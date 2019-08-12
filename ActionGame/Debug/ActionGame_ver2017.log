@@ -1,0 +1,97 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 中間ディレクトリ (Debug\) に別のプロジェクト (ActionGame_ver2017.vcxproj) と共有されているファイルが含まれています。これにより、クリーンしてリビルド動作が適切に行われない可能性があります。
+  BulletTowardPlayer.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\bullettowardplayer.cpp(32): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Circle.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\circle.cpp(24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Coin.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\coin.cpp(54): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  FallWall.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fallwall.cpp(49): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fallwall.cpp(66): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fallwall.cpp(135): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fallwall.cpp(136): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Fence.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fence.cpp(25): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  FireBall.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\fireball.cpp(56): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  FireBar.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(20): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(25): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(51): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(56): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(80): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(85): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(109): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(114): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(138): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(143): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(170): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(176): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\firebar.cpp(194): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  FlashBlock.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\flashblock.cpp(49): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Ghost.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\ghost.cpp(68): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\ghost.cpp(77): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\ghost.cpp(98): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Hanmer.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\hanmer.cpp(40): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  HanmerThrow.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\hanmerthrow.cpp(153): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\hanmerthrow.cpp(155): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Jump.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(46): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(45): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(44): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(43): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(68): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\jump.cpp(75): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Lift.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\lift.cpp(47): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\lift.cpp(50): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  main.cpp
+  Map.cpp
+  Mob.cpp
+  Object.cpp
+  Player.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\player.cpp(178): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\player.cpp(333): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Rect.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\rect.cpp(24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Rope.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\rope.cpp(153): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\rope.cpp(155): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
+  コンパイル中...
+  ShootEnemy.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootenemy.cpp(37): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootenemy.cpp(103): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootenemy.cpp(105): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  ShootLaser.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(61): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(65): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(66): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(73): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(82): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\shootlaser.cpp(83): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Sound.cpp
+  Stage.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\stage.cpp(48): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\stage.cpp(59): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\stage.cpp(63): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  ThornBlock.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\thornblock.cpp(31): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Turtle.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\turtle.cpp(40): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\turtle.cpp(116): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\turtle.cpp(118): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\turtle.cpp(125): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\turtle.cpp(127): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  UpDownObject.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\updownobject.cpp(50): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  WalkEnemy.cpp
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\walkenemy.cpp(57): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\walkenemy.cpp(77): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+d:\工華祭４j\横スクロールアクション班\2dgame2019-master\actiongame\walkenemy.cpp(79): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
+  ActionGame_ver2017.vcxproj -> D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Debug\ActionGame.exe
