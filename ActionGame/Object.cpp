@@ -255,7 +255,7 @@ Rect ChangeCircleToRect(Circle cir) {
 bool CheckCircleRect(Circle cir,Rect rect) {
 	
 	//“–‚½‚é‰Â”\«‚Ì‚ ‚é”ÍˆÍ
-	Rect rect1 = rect,rect2 = rect;
+	Rect rect1(rect.sizeX,rect.sizeY,rect.gx,rect.gy),rect2(rect.sizeX, rect.sizeY, rect.gx, rect.gy);
 
 	rect1.sizeX += 2 * cir.radius;
 	rect2.sizeY += 2 * cir.radius;

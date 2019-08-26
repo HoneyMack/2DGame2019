@@ -940,6 +940,8 @@ void CreateStage1_1R() {
 	stage.CreateCoin(545, 350);
 	stage.CreateCoin(609, 350);
 
+	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
+
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
 

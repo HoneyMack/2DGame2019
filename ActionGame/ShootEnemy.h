@@ -19,6 +19,7 @@ public:
 
 	double velocity;	//左右移動の速度
 	double vecX = 0;	//中心からの座標
+	int centerX; //移動の中心
 
 	ShootEnemy(int x, int y);
 	~ShootEnemy();
