@@ -21,5 +21,5 @@ void Circle::Draw(int x,int y) {
 }
 
 void Circle::Draw(Rect Camera) {
-	DrawCircle(x + *gx -Camera.x,y + *gy -Camera.y,radius,0xFFFFFF,TRUE);
+	DrawCircle(x + *gx -Camera.x,y + *gy -Camera.y,radius,0xFF00FF,TRUE);
 }
