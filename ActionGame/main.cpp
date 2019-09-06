@@ -150,6 +150,10 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Ghost::PicHandle[2] = LoadGraph("pictures/ghost_1.png");
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
+
+	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
+	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
+
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 	//マップ画像をセット
@@ -941,6 +945,7 @@ void CreateStage1_1R() {
 	stage.CreateCoin(609, 350);
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
+	stage.CreateFish(DOT * 10, DOT * 13);	//debug
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
@@ -1473,6 +1478,7 @@ void CreateStage1_2R() {
 	stage.CreateThornBlock(DOT * 180, DOT * 8);
 	stage.CreateThornBlock(DOT * 181, DOT * 8);
 
+	stage.CreateCrab(DOT * 25, DOT * 13);
 
 	stage.CreateGhost(DOT * 25, DOT * 7);
 	stage.CreateGhost(DOT * 25, DOT * 3);

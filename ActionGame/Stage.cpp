@@ -280,3 +280,19 @@ void Stage::CreateFence(int x, int y) {
 	else
 		new Fence(x, y);
 }
+
+void Stage::CreateFish(int x, int y)
+{
+	if (mob == nullptr)
+		mob = new Fish(x, y);
+	else
+		new Fish(x, y);
+}
+
+void Stage::CreateCrab(int x, int y)
+{
+	if (mob == nullptr)
+		mob = new Crab(x, y);
+	else
+		new Crab(x, y);
+}
