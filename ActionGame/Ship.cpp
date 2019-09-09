@@ -94,7 +94,7 @@ void Ship::HitPlayer()
 			else
 				usingP->vy = 0;
 
-			usingP->Knuckled(rect, BOTTOM);
+ 			usingP->Knuckled(rect, BOTTOM);
 			usingP->Animation(STAND);
 			usingP->Jump();
 
