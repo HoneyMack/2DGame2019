@@ -943,7 +943,7 @@ void CreateStage1_1R() {
 	stage.CreateCoin(609, 350);
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
-	stage.CreateShip(DOT * 10, DOT * 10, 0);	//debug
+	stage.CreateShip(DOT * 10, DOT * 10, 300);	//debug
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
