@@ -13,7 +13,10 @@ Crab::Crab(int x, int y)
 	for (int i = 0; i < CRAB_BULLETS; i++) {
 		BTP[i] = new BulletTowardPlayer(x, y);
 		BTP[i]->ay = 0;
+		BTP[i]->picflag = false;
 	}
+
+	
 
 	//当たり判定を画像の中心に	画像が確定したら確認する
 	GetGraphSize(PicHandle, &rect.x, &rect.y);

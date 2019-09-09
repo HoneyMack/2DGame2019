@@ -1,18 +1,12 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Crab.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(94,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(94,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(96,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Player.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(96,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(178,29): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(333,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  BulletTowardPlayer.cpp
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Stage.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(333,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(48,23): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(59,26): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-  main.cpp
   コードを生成中...
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(63,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(126): warning C4715:  'Crab::HitCheck': 値を返さないコントロール パスがあります。
   ActionGame_ver2017.vcxproj -> C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Debug\ActionGame.exe

@@ -121,7 +121,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ShootLaser::PicHandle_dispenser = LoadGraph("pictures/raser_app.png");
 	ShootLaser::PicHandle_laser = LoadGraph("pictures/raser.png");
 	ShootEnemy::PicHandle = LoadGraph("pictures/enemy_gun.png");
-	BulletTowardPlayer::PicHandle = LoadGraph("pictures/bullet.png");
+	BulletTowardPlayer::PicHandle[0] = LoadGraph("pictures/bullet.png");
+	BulletTowardPlayer::PicHandle[1] = LoadGraph("pictures/bullet.png");
 	FireBall::PicHandle = LoadGraph("pictures/fireball.png");
 	FireBar::PicHandle = LoadGraph("pictures/firebar_center.png");
 	UpDownObject::PicHandle = LoadGraph("pictures/lift.png");
