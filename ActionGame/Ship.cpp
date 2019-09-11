@@ -68,7 +68,7 @@ bool Ship::HitCheck(Rect rect)
 			return true;
 		}
 		else if (usingP->vy < 0) {
-			usingP->vy = 0;
+			vy = 0;
 			usingP->Knuckled(this->rect, TOP);
 			return true;
 		}
