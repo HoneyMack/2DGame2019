@@ -59,33 +59,9 @@ void Ship::Draw()
 
 bool Ship::HitCheck(Rect rect)
 {
-	////return false;
-	//if (CheckRectRect(rect, this->rect)) {
-	//	if (usingP->Xmovingflag) {
-	//		//x
-	//		usingP->vx = 0;
-	//		usingP->KnuckledX(this->rect);
-	//		return true;
-	//	}
-	//	else if (usingP->vy < 0) {
-	//		usingP->vy = 0;
-	//		usingP->Knuckled(this->rect, TOP);
-	//		return true;
-	//	}
-	//	//else if (HitFaceRectRect(rect, this->rect) & TOP && usingP->vy > 0 && usingP->Ymovingflag && !(HitFaceRectRect(rect, this->rect) & BOTTOM)) {
-	//	else{	
-	//		HitPlayer();
-	//		return true;
-	//	}
-	//	/*else
-	//		return false;*/
-	//}
+	//return false;
 	if (CheckRectRect(rect, this->rect)) {
-		if (HitFaceRectRect(rect, this->rect) & TOP) {
-			HitPlayer();
-			return true;
-		}
-		else if (usingP->Xmovingflag) {
+		if (usingP->Xmovingflag) {
 			//x
 			usingP->vx = 0;
 			usingP->KnuckledX(this->rect);
@@ -96,7 +72,13 @@ bool Ship::HitCheck(Rect rect)
 			usingP->Knuckled(this->rect, TOP);
 			return true;
 		}
-		else return false;
+		//else if (HitFaceRectRect(rect, this->rect) & TOP && usingP->vy > 0 && usingP->Ymovingflag && !(HitFaceRectRect(rect, this->rect) & BOTTOM)) {
+		else{	
+			HitPlayer();
+			return true;
+		}
+		/*else
+			return false;*/
 	}
 	return false;
 }

@@ -1,3 +1,133 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-  ActionGame_ver2017.vcxproj -> E:\ActionGame\2DGame2019\ActionGame\Debug\ActionGame.exe
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1,1): error C2059:  構文エラー: '<<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\sal.h(2361,12): error C2143:  構文エラー: ';' が '{' の前にありません。
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\sal.h(2361,12): error C2447:  '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(945,1): error C2059:  構文エラー: '<<'
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(947,1): error C2059:  構文エラー: '=='
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1815,1): error C2059:  構文エラー: '=='
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1829,17): error C2011:  'rankdata': 'struct' 型の再定義
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1836,12): error C2086:  'Stage stage': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(22): message :  'stage' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1861,5): error C2374:  'window': 再定義されています。2 回以上初期化されています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(47): message :  'window' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1864,12): error C2086:  'int now_key': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(50): message :  'now_key' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1865,17): error C2086:  'bool befKeys[62]': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(51): message :  'befKeys' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1869,8): error C2374:  'stagename': 再定義されています。2 回以上初期化されています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(55): message :  'stagename' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1872,37): error C2086:  'int stage1_1Back[3]': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(58): message :  'stage1_1Back' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1873,37): error C2086:  'int stage1_2Back[3]': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(59): message :  'stage1_2Back' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1874,37): error C2086:  'int stage1_3Back[3]': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(60): message :  'stage1_3Back' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1877,18): error C2086:  'int goalPicHandle': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(63): message :  'goalPicHandle' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1881,12): error C2086:  'int beftime': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(67): message :  'beftime' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1881,21): error C2086:  'int curtime': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(67): message :  'curtime' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1882,16): error C2086:  'float frametime': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(68): message :  'frametime' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1885,13): error C2086:  'int strWidth': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(71): message :  'strWidth' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1885,21): error C2086:  'int strLen': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(71): message :  'strLen' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1887,11): error C2086:  'int HPfont': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(73): message :  'HPfont' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1888,15): error C2086:  'int rankfont_1': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(74): message :  'rankfont_1' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1888,27): error C2086:  'int rankfont_2': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(74): message :  'rankfont_2' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1888,39): error C2086:  'int rankfont_3': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(74): message :  'rankfont_3' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1889,14): error C2086:  'int Pausefont': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(75): message :  'Pausefont' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1894,7): error C2374:  'str': 再定義されています。2 回以上初期化されています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(80): message :  'str' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1896,10): error C2086:  'HWND hWnd': 再定義されました。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(82): message :  'hWnd' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1900,1): error C2084:  関数 'int WinMain(HINSTANCE,HINSTANCE,LPSTR,int)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(85): message :  'WinMain' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1970,18): error C2653:  'Ship': 識別子がクラス名でも名前空間名でもありません。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1970,8): error C2065:  'PicHandle': 定義されていない識別子です。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2026,20): error C2084:  関数 'void GameControl(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(210): message :  'GameControl' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2064,20): error C2084:  関数 'void StartWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(248): message :  'StartWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2078,24): error C2084:  関数 'int GameSelectWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(262): message :  'GameSelectWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2167,23): error C2084:  関数 'void GamePlayWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(351): message :  'GamePlayWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2215,24): error C2084:  関数 'void GamePauseWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(399): message :  'GamePauseWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2235,23): error C2084:  関数 'void GameOverWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(419): message :  'GameOverWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2253,41): error C2084:  関数 'void GameClearWindow(int)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(437): message :  'GameClearWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2273,19): error C2079:  'addrank' が 未定義の struct 'rankdata' で使用しています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2281,58): error C2664:  'void RankingWrite(std::string,rankdata)': 引数 2 を 'int' から 'rankdata' へ変換できません。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2281,58): message :  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15,8): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2289,22): error C2084:  関数 'void RankingWindow(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(473): message :  'RankingWindow' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2322,38): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2322,69): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2322,101): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2322,128): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2340,111): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2345,111): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2350,111): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2355,107): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2386,47): error C2084:  関数 'void RankingWrite(std::string,rankdata)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(570): message :  'RankingWrite' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2416,21): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2417,25): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2418,25): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2419,25): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2420,25): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2460,48): error C2084:  関数 'rankdata *RankingRead(std::string,int *)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(644): message :  'RankingRead' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2519,38): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2522,10): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2523,10): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2524,10): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2525,10): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2526,10): error C2027:  認識できない型 'rankdata' が使われています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(15): message :  'rankdata' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2534,23): error C2084:  関数 'void CreateStage1_1(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(718): message :  'CreateStage1_1' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2617,23): error C2084:  関数 'void CreateStage2_1(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(801): message :  'CreateStage2_1' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2665,24): error C2084:  関数 'void CreateStage1_1R(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(849): message :  'CreateStage1_1R' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2761,18): error C2039:  'CreateShip': 'Stage' のメンバーではありません。
+E:\ActionGame\2DGame2019\ActionGame\Stage.h(29): message :  'Stage' の宣言を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(2842,24): error C2084:  関数 'void CreateStage1_2R(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1029): message :  'CreateStage1_2R' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(3330,24): error C2084:  関数 'void CreateStage1_3R(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1517): message :  'CreateStage1_3R' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(3619,30): error C2084:  関数 'void CreateStage_MiniGame1(void)' は既に本体を持っています。
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(1806): message :  'CreateStage_MiniGame1' の以前の定義を確認してください
+E:\ActionGame\2DGame2019\ActionGame\main.cpp(3628,1): error C2059:  構文エラー: '>>'

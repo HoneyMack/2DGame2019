@@ -151,7 +151,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Rope.h" />
-    <ClInclude Include="Ship.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
     <ClInclude Include="Sound.h" />
@@ -182,7 +181,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Rope.cpp" />
-    <ClCompile Include="Ship.cpp" />
     <ClCompile Include="ShootEnemy.cpp" />
     <ClCompile Include="ShootLaser.cpp" />
     <ClCompile Include="Sound.cpp" />

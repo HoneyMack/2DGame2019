@@ -8,7 +8,6 @@
 #include "ShootEnemy.h"
 #include "FireBar.h"
 #include "Lift.h"
-#include "Ship.h"
 #include "Rope.h"
 #include "Jump.h"
 #include "Coin.h"
@@ -74,6 +73,4 @@ static	int limit;						//Žc‚èŽžŠÔ
 	void CreateGhost(int x, int y);
 	void CreateThornBlock(int x,int y);
 	void CreateFence(int x, int y);
-
-	void CreateShip(int x, int y, double angle);
 };
