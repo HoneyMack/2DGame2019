@@ -1,3 +1,17 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Player.cpp
+E:\ActionGame\2DGame2019\ActionGame\Player.cpp(178,29): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+E:\ActionGame\2DGame2019\ActionGame\Player.cpp(333,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Ship.cpp
+E:\ActionGame\2DGame2019\ActionGame\Player.cpp(333,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+E:\ActionGame\2DGame2019\ActionGame\Ship.cpp(11,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+E:\ActionGame\2DGame2019\ActionGame\Ship.cpp(51,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Stage.cpp
+E:\ActionGame\2DGame2019\ActionGame\Ship.cpp(51,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+E:\ActionGame\2DGame2019\ActionGame\Stage.cpp(48,23): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+E:\ActionGame\2DGame2019\ActionGame\Stage.cpp(59,26): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
   main.cpp
+  コードを生成中...
+E:\ActionGame\2DGame2019\ActionGame\Stage.cpp(63,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  LINK : 前回のインクリメンタル リンクで E:\ActionGame\2DGame2019\ActionGame\Debug\ActionGame.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   ActionGame_ver2017.vcxproj -> E:\ActionGame\2DGame2019\ActionGame\Debug\ActionGame.exe
