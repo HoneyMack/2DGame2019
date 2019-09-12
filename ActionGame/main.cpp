@@ -153,6 +153,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 
+	
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
 	//マップ画像をセット
