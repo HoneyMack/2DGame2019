@@ -274,20 +274,9 @@ void Stage::CreateThornBlock(int x, int y) {
 	else
 		new ThornBlock(x, y);
 }
-
-
 void Stage::CreateFence(int x, int y) {
 	if (fence == nullptr)
 		fence = new Fence(x, y);
 	else
 		new Fence(x, y);
 }
-
-void Stage::CreateShip(int x, int y, double angle)
-{
-	if (mob == nullptr)
-		mob = new Ship(x, y, angle);
-	else
-		new Ship(x, y, angle);
-}
-
