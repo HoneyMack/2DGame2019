@@ -152,6 +152,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
+
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
 	//マップ画像をセット
@@ -943,7 +944,9 @@ void CreateStage1_1R() {
 	stage.CreateCoin(609, 350);
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
+
 	stage.CreateShip(DOT * 10, DOT * 10, 300);	//debug
+
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
