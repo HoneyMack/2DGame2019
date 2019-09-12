@@ -81,8 +81,9 @@ bool Ship::HitCheck(Rect rect)
 	//		return false;*/
 	//}
 	if (CheckRectRect(rect, this->rect)) {
-		if (HitFaceRectRect(rect, this->rect) & TOP) {
+		if (HitFaceRectRect(rect, this->rect) & TOP && !(HitFaceRectRect(rect,this->rect) & BOTTOM)) {
 			HitPlayer();
+			unsigned int a = HitFaceRectRect(rect, this->rect);
 			return true;
 		}
 		else if (usingP->Xmovingflag) {
