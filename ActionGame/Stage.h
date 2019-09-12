@@ -76,5 +76,4 @@ static	int limit;						//c‚èŠÔ
 	void CreateFence(int x, int y);
 
 	void CreateShip(int x, int y, double angle);
-
 };
