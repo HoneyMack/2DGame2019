@@ -154,6 +154,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
 	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
+	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 

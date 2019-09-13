@@ -295,4 +295,10 @@ void Stage::CreateCrab(int x, int y)
 		mob = new Crab(x, y);
 	else
 		new Crab(x, y);
+void Stage::CreateShip(int x, int y, double angle)
+{	
+	if (mob == nullptr)
+		mob = new Ship(x, y, angle);
+	else
+		new Ship(x, y, angle);
 }

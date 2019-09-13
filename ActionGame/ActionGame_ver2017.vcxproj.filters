@@ -106,6 +106,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Crab.h">
+     <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -205,5 +208,8 @@
     <ResourceCompile Include="ActionGame.rc">
       <Filter>リソース ファイル</Filter>
     </ResourceCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

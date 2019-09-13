@@ -1,7 +1,7 @@
 //マップは配列として持つ
 #pragma once
 #include "DxLib.h"
-//#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
+#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
 
 
 
@@ -227,6 +227,12 @@
 #define FENCE_SIZE 32  //正方形で定義
 #define FENCE_PLAYERMOVESPEED 100 //プレイヤーの移動速度指定
 #define FENCE_LOWJUMPSPEED 200		//LOWジャンプの高さ指定
+
+//Ship
+#define SHIP_SIZEX 96
+#define SHIP_SIZEY 64
+#define SHIP_MOVESPEED 100
+
 
 
 
