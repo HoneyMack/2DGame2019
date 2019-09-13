@@ -948,6 +948,8 @@ void CreateStage1_1R() {
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
 	stage.CreateFish(DOT * 10, DOT * 13);	//debug
+	stage.CreateCrab(DOT * 10, DOT * 4);
+	stage.CreateShip(DOT * 10, DOT * 4, 0);
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
