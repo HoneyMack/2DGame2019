@@ -228,6 +228,12 @@
 #define FENCE_PLAYERMOVESPEED 100 //プレイヤーの移動速度指定
 #define FENCE_LOWJUMPSPEED 200		//LOWジャンプの高さ指定
 
+//Ship
+#define SHIP_SIZEX 96
+#define SHIP_SIZEY 64
+#define SHIP_MOVESPEED 100
+
+
 
 
 //描画サイズ(配列の個数)
