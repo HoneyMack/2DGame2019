@@ -121,7 +121,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ShootLaser::PicHandle_dispenser = LoadGraph("pictures/raser_app.png");
 	ShootLaser::PicHandle_laser = LoadGraph("pictures/raser.png");
 	ShootEnemy::PicHandle = LoadGraph("pictures/enemy_gun.png");
-	BulletTowardPlayer::PicHandle = LoadGraph("pictures/bullet.png");
+	BulletTowardPlayer::PicHandle[0] = LoadGraph("pictures/bullet.png");
+	BulletTowardPlayer::PicHandle[1] = LoadGraph("pictures/bullet.png");
 	FireBall::PicHandle = LoadGraph("pictures/fireball.png");
 	FireBar::PicHandle = LoadGraph("pictures/firebar_center.png");
 	UpDownObject::PicHandle = LoadGraph("pictures/lift.png");
@@ -150,9 +151,12 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Ghost::PicHandle[2] = LoadGraph("pictures/ghost_1.png");
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
-	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
+	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
+	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
+
+	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 	//マップ画像をセット
 	Map::PicHandle[GROUND] = LoadGraph("pictures/ground.png");
@@ -943,7 +947,9 @@ void CreateStage1_1R() {
 	stage.CreateCoin(609, 350);
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
-	stage.CreateShip(DOT * 10, DOT * 10, 0);	//debug
+	stage.CreateFish(DOT * 10, DOT * 13);	//debug
+	stage.CreateCrab(DOT * 10, DOT * 4);
+	stage.CreateShip(DOT * 10, DOT * 4, 0);
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);
@@ -1476,6 +1482,7 @@ void CreateStage1_2R() {
 	stage.CreateThornBlock(DOT * 180, DOT * 8);
 	stage.CreateThornBlock(DOT * 181, DOT * 8);
 
+	stage.CreateCrab(DOT * 25, DOT * 13);
 
 	stage.CreateGhost(DOT * 25, DOT * 7);
 	stage.CreateGhost(DOT * 25, DOT * 3);

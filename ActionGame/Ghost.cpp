@@ -54,6 +54,9 @@ void Ghost::Motion(double frametime){
 		vy = -dy / length*GHOST_MOVESPEED;
 
 		stepPosAll(frametime);
+		/*stepRect_x(display, frametime);
+		stepRect_y(display, frametime);*/
+
 		//‰æ–Ê‰º‚É—Ž‚¿‚È‚¢‚æ‚¤‚É‚·‚é
 		if (y - vecY >= HEIGHT)
 			vecY = y - HEIGHT;

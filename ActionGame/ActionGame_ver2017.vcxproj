@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F7D36982-4C1A-4369-A4E4-5A25F7B789E0}</ProjectGuid>
     <RootNamespace>ActionGame</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
     <ProjectName>ActionGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -134,11 +134,13 @@
     <ClInclude Include="BulletTowardPlayer.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="Crab.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="FallWall.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="FireBall.h" />
     <ClInclude Include="FireBar.h" />
+    <ClInclude Include="Fish.h" />
     <ClInclude Include="FlashBlock.h" />
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Hanmer.h" />
@@ -150,8 +152,8 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Rope.h" />
-    <ClInclude Include="Ship.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
     <ClInclude Include="Sound.h" />
@@ -165,10 +167,12 @@
     <ClCompile Include="BulletTowardPlayer.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Crab.cpp" />
     <ClCompile Include="FallWall.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="FireBall.cpp" />
     <ClCompile Include="FireBar.cpp" />
+    <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FlashBlock.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Hanmer.cpp" />
@@ -191,6 +195,9 @@
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="UpDownObject.cpp" />
     <ClCompile Include="WalkEnemy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ActionGame.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

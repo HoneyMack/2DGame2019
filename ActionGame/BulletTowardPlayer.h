@@ -6,8 +6,10 @@
 class BulletTowardPlayer : public Object
 {
 public:
-	static int PicHandle;
+	static int PicHandle[2];
 	Circle *cir;		//‚ ‚½‚è”»’è
+
+	bool picflag = true;	//true:shootenemy false:crab
 
 	BulletTowardPlayer(int x,int y);
 	~BulletTowardPlayer();
