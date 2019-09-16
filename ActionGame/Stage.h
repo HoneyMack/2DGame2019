@@ -14,6 +14,7 @@
 #include "Coin.h"
 #include "FallWall.h"
 #include "Turtle.h"
+#include "Killer.h"
 #include "HanmerThrow.h"
 #include "Ghost.h"
 #include "ThornBlock.h"
@@ -76,4 +77,6 @@ static	int limit;						//Žc‚èŽžŠÔ
 	void CreateFence(int x, int y);
 
 	void CreateShip(int x, int y, double angle);
+
+	void CreateKiller(int x, int y,bool direction);
 };

@@ -288,3 +288,11 @@ void Stage::CreateShip(int x, int y, double angle)
 	else
 		new Ship(x, y, angle);
 }
+
+void Stage::CreateKiller(int x, int y, bool direction)
+{
+	if (mob == nullptr)
+		mob = new Killer(x, y, direction);
+	else
+		new Killer(x, y, direction);
+}

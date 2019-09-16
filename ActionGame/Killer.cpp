@@ -11,7 +11,7 @@ Killer::Killer(int x, int y, bool direction)
 	if (direction)
 		vx = KILLER_MOVESPEED;
 	else
-		vx = KILLER_MOVESPEED;
+		vx = -KILLER_MOVESPEED;
 
 	ay = 0;
 
@@ -41,21 +41,70 @@ void Killer::Motion(double frametime)
 				waittime = KILLHIGHJUMPTIME;
 			}
 		}
+
 		int hitface = 0x0000;
-		stepPosAll(frametime);
+
+		//stepPosAll(frametime);
+		hitface = stepRect_x(rect, frametime);
+		if ((hitface & RIGHT) || (hitface & LEFT)) {
+			deathflag = true;	//オブジェクトにぶつかったら死亡
+		}
 		
 	}
+	//else if (startflag) {
+	//	deathflag = true;	//一度描画されたのち画面外に出たら死亡
+	//}
 }
 
 void Killer::Draw()
 {
+	if (CheckInCam()) {
+		if (vx > 0)
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+		else
+			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+
+#ifdef DEBUG
+		rect.Draw(*Camera);
+#endif // DEBUG
+
+	}
 }
 
 bool Killer::HitCheck(Rect rect)
 {
-	return false;
+	if (CheckRectRect(rect, this->rect)) {
+		//プライヤーが落下してきて、自分の上にあたっていたら自分が死んでプレイヤーにダメージは入らない
+		if (HitFaceRectRect(rect, this->rect) & TOP && usingP->vy > 0 && usingP->Ymovingflag && !(HitFaceRectRect(rect, this->rect) & BOTTOM)) {
+			killedenemy++;
+			PlaySoundMem(Sound::sounds[SOUND_ENEMYTREAD], DX_PLAYTYPE_BACK);
+			deathflag = true;
+			usingP->Knuckled(this->rect, BOTTOM);
+
+			waittime = 0;
+			//ハイジャンプ可能にする
+			usingP->Animation(JUMP);
+			if (usingP->now_key & PAD_INPUT_10) {
+
+				usingP->highjumpcounter = (CANHIGHJUMPTIME - KILLHIGHJUMPLIMIT) / 1000.0;
+				PlaySoundMem(Sound::sounds[SOUND_PLAYERJUMP], DX_PLAYTYPE_BACK);
+				waittime = KILLHIGHJUMPTIME;
+				//usingP->vy = -JUMPSPEED;
+			}
+			usingP->vy = -KILLJUMP;
+		}
+		else
+			HitPlayer();
+
+
+		return true;
+	}
+	else
+		return false;
+	
 }
 
 void Killer::HitPlayer()
 {
+	usingP->Damage(KILLER_HITDAMAGE, ENEMYMATCHLESSTIME);
 }

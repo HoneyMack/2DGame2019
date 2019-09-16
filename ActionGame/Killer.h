@@ -3,7 +3,9 @@
 #include "Mob.h"
 #include "Object.h"
 
-#define KILLER_MOVESPEED 40
+#define KILLER_MOVESPEED 200
+#define KILLER_HITDAMAGE 5
+
 
 class Killer :public Mob,public Object
 {
@@ -14,7 +16,7 @@ public:
 
 	double waittime = KILLHIGHJUMPLIMIT;
 	
-	double velocity;
+	//double velocity;
 	bool startflag = false;
 
 	Killer(int x, int y,bool direction);	//true:âEÇ…êiÇﬁ false:ç∂Ç…êiÇﬁ
