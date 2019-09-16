@@ -15,6 +15,7 @@
 #include "FallWall.h"
 #include "Turtle.h"
 #include "Killer.h"
+#include "Eel.h"
 #include "HanmerThrow.h"
 #include "Ghost.h"
 #include "ThornBlock.h"
@@ -79,4 +80,5 @@ static	int limit;						//Žc‚èŽžŠÔ
 	void CreateShip(int x, int y, double angle);
 
 	void CreateKiller(int x, int y,bool direction);
+	void CreateEel(int x, int y, bool direction);
 };

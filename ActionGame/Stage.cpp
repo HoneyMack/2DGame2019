@@ -296,3 +296,11 @@ void Stage::CreateKiller(int x, int y, bool direction)
 	else
 		new Killer(x, y, direction);
 }
+
+void Stage::CreateEel(int x, int y, bool direction)
+{
+	if (mob == nullptr)
+		mob = new Eel(x, y, direction);
+	else
+		new Eel(x, y, direction);
+}

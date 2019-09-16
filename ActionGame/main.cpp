@@ -154,6 +154,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 	Killer::PicHandle = LoadGraph("pictures/Killer.png");
+	Eel::PicHandle = LoadGraph("pictures/Eel.png");
 
 	//マップ画像をセット
 	Map::PicHandle[GROUND] = LoadGraph("pictures/ground.png");
@@ -945,7 +946,8 @@ void CreateStage1_1R() {
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
 	stage.CreateShip(DOT * 25, DOT * 14, 30);	//debug
-	stage.CreateKiller(DOT * 10, DOT * 9, true);	//debug
+	stage.CreateEel(DOT * 10, DOT * 9, true);	//debug
+	
 
 	stage.CreateWalkEnemy(700, 415);
 	stage.CreateWalkEnemy(1280, 290);

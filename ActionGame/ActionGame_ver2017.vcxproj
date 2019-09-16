@@ -135,6 +135,7 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="Eel.h" />
     <ClInclude Include="FallWall.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="FireBall.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="BulletTowardPlayer.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Eel.cpp" />
     <ClCompile Include="FallWall.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="FireBall.cpp" />
