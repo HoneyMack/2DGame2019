@@ -5,9 +5,6 @@
 #include "define.h"
 #include <math.h>
 
-#define SHIP_SIZEX 96
-#define SHIP_SIZEY 64
-#define SHIP_MOVESPEED 100
 
 class Ship :public Object,public Mob
 {

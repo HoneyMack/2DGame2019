@@ -1,4 +1,4 @@
-#include "WalkEnemy.h"
+ #include "WalkEnemy.h"
 
 int WalkEnemy::PicHandle[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 

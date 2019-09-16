@@ -304,3 +304,21 @@ void Stage::CreateEel(int x, int y, bool direction)
 	else
 		new Eel(x, y, direction);
 }
+
+
+void Stage::CreateFish(int x, int y)
+{
+	if (mob == nullptr)
+		mob = new Fish(x, y);
+	else
+		new Fish(x, y);
+}
+
+void Stage::CreateCrab(int x, int y)
+{
+	if (mob == nullptr)
+		mob = new Crab(x, y);
+	else
+		new Crab(x, y);
+}
+

@@ -18,6 +18,8 @@
 #include "Eel.h"
 #include "HanmerThrow.h"
 #include "Ghost.h"
+#include "Fish.h"
+#include "Crab.h"
 #include "ThornBlock.h"
 #include "Fence.h"
 #include "Map.h"
@@ -76,6 +78,9 @@ static	int limit;						//Žc‚èŽžŠÔ
 	void CreateGhost(int x, int y);
 	void CreateThornBlock(int x,int y);
 	void CreateFence(int x, int y);
+
+	void CreateFish(int x, int y);
+	void CreateCrab(int x, int y);
 
 	void CreateShip(int x, int y, double angle);
 
