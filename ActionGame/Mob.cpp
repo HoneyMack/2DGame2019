@@ -19,6 +19,12 @@ bool Mob::HasNext() {
 	else
 		return false;
 }
+
+void Mob::AllDelete() {
+	AllDelete(first);
+	first = nullptr;
+}
+
 void Mob::AllDelete(Mob* mob) {
 	while (mob != nullptr) {
 		Mob* nextmob = mob->next;

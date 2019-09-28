@@ -8,7 +8,8 @@ public:
 	static Mob *first, *last;
 	Mob *former, *next;	//インスタンスの鎖に用いる
 	bool deathflag = false;	//死んだか：yes-> true
-	static	int killedenemy;						//倒された敵の数
+	static	int killedenemy;//倒された敵の数
+
 
 	virtual void Motion(double frametime) = 0;	//動き&処理
 	virtual void Draw() = 0;		//描画
@@ -17,11 +18,12 @@ public:
 	virtual void HitPlayer() {};						//プレイヤーにぶつかっていた時の処理を記述
 
 	bool HasNext();								//次の要素があるか。
+	static void AllDelete();
 	static void AllDelete(Mob* mob);				//インスタンスの鎖をすべて消去。
-	virtual void ChainMaker();		//インスタンスの鎖に追加。それぞれの敵のコンストラクタ内に記述してください。
-	virtual void ChainCutter();		//インスタンスの鎖から取り除く。それぞれの敵のデストラクタ内に記述してください。
+	virtual void ChainMaker();		//インスタンスの鎖に追加。
+	virtual void ChainCutter();		//インスタンスの鎖から取り除く。
 
-	Mob();
+	Mob(); //コンストラクタ
 	virtual ~Mob();
 };
 

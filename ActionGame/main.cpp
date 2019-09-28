@@ -768,38 +768,38 @@ void CreateStage1_1() {
 	//ステージにセット
 	*stage.usingM = firstMap;
 
-	stage.CreateWalkEnemy(300, 300);
-	stage.CreateWalkEnemy(100, 100);
-	stage.CreateWalkEnemy(200, 200);
-	//stage.CreateShootLaser(1000);
-	stage.CreateShootLaser(500);
-	stage.CreateShootEnemy(300, 300);
-	stage.CreateShootEnemy(600, 300);
-	stage.CreateUpDownObject(1000, 300);
-	stage.CreateUpDownObject(500, 200);
+	new WalkEnemy(300, 300);
+	new WalkEnemy(100, 100);
+	new WalkEnemy(200, 200);
+	//new ShootLaser(1000);
+	new ShootLaser(500);
+	new ShootEnemy(300, 300);
+	new ShootEnemy(600, 300);
+	new UpDownObject(1000, 300);
+	new UpDownObject(500, 200);
 
 
-	stage.CreateCoin(100, 300);
-	stage.CreateFallWall(400, 200);
-	stage.CreateFallWall(600, 20);
+	new Coin(100, 300);
+	new FallWall(400, 200);
+	new FallWall(600, 20);
 	//バグ座標（610,10）,サイズ（30,40）<-直した
-	stage.CreateTurtle(610, 10);
+	new Turtle(610, 10);
 	for(int i = 0; i< 1;i++)
-		stage.CreateWalkEnemy(730 + i*2, 10);
+		new WalkEnemy(730 + i*2, 10);
 
 	//40000個のファイヤーボールを作ると処理が間に合わない。10000ならいけるはず
-	stage.CreateFireBar(1200, 200, 10, 4);
+	new FireBar(1200, 200, 10, 4);
 
 
-	stage.CreateLift(1500, 300, true);
-	stage.CreateLift(1800, 300, false);
-	stage.CreateRope(350, 150, 5);
-	stage.CreateRope(2500, 350, 2);
-	stage.CreateJump(3200, 400);
-	stage.CreateJump(3240, 400);
-	stage.CreateJump(3280, 400);
-	stage.CreateJump(3320, 400);
-	stage.CreateFlashBlock(DOT * 15, DOT * 10);
+	new Lift(1500, 300, true);
+	new Lift(1800, 300, false);
+	new Rope(350, 150, 5);
+	new Rope(2500, 350, 2);
+	new Jump(3200, 400);
+	new Jump(3240, 400);
+	new Jump(3280, 400);
+	new Jump(3320, 400);
+	new FlashBlock(DOT * 15, DOT * 10);
 
 }
 
@@ -829,26 +829,26 @@ void CreateStage2_1() {
 	//ステージにセット
 	*stage.usingM = firstMap;
 
-	stage.CreateLift(300, 400, true);
+	new Lift(300, 400, true);
 
-	//stage.CreateTurtle(300, 10);
-	//stage.CreateJump(300, 400);
-	//stage.CreateHanmerThrow(300, 10, 300);
+	//new Turtle(300, 10);
+	//new Jump(300, 400);
+	//new HanmerThrow(300, 10, 300);
 
-	//stage.CreateFlashBlock(DOT * 15, DOT * 10);
-	//stage.CreateFlashBlock(DOT * 12, DOT * 10);
-	//stage.CreateGhost(300,10);
-	//stage.CreateThornBlock(300,400);
-	//stage.CreateGhost(10,10);
+	//new FlashBlock(DOT * 15, DOT * 10);
+	//new FlashBlock(DOT * 12, DOT * 10);
+	//new Ghost(300,10);
+	//new ThornBlock(300,400);
+	//new Ghost(10,10);
 	for (int i = 0; i < 5; i++) {
 		for (int j = 0; j < 5; j++) {
-			stage.CreateFence(DOT *( 6 + i),DOT * (9 + j));
+			new Fence(DOT *( 6 + i),DOT * (9 + j));
 		}
 	}
 
-	//stage.CreateFence(DOT * 6, DOT * 10);
-	//stage.CreateFence(DOT * 5, DOT * 11);
-	//stage.CreateFence(DOT * 5, DOT * 10);
+	//new Fence(DOT * 6, DOT * 10);
+	//new Fence(DOT * 5, DOT * 11);
+	//new Fence(DOT * 5, DOT * 10);
 }
 
 void CreateStage1_1R() {
@@ -943,90 +943,90 @@ void CreateStage1_1R() {
 
 
 
-	stage.CreateCoin(545, 350);
-	stage.CreateCoin(609, 350);
+	new Coin(545, 350);
+	new Coin(609, 350);
 
-	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
-	stage.CreateFish(DOT * 10, DOT * 13);	//debug
-	stage.CreateCrab(DOT * 10, DOT * 4);
-	stage.CreateShip(DOT * 10, DOT * 4, 0);
+	new Turtle(DOT * 10, DOT * 13); //debug
+	new Fish(DOT * 10, DOT * 13);	//debug
+	new Crab(DOT * 10, DOT * 4);
+	new Ship(DOT * 10, DOT * 4, 0);
 
-	stage.CreateWalkEnemy(700, 415);
-	stage.CreateWalkEnemy(1280, 290);
+	new WalkEnemy(700, 415);
+	new WalkEnemy(1280, 290);
 
-	stage.CreateShootEnemy(1248, 415);
-	stage.CreateShootEnemy(1280, 415);
+	new ShootEnemy(1248, 415);
+	new ShootEnemy(1280, 415);
 
-	stage.CreateJump(1500, 415);
+	new Jump(1500, 415);
 
-	stage.CreateCoin(1600, 256);
-	stage.CreateCoin(1632, 256);
-	stage.CreateCoin(1664, 256);
-	stage.CreateCoin(1696, 256);
-	stage.CreateCoin(1728, 256);
-	stage.CreateCoin(1760, 256);
+	new Coin(1600, 256);
+	new Coin(1632, 256);
+	new Coin(1664, 256);
+	new Coin(1696, 256);
+	new Coin(1728, 256);
+	new Coin(1760, 256);
 
-	stage.CreateRope(1834, 100, 5);
+	new Rope(1834, 100, 5);
 
-	stage.CreateTurtle(DOT * 76, DOT * 13);
-
-
-
-	stage.CreateUpDownObject(DOT * 87, DOT * 9);
-
-	stage.CreateFallWall(DOT * 90, DOT * 4);
-
-	stage.CreateWalkEnemy(DOT * 93, DOT * 13);
-
-	stage.CreateShootEnemy(DOT * 104, DOT * 13);
-
-	stage.CreateTurtle(DOT * 109, DOT * 13);
-
-	stage.CreateUpDownObject(DOT * 109, DOT * 9);
-
-	stage.CreateJump(DOT * 117, DOT * 13);
-
-	stage.CreateFireBar(DOT * 125, DOT * 10, 90.0, true, 10, 4, 90);
-
-	stage.CreateRope(DOT * 119, DOT * 1, 4);
-	stage.CreateRope(DOT * 127, DOT * 1, 5);
-
-	stage.CreateLift(DOT * 131, DOT * 7, true);
-
-	stage.CreateShootLaser(DOT * 131);
-
-	stage.CreateFireBar(DOT * 138, DOT * 10, 90.0, false, 10, 4, 90);
-
-	stage.CreateJump(DOT * 153, DOT * 13);
+	new Turtle(DOT * 76, DOT * 13);
 
 
 
-	stage.CreateTurtle(DOT * 165, DOT * 13);
+	new UpDownObject(DOT * 87, DOT * 9);
+
+	new FallWall(DOT * 90, DOT * 4);
+
+	new WalkEnemy(DOT * 93, DOT * 13);
+
+	new ShootEnemy(DOT * 104, DOT * 13);
+
+	new Turtle(DOT * 109, DOT * 13);
+
+	new UpDownObject(DOT * 109, DOT * 9);
+
+	new Jump(DOT * 117, DOT * 13);
+
+	new FireBar(DOT * 125, DOT * 10, 90.0, true, 10, 4, 90);
+
+	new Rope(DOT * 119, DOT * 1, 4);
+	new Rope(DOT * 127, DOT * 1, 5);
+
+	new Lift(DOT * 131, DOT * 7, true);
+
+	new ShootLaser(DOT * 131);
+
+	new FireBar(DOT * 138, DOT * 10, 90.0, false, 10, 4, 90);
+
+	new Jump(DOT * 153, DOT * 13);
 
 
-	stage.CreateTurtle(DOT * 172, DOT * 13);
 
-	stage.CreateLift(DOT * 188, DOT * 9, true);
+	new Turtle(DOT * 165, DOT * 13);
 
-	stage.CreateLift(DOT * 193, DOT * 7, true);
 
-	stage.CreateFallWall(DOT * 185, DOT * 2);
+	new Turtle(DOT * 172, DOT * 13);
 
-	stage.CreateCoin(DOT * 195, DOT * 5);
-	stage.CreateCoin(DOT * 196, DOT * 4);
-	stage.CreateCoin(DOT * 197, DOT * 3);
-	stage.CreateCoin(DOT * 198, DOT * 3);
-	stage.CreateCoin(DOT * 199, DOT * 4);
-	stage.CreateCoin(DOT * 200, DOT * 5);
+	new Lift(DOT * 188, DOT * 9, true);
 
-	stage.CreateFlashBlock(DOT * 82, DOT * 11);
-	stage.CreateFlashBlock(DOT * 18, DOT * 8);
+	new Lift(DOT * 193, DOT * 7, true);
 
-	stage.CreateFlashBlock(DOT * 168, DOT * 14);
-	stage.CreateFlashBlock(DOT * 107, DOT * 14);
+	new FallWall(DOT * 185, DOT * 2);
 
-	stage.CreateFlashBlock(DOT * 112, DOT * 13);
-	stage.CreateFlashBlock(DOT * 160, DOT * 13);
+	new Coin(DOT * 195, DOT * 5);
+	new Coin(DOT * 196, DOT * 4);
+	new Coin(DOT * 197, DOT * 3);
+	new Coin(DOT * 198, DOT * 3);
+	new Coin(DOT * 199, DOT * 4);
+	new Coin(DOT * 200, DOT * 5);
+
+	new FlashBlock(DOT * 82, DOT * 11);
+	new FlashBlock(DOT * 18, DOT * 8);
+
+	new FlashBlock(DOT * 168, DOT * 14);
+	new FlashBlock(DOT * 107, DOT * 14);
+
+	new FlashBlock(DOT * 112, DOT * 13);
+	new FlashBlock(DOT * 160, DOT * 13);
 
 
 }
@@ -1300,222 +1300,222 @@ void CreateStage1_2R() {
 	*stage.usingM = firstMap;
 
 	//MOB
-	stage.CreateJump(DOT * 15, DOT * 10);
+	new Jump(DOT * 15, DOT * 10);
 
-	stage.CreateWalkEnemy(DOT * 6, DOT * 13);
-	stage.CreateWalkEnemy(DOT * 7, DOT * 13);
+	new WalkEnemy(DOT * 6, DOT * 13);
+	new WalkEnemy(DOT * 7, DOT * 13);
 
-	stage.CreateCoin(DOT, DOT * 5);
-	stage.CreateCoin(DOT, DOT * 6);
-	stage.CreateCoin(DOT, DOT * 7);
-	stage.CreateCoin(DOT, DOT * 8);
+	new Coin(DOT, DOT * 5);
+	new Coin(DOT, DOT * 6);
+	new Coin(DOT, DOT * 7);
+	new Coin(DOT, DOT * 8);
 
-	stage.CreateCoin(DOT * 13, DOT * 3);
-	stage.CreateCoin(DOT * 13, DOT * 5);
-	stage.CreateCoin(DOT * 14, DOT * 4);
-	stage.CreateCoin(DOT * 15, DOT * 3);
-	stage.CreateCoin(DOT * 15, DOT * 5);
+	new Coin(DOT * 13, DOT * 3);
+	new Coin(DOT * 13, DOT * 5);
+	new Coin(DOT * 14, DOT * 4);
+	new Coin(DOT * 15, DOT * 3);
+	new Coin(DOT * 15, DOT * 5);
 
-	stage.CreateCoin(DOT * 64, DOT * 6);
-	stage.CreateCoin(DOT * 64, DOT * 7);
-	stage.CreateCoin(DOT * 64, DOT * 8);
+	new Coin(DOT * 64, DOT * 6);
+	new Coin(DOT * 64, DOT * 7);
+	new Coin(DOT * 64, DOT * 8);
 
-	stage.CreateCoin(DOT * 65, DOT * 6);
-	stage.CreateCoin(DOT * 65, DOT * 7);
-	stage.CreateCoin(DOT * 65, DOT * 8);
+	new Coin(DOT * 65, DOT * 6);
+	new Coin(DOT * 65, DOT * 7);
+	new Coin(DOT * 65, DOT * 8);
 
-	stage.CreateCoin(DOT * 66, DOT * 6);
-	stage.CreateCoin(DOT * 66, DOT * 7);
-	stage.CreateCoin(DOT * 66, DOT * 8);
+	new Coin(DOT * 66, DOT * 6);
+	new Coin(DOT * 66, DOT * 7);
+	new Coin(DOT * 66, DOT * 8);
 
-	stage.CreateCoin(DOT * 64, DOT * 11);
-	stage.CreateCoin(DOT * 64, DOT * 12);
-	stage.CreateCoin(DOT * 64, DOT * 13);
+	new Coin(DOT * 64, DOT * 11);
+	new Coin(DOT * 64, DOT * 12);
+	new Coin(DOT * 64, DOT * 13);
 
-	stage.CreateCoin(DOT * 65, DOT * 11);
-	stage.CreateCoin(DOT * 65, DOT * 12);
-	stage.CreateCoin(DOT * 65, DOT * 13);
+	new Coin(DOT * 65, DOT * 11);
+	new Coin(DOT * 65, DOT * 12);
+	new Coin(DOT * 65, DOT * 13);
 
-	stage.CreateCoin(DOT * 66, DOT * 11);
-	stage.CreateCoin(DOT * 66, DOT * 12);
-	stage.CreateCoin(DOT * 66, DOT * 13);
+	new Coin(DOT * 66, DOT * 11);
+	new Coin(DOT * 66, DOT * 12);
+	new Coin(DOT * 66, DOT * 13);
 
-	stage.CreateRope(DOT * 18, DOT, 7);
-	stage.CreateRope(DOT * 33, DOT, 7);
-	stage.CreateRope(DOT * 60, DOT, 7);
-	stage.CreateRope(DOT * 130, DOT, 7);
-	stage.CreateRope(DOT * 135, DOT, 7);
-	stage.CreateRope(DOT * 140, DOT, 7);
-	stage.CreateRope(DOT * 145, DOT, 7);
-	stage.CreateRope(DOT * 150, DOT, 7);
+	new Rope(DOT * 18, DOT, 7);
+	new Rope(DOT * 33, DOT, 7);
+	new Rope(DOT * 60, DOT, 7);
+	new Rope(DOT * 130, DOT, 7);
+	new Rope(DOT * 135, DOT, 7);
+	new Rope(DOT * 140, DOT, 7);
+	new Rope(DOT * 145, DOT, 7);
+	new Rope(DOT * 150, DOT, 7);
 
-	stage.CreateTurtle(DOT * 33, DOT * 13);
+	new Turtle(DOT * 33, DOT * 13);
 
-	stage.CreateHanmerThrow(DOT * 46, DOT * 5, 300);
-	//stage.CreateHanmerThrow(DOT * 48, DOT * 5,300);
-	//stage.CreateHanmerThrow(DOT * 50, DOT * 5,300);
-	stage.CreateHanmerThrow(DOT * 52, DOT * 5, 300);
+	new HanmerThrow(DOT * 46, DOT * 5, 300);
+	//new HanmerThrow(DOT * 48, DOT * 5,300);
+	//new HanmerThrow(DOT * 50, DOT * 5,300);
+	new HanmerThrow(DOT * 52, DOT * 5, 300);
 
-	stage.CreateUpDownObject(DOT * 88, DOT * 4);
+	new UpDownObject(DOT * 88, DOT * 4);
 
 
-	stage.CreateLift(DOT * 90, DOT * 12, false);
-	stage.CreateLift(DOT * 94, DOT * 4, true);
-	stage.CreateCoin(DOT * 94, DOT * 8);
-	stage.CreateCoin(DOT * 94, DOT * 7);
-	stage.CreateCoin(DOT * 94, DOT * 6);
-	stage.CreateLift(DOT * 98, DOT * 12, false);
-	stage.CreateLift(DOT * 102, DOT * 4, true);
-	stage.CreateCoin(DOT * 102, DOT * 8);
-	stage.CreateCoin(DOT * 102, DOT * 7);
-	stage.CreateCoin(DOT * 102, DOT * 6);
-	stage.CreateLift(DOT * 102, DOT * 12, false);
-	stage.CreateLift(DOT * 106, DOT * 5, true);
-	stage.CreateLift(DOT * 110, DOT * 6, true);
-	stage.CreateLift(DOT * 114, DOT * 7, true);
-	stage.CreateLift(DOT * 118, DOT * 8, true);
-	stage.CreateLift(DOT * 163, DOT * 6, true);
-	stage.CreateCoin(DOT * 163, DOT * 7);
-	stage.CreateCoin(DOT * 164, DOT * 9);
-	stage.CreateCoin(DOT * 163, DOT * 11);
-	stage.CreateCoin(DOT * 164, DOT * 13);
+	new Lift(DOT * 90, DOT * 12, false);
+	new Lift(DOT * 94, DOT * 4, true);
+	new Coin(DOT * 94, DOT * 8);
+	new Coin(DOT * 94, DOT * 7);
+	new Coin(DOT * 94, DOT * 6);
+	new Lift(DOT * 98, DOT * 12, false);
+	new Lift(DOT * 102, DOT * 4, true);
+	new Coin(DOT * 102, DOT * 8);
+	new Coin(DOT * 102, DOT * 7);
+	new Coin(DOT * 102, DOT * 6);
+	new Lift(DOT * 102, DOT * 12, false);
+	new Lift(DOT * 106, DOT * 5, true);
+	new Lift(DOT * 110, DOT * 6, true);
+	new Lift(DOT * 114, DOT * 7, true);
+	new Lift(DOT * 118, DOT * 8, true);
+	new Lift(DOT * 163, DOT * 6, true);
+	new Coin(DOT * 163, DOT * 7);
+	new Coin(DOT * 164, DOT * 9);
+	new Coin(DOT * 163, DOT * 11);
+	new Coin(DOT * 164, DOT * 13);
 
-	stage.CreateJump(DOT * 165, DOT * 13);
-	stage.CreateJump(DOT * 170, DOT * 13);
-	stage.CreateJump(DOT * 175, DOT * 13);
-	stage.CreateJump(DOT * 194, DOT * 13);
-	stage.CreateCoin(DOT * 195, DOT * 5);
-	stage.CreateCoin(DOT * 197, DOT * 4);
-	stage.CreateCoin(DOT * 199, DOT * 3);
+	new Jump(DOT * 165, DOT * 13);
+	new Jump(DOT * 170, DOT * 13);
+	new Jump(DOT * 175, DOT * 13);
+	new Jump(DOT * 194, DOT * 13);
+	new Coin(DOT * 195, DOT * 5);
+	new Coin(DOT * 197, DOT * 4);
+	new Coin(DOT * 199, DOT * 3);
 
-	stage.CreateFlashBlock(DOT * 14, DOT * 11);
-	stage.CreateFlashBlock(DOT * 14, DOT * 14);
-	stage.CreateFlashBlock(DOT * 15, DOT * 14);
+	new FlashBlock(DOT * 14, DOT * 11);
+	new FlashBlock(DOT * 14, DOT * 14);
+	new FlashBlock(DOT * 15, DOT * 14);
 
-	stage.CreateFlashBlock(DOT * 35, DOT * 12);
-	stage.CreateFlashBlock(DOT * 57, DOT * 5);
+	new FlashBlock(DOT * 35, DOT * 12);
+	new FlashBlock(DOT * 57, DOT * 5);
 
-	stage.CreateFlashBlock(DOT * 83, DOT * 5);
-	stage.CreateFlashBlock(DOT * 84, DOT * 5);
-	stage.CreateFlashBlock(DOT * 83, DOT * 9);
-	stage.CreateFlashBlock(DOT * 84, DOT * 9);
-	stage.CreateFlashBlock(DOT * 83, DOT * 14);
-	stage.CreateFlashBlock(DOT * 84, DOT * 14);
-	stage.CreateFlashBlock(DOT * 123, DOT * 7);
-	stage.CreateFlashBlock(DOT * 124, DOT * 7);
-	stage.CreateFlashBlock(DOT * 158, DOT * 7);
-	stage.CreateFlashBlock(DOT * 159, DOT * 7);
+	new FlashBlock(DOT * 83, DOT * 5);
+	new FlashBlock(DOT * 84, DOT * 5);
+	new FlashBlock(DOT * 83, DOT * 9);
+	new FlashBlock(DOT * 84, DOT * 9);
+	new FlashBlock(DOT * 83, DOT * 14);
+	new FlashBlock(DOT * 84, DOT * 14);
+	new FlashBlock(DOT * 123, DOT * 7);
+	new FlashBlock(DOT * 124, DOT * 7);
+	new FlashBlock(DOT * 158, DOT * 7);
+	new FlashBlock(DOT * 159, DOT * 7);
 
-	stage.CreateThornBlock(DOT * 13, DOT * 4);
-	stage.CreateThornBlock(DOT * 14, DOT * 3);
-	stage.CreateThornBlock(DOT * 14, DOT * 5);
-	stage.CreateThornBlock(DOT * 15, DOT * 4);
+	new ThornBlock(DOT * 13, DOT * 4);
+	new ThornBlock(DOT * 14, DOT * 3);
+	new ThornBlock(DOT * 14, DOT * 5);
+	new ThornBlock(DOT * 15, DOT * 4);
 
-	stage.CreateThornBlock(DOT * 1, DOT * 9);
-	stage.CreateThornBlock(DOT * 2, DOT * 8);
+	new ThornBlock(DOT * 1, DOT * 9);
+	new ThornBlock(DOT * 2, DOT * 8);
 
-	stage.CreateThornBlock(DOT * 22, DOT * 8);
-	stage.CreateThornBlock(DOT * 22, DOT * 7);
-	//stage.CreateThornBlock(DOT * 22, DOT * 6);
+	new ThornBlock(DOT * 22, DOT * 8);
+	new ThornBlock(DOT * 22, DOT * 7);
+	//new ThornBlock(DOT * 22, DOT * 6);
 
-	stage.CreateThornBlock(DOT * 22, DOT * 4);
-	stage.CreateThornBlock(DOT * 22, DOT * 3);
-	stage.CreateThornBlock(DOT * 22, DOT * 2);
+	new ThornBlock(DOT * 22, DOT * 4);
+	new ThornBlock(DOT * 22, DOT * 3);
+	new ThornBlock(DOT * 22, DOT * 2);
 
-	stage.CreateThornBlock(DOT * 22, DOT * 10);
+	new ThornBlock(DOT * 22, DOT * 10);
 
-	stage.CreateThornBlock(DOT * 36, DOT * 6);
+	new ThornBlock(DOT * 36, DOT * 6);
 
-	stage.CreateThornBlock(DOT * 36, DOT * 3);
-	stage.CreateThornBlock(DOT * 37, DOT * 4);
-	stage.CreateThornBlock(DOT * 37, DOT * 2);
+	new ThornBlock(DOT * 36, DOT * 3);
+	new ThornBlock(DOT * 37, DOT * 4);
+	new ThornBlock(DOT * 37, DOT * 2);
 
-	stage.CreateThornBlock(DOT * 37, DOT * 11);
-	stage.CreateThornBlock(DOT * 37, DOT * 12);
+	new ThornBlock(DOT * 37, DOT * 11);
+	new ThornBlock(DOT * 37, DOT * 12);
 
-	stage.CreateThornBlock(DOT * 63, DOT);
-	stage.CreateThornBlock(DOT * 63, DOT * 2);
-	stage.CreateThornBlock(DOT * 63, DOT * 3);
+	new ThornBlock(DOT * 63, DOT);
+	new ThornBlock(DOT * 63, DOT * 2);
+	new ThornBlock(DOT * 63, DOT * 3);
 
-	stage.CreateThornBlock(DOT * 63, DOT * 6);
-	stage.CreateThornBlock(DOT * 63, DOT * 7);
-	stage.CreateThornBlock(DOT * 63, DOT * 8);
+	new ThornBlock(DOT * 63, DOT * 6);
+	new ThornBlock(DOT * 63, DOT * 7);
+	new ThornBlock(DOT * 63, DOT * 8);
 
-	stage.CreateThornBlock(DOT * 63, DOT * 12);
-	stage.CreateThornBlock(DOT * 63, DOT * 13);
+	new ThornBlock(DOT * 63, DOT * 12);
+	new ThornBlock(DOT * 63, DOT * 13);
 
-	stage.CreateThornBlock(DOT * 162, DOT * 7);
-	stage.CreateThornBlock(DOT * 165, DOT * 7);
-	stage.CreateThornBlock(DOT * 166, DOT * 7);
-	stage.CreateThornBlock(DOT * 167, DOT * 7);
-	stage.CreateThornBlock(DOT * 168, DOT * 7);
-	stage.CreateThornBlock(DOT * 169, DOT * 7);
-	stage.CreateThornBlock(DOT * 170, DOT * 7);
-	stage.CreateThornBlock(DOT * 171, DOT * 7);
-	stage.CreateThornBlock(DOT * 172, DOT * 7);
-	stage.CreateThornBlock(DOT * 173, DOT * 7);
-	stage.CreateThornBlock(DOT * 174, DOT * 7);
-	stage.CreateThornBlock(DOT * 175, DOT * 7);
-	stage.CreateThornBlock(DOT * 176, DOT * 7);
-	stage.CreateThornBlock(DOT * 177, DOT * 7);
-	stage.CreateThornBlock(DOT * 178, DOT * 7);
-	stage.CreateThornBlock(DOT * 179, DOT * 7);
-	stage.CreateThornBlock(DOT * 180, DOT * 7);
-	stage.CreateThornBlock(DOT * 181, DOT * 7);
+	new ThornBlock(DOT * 162, DOT * 7);
+	new ThornBlock(DOT * 165, DOT * 7);
+	new ThornBlock(DOT * 166, DOT * 7);
+	new ThornBlock(DOT * 167, DOT * 7);
+	new ThornBlock(DOT * 168, DOT * 7);
+	new ThornBlock(DOT * 169, DOT * 7);
+	new ThornBlock(DOT * 170, DOT * 7);
+	new ThornBlock(DOT * 171, DOT * 7);
+	new ThornBlock(DOT * 172, DOT * 7);
+	new ThornBlock(DOT * 173, DOT * 7);
+	new ThornBlock(DOT * 174, DOT * 7);
+	new ThornBlock(DOT * 175, DOT * 7);
+	new ThornBlock(DOT * 176, DOT * 7);
+	new ThornBlock(DOT * 177, DOT * 7);
+	new ThornBlock(DOT * 178, DOT * 7);
+	new ThornBlock(DOT * 179, DOT * 7);
+	new ThornBlock(DOT * 180, DOT * 7);
+	new ThornBlock(DOT * 181, DOT * 7);
 
-	stage.CreateThornBlock(DOT * 162, DOT * 8);
-	stage.CreateThornBlock(DOT * 165, DOT * 8);
-	stage.CreateThornBlock(DOT * 166, DOT * 8);
-	stage.CreateThornBlock(DOT * 167, DOT * 8);
-	stage.CreateThornBlock(DOT * 168, DOT * 8);
-	stage.CreateThornBlock(DOT * 169, DOT * 8);
-	stage.CreateThornBlock(DOT * 170, DOT * 8);
-	stage.CreateThornBlock(DOT * 171, DOT * 8);
-	stage.CreateThornBlock(DOT * 172, DOT * 8);
-	stage.CreateThornBlock(DOT * 173, DOT * 8);
-	stage.CreateThornBlock(DOT * 174, DOT * 8);
-	stage.CreateThornBlock(DOT * 175, DOT * 8);
-	stage.CreateThornBlock(DOT * 176, DOT * 8);
-	stage.CreateThornBlock(DOT * 177, DOT * 8);
-	stage.CreateThornBlock(DOT * 178, DOT * 8);
-	stage.CreateThornBlock(DOT * 179, DOT * 8);
-	stage.CreateThornBlock(DOT * 180, DOT * 8);
-	stage.CreateThornBlock(DOT * 181, DOT * 8);
+	new ThornBlock(DOT * 162, DOT * 8);
+	new ThornBlock(DOT * 165, DOT * 8);
+	new ThornBlock(DOT * 166, DOT * 8);
+	new ThornBlock(DOT * 167, DOT * 8);
+	new ThornBlock(DOT * 168, DOT * 8);
+	new ThornBlock(DOT * 169, DOT * 8);
+	new ThornBlock(DOT * 170, DOT * 8);
+	new ThornBlock(DOT * 171, DOT * 8);
+	new ThornBlock(DOT * 172, DOT * 8);
+	new ThornBlock(DOT * 173, DOT * 8);
+	new ThornBlock(DOT * 174, DOT * 8);
+	new ThornBlock(DOT * 175, DOT * 8);
+	new ThornBlock(DOT * 176, DOT * 8);
+	new ThornBlock(DOT * 177, DOT * 8);
+	new ThornBlock(DOT * 178, DOT * 8);
+	new ThornBlock(DOT * 179, DOT * 8);
+	new ThornBlock(DOT * 180, DOT * 8);
+	new ThornBlock(DOT * 181, DOT * 8);
 
-	stage.CreateCrab(DOT * 25, DOT * 13);
+	new Crab(DOT * 25, DOT * 13);
 
-	stage.CreateGhost(DOT * 25, DOT * 7);
-	stage.CreateGhost(DOT * 25, DOT * 3);
-	stage.CreateGhost(DOT * 40, DOT * 4);
-	stage.CreateGhost(DOT * 46, DOT * 13);
-	//stage.CreateGhost(DOT * 48, DOT * 13);
-	//stage.CreateGhost(DOT * 50, DOT * 13);
-	//stage.CreateGhost(DOT * 52, DOT * 13);
+	new Ghost(DOT * 25, DOT * 7);
+	new Ghost(DOT * 25, DOT * 3);
+	new Ghost(DOT * 40, DOT * 4);
+	new Ghost(DOT * 46, DOT * 13);
+	//new Ghost(DOT * 48, DOT * 13);
+	//new Ghost(DOT * 50, DOT * 13);
+	//new Ghost(DOT * 52, DOT * 13);
 
-	stage.CreateGhost(DOT * 68, DOT);
-	stage.CreateGhost(DOT * 68, DOT * 13);
+	new Ghost(DOT * 68, DOT);
+	new Ghost(DOT * 68, DOT * 13);
 
-	stage.CreateGhost(DOT * 70, DOT * 7);
-	//stage.CreateGhost(DOT * 70, DOT * 8);
-	//stage.CreateGhost(DOT * 71, DOT * 7);
-	//stage.CreateGhost(DOT * 71, DOT * 8);
-	//stage.CreateGhost(DOT * 72, DOT * 7);
-	stage.CreateGhost(DOT * 72, DOT * 8);
+	new Ghost(DOT * 70, DOT * 7);
+	//new Ghost(DOT * 70, DOT * 8);
+	//new Ghost(DOT * 71, DOT * 7);
+	//new Ghost(DOT * 71, DOT * 8);
+	//new Ghost(DOT * 72, DOT * 7);
+	new Ghost(DOT * 72, DOT * 8);
 
-	stage.CreateGhost(DOT * 109, DOT * 13);
-	//stage.CreateGhost(DOT * 110, DOT * 13);
-	stage.CreateGhost(DOT * 111, DOT * 13);
+	new Ghost(DOT * 109, DOT * 13);
+	//new Ghost(DOT * 110, DOT * 13);
+	new Ghost(DOT * 111, DOT * 13);
 
-	stage.CreateGhost(DOT * 109, DOT * 2);
-	//stage.CreateGhost(DOT * 110, DOT * 2);
-	stage.CreateGhost(DOT * 111, DOT * 2);
+	new Ghost(DOT * 109, DOT * 2);
+	//new Ghost(DOT * 110, DOT * 2);
+	new Ghost(DOT * 111, DOT * 2);
 
-	stage.CreateGhost(DOT * 123, DOT * 13);
-	stage.CreateGhost(DOT * 124, DOT * 13);
+	new Ghost(DOT * 123, DOT * 13);
+	new Ghost(DOT * 124, DOT * 13);
 
-	stage.CreateGhost(DOT * 135, DOT * 13);
-	stage.CreateGhost(DOT * 140, DOT * 13);
-	stage.CreateGhost(DOT * 145, DOT * 13);
+	new Ghost(DOT * 135, DOT * 13);
+	new Ghost(DOT * 140, DOT * 13);
+	new Ghost(DOT * 145, DOT * 13);
 
 }
 
@@ -1628,183 +1628,183 @@ void CreateStage1_3R() {
 
 	
 
-	stage.CreateShootEnemy(DOT * 8, DOT * 12);
-	stage.CreateHanmerThrow(DOT * 10, DOT * 9, 250);
-	stage.CreateCoin(DOT * 8, DOT * 8);
-	stage.CreateCoin(DOT * 9, DOT * 7 + 5);
-	stage.CreateCoin(DOT * 10, DOT * 6 + 20);
-	stage.CreateCoin(DOT * 11, DOT * 7 + 5);
-	stage.CreateCoin(DOT * 12, DOT * 8);
+	new ShootEnemy(DOT * 8, DOT * 12);
+	new HanmerThrow(DOT * 10, DOT * 9, 250);
+	new Coin(DOT * 8, DOT * 8);
+	new Coin(DOT * 9, DOT * 7 + 5);
+	new Coin(DOT * 10, DOT * 6 + 20);
+	new Coin(DOT * 11, DOT * 7 + 5);
+	new Coin(DOT * 12, DOT * 8);
 
-	stage.CreateWalkEnemy(DOT * 20, DOT * 12);
-	stage.CreateHanmerThrow(DOT * 25, DOT * 12, 250);
+	new WalkEnemy(DOT * 20, DOT * 12);
+	new HanmerThrow(DOT * 25, DOT * 12, 250);
 
 
 
 	for (int i = 0; i < 10; i += 2) {
-		stage.CreateShootEnemy(DOT * (51 + i), DOT * 4);
-		stage.CreateShootEnemy(DOT*(50 + i), DOT * 5);
+		new ShootEnemy(DOT * (51 + i), DOT * 4);
+		new ShootEnemy(DOT*(50 + i), DOT * 5);
 	}
 
 	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT*(52 + i * 3), DOT * 9);
-		stage.CreateCoin(DOT*(53 + i * 3), DOT * 8);
-		stage.CreateCoin(DOT*(54 + i * 3), DOT * 9);
+		new Coin(DOT*(52 + i * 3), DOT * 9);
+		new Coin(DOT*(53 + i * 3), DOT * 8);
+		new Coin(DOT*(54 + i * 3), DOT * 9);
 	}
 	for (int i = 0; i < 5; i++) {
-		stage.CreateJump(DOT*(51 + i * 3), DOT * 13);
+		new Jump(DOT*(51 + i * 3), DOT * 13);
 	}
 	for (int i = 0; i < 6; i++) {
-		stage.CreateFallWall(DOT*(69 + i * 2), DOT);
+		new FallWall(DOT*(69 + i * 2), DOT);
 	}
 	for (int i = 0; i < 5; i++)
-		stage.CreateCoin(DOT * (70 + i * 2), DOT * 3);
-	//stage.CreateFlashBlock(DOT * 80, DOT * 5);
-	stage.CreateFallWall(DOT * 81, DOT);
+		new Coin(DOT * (70 + i * 2), DOT * 3);
+	//new FlashBlock(DOT * 80, DOT * 5);
+	new FallWall(DOT * 81, DOT);
 
-	stage.CreateCoin(DOT * 82, DOT * 3);
-	stage.CreateCoin(DOT * 83, DOT * 2);
-	stage.CreateCoin(DOT * 84, DOT * 2);
-	stage.CreateCoin(DOT * 85, DOT * 3);
-	stage.CreateLift(DOT * 86, DOT * 4, true);
-	stage.CreateShootEnemy(DOT * 86, DOT * 12);
-	stage.CreateShootEnemy(DOT * 87, DOT * 13);
-	stage.CreateFireBar(DOT * 91, DOT * 6, 90, false, 8, 3, 0);
-	stage.CreateCoin(DOT * 91, DOT * 7 + 16);
-	stage.CreateCoin(DOT * 92, DOT * 7 + 16);
-	stage.CreateCoin(DOT * 93, DOT * 5);
+	new Coin(DOT * 82, DOT * 3);
+	new Coin(DOT * 83, DOT * 2);
+	new Coin(DOT * 84, DOT * 2);
+	new Coin(DOT * 85, DOT * 3);
+	new Lift(DOT * 86, DOT * 4, true);
+	new ShootEnemy(DOT * 86, DOT * 12);
+	new ShootEnemy(DOT * 87, DOT * 13);
+	new FireBar(DOT * 91, DOT * 6, 90, false, 8, 3, 0);
+	new Coin(DOT * 91, DOT * 7 + 16);
+	new Coin(DOT * 92, DOT * 7 + 16);
+	new Coin(DOT * 93, DOT * 5);
 	for (int i = 0; i < 7; i++) {
-		stage.CreateCoin(DOT * (90 + i), 0);
+		new Coin(DOT * (90 + i), 0);
 	}
 	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT * 90, DOT*(i + 1));
+		new Coin(DOT * 90, DOT*(i + 1));
 	}
-	stage.CreateCoin(DOT * 91, DOT * 1);
-	stage.CreateCoin(DOT * 91, DOT * 3);
-	stage.CreateCoin(DOT * 93, DOT * 4);
-	stage.CreateLift(DOT * 96, DOT * 9, true);
-	stage.CreateRope(DOT * 98, 0, 4);
-	stage.CreateShootLaser(DOT * 103);
-	stage.CreateFireBar(DOT * 103 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
-	stage.CreateWalkEnemy(DOT * 103, DOT * 12);
-	stage.CreateFireBar(DOT * 110 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
-	stage.CreateFireBar(DOT * 117 + 16, DOT * 10 - 16, 60, false, 8, 2, 0);
-	stage.CreateWalkEnemy(DOT * 117, DOT * 12);
-	stage.CreateFireBar(DOT * 124 + 16, DOT * 10 - 16,60,true, 8, 2,0);
+	new Coin(DOT * 91, DOT * 1);
+	new Coin(DOT * 91, DOT * 3);
+	new Coin(DOT * 93, DOT * 4);
+	new Lift(DOT * 96, DOT * 9, true);
+	new Rope(DOT * 98, 0, 4);
+	new ShootLaser(DOT * 103);
+	new FireBar(DOT * 103 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
+	new WalkEnemy(DOT * 103, DOT * 12);
+	new FireBar(DOT * 110 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
+	new FireBar(DOT * 117 + 16, DOT * 10 - 16, 60, false, 8, 2, 0);
+	new WalkEnemy(DOT * 117, DOT * 12);
+	new FireBar(DOT * 124 + 16, DOT * 10 - 16,60,true, 8, 2,0);
 
-	stage.CreateFireBar(DOT * 131 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
-	stage.CreateFireBar(DOT * 138 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
-	stage.CreateFireBar(DOT * 145 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
-	stage.CreateFireBar(DOT * 152 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
-	stage.CreateCoin(DOT * 122, DOT * 9);
-	stage.CreateCoin(DOT * 128, DOT * 9);
-	stage.CreateCoin(DOT * 125, DOT * 6);
-	stage.CreateCoin(DOT * 135, DOT * 9);
-	stage.CreateCoin(DOT * 139, DOT * 6);
-	stage.CreateCoin(DOT * 142, DOT * 9);
+	new FireBar(DOT * 131 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
+	new FireBar(DOT * 138 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
+	new FireBar(DOT * 145 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
+	new FireBar(DOT * 152 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
+	new Coin(DOT * 122, DOT * 9);
+	new Coin(DOT * 128, DOT * 9);
+	new Coin(DOT * 125, DOT * 6);
+	new Coin(DOT * 135, DOT * 9);
+	new Coin(DOT * 139, DOT * 6);
+	new Coin(DOT * 142, DOT * 9);
 
-	stage.CreateFireBar(DOT * 159 + 16, DOT * 10 - 16, 60, false, 8, 6, 0);
-	stage.CreateFireBar(DOT * 166 + 16, DOT * 10 - 16, 60, false, 8, 7, 0);
-	stage.CreateFireBar(DOT * 173 + 16, DOT * 10 - 16, 60, false, 8, 8, 0);
+	new FireBar(DOT * 159 + 16, DOT * 10 - 16, 60, false, 8, 6, 0);
+	new FireBar(DOT * 166 + 16, DOT * 10 - 16, 60, false, 8, 7, 0);
+	new FireBar(DOT * 173 + 16, DOT * 10 - 16, 60, false, 8, 8, 0);
 
 
 
-	//stage.CreateFence(DOT * 180, DOT * 7);
+	//new Fence(DOT * 180, DOT * 7);
 	for (int i = 0; i < 112; i++) {
 		for (int j = 1; j < 14; j++) {
-			stage.CreateFence(DOT*(178 + i), DOT*j);
+			new Fence(DOT*(178 + i), DOT*j);
 		}
 	}
 	for (int i = 0; i < 5; i++) {
-		stage.CreateShootEnemy(DOT*(185 + i * 4), DOT * 12);
+		new ShootEnemy(DOT*(185 + i * 4), DOT * 12);
 	}
 	for (int i = 0; i < 3; i++) {
-		stage.CreateHanmerThrow(DOT*(185 + i * 8), DOT * 12, 460);
+		new HanmerThrow(DOT*(185 + i * 8), DOT * 12, 460);
 	}
 
 	for (int i = 0; i < 3; i++) {
-		stage.CreateFireBar(DOT*(210 + i * 5), DOT*(2 + i * 4), 40, true, 4, 4, 0);
+		new FireBar(DOT*(210 + i * 5), DOT*(2 + i * 4), 40, true, 4, 4, 0);
 	}
 	for (int i = 0; i < 2; i++) {
-		stage.CreateFireBar(DOT*(210 + i * 10), DOT*(10 - i * 8), 40, true, 4, 4, 0);
+		new FireBar(DOT*(210 + i * 10), DOT*(10 - i * 8), 40, true, 4, 4, 0);
 	}
 	for (int i = 0; i < 2; i++) {
-		stage.CreateFireBar(DOT * 215, DOT*(2 + i * 8), 40, false, 4, 4, 0);
+		new FireBar(DOT * 215, DOT*(2 + i * 8), 40, false, 4, 4, 0);
 	}
 	for (int i = 0; i < 2; i++) {
-		stage.CreateFireBar(DOT*(210 + i * 10), DOT * 6, 40, false, 4, 4, 0);
+		new FireBar(DOT*(210 + i * 10), DOT * 6, 40, false, 4, 4, 0);
 	}
-	stage.CreateFireBar(DOT * 230, DOT * 7, 45, true, 16, 4, 0);
+	new FireBar(DOT * 230, DOT * 7, 45, true, 16, 4, 0);
 	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT * 227, DOT*(5 + i));
-	}
-	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT * 234, DOT*(5 + i));
+		new Coin(DOT * 227, DOT*(5 + i));
 	}
 	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT * (229 + i), DOT * 3);
+		new Coin(DOT * 234, DOT*(5 + i));
 	}
 	for (int i = 0; i < 3; i++) {
-		stage.CreateCoin(DOT * (229 + i), DOT * 11);
+		new Coin(DOT * (229 + i), DOT * 3);
+	}
+	for (int i = 0; i < 3; i++) {
+		new Coin(DOT * (229 + i), DOT * 11);
 	}
 
 	for (int i =1; i < 4; i++) {
-		stage.CreateHanmerThrow(DOT*(256 + i * 8), DOT * 1, 250);
-		stage.CreateShootEnemy(DOT * (258 + i * 8), DOT * 12);
+		new HanmerThrow(DOT*(256 + i * 8), DOT * 1, 250);
+		new ShootEnemy(DOT * (258 + i * 8), DOT * 12);
 
 	}
 	for (int i = 0; i < 3; i++) {
-		stage.CreateShootLaser(DOT*(253 + i * 20));
+		new ShootLaser(DOT*(253 + i * 20));
 	}
 
 
 	for (int i = 0; i < 7; i++) {
-		stage.CreateFlashBlock(DOT * 240, DOT*i * 2);  ///////////////////////////
+		new FlashBlock(DOT * 240, DOT*i * 2);  ///////////////////////////
 
 	}
-	stage.CreateFlashBlock(DOT * 249, DOT * 8);  //kkakakakakakka
-	stage.CreateFlashBlock(DOT * 251, DOT * 4);  //
-	stage.CreateFlashBlock(DOT * 251, DOT * 8);  //
-	stage.CreateGhost(DOT * 38, DOT * 14);
+	new FlashBlock(DOT * 249, DOT * 8);  //kkakakakakakka
+	new FlashBlock(DOT * 251, DOT * 4);  //
+	new FlashBlock(DOT * 251, DOT * 8);  //
+	new Ghost(DOT * 38, DOT * 14);
 
-	stage.CreateGhost(DOT * 243, DOT * 2);
-	stage.CreateGhost(DOT * 243, DOT * 13);
+	new Ghost(DOT * 243, DOT * 2);
+	new Ghost(DOT * 243, DOT * 13);
 
 	for (int i = 0; i < 6; i++) {
-		stage.CreateThornBlock(DOT * 246, DOT*(i + 1));
-		stage.CreateThornBlock(DOT * 246, DOT * (13 - i));
+		new ThornBlock(DOT * 246, DOT*(i + 1));
+		new ThornBlock(DOT * 246, DOT * (13 - i));
 	}
 	for (int i = 0; i < 2; i++) {
-		stage.CreateThornBlock(DOT*(247 + i), DOT * 8);
-		stage.CreateThornBlock(DOT*(247 + i), DOT * 6);  //////////////////
+		new ThornBlock(DOT*(247 + i), DOT * 8);
+		new ThornBlock(DOT*(247 + i), DOT * 6);  //////////////////
 	}
-	stage.CreateThornBlock(DOT * 250, DOT * 2);
-	stage.CreateThornBlock(DOT * 254, DOT * 7);
+	new ThornBlock(DOT * 250, DOT * 2);
+	new ThornBlock(DOT * 254, DOT * 7);
 	for (int i = 0; i < 4; i++) {
-		stage.CreateThornBlock(DOT * 248, DOT*(5 - i));
+		new ThornBlock(DOT * 248, DOT*(5 - i));
 	}
-	stage.CreateThornBlock(DOT * 249, DOT * 2);
+	new ThornBlock(DOT * 249, DOT * 2);
 
 	/////////////////////////////////////////////
 	for (int i = 0; i < 4; i++) {
-		stage.CreateThornBlock(DOT*(251 + i), DOT * 2);
+		new ThornBlock(DOT*(251 + i), DOT * 2);
 	}
 	for (int i = 0; i < 5; i++) {
-		stage.CreateThornBlock(DOT * 254, DOT*(6 - i));
+		new ThornBlock(DOT * 254, DOT*(6 - i));
 	}
 
 	for (int i = 0; i < 3; i++) {
-		stage.CreateThornBlock(DOT * 251, DOT*(5 + i));
+		new ThornBlock(DOT * 251, DOT*(5 + i));
 	}
 
 	for (int i = 0; i < 2; i++) {
 
-		stage.CreateThornBlock(DOT * 254, DOT*(8 + i));
+		new ThornBlock(DOT * 254, DOT*(8 + i));
 	}
-	stage.CreateThornBlock(DOT * 250, DOT * 8);
-	stage.CreateThornBlock(DOT * 251, DOT * 9);
+	new ThornBlock(DOT * 250, DOT * 8);
+	new ThornBlock(DOT * 251, DOT * 9);
 
-	//stage.CreateFence(222, 222);
+	//new Fence(222, 222);
 }
 
 
@@ -1812,8 +1812,8 @@ void CreateStage_MiniGame1() {
 	//値を負として使う(5秒間の説明)
 	stage.limit = 5000;
 
-	//stage.CreateTurtle(300, 10);
-	//stage.CreateJump(300, 400);
+	//new Turtle(300, 10);
+	//new Jump(300, 400);
 
 
 }

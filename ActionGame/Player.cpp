@@ -64,56 +64,7 @@ Player::~Player()
 {
 	//delete rect;
 }
-//void Player::ForceHorizontalScrollMotion(double frametime) {
-//
-//	int hitface = 0x0000; //ぶつかっている壁の位置を記憶
-//	//now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//キー入力処理
-//
-//
-//	keypressed = CrossKeyInput();				//キー入力
-//
-//	if (keypressed) {
-//		//アニメーション処理
-//		if (index != 2) {
-//			motion += frametime * 1000;
-//			if (motion > ANIMETIONINTERVAL) {
-//				motion = 0;
-//				index = (index + 1) % 2;
-//			}
-//		}
-//	}
-//	else
-//		index = 0;		//キーが押されていなければ止まった状態に
-//
-//	double perRecover = (double)(Camera->x + WIDTH / 2 - x - 50) / RECOVERTIME;	//復帰率 -50はオフセット
-//																			
-//						
-//	//前に動かす
-//	vx = SCROLLSPEED + perRecover;
-//
-//	hitface = stepRect_x(rect, frametime);		//x方向の時間を進める
-//
-//	//壁に当たったら速度０
-//	if (hitface & RIGHT || hitface & LEFT) {
-//		vx = 0.0;
-//	}
-//
-//	hitface = stepRect_y(rect, frametime);		//y方向の時間を進める
-//
-//	//地面にあたっていたら
-//	if (hitface &BOTTOM) {
-//		vy = 0.0;		
-//		if(index ==2)
-//			index = 0;
-//		Jump();
-//	}
-//	else if (hitface & TOP) {
-//		vy = 0.0;
-//
-//	}
-//
-//	MatchLessProcess(frametime);
-//}
+
 void Player::Motion(double frametime) {
 	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);		//キー入力処理
 
@@ -157,9 +108,6 @@ void Player::Motion(double frametime) {
 			vx = 0;
 			//directionflag = 0;			//どこも向かない
 		}
-			
-
-
 		Jump(FENCE_LOWJUMPSPEED);
 
 		//もし、自分の底しか当たっていなかったら立たせる
@@ -466,7 +414,7 @@ int Player::stepRect_x(Rect rect, double frametime) {
 
 
 	//あたり判定
-	EnemysHitCheck(Stage::mob);
+	EnemysHitCheck(Mob::first);
 	//移動終了
 	Xmovingflag = false;
 
@@ -508,7 +456,7 @@ int Player::stepRect_y(Rect rect, double frametime) {
 	}
 
 	//あたり判定
-	EnemysHitCheck(Stage::mob);
+	EnemysHitCheck(Mob::first);
 	//移動終了
 	Ymovingflag = false;
 

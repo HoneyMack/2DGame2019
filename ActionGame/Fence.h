@@ -21,6 +21,7 @@ public:
 	void Draw();
 	bool HasNext();						//次の要素があるか。
 	int HitCheckReturnFace(Rect rect);			//rectが あたっているかを調べる。 戻り値はrectを中心として当たった面
+	static void AllDelete();
 	static void AllDelete(Fence *fence);
 	void ChainMaker();		//インスタンスの鎖に追加。
 	void ChainCutter();		//インスタンスの鎖から取り除く。
