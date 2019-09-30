@@ -234,6 +234,11 @@
 #define SHIP_MOVESPEED 100
 
 
+//SeaWeed(海藻)
+#define SEAWEED_SIZEX 32 //海藻の画像の大きさ
+#define SEAWEED_SIZEY 32 //海藻の画像の大きさ
+#define SEAWEED_TOTALPICTURES 5 //画像の総数
+#define SEAWEED_SWITCHTIME 1000 //1画像あたりの表示時間(ms/画像)
 
 
 //描画サイズ(配列の個数)

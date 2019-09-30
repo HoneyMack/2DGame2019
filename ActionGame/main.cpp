@@ -156,6 +156,12 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
+	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
+	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
+	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
+	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
+
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 	//マップ画像をセット
@@ -192,9 +198,6 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
-	Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
-	Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
-	Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
 
 	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//音量調整
 
@@ -306,6 +309,15 @@ int GameSelectWindow() {
 	//選択されたらその番号を返す +(GameSelectWindowに入った瞬間にゲームに入るのを防ぐ)
 	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
 		switch (selectnum) {
+
+		case 0:
+			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
+			CreateStage1_1R();
+			break;
+		case 1:
+			CreateStage1_2R();
+			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
+			break;
 		case 2:
 			CreateStage1_3R();
 			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
@@ -315,14 +327,6 @@ int GameSelectWindow() {
 			break;
 		case 4:
 			CreateStage1_1();
-			break;
-		case 0:
-			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
-			CreateStage1_1R();
-			break;
-		case 1:
-			CreateStage1_2R();
-			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
 			break;
 		}
 		if (now_key&PAD_INPUT_4)
@@ -942,7 +946,6 @@ void CreateStage1_1R() {
 	*stage.usingM = firstMap;
 
 
-
 	new Coin(545, 350);
 	new Coin(609, 350);
 
@@ -950,6 +953,8 @@ void CreateStage1_1R() {
 	new Fish(DOT * 10, DOT * 13);	//debug
 	new Crab(DOT * 10, DOT * 4);
 	new Ship(DOT * 10, DOT * 4, 0);
+
+	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);

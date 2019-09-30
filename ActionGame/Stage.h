@@ -20,6 +20,7 @@
 #include "Crab.h"
 #include "ThornBlock.h"
 #include "Fence.h"
+#include "SeaWeed.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"
