@@ -162,6 +162,7 @@
     <ClInclude Include="Stage.h" />
     <ClInclude Include="ThornBlock.h" />
     <ClInclude Include="Turtle.h" />
+    <ClInclude Include="TurtleWithWing.h" />
     <ClInclude Include="UpDownObject.h" />
     <ClInclude Include="WalkEnemy.h" />
   </ItemGroup>
@@ -197,6 +198,7 @@
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="ThornBlock.cpp" />
     <ClCompile Include="Turtle.cpp" />
+    <ClCompile Include="TurtleWithWing.cpp" />
     <ClCompile Include="UpDownObject.cpp" />
     <ClCompile Include="WalkEnemy.cpp" />
   </ItemGroup>

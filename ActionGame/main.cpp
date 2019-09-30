@@ -142,6 +142,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Turtle::PicShellHandle[1] = LoadGraph("pictures/takoyaki_right.png");
 	Turtle::PicShellHandle[2] = LoadGraph("pictures/takoyaki_left.png");
 	Turtle::PicShellHandle[3] = LoadGraph("pictures/takoyaki_back.png");
+	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debug—p‰¼‰æ‘œ
 	HanmerThrow::PicHandle[0] = LoadGraph("pictures/HanmerThrow_1.png");
 	HanmerThrow::PicHandle[1] = LoadGraph("pictures/HanmerThrow_2.png");
 	HanmerThrow::PicHandle[2] = LoadGraph("pictures/HanmerThrow_3.png");
@@ -952,12 +953,13 @@ void CreateStage1_1R() {
 	new Coin(609, 350);
 
 	new Turtle(DOT * 10, DOT * 13); //debug
-	new Fish(DOT * 10, DOT * 13);	//debug
-	new Crab(DOT * 10, DOT * 4);
+	//new Fish(DOT * 10, DOT * 13);	//debug
+	//new Crab(DOT * 10, DOT * 4);
 	new Ship(DOT * 10, DOT * 4, 0);
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 	new GardenEel(DOT * 30, DOT * 14);//debug
+	new TurtleWithWing(DOT * 35, DOT * 10); //debug
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);

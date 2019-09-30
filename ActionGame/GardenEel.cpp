@@ -12,21 +12,22 @@ GardenEel::GardenEel(int _x, int _y, int _initPhase) {
 }
 
 void GardenEel::Motion(double ftime) {
-	//åªç›ÇÃà íuÇåvéZÇµë„ì¸
-
-	int time = (GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME + GARDENEEL_FALLINGTIME) - (Stage::limit + initPhase) % (GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME + GARDENEEL_FALLINGTIME);
-	if (time < GARDENEEL_HIDINGTIME) y = initY; //å©Ç¶Ç»Ç¢ÇÊÇ§Ç…
-	else if (time < GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME) {
-		//ìôë¨íºê¸â^ìÆÇ≈è„è∏
-		time -= GARDENEEL_HIDINGTIME;
-		y = initY - (int)(GARDENEEL_SIZEY * (double)time / GARDENEEL_RISINGTIME);
-	}
-	else if (time < GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME) {
-		y = initY - GARDENEEL_SIZEY;
-	}
-	else {
-		time -= GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME;
-		y = initY - (int)(GARDENEEL_SIZEY * (1.0 - (double)time / GARDENEEL_FALLINGTIME));
+	if (CheckInCam() || CheckInCam(x + GARDENEEL_SIZEX, y)) {
+		//åªç›ÇÃà íuÇåvéZÇµë„ì¸
+		int time = (GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME + GARDENEEL_FALLINGTIME) - (Stage::limit + initPhase) % (GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME + GARDENEEL_FALLINGTIME);
+		if (time < GARDENEEL_HIDINGTIME) y = initY; //å©Ç¶Ç»Ç¢ÇÊÇ§Ç…
+		else if (time < GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME) {
+			//ìôë¨íºê¸â^ìÆÇ≈è„è∏
+			time -= GARDENEEL_HIDINGTIME;
+			y = initY - (int)(GARDENEEL_SIZEY * (double)time / GARDENEEL_RISINGTIME);
+		}
+		else if (time < GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME) {
+			y = initY - GARDENEEL_SIZEY;
+		}
+		else {
+			time -= GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_HOLDINGTIME;
+			y = initY - (int)(GARDENEEL_SIZEY * (1.0 - (double)time / GARDENEEL_FALLINGTIME));
+		}
 	}
 }
 
@@ -45,7 +46,7 @@ bool GardenEel::HitCheck(Rect rect) {
 	//ìñÇΩÇËîªíËìØémÇ™è’ìÀÇµÇƒÇ¢ÇÈÇ©Ç¬ÅAHidingTimeíÜÇ≈ÇÕÇ»Ç¢
 	if (CheckRectRect(rect, collider)
 		&& (Stage::limit + initPhase) % (GARDENEEL_HIDINGTIME + GARDENEEL_RISINGTIME + GARDENEEL_FALLINGTIME + GARDENEEL_HOLDINGTIME)
-	> GARDENEEL_HIDINGTIME) {
+		> GARDENEEL_HIDINGTIME) {
 		HitPlayer();
 		return true;
 	}

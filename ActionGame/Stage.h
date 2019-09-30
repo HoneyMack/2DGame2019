@@ -14,6 +14,7 @@
 #include "Coin.h"
 #include "FallWall.h"
 #include "Turtle.h"
+#include "TurtleWithWing.h"
 #include "HanmerThrow.h"
 #include "Ghost.h"
 #include "Fish.h"

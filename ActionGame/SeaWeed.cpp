@@ -19,7 +19,7 @@ void SeaWeed::Draw() {
 			for (int j = 0; j < height; j++) {
 				DrawGraph(RelativePosX() + SEAWEED_SIZEX * i,
 					RelativePosY() + SEAWEED_SIZEY * j,
-					PicHandles[(Stage::limit / SEAWEED_SWITCHTIME) % SEAWEED_TOTALPICTURES],TRUE);
+					PicHandles[(Stage::limit / SEAWEED_SWITCHTIME) % SEAWEED_TOTALPICTURES], TRUE);
 			}
 		}
 	}

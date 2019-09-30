@@ -182,6 +182,11 @@
 //#define SHELL_SIZEY 30
 #define TURTLE_TURNTIME 60 //回転の画像一コマを表示する時間（ms）
 
+//TurtleWithWing
+#define TURTLEWITHWING_PERIODICTIME 5000 //一周するのに要する時間(ms)
+#define TURTLEWITHWING_MOVEMENT 35 //振幅(dot)
+
+
 //HanmerThrow
 #define HANMERTHROW_SIZEX 26
 #define HANMERTHROW_SIZEY 50
@@ -241,11 +246,11 @@
 //GardenEel(チンアナゴ)
 #define GARDENEEL_SIZEX 10 //チンアナゴの画像サイズ
 #define GARDENEEL_SIZEY 32
-
 #define GARDENEEL_HIDINGTIME 1000 //土に隠れている（当たらない）時間(ms)
 #define GARDENEEL_RISINGTIME 500 //上に上昇している時間(ms)
 #define GARDENEEL_HOLDINGTIME 3000 //上昇しきって伸びている状態の時間(ms)
 #define GARDENEEL_FALLINGTIME 1000 //下に下降している時間(ms)
+
 
 //描画サイズ(配列の個数)
 #define VIEW_WIDTH_INDEX	WIDTH/DOT
@@ -310,10 +315,6 @@ enum {
 	STAND,RUN,JUMP,ROPE,FENCE
 };
 
-//プレイヤー画像識別用
-enum {
-	sss
-};
 
 //サウンド管理用
 enum {
