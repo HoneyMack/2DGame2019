@@ -303,3 +303,11 @@ void Stage::CreateShip(int x, int y, double angle)
 	else
 		new Ship(x, y, angle);
 }
+
+void Stage::CreatePenguin(int x, int y)
+{
+	if (mob == nullptr)
+		mob = new Penguin(x, y);
+	else
+		new Penguin(x, y);
+}

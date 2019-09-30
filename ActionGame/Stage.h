@@ -2,6 +2,7 @@
 
 #include "Player.h"
 #include "WalkEnemy.h"
+#include "Penguin.h"
 #include "FlashBlock.h"
 #include "ShootLaser.h"
 #include "UpDownObject.h"
@@ -81,4 +82,6 @@ static	int limit;						//Žc‚èŽžŠÔ
 	void CreateCrab(int x, int y);
 
 	void CreateShip(int x, int y, double angle);
+	
+	void CreatePenguin(int x, int y);
 };

@@ -155,6 +155,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
 	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
+	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
@@ -948,6 +949,9 @@ void CreateStage1_1R() {
 
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
 	stage.CreateFish(DOT * 10, DOT * 13);	//debug
+
+	stage.CreatePenguin(DOT * 10, DOT * 13);
+
 	stage.CreateCrab(DOT * 10, DOT * 4);
 	stage.CreateShip(DOT * 10, DOT * 4, 0);
 
