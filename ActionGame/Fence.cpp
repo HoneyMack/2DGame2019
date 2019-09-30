@@ -25,6 +25,12 @@ void Fence::Draw() {
 		DrawGraph(RelativePosX(),RelativePosY(),PicHandle,TRUE);
 	}
 }
+
+void Fence::AllDelete() {
+	AllDelete(first);
+	first = nullptr;
+}
+
 void Fence::AllDelete(Fence* mob) {
 	while (mob != nullptr) {
 		Fence* nextmob = mob->next;

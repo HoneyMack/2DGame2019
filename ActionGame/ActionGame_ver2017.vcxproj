@@ -142,6 +142,7 @@
     <ClInclude Include="FireBar.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="FlashBlock.h" />
+    <ClInclude Include="GardenEel.h" />
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Hanmer.h" />
     <ClInclude Include="HanmerThrow.h" />
@@ -154,12 +155,14 @@
     <ClInclude Include="Rect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Rope.h" />
+    <ClInclude Include="SeaWeed.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="ThornBlock.h" />
     <ClInclude Include="Turtle.h" />
+    <ClInclude Include="TurtleWithWing.h" />
     <ClInclude Include="UpDownObject.h" />
     <ClInclude Include="WalkEnemy.h" />
   </ItemGroup>
@@ -174,6 +177,7 @@
     <ClCompile Include="FireBar.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FlashBlock.cpp" />
+    <ClCompile Include="GardenEel.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Hanmer.cpp" />
     <ClCompile Include="HanmerThrow.cpp" />
@@ -186,6 +190,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Rope.cpp" />
+    <ClCompile Include="SeaWeed.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="ShootEnemy.cpp" />
     <ClCompile Include="ShootLaser.cpp" />
@@ -193,6 +198,7 @@
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="ThornBlock.cpp" />
     <ClCompile Include="Turtle.cpp" />
+    <ClCompile Include="TurtleWithWing.cpp" />
     <ClCompile Include="UpDownObject.cpp" />
     <ClCompile Include="WalkEnemy.cpp" />
   </ItemGroup>

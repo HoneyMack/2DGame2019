@@ -1,26 +1,33 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  BulletTowardPlayer.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  GardenEel.cpp
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(7,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(8,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(38,78): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(38,45): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  HanmerThrow.cpp
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(38,29): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\HanmerThrow.cpp(153,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\HanmerThrow.cpp(153,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\HanmerThrow.cpp(155,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Player.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(178,29): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(333,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\HanmerThrow.cpp(155,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Player.cpp(126,29): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Player.cpp(281,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SeaWeed.cpp
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Player.cpp(281,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\SeaWeed.cpp(21,21): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Stage.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(333,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(48,23): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(59,26): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-  ThornBlock.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(63,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ThornBlock.cpp(31,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  WalkEnemy.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ThornBlock.cpp(31,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(57,32): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(77,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(77,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(79,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\SeaWeed.cpp(20,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Stage.cpp(41,23): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Stage.cpp(51,26): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  TurtleWithWing.cpp
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Stage.cpp(55,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(8,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(9,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(12,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(12,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(42,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  main.cpp
   コードを生成中...
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(79,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  LINK : 前回のインクリメンタル リンクで C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Debug\ActionGame.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-  ActionGame_ver2017.vcxproj -> C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Debug\ActionGame.exe
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\TurtleWithWing.cpp(42,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  ActionGame_ver2017.vcxproj -> D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Debug\ActionGame.exe

@@ -1,8 +1,5 @@
 #include "Stage.h"
 
-Mob* Stage::mob = nullptr;	//最初は敵を生成しない
-Fence* Stage::fence = nullptr;
-
 int Stage::limit = 0;
 
 Stage::Stage()
@@ -21,12 +18,8 @@ Stage::Stage()
 
 Stage::~Stage()
 {
-	Mob::AllDelete(mob);
-	Fence::AllDelete(fence);
-
-	//何も差していないことを保証
-	mob = nullptr;
-	fence = nullptr;
+	Mob::AllDelete();
+	Fence::AllDelete();
 
 	//動的生成したメモリ開放
 	delete Camera;
@@ -48,9 +41,8 @@ void Stage::AllUpdate(double ftime) {
 	limit -= ftime * 1000;
 	//何かしらのフラッシュブロックが押されたかを判定のためtrue = 光っている
 	FlashBlock::flashingflag = false;
-	//Fence::anyprocessed = false;	//一度でも処理されたかの処理
 
-	Update(mob, ftime);
+	Update(ftime);
 	switch (mode) {
 	case CROSSKEYANDJUMP:
 		usingP->Motion(ftime);
@@ -68,16 +60,15 @@ void Stage::AllUpdate(double ftime) {
 }
 
 void Stage::AllDraw() {
-
-
 	usingP->Draw();
 	usingM->Draw(Camera);
 
-	Draw(mob);
-	AddDraw(mob);
+	Draw();
+	AddDraw();
 }
-void Stage::Update(Mob* mob, double ftime) {
+void Stage::Update(double ftime) {
 	//敵の処理の基本形
+	Mob* mob = Mob::first;
 	if (mob != nullptr) {		//インスタンスを保持しているか
 		if (mob->deathflag == false)
 		mob->Motion(ftime);
@@ -88,8 +79,9 @@ void Stage::Update(Mob* mob, double ftime) {
 		}
 	}
 }
-void Stage::Draw(Mob *mob) {
+void Stage::Draw() {
 	//敵の描画の基本形
+	Mob* mob = Mob::first;
 	if (mob != nullptr) {		//インスタンスを保持しているか
 		if (mob->deathflag == false)
 		mob->Draw();
@@ -100,8 +92,10 @@ void Stage::Draw(Mob *mob) {
 		}
 	}
 }
-void Stage::AddDraw(Mob *mob) {
+
+void Stage::AddDraw() {
 	//敵の描画の基本形
+	Mob* mob = Mob::first;
 	if (mob != nullptr) {		//インスタンスを保持しているか
 		if (mob->deathflag == false)
 			mob->AddDraw();
@@ -128,178 +122,6 @@ void Stage::AllReset() {
 	Coin::hadcoins = 0;
 
 	//インスタンスの鎖を消去
-	Mob::AllDelete(mob);
-	Fence::AllDelete(fence);
-
-	//何も差していないことを保証
-	mob = nullptr;
-	fence = nullptr;
-
-}
-
-void Stage::CreateWalkEnemy(int x, int y) {
-	if (mob == nullptr)
-		mob = new WalkEnemy(x, y);
-	else
-		new WalkEnemy(x, y);
-}
-
-void Stage::CreateFlashBlock(int x, int y) {
-	if (mob == nullptr)
-		mob = new FlashBlock(x, y);
-	else
-		new FlashBlock(x, y);
-}
-
-void Stage::CreateShootLaser(int x) {
-	if (mob == nullptr)
-		mob = new ShootLaser(x);
-	else
-		new ShootLaser(x);
-}
-
-void Stage::CreateUpDownObject(int x, int y) {
-	if (mob == nullptr)
-		mob = new UpDownObject(x, y);
-	else
-		new UpDownObject(x, y);
-}
-void Stage::CreateShootEnemy(int x, int y) {
-	if (mob == nullptr)
-		mob = new ShootEnemy(x, y);
-	else
-		new ShootEnemy(x, y);
-}
-
-void Stage::CreateCoin(int x,int y) {
-	if (mob == nullptr)
-		mob = new Coin(x, y);
-	else
-		new Coin(x, y);
-}
-
-void Stage::CreateLift(int x, int y, bool direction) {
-	if (mob == nullptr)
-		mob = new Lift(x, y, direction);
-	else
-		new Lift(x, y, direction);
-}
-
-void Stage::CreateFireBar(int x, int y) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y);
-	else
-		new FireBar(x, y);
-}
-void Stage::CreateFireBar(int x, int y, int length, int number) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y, length, number);
-	else
-		new FireBar(x, y, length, number);
-}
-
-void Stage::CreateFireBar(int x, int y, double speed) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y, speed);
-	else
-		new FireBar(x, y, speed);
-}
-
-void Stage::CreateFireBar(int x, int y, bool direction) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y, direction);
-	else
-		new FireBar(x, y, direction);
-}
-
-void Stage::CreateFireBar(int x, int y, int angle) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y, angle);
-	else
-		new FireBar(x, y, angle);
-}
-
-void Stage::CreateFireBar(int x, int y, double speed, bool direction, int length, int number, int angle) {
-	if (mob == nullptr)
-		mob = new FireBar(x, y, speed, direction, length, number, angle);
-	else
-		new FireBar(x, y, speed, direction, length, number, angle);
-}
-
-
-void Stage::CreateRope(int x, int y,int ropenum) {
-	if (mob == nullptr)
-		mob = new Rope(x, y,ropenum);
-	else
-		new Rope(x, y,ropenum);
-}
-
-void Stage::CreateJump(int x, int y)
-{
-	if (mob == nullptr)
-		mob = new Jump(x, y);
-	else
-		new Jump(x, y);
-}
-
-void Stage::CreateFallWall(int x, int y) {
-	if (mob == nullptr)
-		mob = new FallWall(x, y);
-	else
-		new FallWall(x, y);
-}
-void Stage::CreateTurtle(int x, int y) {
-	if (mob == nullptr)
-		mob = new Turtle(x, y);
-	else
-		new Turtle(x, y);
-}
-void Stage::CreateHanmerThrow(int x, int y, double iv) {
-	if (mob == nullptr)
-		mob = new HanmerThrow(x, y, iv);
-	else
-		new HanmerThrow(x, y, iv);
-}
-
-void Stage::CreateGhost(int x, int y) {
-	if (mob == nullptr)
-		mob = new Ghost(x, y);
-	else
-		new Ghost(x, y);
-}
-
-void Stage::CreateThornBlock(int x, int y) {
-	if (mob == nullptr)
-		mob = new ThornBlock(x, y);
-	else
-		new ThornBlock(x, y);
-}
-void Stage::CreateFence(int x, int y) {
-	if (fence == nullptr)
-		fence = new Fence(x, y);
-	else
-		new Fence(x, y);
-}
-
-void Stage::CreateFish(int x, int y)
-{
-	if (mob == nullptr)
-		mob = new Fish(x, y);
-	else
-		new Fish(x, y);
-}
-
-void Stage::CreateCrab(int x, int y)
-{
-	if (mob == nullptr)
-		mob = new Crab(x, y);
-	else
-		new Crab(x, y);
-}
-void Stage::CreateShip(int x, int y, double angle)
-{	
-	if (mob == nullptr)
-		mob = new Ship(x, y, angle);
-	else
-		new Ship(x, y, angle);
+	Mob::AllDelete();
+	Fence::AllDelete();
 }
