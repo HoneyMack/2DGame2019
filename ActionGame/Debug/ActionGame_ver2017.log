@@ -1,3 +1,8 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main.cpp
+  GardenEel.cpp
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(7,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(8,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(37,78): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(37,45): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\GardenEel.cpp(37,29): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   ActionGame_ver2017.vcxproj -> D:\工華祭４J\横スクロールアクション班\2DGame2019-master\ActionGame\Debug\ActionGame.exe

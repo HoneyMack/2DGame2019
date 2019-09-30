@@ -142,6 +142,7 @@
     <ClInclude Include="FireBar.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="FlashBlock.h" />
+    <ClInclude Include="GardenEel.h" />
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Hanmer.h" />
     <ClInclude Include="HanmerThrow.h" />
@@ -175,6 +176,7 @@
     <ClCompile Include="FireBar.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FlashBlock.cpp" />
+    <ClCompile Include="GardenEel.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Hanmer.cpp" />
     <ClCompile Include="HanmerThrow.cpp" />

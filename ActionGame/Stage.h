@@ -21,6 +21,7 @@
 #include "ThornBlock.h"
 #include "Fence.h"
 #include "SeaWeed.h"
+#include "GardenEel.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"
@@ -34,10 +35,10 @@ class Stage
 {
 public:
 	int mode = CROSSKEYANDJUMP;		//プレイモード
-static	int limit;						//残り時間
-	Rect *Camera;					//描画範囲指定用矩形の用意
-	Player *usingP;					//プレイヤー
-	Map *usingM;					//マップ
+	static	int limit;						//残り時間
+	Rect* Camera;					//描画範囲指定用矩形の用意
+	Player* usingP;					//プレイヤー
+	Map* usingM;					//マップ
 	int mapparts[ACCOUNTFORMAPPARTS];	//背景画像の断片
 
 	Stage();
@@ -45,7 +46,7 @@ static	int limit;						//残り時間
 
 	void AllUpdate(double frametime);
 	void AllDraw();
-	
+
 	void AllReset();
 
 	void Update(double frametime);//mobインスタンスのポインタを渡すと渡したMobの処理をしてくれる

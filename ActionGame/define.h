@@ -42,9 +42,6 @@
 //強制スクロールの速度(dot/s)
 #define SCROLLSPEED 100
 
-//復帰までのじかん（s）
-#define RECOVERTIME 1
-
 
 //敵のダメージ量関係
 #define WALKENEMY_HITDAMAGE 5		//ぶつかったときのダメージ量
@@ -59,6 +56,7 @@
 #define THORNBLOCK_HITDAMAGE 12
 #define HANMER_HITDAMAGE 8
 #define HANMERTHROW_DAMAGE 4
+#define GARDENEEL_DAMAGE  4//チンアナゴに衝突したときのダメージ
 
 //player move speed
 #define HITPOINT 50		//プレイヤーのHP
@@ -240,6 +238,14 @@
 #define SEAWEED_TOTALPICTURES 5 //画像の総数
 #define SEAWEED_SWITCHTIME 1000 //1画像あたりの表示時間(ms/画像)
 
+//GardenEel(チンアナゴ)
+#define GARDENEEL_SIZEX 10 //チンアナゴの画像サイズ
+#define GARDENEEL_SIZEY 32
+
+#define GARDENEEL_HIDINGTIME 1000 //土に隠れている（当たらない）時間(ms)
+#define GARDENEEL_RISINGTIME 500 //上に上昇している時間(ms)
+#define GARDENEEL_HOLDINGTIME 3000 //上昇しきって伸びている状態の時間(ms)
+#define GARDENEEL_FALLINGTIME 1000 //下に下降している時間(ms)
 
 //描画サイズ(配列の個数)
 #define VIEW_WIDTH_INDEX	WIDTH/DOT

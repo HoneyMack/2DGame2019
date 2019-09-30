@@ -162,6 +162,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
 	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
 
+	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
+
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 	//マップ画像をセット
@@ -955,6 +957,7 @@ void CreateStage1_1R() {
 	new Ship(DOT * 10, DOT * 4, 0);
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
+	new GardenEel(DOT * 30, DOT * 14);//debug
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);
