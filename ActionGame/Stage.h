@@ -21,6 +21,7 @@
 #include "Crab.h"
 #include "ThornBlock.h"
 #include "Fence.h"
+#include "Sea.h"
 #include "SeaWeed.h"
 #include "GardenEel.h"
 #include "Map.h"
