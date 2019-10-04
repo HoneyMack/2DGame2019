@@ -20,7 +20,7 @@ public:
 
 	//static bool InWaterFlag = false;
 
-	Sea(int x, int y);	
+	Sea(int x, int y,int direction);	//direction:0”g‚È‚µA‚P¶•ûŒüA‚Q‰E•ûŒüA‚Rã•ûŒüA‚S‰º•ûŒü@‚TˆÈã”g‚È‚µ
 	~Sea();
 
 	void ChainMaker();	//ƒŠƒXƒg‚Å‚·‚×‚Ä‚ÌŠC‚Ì”»’è‚ğˆ—‚·‚é
