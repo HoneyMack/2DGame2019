@@ -12,6 +12,7 @@
 #include "Rope.h"
 #include "Jump.h"
 #include "Coin.h"
+#include "HealingItem.h"
 #include "FallWall.h"
 #include "Turtle.h"
 #include "TurtleWithWing.h"

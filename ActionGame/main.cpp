@@ -164,6 +164,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug—p‰¼‰æ‘œ
 
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug—p‰¼‰æ‘œ
+	HealingItem::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
@@ -956,6 +957,8 @@ void CreateStage1_1R() {
 	//new Fish(DOT * 10, DOT * 13);	//debug
 	//new Crab(DOT * 10, DOT * 4);
 	new Ship(DOT * 10, DOT * 4, 0);
+
+	new HealingItem(DOT * 15, DOT * 9);//debug
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 	new GardenEel(DOT * 30, DOT * 14);//debug
