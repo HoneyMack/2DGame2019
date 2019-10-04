@@ -146,6 +146,7 @@
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Hanmer.h" />
     <ClInclude Include="HanmerThrow.h" />
+    <ClInclude Include="HealingItem.h" />
     <ClInclude Include="Jump.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Map.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Hanmer.cpp" />
     <ClCompile Include="HanmerThrow.cpp" />
+    <ClCompile Include="HealingItem.cpp" />
     <ClCompile Include="Jump.cpp" />
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
