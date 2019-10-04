@@ -44,4 +44,5 @@ bool HealingItem::HitCheck(Rect rect)
 void HealingItem::HitPlayer()
 {
 	usingP->HP += HEALING_POINT;
+	deathflag = true;
 }
