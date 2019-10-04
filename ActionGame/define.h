@@ -1,7 +1,7 @@
 //マップは配列として持つ
 #pragma once
 #include "DxLib.h"
-#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
+//#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
 
 
 
@@ -250,6 +250,18 @@
 #define GARDENEEL_RISINGTIME 500 //上に上昇している時間(ms)
 #define GARDENEEL_HOLDINGTIME 3000 //上昇しきって伸びている状態の時間(ms)
 #define GARDENEEL_FALLINGTIME 1000 //下に下降している時間(ms)
+
+//Sea(海)
+#define SEA_SIZEX 32
+#define SEA_SIZEY 32
+#define SEA_TRANSPARENCY 150	//水の透明度指定
+#define SEA_FIRSTDIVE_SPEED_DECAY 0.5	//初めて海に入った時の速度減衰（小数点以下）
+#define SEA_GRAVITY 300	//海の中の重力
+#define SEA_PLAYERMOVESPEED 70	//水中での移動速度
+#define SEA_BOOSTSPEED 14
+#define SEA_MAXBOOST 140	
+#define SEA_LOWJUMPSPEED 50
+#define SEA_MAXVY 100	//水中での落下速度の最大値
 
 
 //描画サイズ(配列の個数)

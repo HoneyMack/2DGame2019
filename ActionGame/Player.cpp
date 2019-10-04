@@ -114,10 +114,45 @@ void Player::Motion(double frametime) {
 		if (hitface == BOTTOM)
 			Animation(STAND);
 	}
+	else if (Sea::PlayerHitCheck(rect)) {
+		if (seaflag = false) {
+			//初めて海の中に入った
+			vx *= SEA_FIRSTDIVE_SPEED_DECAY;
+			vy *= SEA_FIRSTDIVE_SPEED_DECAY;
+			ay = SEA_GRAVITY;
+			seaflag = true;
+		}
+		Animation(FENCE);		//アニメーションをフェンスで仮置き（泳ぎモーションが完成したら差し替え）
+		//左右移動
+		if (now_key & (PAD_INPUT_LEFT | PAD_INPUT_RIGHT)) {
+			if (now_key & PAD_INPUT_LEFT) {
+				vx -= SEA_BOOSTSPEED;
+				directionflag = 2;		//左向き
+				if (vx < -SEA_MAXBOOST)
+					vx = -SEA_MAXBOOST;
+			}
+
+			else {
+				vx += SEA_BOOSTSPEED;
+				directionflag = 1;		//右向き
+				if (vx > SEA_MAXBOOST)
+					vx = SEA_MAXBOOST;
+			}
+		}
+		else {
+			vx *= 0.5;
+			//directionflag = 0;			//どこも向かない
+		}
+		if (vy > SEA_MAXVY) {
+			vy = SEA_MAXVY;	//水中での下方への速度制限
+		}
+		Jump(SEA_LOWJUMPSPEED);
+	}
 	else {
-		if (fenceflag == true) {
+		if (fenceflag == true || seaflag == true) {
 			ay = GRAVITY;
 			fenceflag = false;
+			seaflag = false;
 		}
 		keypressed = CrossKeyInput();				//キー入力
 		//directionflag = 0;
@@ -153,7 +188,7 @@ void Player::Motion(double frametime) {
 			vy = 0.0;
 			Animation(STAND);
 			Jump();
-			if (keypressed)
+			if (keypressed && seaflag == false)	//海中でこの処理が働かないように変更
 				vx *= 0.9;			//プレイヤー地面にいてキーが押されているときの横速度減衰率
 			else
 				vx *= 0.6;			//プレイヤーが地面にいてキーが押されていないときの横速度減衰率
