@@ -13,7 +13,7 @@ Penguin::Penguin(int x,int y)
 	rect.x -= rect.sizeX / 2;
 	rect.y -= rect.sizeY / 2 - 2;
 
-	velocity = PENGUIN_MOVESPEED;
+	velocity = PENGUIN_WALKINGSPEED;
 }
 
 
@@ -36,7 +36,23 @@ void Penguin::Motion(double frametime)
 		}
 		int hitface = 0x0000;
 
-		if (vecX + velocity * frametime > PENGUIN_MOVEWIDTH / 2 || vecX + velocity * frametime < -PENGUIN_MOVEWIDTH) {
+		//xÀ•W‚Ì‚Ý‚Ì‹——£‚É‚æ‚Á‚ÄŠŠ‚è‚¾‚·
+		int distance = usingP->x - x;
+		if (distance < 0) {
+			distance *= -1;
+		}
+
+		if (distance < PENGUIN_SEARCHINGAREA && searched == false) {
+			//velocity = PENGUIN_SLIDINGSPEED;
+			if (usingP->x < x)
+				velocity = -PENGUIN_SLIDINGSPEED;
+			else
+				velocity = PENGUIN_SLIDINGSPEED;
+			searched = true;
+		}
+
+		//ŠŠ‚è‚¾‚·‚Æ”ÍˆÍ‚É‚æ‚éÜ‚è•Ô‚µ‚È‚µB
+		if ((vecX + velocity * frametime > PENGUIN_MOVEWIDTH / 2 || vecX + velocity * frametime < -PENGUIN_MOVEWIDTH)&&searched == false) {
 			velocity = -velocity;
 		}
 

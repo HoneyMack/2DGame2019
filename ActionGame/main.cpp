@@ -950,7 +950,7 @@ void CreateStage1_1R() {
 	stage.CreateTurtle(DOT * 10, DOT * 13); //debug
 	stage.CreateFish(DOT * 10, DOT * 13);	//debug
 
-	stage.CreatePenguin(DOT * 10, DOT * 13);
+	stage.CreatePenguin(DOT * 20, DOT * 13);
 
 	stage.CreateCrab(DOT * 10, DOT * 4);
 	stage.CreateShip(DOT * 10, DOT * 4, 0);
