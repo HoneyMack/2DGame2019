@@ -158,6 +158,7 @@
     <ClInclude Include="SeaWeed.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
+    <ClInclude Include="SnowMan.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="ThornBlock.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="ShootEnemy.cpp" />
     <ClCompile Include="ShootLaser.cpp" />
+    <ClCompile Include="SnowMan.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="ThornBlock.cpp" />

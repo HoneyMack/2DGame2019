@@ -108,8 +108,6 @@ bool WalkEnemy::HitCheck(Rect rect) {
 		}
 		else
 			HitPlayer();
-		
-		
 		return true;
 	}
 	else
