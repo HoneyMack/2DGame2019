@@ -964,7 +964,7 @@ void CreateStage1_1R() {
 
 	for (int i = 0; i < 112; i++) {			//debug
 		for (int j = 1; j < 14; j++) {
-			new Sea(DOT *  i, DOT * j);
+			new Sea(DOT *  i, DOT * j,0);
 		}
 	}
 

@@ -256,7 +256,7 @@
 #define SEA_SIZEY 32
 #define SEA_TRANSPARENCY 150	//水の透明度指定
 #define SEA_FIRSTDIVE_SPEED_DECAY 0.5	//初めて海に入った時の速度減衰（小数点以下）
-#define SEA_GRAVITY 300	//海の中の重力
+#define SEA_GRAVITY 2000	//海の中の重力
 #define SEA_PLAYERMOVESPEED 70	//水中での移動速度
 #define SEA_BOOSTSPEED 14
 #define SEA_MAXBOOST 140	

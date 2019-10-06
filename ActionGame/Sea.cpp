@@ -5,10 +5,12 @@ Sea* Sea::last = nullptr;
 
 int Sea::PicHandle = 0;
 
-Sea::Sea(int x, int y)
+Sea::Sea(int x, int y,int direction)
 {
 	this->x = x;
 	this->y = y;
+
+	this->direction = direction;
 	
 	ChainMaker();
 }
@@ -60,7 +62,15 @@ bool Sea::HasNext()
 
 int Sea::HitCheckReturnSea(Rect rect)
 {	//ŒÂX‚Ì“–‚½‚è”»’è
-	return HitFaceRectRect(this->rect,rect);
+	//return HitFaceRectRect(this->rect,rect);
+
+	if (HitFaceRectRect(this->rect, rect)) {		//‚±‚±‚Å”g‚È‚µ‚ğ‚O‚©‚ç‚P‚P‚P‚P‚É•ÏXi‚±‚ÌŒã‚Ìˆ—‚Å‚O‚Í“–‚½‚Á‚Ä‚¢‚È‚¢‚±‚Ì‚Æ”»’è‚Ég‚¢‚½‚¢‚©‚çj
+		if (direction == 0)
+			return 0b1111;
+		else
+			return direction;
+	}
+	else return 0;
 }
 
 void Sea::AllDelete()

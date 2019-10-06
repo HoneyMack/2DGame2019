@@ -115,7 +115,7 @@ void Player::Motion(double frametime) {
 			Animation(STAND);
 	}
 	else if (Sea::PlayerHitCheck(rect)) {
-		if (seaflag = false) {
+		if (seaflag == false) {
 			//‰‚ß‚ÄŠC‚Ì’†‚É“ü‚Á‚½
 			vx *= SEA_FIRSTDIVE_SPEED_DECAY;
 			vy *= SEA_FIRSTDIVE_SPEED_DECAY;
@@ -146,6 +146,8 @@ void Player::Motion(double frametime) {
 		if (vy > SEA_MAXVY) {
 			vy = SEA_MAXVY;	//…’†‚Å‚Ì‰º•û‚Ö‚Ì‘¬“x§ŒÀ
 		}
+
+		//ax = 750;
 		Jump(SEA_LOWJUMPSPEED);
 	}
 	else {

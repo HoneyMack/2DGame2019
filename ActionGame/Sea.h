@@ -20,8 +20,10 @@ public:
 
 	//static bool InWaterFlag = false;
 
-	Sea(int x, int y,int direction);	//direction:0波なし、１左方向、２右方向、３上方向、４下方向　５以上波なし
+	Sea(int x, int y,int direction);	//direction:0波なし、上下右左の四ビットで指定。例外処理めんどくさいので変な数を入れないように！！！原則一つ
 	~Sea();
+
+	int direction;
 
 	void ChainMaker();	//リストですべての海の判定を処理する
 	void ChainCutter();
