@@ -54,12 +54,17 @@ void Rope::Motion(double frametime)
 				usingP->y -= vy* frametime;
 				vy = 0;
 			}
-		}	
+		}
+		else
+			usingP->x = x + 10;
 		//ロープ上下移動
 		if (usingP->now_key & PAD_INPUT_UP)
 			usingP->y -= ROPE_UPDOWN * frametime;
 		if (usingP->now_key & PAD_INPUT_DOWN)
 			usingP->y += ROPE_UPDOWN * frametime;
+
+		
+
 		
 	}
 	else {
@@ -78,32 +83,45 @@ void Rope::Motion(double frametime)
 
 bool Rope::HitCheck(Rect rope)
 {
-	//当たっているか
-	if (CheckRectRect(rope, this->rope)|| CheckRectRect(rope, this->fixture)) {
+	
+	//当たっているか かつロープをつかんでいてジャンプ中でない
+	if (CheckRectRect(rope, this->rope)|| CheckRectRect(rope, this->fixture))  {
 		//ロープをつかんでいるか
 		if (CheckRectRect(rope, this->rope)) {
-			//つかんで初めての処理か
-       			if (!catchflag) {
-				usingP->vy = 0;
-				usingP->ay = 0;
-				catchflag = true;
-			}
-			//ロープをつかんでいるときの左右移動制限
-			if (usingP->keypressed) {
-				usingP->vx *= 0.75;
+			//無効か時間の処理
+			if (invalidation < 100) {
+				invalidation++;
+				return false;
 			}
 			else {
-				usingP->vx *= 0.60;
+				invalidation = 100;
+
+				//つかんで初めての処理か
+				if (!catchflag) {
+					usingP->vy = 0;
+					usingP->ay = 0;
+					catchflag = true;
+				}
+				//ロープをつかんでいるときの左右移動制限
+				if (usingP->keypressed) {
+					usingP->vx *= 0.75;
+				}
+				else {
+					usingP->vx *= 0.60;
+				}
+				//ロープをつかんでいてかつキーが押されていたらジャンプ可能
+				if (InKeyTrigger(usingP->now_key, PAD_INPUT_10)) {
+					PlaySoundMem(Sound::sounds[SOUND_ROPEJUMP], DX_PLAYTYPE_BACK);
+					vy = -ROPE_JUMPSPEED;
+					invalidation = 0;
+
+				}
+				//アニメーションを行う
+				usingP->Animation(ROPE);
+				//ロープにつかんだので登り続けないようにする
+				usingP->highjumpcounter = CANHIGHJUMPTIME;
+
 			}
-			//ロープをつかんでいてかつキーが押されていたらジャンプ可能
-			if (InKeyTrigger(usingP->now_key, PAD_INPUT_10)) {
-				PlaySoundMem(Sound::sounds[SOUND_ROPEJUMP], DX_PLAYTYPE_BACK);
-				vy = -ROPE_JUMPSPEED;
-			}
-			//アニメーションを行う
-			usingP->Animation(ROPE);
-			//ロープにつかんだので登り続けないようにする
-			usingP->highjumpcounter = CANHIGHJUMPTIME;
 		}
 		//固定具にぶつかっているか
 		if (CheckRectRect(rope, this->fixture)) {
@@ -143,8 +161,10 @@ bool Rope::HitCheck(Rect rope)
 		}
 		return true;
 	}
-	else
+	else {
+		invalidation = 100;
 		return false;
+	}
 }
 
 void Rope::Draw(){
