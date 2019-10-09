@@ -257,11 +257,13 @@
 #define SEA_TRANSPARENCY 150	//水の透明度指定
 #define SEA_FIRSTDIVE_SPEED_DECAY 0.5	//初めて海に入った時の速度減衰（小数点以下）
 #define SEA_GRAVITY 2000	//海の中の重力
-#define SEA_PLAYERMOVESPEED 70	//水中での移動速度
-#define SEA_BOOSTSPEED 14
-#define SEA_MAXBOOST 140	
-#define SEA_LOWJUMPSPEED 50
+//#define SEA_PLAYERMOVESPEED 70	//水中での移動速度
+//#define SEA_BOOSTSPEED 14
+#define SEA_MOVESPEED 100	
+#define SEA_LOWJUMPSPEED 120
 #define SEA_MAXVY 100	//水中での落下速度の最大値
+#define SEA_WAVESPEEDX 30 //波によってプレイヤーに与えられる速度
+#define SEA_WAVESPEEDY 10
 
 
 //描画サイズ(配列の個数)

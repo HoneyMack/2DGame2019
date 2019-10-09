@@ -153,8 +153,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
+	Fish::PicHandle = LoadGraph("pictures/fish.png");	//魚仮画像セット
+	Crab::PicHandle = LoadGraph("pictures/crab.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
 	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
@@ -954,8 +954,8 @@ void CreateStage1_1R() {
 	new Coin(609, 350);
 
 	new Turtle(DOT * 10, DOT * 13); //debug
-	//new Fish(DOT * 10, DOT * 13);	//debug
-	//new Crab(DOT * 10, DOT * 4);
+	new Fish(DOT * 10, DOT * 13);	//debug
+	new Crab(DOT * 10, DOT * 4);
 	new Ship(DOT * 10, DOT * 4, 0);
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
@@ -964,7 +964,7 @@ void CreateStage1_1R() {
 
 	for (int i = 0; i < 112; i++) {			//debug
 		for (int j = 1; j < 14; j++) {
-			new Sea(DOT *  i, DOT * j,0);
+			new Sea(DOT *  i, DOT * j,4);
 		}
 	}
 

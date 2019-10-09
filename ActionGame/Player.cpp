@@ -126,17 +126,17 @@ void Player::Motion(double frametime) {
 		//左右移動
 		if (now_key & (PAD_INPUT_LEFT | PAD_INPUT_RIGHT)) {
 			if (now_key & PAD_INPUT_LEFT) {
-				vx -= SEA_BOOSTSPEED;
+				vx = -SEA_MOVESPEED;
 				directionflag = 2;		//左向き
-				if (vx < -SEA_MAXBOOST)
-					vx = -SEA_MAXBOOST;
+				/*if (vx < -SEA_MOVESPEED)
+					vx = -SEA_MOVESPEED;*/
 			}
 
 			else {
-				vx += SEA_BOOSTSPEED;
-				directionflag = 1;		//右向き
-				if (vx > SEA_MAXBOOST)
-					vx = SEA_MAXBOOST;
+				vx = SEA_MOVESPEED;
+				//directionflag = 1;		//右向き
+				//if (vx > SEA_MOVESPEED)
+				//	vx = SEA_MOVESPEED;
 			}
 		}
 		else {
@@ -147,7 +147,13 @@ void Player::Motion(double frametime) {
 			vy = SEA_MAXVY;	//水中での下方への速度制限
 		}
 
+		hitface = Sea::PlayerHitCheck(rect);
+		if (hitface & 0b0001) vx -= SEA_WAVESPEEDX;
+		if (hitface & 0b0010) vx += SEA_WAVESPEEDX;
+		if (hitface & 0b0100) vy += SEA_WAVESPEEDY;
+		if (hitface & 0b1000) vy -= SEA_WAVESPEEDY;
 		//ax = 750;
+		
 		Jump(SEA_LOWJUMPSPEED);
 	}
 	else {
