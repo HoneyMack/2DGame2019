@@ -148,10 +148,11 @@ void Player::Motion(double frametime) {
 		}
 
 		hitface = Sea::PlayerHitCheck(rect);
-		if (hitface & 0b0001) vx -= SEA_WAVESPEEDX;
-		if (hitface & 0b0010) vx += SEA_WAVESPEEDX;
-		if (hitface & 0b0100) vy += SEA_WAVESPEEDY;
-		if (hitface & 0b1000) vy -= SEA_WAVESPEEDY;
+		if (hitface & 0b0001 && hitface != 0b1111 ) vx -= SEA_WAVESPEEDX;
+		if (hitface & 0b0010 && hitface != 0b1111) vx += SEA_WAVESPEEDX;
+		if (hitface & 0b0100 && hitface != 0b1111) vy += SEA_WAVESPEEDDOWN;
+		if (hitface & 0b1000 && hitface != 0b1111) vy -= SEA_WAVESPEEDUP;
+		//if (hitface == 0b1111) vx = vy = 0;
 		//ax = 750;
 		
 		Jump(SEA_LOWJUMPSPEED);

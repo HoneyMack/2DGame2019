@@ -263,7 +263,8 @@
 #define SEA_LOWJUMPSPEED 120
 #define SEA_MAXVY 100	//水中での落下速度の最大値
 #define SEA_WAVESPEEDX 30 //波によってプレイヤーに与えられる速度
-#define SEA_WAVESPEEDY 10
+#define SEA_WAVESPEEDDOWN 10
+#define SEA_WAVESPEEDUP 50
 
 
 //描画サイズ(配列の個数)
