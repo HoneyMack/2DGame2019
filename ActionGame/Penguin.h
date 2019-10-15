@@ -3,12 +3,6 @@
 #include"Mob.h"
 #include "Object.h"
 
-#define PENGUIN_MOVEWIDTH 160
-#define PENGUIN_HITDAMAGE 4
-#define PENGUIN_SLIDINGSPEED 300
-#define PENGUIN_WALKINGSPEED 100
-#define PENGUIN_SEARCHINGAREA 200
-
 
 class Penguin : public Mob,public Object
 {

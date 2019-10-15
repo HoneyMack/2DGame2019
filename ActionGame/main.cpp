@@ -870,6 +870,8 @@ void CreateStage1_1R() {
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
+	firstMap.m_map[13][13] = 1;
+
 	//ƒ}ƒbƒvì»
 	firstMap.m_map[13][11] = BLOCK_WOOD;
 	firstMap.m_map[16][11] = BLOCK_WOOD;

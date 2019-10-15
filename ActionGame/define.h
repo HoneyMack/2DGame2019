@@ -234,6 +234,15 @@
 #define SHIP_MOVESPEED 100
 
 
+//Penguin
+#define PENGUIN_MOVEWIDTH 160
+#define PENGUIN_HITDAMAGE 4
+#define PENGUIN_SLIDINGSPEED 300	//滑ってる時のスピード
+#define PENGUIN_WALKINGSPEED 100	//歩いてる時のスピード
+#define PENGUIN_SEARCHINGAREA 200
+
+
+
 
 
 //描画サイズ(配列の個数)
