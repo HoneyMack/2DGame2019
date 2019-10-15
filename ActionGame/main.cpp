@@ -157,6 +157,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
+	Polarbear::PicHandle = LoadGraph("pictures/Ship.png"); //debug用仮画像
+
 	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
 	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
 	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
@@ -960,6 +962,8 @@ void CreateStage1_1R() {
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 	new GardenEel(DOT * 30, DOT * 14);//debug
 	new TurtleWithWing(DOT * 35, DOT * 10); //debug
+
+	new Polarbear(DOT * 20, DOT * 3);
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);

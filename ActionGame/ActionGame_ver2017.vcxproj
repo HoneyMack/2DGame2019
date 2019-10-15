@@ -152,6 +152,7 @@
     <ClInclude Include="Mob.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Polarbear.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Rope.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Polarbear.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Rope.cpp" />
     <ClCompile Include="SeaWeed.cpp" />

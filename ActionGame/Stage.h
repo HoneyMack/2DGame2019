@@ -22,6 +22,7 @@
 #include "ThornBlock.h"
 #include "Fence.h"
 #include "SeaWeed.h"
+#include "Polarbear.h"  //new
 #include "GardenEel.h"
 #include "Map.h"
 #include "Rect.h"

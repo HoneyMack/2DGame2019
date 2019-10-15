@@ -221,6 +221,13 @@
 #define GHOST_TRANSPARENCY 50  //どのくらい透明にするか0:透明　250:不透明
 #define GHOST_TURNTIME 300	//フラッシュがたかれて引っ込むまで
 
+//Polarbear
+#define PBSIZEX 32
+#define PBSIZEY 32
+#define PB_SPEED 100
+#define PB_MOVEWIDTH 160
+#define PB_HITDAMAGE 5
+
 //thornblock
 #define THORNBLOCK_SIZEX 28
 #define THORNBLOCK_SIZEY 28
@@ -235,6 +242,8 @@
 #define SHIP_SIZEX 96
 #define SHIP_SIZEY 64
 #define SHIP_MOVESPEED 100
+
+
 
 
 //SeaWeed(海藻)
