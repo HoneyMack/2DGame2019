@@ -228,6 +228,13 @@
 #define PB_MOVEWIDTH 160
 #define PB_HITDAMAGE 5
 
+//Penguin
+#define PENGUIN_MOVEWIDTH 160
+#define PENGUIN_HITDAMAGE 4
+#define PENGUIN_SLIDINGSPEED 300	//�����Ă鎞�̃X�s�[�h
+#define PENGUIN_WALKINGSPEED 100	//�����Ă鎞�̃X�s�[�h
+#define PENGUIN_SEARCHINGAREA 200
+
 //thornblock
 #define THORNBLOCK_SIZEX 28
 #define THORNBLOCK_SIZEY 28

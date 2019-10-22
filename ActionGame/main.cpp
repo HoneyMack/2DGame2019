@@ -167,6 +167,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug�p���摜
 	Sea::PicHandle = LoadGraph("pictures/Sea.png");
+	
+	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
