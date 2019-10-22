@@ -124,8 +124,5 @@ void Stage::AllReset() {
 	//インスタンスの鎖を消去
 	Mob::AllDelete();
 	Fence::AllDelete();
-<<<<<<< HEAD
 	Sea::AllDelete();
-=======
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
 }

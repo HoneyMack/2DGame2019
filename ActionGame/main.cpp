@@ -10,55 +10,55 @@
 #define STAGENUM 3
 using namespace std;
 
-//ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^•Û—p	ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“
+//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p	ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½
 struct rankdata {
 	string name;
 	int limit, killedene, hp, coin;
 };
 
 
-//ƒNƒ‰ƒXƒCƒ“ƒXƒ^ƒ“ƒXì¬
+//ï¿½Nï¿½ï¿½ï¿½Xï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ì¬
 Stage stage;
 
-//ŠÖ”@ƒvƒƒgƒ^ƒCƒvéŒ¾
+//ï¿½Öï¿½ï¿½@ï¿½vï¿½ï¿½ï¿½gï¿½^ï¿½Cï¿½vï¿½éŒ¾
 void GameControl();
 void StartWindow();
-int  GameSelectWindow();		//‘I‘ğ‚µ‚½ƒXƒe[ƒW‚Ì®—”Ô†‚ğ•Ô‚·
+int  GameSelectWindow();		//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
 void GamePlayWindow();
 void GamePauseWindow();
 void GameOverWindow();
-void GameClearWindow(int selectedstage);	//‘I‘ğ‚µ‚½ƒXƒe[ƒW‚Ì®—”Ô†‚ğ“n‚·
+void GameClearWindow(int selectedstage);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½nï¿½ï¿½
 void RankingWindow();
 
-void RankingWrite(string txtname, rankdata rankdata);		//txtname‚Ìƒtƒ@ƒCƒ‹‚Érnkdt‚ğ‘‚«‚Ş
-rankdata* RankingRead(string txtname, int* index);					//txtname‚Ìƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚ğ“Ç‚İ‚ñ‚Å–ß‚è’l‚Æ‚µ‚Ä“n‚· ”z—ñ‚Ì—v‘f”‚ğˆø”‚É“n‚·
+void RankingWrite(string txtname, rankdata rankdata);		//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½rnkdtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+rankdata* RankingRead(string txtname, int* index);					//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½Å–ß‚ï¿½lï¿½Æ‚ï¿½ï¿½Ä“nï¿½ï¿½ ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É“nï¿½ï¿½
 
-//ƒXƒe[ƒW‚ÌƒIƒuƒWƒFƒNƒg¶¬
+//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
 void CreateStage1_1();
 void CreateStage2_1();
 void CreateStage1_1R();
 void CreateStage1_2R();
 void CreateStage1_3R();
-void CreateStage_MiniGame1();			//ƒ^ƒCƒ€‚ğ‹£‚¤ƒ~ƒjƒQ[ƒ€
+void CreateStage_MiniGame1();			//ï¿½^ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½jï¿½Qï¿½[ï¿½ï¿½
 
 
-//ƒƒjƒ…[Ø‚è‘Ö‚¦—pƒtƒ‰ƒO
+//ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½pï¿½tï¿½ï¿½ï¿½O
 int window = STARTWINDOW;
 
-//ƒL[“ü—ÍŠÖŒW
-int now_key;		//¡‚ÌƒtƒŒ[ƒ€‚Ìó‘Ô‚ğ•Û
-bool befKeys[62];	//ˆêŒË‘O‚Ì“ü—Í•Û—p
+//ï¿½Lï¿½[ï¿½ï¿½ï¿½ÍŠÖŒW
+int now_key;		//ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìï¿½Ô‚ï¿½Ûï¿½
+bool befKeys[62];	//ï¿½ï¿½Ë‘Oï¿½Ì“ï¿½ï¿½Í•Ûï¿½ï¿½p
 
 
-//ƒ}ƒbƒv–¼•Û
+//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Ûï¿½
 string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","TEST1","TEST2" };
 
-//”wŒi‰æ‘œw’è
+//ï¿½wï¿½iï¿½æ‘œï¿½wï¿½ï¿½
 int stage1_1Back[ACCOUNTFORMAPPARTS];
 int stage1_2Back[ACCOUNTFORMAPPARTS];
 int stage1_3Back[ACCOUNTFORMAPPARTS];
 
-//ƒS[ƒ‹ƒo[
+//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[
 int goalPicHandle;
 
 
@@ -66,12 +66,12 @@ int goalPicHandle;
 int beftime, curtime;
 float frametime;
 
-//ƒXƒ^[ƒg‰æ–Ê‚Ì•¶š
+//ï¿½Xï¿½^ï¿½[ï¿½gï¿½ï¿½Ê‚Ì•ï¿½ï¿½ï¿½
 int strWidth, strLen;
 
-int HPfont;				//HP•\¦—pƒtƒHƒ“ƒgƒnƒ“ƒhƒ‹•Û
-int rankfont_1, rankfont_2, rankfont_3;			//ƒ‰ƒ“ƒN•\¦—pƒtƒHƒ“ƒg
-int Pausefont;							//ƒ|[ƒYƒtƒHƒ“ƒg
+int HPfont;				//HPï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ûï¿½
+int rankfont_1, rankfont_2, rankfont_3;			//ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½g
+int Pausefont;							//ï¿½|ï¿½[ï¿½Yï¿½tï¿½Hï¿½ï¿½ï¿½g
 
 
 //int picture;
@@ -93,17 +93,17 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	beftime = GetNowCount() & INT_MAX;
 
 
-	//ƒtƒHƒ“ƒgƒZƒbƒg
-	HPfont = CreateFontToHandle("ƒƒCƒŠƒI", 16, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_1 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_2 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 8, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_3 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 7, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	//ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Zï¿½bï¿½g
+	HPfont = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_1 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_2 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 8, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_3 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 7, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
 	Pausefont = CreateFontToHandle("Ravie", 32, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
 
-	//”wŒi‰æ‘œ
+	//ï¿½wï¿½iï¿½æ‘œ
 	//picture = LoadGraph("pictures/background.png");
 
-	//Mob‰æ‘œ‚ğƒZƒbƒg
+	//Mobï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
 	Player::PicHandle[0] = LoadGraph("pictures/player.png");
 	Player::PicHandle[1] = LoadGraph("pictures/boy_run.png");
 	Player::PicHandle[2] = LoadGraph("pictures/boy_jump.png");
@@ -142,7 +142,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Turtle::PicShellHandle[1] = LoadGraph("pictures/takoyaki_right.png");
 	Turtle::PicShellHandle[2] = LoadGraph("pictures/takoyaki_left.png");
 	Turtle::PicShellHandle[3] = LoadGraph("pictures/takoyaki_back.png");
-	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debug—p‰¼‰æ‘œ
+	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
 	HanmerThrow::PicHandle[0] = LoadGraph("pictures/HanmerThrow_1.png");
 	HanmerThrow::PicHandle[1] = LoadGraph("pictures/HanmerThrow_2.png");
 	HanmerThrow::PicHandle[2] = LoadGraph("pictures/HanmerThrow_3.png");
@@ -153,41 +153,31 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 
-<<<<<<< HEAD
 	Fish::PicHandle = LoadGraph("pictures/fish.png");	//ï¿½ï¿½ï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
 	Crab::PicHandle = LoadGraph("pictures/crab.png");	//ï¿½Jï¿½jï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//ï¿½fï¿½oï¿½bï¿½Nï¿½pï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
 
 	Polarbear::PicHandle = LoadGraph("pictures/Ship.png"); //debugï¿½pï¿½ï¿½ï¿½æ‘œ
-=======
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//‹›‰¼‰æ‘œƒZƒbƒg
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ƒJƒj‰æ‘œ‰¼ƒZƒbƒg
-	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//ƒfƒoƒbƒN—p‰¼‰æ‘œƒZƒbƒg
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
 
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug—p‰¼‰æ‘œ
-	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug—p‰¼‰æ‘œ
-	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug—p‰¼‰æ‘œ
-	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug—p‰¼‰æ‘œ
-	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug—p‰¼‰æ‘œ
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
 
-<<<<<<< HEAD
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
 	Sea::PicHandle = LoadGraph("pictures/Sea.png");
-=======
-	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug—p‰¼‰æ‘œ
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
-	//ƒ}ƒbƒv‰æ‘œ‚ğƒZƒbƒg
+	//ï¿½}ï¿½bï¿½vï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
 	Map::PicHandle[GROUND] = LoadGraph("pictures/ground.png");
 	Map::PicHandle[TOGE] = LoadGraph("pictures/toge.png");
 	Map::PicHandle[BLOCK_STONE] = LoadGraph("pictures/block_stone.png");
 	Map::PicHandle[BLOCK_ICE] = LoadGraph("pictures/block_ice.png");
 	Map::PicHandle[BLOCK_WOOD] = LoadGraph("pictures/block_wood.png");
 
-	//”wŒi‰æ‘œ‚ğƒZƒbƒg
+	//ï¿½wï¿½iï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
 	stage1_1Back[0] = LoadGraph("pictures/background/stage1_1/background_1.jpg");
 	stage1_1Back[1] = LoadGraph("pictures/background/stage1_1/background_2.jpg");
 	stage1_1Back[2] = LoadGraph("pictures/background/stage1_1/background_3.jpg");
@@ -198,10 +188,10 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	stage1_3Back[1] = LoadGraph("pictures/background/stage1_3/background_2.jpg");
 	stage1_3Back[2] = LoadGraph("pictures/background/stage1_3/background_3.jpg");
 
-	//ƒS[ƒ‹
+	//ï¿½Sï¿½[ï¿½ï¿½
 	goalPicHandle = LoadGraph("pictures/goal_line.png");
 
-	//ƒTƒEƒ“ƒh‚ğƒZƒbƒg
+	//ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Zï¿½bï¿½g
 	Sound::sounds[SOUND_FLASHBLOCK] = LoadSoundMem("sounds/flashblock.mp3");
 	Sound::sounds[SOUND_PLAYERJUMP] = LoadSoundMem("sounds/jump.mp3");
 	Sound::sounds[SOUND_LASERSHOT] = LoadSoundMem("sounds/lasershot.mp3");
@@ -215,7 +205,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
 
-	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//‰¹—Ê’²®
+	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//ï¿½ï¿½ï¿½Ê’ï¿½ï¿½ï¿½
 
 	while (ProcessMessage() == 0 && ScreenFlip() == 0 && ClearDrawScreen() == 0)
 	{
@@ -223,7 +213,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 		GameControl();
 		//printfDx("%f::", frametime);
 	}
-	//ƒƒ‚ƒŠ‚ğ‚·‚×‚Ä‰ğ•ú
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚Ä‰ï¿½ï¿½
 	stage.AllReset();
 
 	DxLib_End();
@@ -232,21 +222,21 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 }
 
 void GameControl() {
-	//‘I‘ğ‚³‚ê‚½ƒXƒe[ƒW‚Ì”Ô†‚ğ•Û
+	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì”Ôï¿½ï¿½ï¿½Ûï¿½
 	static int selectedstage = 0;
 	//calcurate frametime
 	curtime = GetNowCount() & INT_MAX;
 	frametime = (float)(curtime - beftime) / 1000.0f;
 	beftime = curtime;
 
-	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//ƒL[“ü—Íˆ—
+	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//ï¿½Lï¿½[ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½
 
 	switch (window) {
 	case STARTWINDOW:
 		StartWindow();
 		break;
 	case GAMESELECTWINDOW:
-		//‰¹‚ğ’â~
+		//ï¿½ï¿½ï¿½ï¿½ï¿½~
 		StopSoundMem(Sound::sounds[selectedstage + SOUND_STAGESTART + 1]);
 		selectedstage = GameSelectWindow();
 		break;
@@ -275,7 +265,7 @@ void StartWindow() {
 	strLen = strlen(str);
 	strWidth = GetDrawStringWidth(str, strLen);
 
-	//‚¿‚å‚¤‚Ç’†‰›‚É•`‰æ‚³‚ê‚é‚æ‚¤‚É‚·‚é‚½‚ß‚Ìˆ—
+	//ï¿½ï¿½ï¿½å‚¤ï¿½Ç’ï¿½ï¿½ï¿½ï¿½É•`ï¿½æ‚³ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½é‚½ï¿½ß‚Ìï¿½ï¿½ï¿½
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
 
 	if (GetJoypadInputState(DX_INPUT_KEY_PAD1)) {
@@ -284,45 +274,45 @@ void StartWindow() {
 }
 
 int GameSelectWindow() {
-	static int selectnum = -1;												//‘I‘ğ‚µ‚½ƒ}ƒbƒv‚ğ‹L‰¯‚µ‚Ä‚¨‚­BÅ‰‚É•‰‚Ì”‚ğ“ü‚ê‚Ä‚¨‚¢‚ÄA˜A‘±‰Ÿ‚³‚ê‚ğ–h‚®
-	const int startx = 100, starty = 100, interval = 30;					//ˆê—ñ–Ú‚Ì x À•W,yÀ•W,€–Ú‚ÌŠÔŠu
+	static int selectnum = -1;												//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Bï¿½Åï¿½ï¿½É•ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ÄAï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½
+	const int startx = 100, starty = 100, interval = 30;					//ï¿½ï¿½ï¿½Ú‚ï¿½ x ï¿½ï¿½ï¿½W,yï¿½ï¿½ï¿½W,ï¿½ï¿½ï¿½Ú‚ÌŠÔŠu
 
-	//‰‰ñ˜A‘±‚Å“ü‚Á‚Ä‚µ‚Ü‚¤‚Ì‚Å
+	//ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Å“ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ï¿½
 	if (selectnum == -1) {
-		InKeyTrigger(now_key, PAD_INPUT_1);			//ƒL[“ü—Í‚ğ—¬‚·
+		InKeyTrigger(now_key, PAD_INPUT_1);			//ï¿½Lï¿½[ï¿½ï¿½ï¿½Í‚ğ—¬‚ï¿½
 		InKeyTrigger(now_key, PAD_INPUT_4);
 		selectnum = 0;
 	}
 
-	if (InKeyTrigger(now_key, PAD_INPUT_DOWN) && selectnum < STAGENUM - 1)					selectnum++;			//‰½‚à‚È‚¢‚Æ‚±‚ë‚ğ‘I‘ğ‚µ‚È‚¢‚æ‚¤‚É§ŒÀ
+	if (InKeyTrigger(now_key, PAD_INPUT_DOWN) && selectnum < STAGENUM - 1)					selectnum++;			//ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½Éï¿½ï¿½ï¿½
 	if (InKeyTrigger(now_key, PAD_INPUT_UP) && selectnum > 0)	selectnum--;
 
-	//‘I‘ğ‚ğ‹­§‚·‚é
+	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (selectnum >= 0)
-		DrawString(startx - 30, starty + selectnum * interval, "¡", 0xFFFFFF);	//‘I‘ğ‚µ‚Ä‚¢‚é‰¡‚É¡‚ğ•`‰æ
+		DrawString(startx - 30, starty + selectnum * interval, "ï¿½ï¿½", 0xFFFFFF);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‰¡ï¿½Éï¿½ï¿½ï¿½`ï¿½ï¿½
 
-	//¡‚ ‚éƒ}ƒbƒv–¼‚ğ•`‰æ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½
 	for (int i = 0; i < STAGENUM; i++)
 		DrawString(startx, starty + interval * i, stagename[i].c_str(), 0xFFFFFF);
 
-	DrawString(30, 310, "ƒvƒŒƒCƒ‚[ƒh:", 0xFFFFFF);
-	DrawString(50, 340, "AƒL[:‹­§ƒXƒNƒ[ƒ‹ + ¶‰EˆÚ“®(–îˆóƒL[) + ƒWƒƒƒ“ƒv(ƒXƒy[ƒXƒL[)", 0xFFFFFF);							//’ˆÓ‘‚«
-	DrawString(50, 370, "ZƒL[: ¶‰EˆÚ“®(–îˆóƒL[) + ƒWƒƒƒ“ƒv(ƒXƒy[ƒXƒL[)", 0xFFFFFF);
-	DrawString(30, 430, "RƒL[:ƒ‰ƒ“ƒLƒ“ƒO•\¦‚Ö", 0xFFFFFF);
+	DrawString(30, 310, "ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½h:", 0xFFFFFF);
+	DrawString(50, 340, "Aï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ + ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);							//ï¿½ï¿½ï¿½Óï¿½ï¿½ï¿½
+	DrawString(50, 370, "Zï¿½Lï¿½[: ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);
+	DrawString(30, 430, "Rï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½\ï¿½ï¿½ï¿½ï¿½", 0xFFFFFF);
 
-	//ƒXƒe[ƒW‚ÌBGM‚Íƒƒ‚ƒŠƒoƒJH‚¢‚·‚é‚Ì‚ÅÁ‚µ‚Ä‚¨‚­
-	static bool stagesounddeleteflag = false; //ƒXƒe[ƒW‚Ì‰¹Šy‚ªÁ‚³‚ê‚Ä‚¢‚é‚©
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ï¿½BGMï¿½Íƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Jï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Åï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+	static bool stagesounddeleteflag = false; //ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì‰ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
 	if (!stagesounddeleteflag) {
 		for (int i = SOUND_STAGESTART; i < SOUND_MAX; i++) {
 			DeleteSoundMem(Sound::sounds[i]);
 		}
 		stagesounddeleteflag = true;
 
-		//‰æ‘œ‚ğÁ‹‚·‚é
+		//ï¿½æ‘œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for(int i = 0;i < 3;i++)
 		stage.mapparts[i] = 0;
 	}
-	//‘I‘ğ‚³‚ê‚½‚ç‚»‚Ì”Ô†‚ğ•Ô‚· +(GameSelectWindow‚É“ü‚Á‚½uŠÔ‚ÉƒQ[ƒ€‚É“ü‚é‚Ì‚ğ–h‚®)
+	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ç‚»ï¿½Ì”Ôï¿½ï¿½ï¿½Ô‚ï¿½ +(GameSelectWindowï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½Ô‚ÉƒQï¿½[ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½Ì‚ï¿½hï¿½ï¿½)
 	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
 		switch (selectnum) {
 
@@ -350,7 +340,7 @@ int GameSelectWindow() {
 		else {
 			stage.mode = CROSSKEYANDJUMP;
 		}
-		//ˆ—‚ªd‚­‚È‚Á‚Ä‚µ‚Ü‚¤‚Ì‚ÅŒv‘ªƒŠƒZƒbƒg
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ÅŒvï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
 		//calcurate frametime
 		curtime = GetNowCount() & INT_MAX;
 		frametime = (float)(curtime - beftime) / 1000.0f;
@@ -358,10 +348,10 @@ int GameSelectWindow() {
 		window = GAMEPLAYWINDOW;
 		stagesounddeleteflag = false;
 
-		//‰¹‚ğÄ¶
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Äï¿½
 		PlaySoundMem(Sound::sounds[selectnum + SOUND_STAGESTART + 1], DX_PLAYTYPE_LOOP, TRUE);
 	}
-	//ƒ‰ƒ“ƒLƒ“ƒO‰æ–Ê‚ÖˆÚ“®
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ï¿½Ê‚ÖˆÚ“ï¿½
 	if (CheckHitKey(KEY_INPUT_R) == 1) {
 		window = RANKINGWINDOW;
 	}
@@ -369,73 +359,73 @@ int GameSelectWindow() {
 
 
 
-	//‘I‘ğ‚µ‚½”Ô†‚ğ•Ô‚·
+	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
 	return selectnum;
 }
 
 void GamePlayWindow() {
-	//ˆê’èˆÈã‚ÌƒtƒŒ[ƒ€time‚ªo‚Ä‚µ‚Ü‚Á‚½‚Ì—áŠOˆ—(200ms)
+	//ï¿½ï¿½ï¿½Èï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½timeï¿½ï¿½ï¿½oï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½Oï¿½ï¿½ï¿½ï¿½(200ms)
 	if (frametime >= 0.2) {
 		window = GAMEPAUSEWINDOW;
 	}
 	else {
-		//”wŒi•`‰æ
+		//ï¿½wï¿½iï¿½`ï¿½ï¿½
 		//DrawGraph(-stage.Camera->x, -stage.Camera->y, picture, TRUE);
 
 
 		stage.AllUpdate(frametime);
 		stage.AllDraw();
 
-		//•\¦ŠÖŒW•`‰æ
-		//c‚è‚g‚o‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
+		//ï¿½\ï¿½ï¿½ï¿½ÖŒWï¿½`ï¿½ï¿½
+		//ï¿½cï¿½ï¿½gï¿½oï¿½É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 		if (stage.usingP->HP >= 10)
 			DrawFormatStringToHandle(10, 10, 0x32CCB6, HPfont, "HP:%3d", stage.usingP->HP);
 		else
 			DrawFormatStringToHandle(10, 10, 0xFF0037, HPfont, "HP:%3d", stage.usingP->HP);
 
-		DrawFormatStringToHandle(90, 10, 0xFFF10F, HPfont, "COIN:%4d", Coin::hadcoins);		//ƒRƒCƒ“•`‰æ
+		DrawFormatStringToHandle(90, 10, 0xFFF10F, HPfont, "COIN:%4d", Coin::hadcoins);		//ï¿½Rï¿½Cï¿½ï¿½ï¿½`ï¿½ï¿½
 
-		//c‚èŠÔ‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
+		//ï¿½cï¿½èï¿½Ô‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 		if (stage.limit >= 100000)
 			DrawFormatStringToHandle(530, 10, 0xFFFFFF, HPfont, "TIME:%3d", stage.limit / 1000);
 		else
 			DrawFormatStringToHandle(530, 10, 0xFF0037, HPfont, "TIME:%3d", stage.limit / 1000);
 
-		//printfDx("coins:%d , ", Coin::hadcoins);	//ŠƒRƒCƒ“•\¦
-		//printfDx("HP:%d , ", stage.usingP->HP);	//HP•\¦
-		//printfDx("vy:%f , ", stage.usingP->vy);	//‚™‘¬“x•\¦
+		//printfDx("coins:%d , ", Coin::hadcoins);	//ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½Cï¿½ï¿½ï¿½\ï¿½ï¿½
+		//printfDx("HP:%d , ", stage.usingP->HP);	//HPï¿½\ï¿½ï¿½
+		//printfDx("vy:%f , ", stage.usingP->vy);	//ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½\ï¿½ï¿½
 
-		if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
+		if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
 			window = GAMEPAUSEWINDOW;
 
-		//ƒQ[ƒ€ƒI[ƒo[”»’è(c‚èŠÔ‚OAHP‚OAƒvƒŒƒCƒ„[‚ª—‚¿‚é)
+		//ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½ï¿½(ï¿½cï¿½èï¿½Ô‚Oï¿½AHPï¿½Oï¿½Aï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		if (stage.limit < 0 || stage.usingP->HP <= 0 || stage.usingP->y >= HEIGHT + DOT) {
 			window = GAMEOVERWINDOW;
 		}
-		//ƒS[ƒ‹”»’è
+		//ï¿½Sï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (stage.usingP->x > stage.usingM->getNumX() * DOT - 50) {
 			window = GAMECLEARWINDOW;
 		}		
-		//ƒS[ƒ‹ƒo[•`‰æ
+		//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[ï¿½`ï¿½ï¿½
 		DrawGraph(stage.usingM->getNumX()*DOT -stage.Camera->x -100,350,goalPicHandle,TRUE);
 	}
 }
 
 void GamePauseWindow() {
 
-	str = "ƒXƒe[ƒW‚É–ß‚é:ESC , ƒXƒe[ƒW‘I‘ğ‚É–ß‚é:Z";
+	str = "ï¿½Xï¿½eï¿½[ï¿½Wï¿½É–ß‚ï¿½:ESC , ï¿½Xï¿½eï¿½[ï¿½Wï¿½Iï¿½ï¿½ï¿½É–ß‚ï¿½:Z";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen, Pausefont);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
 
 	str = "Pause";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
 
-	if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
+	if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
 		window = GAMEPLAYWINDOW;
-	if (InKeyTrigger(now_key, PAD_INPUT_1)) {//zƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
+	if (InKeyTrigger(now_key, PAD_INPUT_1)) {//zï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
 		stage.AllReset();
 		window = GAMESELECTWINDOW;
 	}
@@ -445,12 +435,12 @@ void GameOverWindow() {
 
 	str = "GameOver";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
 
-	str = "‘I‘ğƒƒjƒ…[‚É–ß‚é:ZƒL[";
+	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 300, str, 0x00FFFF);
 
 	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
@@ -462,25 +452,25 @@ void GameOverWindow() {
 void GameClearWindow(int selectedstage) {
 	str = "GAMECLEAR";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF);
 
 
-	//–¼‘O‚ğ“ü—Í‚³‚¹‚é
+	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½
 	char addname[20 + 1] = {""};
-	str = "–¼‘O‚ğ“ü—Í‚µ‚ÄƒXƒRƒA‚ğƒ‰ƒ“ƒLƒ“ƒO‚É“o˜^‚µ‚Ü‚·(20•¶šˆÈ“à):Enter‚ÅŒˆ’è";
+	str = "ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ÄƒXï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½É“oï¿½^ï¿½ï¿½ï¿½Ü‚ï¿½(20ï¿½ï¿½ï¿½ï¿½ï¿½È“ï¿½):Enterï¿½ÅŒï¿½ï¿½ï¿½";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 300, str, 0xFFFFFF);
 
-	str = "EscƒL[:“o˜^‚¹‚¸‚É–ß‚é";
+	str = "Escï¿½Lï¿½[:ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
 	//if (KeyInputSingleCharString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
 	if (KeyInputString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
 		rankdata addrank;
-		//V‚µ‚­’Ç‰Á‚·‚éƒXƒRƒA‚ğ”z—ñ‚É’Ç‰Á
+		//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
 		addrank.name = addname;
 		addrank.limit = stage.limit / 1000;
 		addrank.killedene = Mob::killedenemy;
@@ -489,31 +479,31 @@ void GameClearWindow(int selectedstage) {
 
 		RankingWrite(stagename[selectedstage] + ".txt", addrank);
 	}
-	//“ü—ÍŒãƒZƒŒƒNƒgƒEƒBƒ“ƒhƒE‚É–ß‚é
+	//ï¿½ï¿½ï¿½ÍŒï¿½Zï¿½ï¿½ï¿½Nï¿½gï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½É–ß‚ï¿½
 	stage.AllReset();
 	window = GAMESELECTWINDOW;
 
 }
 
 void RankingWindow() {
-	static int selectedstage = 0;	//Œ©‚½‚¢ƒXƒe[ƒW”Ô†‚ğ•Û
+	static int selectedstage = 0;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ôï¿½ï¿½ï¿½Ûï¿½
 	{
 		//string str;
-		//ifstream text("test.txt");		//ƒeƒLƒXƒg“üè
-		////ƒf[ƒ^‚ğˆê“I•Û
+		//ifstream text("test.txt");		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
+		////ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
 		//string name[RECODE_NUM_MAX];
 		//int scores[RECODE_NUM_MAX][5];
-		////‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
+		////ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
 		//int count = 0;
 		//while (getline(text, str) && count < RECODE_NUM_MAX)
 		//{
-		//	//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
+		//	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
 		//	string tmp;
 		//	istringstream stream(str);
-		//	//–¼‘O‚ğæ‚èo‚·
+		//	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
 		//	getline(stream, tmp, ',');
 		//	name[count] = tmp;
-		//	//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
+		//	//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
 		//	for (int i = 0; i < 4; i++) {
 		//		getline(stream, tmp, ',');
 		//		scores[count][i] = stoi(tmp);
@@ -522,98 +512,98 @@ void RankingWindow() {
 		//}
 
 
-		int count = 0;		//”z—ñ‚Ì—v‘f”‚ğ“üè
-		int scores[RECODE_NUM_MAX];			//‘‡“¾“_
-		rankdata *score = RankingRead(stagename[selectedstage] + ".txt", &count);	//ƒf[ƒ^•Û—p
+		int count = 0;		//ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int scores[RECODE_NUM_MAX];			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_
+		rankdata *score = RankingRead(stagename[selectedstage] + ".txt", &count);	//ï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p
 
-		//‘‡ŒvZ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
 		for (int i = 0; i < count; i++) {
 			scores[i] = SCORE_LIMIT * score[i].limit + SCORE_ENEMY * score[i].killedene + SCORE_HP * score[i].hp + SCORE_COIN * score[i].coin;
 		}
 
-		//Å‰‚É•\¦‚·‚éˆÊ’u
+		//ï¿½Åï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
 		int firstx = 20, firsty = 20, interval = 20;
-		int rank;	//‡ˆÊƒJƒEƒ“ƒg
-		//•\¦
+		int rank;	//ï¿½ï¿½ï¿½ÊƒJï¿½Eï¿½ï¿½ï¿½g
+		//ï¿½\ï¿½ï¿½
 		for (int i = 0; i < count; i++) {
-			//‡ˆÊ•t‚¯
+			//ï¿½ï¿½ï¿½Ê•tï¿½ï¿½
 			rank = 0;
 			for (int j = 0; j < count; j++) {
 				if (scores[i] < scores[j])
 					rank++;
 			}
-			//‡ˆÊ‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
+			//ï¿½ï¿½ï¿½Ê‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 			switch (rank + 1) {
 			case 1:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFF10F, rankfont_1, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFF10F, rankfont_1, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFF10F, rankfont_1, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFF10F, rankfont_1, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFF10F, rankfont_1, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFF10F, rankfont_1, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
 				break;
 			case 2:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xafafb0, rankfont_2, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xafafb0, rankfont_2, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xafafb0, rankfont_2, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xafafb0, rankfont_2, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xafafb0, rankfont_2, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xafafb0, rankfont_2, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
 				break;
 			case 3:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xb36b24, rankfont_3, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xb36b24, rankfont_3, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xb36b24, rankfont_3, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xb36b24, rankfont_3, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xb36b24, rankfont_3, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xb36b24, rankfont_3, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
 				break;
 			default:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFFFFF, HPfont, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFFFFF, HPfont, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFFFFF, HPfont, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFFFFF, HPfont, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFFFFF, HPfont, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFFFFF, HPfont, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
 				break;
 			}
 		}
 	}
 
-	str = "‘I‘ğƒƒjƒ…[‚É–ß‚é:ZƒL[";
+	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
+	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
 
-	//‰E¶ˆ—
+	//ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (InKeyTrigger(now_key, PAD_INPUT_RIGHT) && selectedstage < STAGENUM - 1) selectedstage++;
 	if (InKeyTrigger(now_key, PAD_INPUT_LEFT) && selectedstage > 0) selectedstage--;
 
-	//before,now,nextƒ‰ƒ“ƒLƒ“ƒO‚ÉˆÚ“®‚Ì•`‰æ
-	strWidth = GetDrawFormatStringWidth("now:%s", stagename[selectedstage].c_str());				//’†‰›•`‰æ—p
+	//before,now,nextï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ÉˆÚ“ï¿½ï¿½Ì•`ï¿½ï¿½
+	strWidth = GetDrawFormatStringWidth("now:%s", stagename[selectedstage].c_str());				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
 	DrawFormatString((WIDTH - strWidth) / 2, 430, 0xFFFFFF, "now:%s", stagename[selectedstage].c_str());
 
 	if (selectedstage > 0)
-		DrawFormatString(20, 430, 0xffffff, "©before:%s", stagename[selectedstage - 1].c_str());
+		DrawFormatString(20, 430, 0xffffff, "ï¿½ï¿½before:%s", stagename[selectedstage - 1].c_str());
 	if (selectedstage < STAGENUM - 1)
-		DrawFormatString(450, 430, 0xffffff, "¨next:%s", stagename[selectedstage + 1].c_str());
+		DrawFormatString(450, 430, 0xffffff, "ï¿½ï¿½next:%s", stagename[selectedstage + 1].c_str());
 
-	//ƒL[“ü—Í
+	//ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½
 	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
 		window = GAMESELECTWINDOW;
 	}
 }
 
 void RankingWrite(string name, rankdata rank) {
-	//“üo—Í
+	//ï¿½ï¿½ï¿½oï¿½ï¿½
 	string str;
-	ifstream text(name);		//ƒeƒLƒXƒg“üè
+	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
 
-	//ƒf[ƒ^‚ğˆê“I•Û
+	//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
 	string names[RECODE_NUM_MAX + 1] = {};
-	int scores[RECODE_NUM_MAX + 1][5] = {};//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
+	int scores[RECODE_NUM_MAX + 1][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
 
-	//‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
+	//ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
 	int count = 0;
 
-	//ˆês•ª“Ç‚İæ‚è
+	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
 	while (getline(text, str) && count < RECODE_NUM_MAX)
 	{
-		//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
+		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
 		string tmp;
 		istringstream stream(str);
-		//–¼‘O‚ğæ‚èo‚·
+		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
 		getline(stream, tmp, ',');
 		names[count] = tmp;
-		//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
+		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
 		for (int i = 0; i < 4; i++) {
 			getline(stream, tmp, ',');
 			scores[count][i] = stoi(tmp);
@@ -621,31 +611,31 @@ void RankingWrite(string name, rankdata rank) {
 		count++;
 	}
 
-	//V‚µ‚­’Ç‰Á‚·‚éƒXƒRƒA‚ğ”z—ñ‚É’Ç‰Á
+	//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
 	names[count] = rank.name;
 	scores[count][0] = rank.limit;
 	scores[count][1] = rank.killedene;
 	scores[count][2] = rank.hp;
 	scores[count][3] = rank.coin;
 
-	//‘‡ŒvZ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
 	for (int i = 0; i <= count; i++) {
 		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
 	}
-	//ƒ\[ƒg i‚ª‘Oj‚ªŒã‚ë
+	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
 	for (int i = 0; i < count; i++) {
 		for (int j = i + 1; j <= count; j++) {
 			if (scores[i][4] < scores[j][4]) {
 				int d_score[5];
-				//”z—ñ‚Ì’†g‚ğŠÛXƒRƒs[
+				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
 				for (int k = 0; k < 5; k++) {
 					d_score[k] = scores[i][k];
 				}
-				//–¼‘O“ü‚ê‘Ö‚¦
+				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
 				string d_name = names[i];
 				names[i] = names[j];
 				names[j] = d_name;
-				//”z—ñ“ü‚ê‘Ö‚¦
+				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
 				for (int k = 0; k < 5; k++) {
 					scores[i][k] = scores[j][k];
 				}
@@ -656,10 +646,10 @@ void RankingWrite(string name, rankdata rank) {
 		}
 	}
 	text.close();
-	//ƒeƒLƒXƒg‚Éo—Í(ƒEƒCƒ‹ƒXƒZƒLƒ…ƒŠƒeƒB[‚É‚æ‚Á‚Ä‘‚«‚ß‚È‚­‚È‚é‚Ì‚Å’ˆÓ)
+	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Éoï¿½ï¿½(ï¿½Eï¿½Cï¿½ï¿½ï¿½Xï¿½Zï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Bï¿½[ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚È‚ï¿½ï¿½È‚ï¿½Ì‚Å’ï¿½ï¿½ï¿½)
 	ofstream output(name, ios_base::trunc);
 
-	//‘‚«‚İ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	for (int i = 0; i <= count; i++)
 		output << names[i] << ',' << scores[i][0] << ',' << scores[i][1] << ',' << scores[i][2] << ',' << scores[i][3] << ',' << std::endl;
 
@@ -667,27 +657,27 @@ void RankingWrite(string name, rankdata rank) {
 }
 
 rankdata* RankingRead(string name, int *index) {
-	//“üo—Í
+	//ï¿½ï¿½ï¿½oï¿½ï¿½
 	string str;
-	ifstream text(name);		//ƒeƒLƒXƒg“üè
+	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
 
-								//ƒf[ƒ^‚ğˆê“I•Û
+								//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
 	string names[RECODE_NUM_MAX] = {};
-	int scores[RECODE_NUM_MAX][5] = {};//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
+	int scores[RECODE_NUM_MAX][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
 
-										   //‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
+										   //ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
 	int count = 0;
 
-	//ˆês•ª“Ç‚İæ‚è
+	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
 	while (getline(text, str) && count < RECODE_NUM_MAX)
 	{
-		//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
+		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
 		string tmp;
 		istringstream stream(str);
-		//–¼‘O‚ğæ‚èo‚·
+		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
 		getline(stream, tmp, ',');
 		names[count] = tmp;
-		//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
+		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
 		for (int i = 0; i < 4; i++) {
 			getline(stream, tmp, ',');
 			scores[count][i] = stoi(tmp);
@@ -695,24 +685,24 @@ rankdata* RankingRead(string name, int *index) {
 		count++;
 	}
 
-	//‘‡ŒvZ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
 	for (int i = 0; i < count; i++) {
 		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
 	}
-	//ƒ\[ƒg i‚ª‘Oj‚ªŒã‚ë
+	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
 	for (int i = 0; i < count - 1; i++) {
 		for (int j = i + 1; j < count; j++) {
 			if (scores[i][4] < scores[j][4]) {
 				int d_score[5];
-				//”z—ñ‚Ì’†g‚ğŠÛXƒRƒs[
+				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
 				for (int k = 0; k < 5; k++) {
 					d_score[k] = scores[i][k];
 				}
-				//–¼‘O“ü‚ê‘Ö‚¦
+				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
 				string d_name = names[i];
 				names[i] = names[j];
 				names[j] = d_name;
-				//”z—ñ“ü‚ê‘Ö‚¦
+				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
 				for (int k = 0; k < 5; k++) {
 					scores[i][k] = scores[j][k];
 				}
@@ -724,7 +714,7 @@ rankdata* RankingRead(string name, int *index) {
 	}
 	text.close();
 
-	//ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^”z—ñ‚É“ü‚ê‚é
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½zï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½
 	static rankdata rank[RECODE_NUM_MAX];
 
 	for (int i = 0; i < count; i++) {
@@ -735,7 +725,7 @@ rankdata* RankingRead(string name, int *index) {
 		rank[i].coin = scores[i][3];
 	}
 
-	//—v‘f”‚ğ“n‚µ‚Ä‚ ‚°‚é
+	//ï¿½vï¿½fï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
 	*index = count;
 	return rank;
 }
@@ -747,34 +737,34 @@ void CreateStage1_1() {
 
 	Map firstMap;
 
-	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
-	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
+	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//’n–Ê¶¬
+	//ï¿½nï¿½Êï¿½ï¿½ï¿½
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
-	//mapì¬
-	//’·•ûŒ`@1*5
+	//mapï¿½ì¬
+	//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½@1*5
 	firstMap.m_map[6][5] = 1;
 	firstMap.m_map[6][6] = 1;
 	firstMap.m_map[6][7] = 1;
 	firstMap.m_map[6][8] = 1;
 	firstMap.m_map[6][9] = 1;
 
-	//s‚Ìš
+	//sï¿½Ìï¿½
 	firstMap.m_map[4][10] = 1;
 	firstMap.m_map[3][10] = 1;
 	firstMap.m_map[3][11] = 1;
 	firstMap.m_map[2][11] = 1;
-	//2‚Ìš
+	//2ï¿½Ìï¿½
 	firstMap.m_map[8][10] = 1;
 	firstMap.m_map[9][10] = 1;
 	firstMap.m_map[9][11] = 1;
 	firstMap.m_map[10][11] = 1;
 
-	//³•ûŒ` 2*2
+	//ï¿½ï¿½ï¿½ï¿½ï¿½` 2*2
 	firstMap.m_map[17][11] = BLOCK_WOOD;
 	firstMap.m_map[17][10] = BLOCK_ICE;
 	firstMap.m_map[16][11] = BLOCK_STONE;
@@ -785,7 +775,7 @@ void CreateStage1_1() {
 		firstMap.m_map[19 + i * 5][13] = 1;
 	}
 
-	//ƒXƒe[ƒW‚ÉƒZƒbƒg
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
 	*stage.usingM = firstMap;
 
 	new WalkEnemy(300, 300);
@@ -802,12 +792,12 @@ void CreateStage1_1() {
 	new Coin(100, 300);
 	new FallWall(400, 200);
 	new FallWall(600, 20);
-	//ƒoƒOÀ•Wi610,10j,ƒTƒCƒYi30,40j<-’¼‚µ‚½
+	//ï¿½oï¿½Oï¿½ï¿½ï¿½Wï¿½i610,10ï¿½j,ï¿½Tï¿½Cï¿½Yï¿½i30,40ï¿½j<-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	new Turtle(610, 10);
 	for(int i = 0; i< 1;i++)
 		new WalkEnemy(730 + i*2, 10);
 
-	//40000ŒÂ‚Ìƒtƒ@ƒCƒ„[ƒ{[ƒ‹‚ğì‚é‚Æˆ—‚ªŠÔ‚É‡‚í‚È‚¢B10000‚È‚ç‚¢‚¯‚é‚Í‚¸
+	//40000ï¿½Â‚Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½[ï¿½{ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚Éï¿½ï¿½ï¿½È‚ï¿½ï¿½B10000ï¿½È‚ç‚¢ï¿½ï¿½ï¿½ï¿½Í‚ï¿½
 	new FireBar(1200, 200, 10, 4);
 
 
@@ -829,15 +819,15 @@ void CreateStage2_1() {
 	stage.usingP->x = 320;
 	stage.usingP->y = 20;
 
-	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
-	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
+	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
 	firstMap.setNum(firstMap.getNumX(), firstMap.getNumY());
 
-	//’n–Ê¶¬
+	//ï¿½nï¿½Êï¿½ï¿½ï¿½
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
 
-	//c–_1*2
+	//ï¿½cï¿½_1*2
 	//firstMap.m_map[6][12] = 1;
 	//firstMap.m_map[6][13] = 1;
 
@@ -846,7 +836,7 @@ void CreateStage2_1() {
 
 	firstMap.m_map[2][firstMap.getNumY() - 1] = 0;
 
-	//ƒXƒe[ƒW‚ÉƒZƒbƒg
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
 	*stage.usingM = firstMap;
 
 	new Lift(300, 400, true);
@@ -872,7 +862,7 @@ void CreateStage2_1() {
 }
 
 void CreateStage1_1R() {
-	//”wŒi‚ğƒZƒbƒg
+	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_1Back[i];
 	}
@@ -881,22 +871,18 @@ void CreateStage1_1R() {
 
 	Map firstMap;
 
-	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
-	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
+	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//’n–Ê¶¬
+	//ï¿½nï¿½Êï¿½ï¿½ï¿½
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
-<<<<<<< HEAD
 	//ï¿½}ï¿½bï¿½vï¿½ì»
 	//for (int i = 0; i < firstMap.getNumX(); i++)
 	//	firstMap.m_map[i][0] = 1;		//debug ï¿½Vï¿½ï¿½ì¬
 
-=======
-	//ƒ}ƒbƒvì»
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
 	firstMap.m_map[13][11] = BLOCK_WOOD;
 	firstMap.m_map[16][11] = BLOCK_WOOD;
 	firstMap.m_map[18][11] = BLOCK_WOOD;
@@ -961,11 +947,11 @@ void CreateStage1_1R() {
 
 	firstMap.m_map[185][13] = BLOCK_WOOD;
 
-	//ƒ}ƒbƒv‰ÁH
+	//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½H
 	firstMap.m_map[168][14] = 0;
 	firstMap.m_map[107][14] = 0;
 
-	//ƒXƒe[ƒW‚ÉƒZƒbƒg
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
 	*stage.usingM = firstMap;
 
 
@@ -1073,7 +1059,7 @@ void CreateStage1_1R() {
 
 }
 void CreateStage1_2R() {
-	//”wŒi‚ğƒZƒbƒg
+	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_2Back[i];
 	}
@@ -1085,15 +1071,15 @@ void CreateStage1_2R() {
 
 	Map firstMap;
 
-	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
-	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
+	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//’n–Ê¶¬
+	//ï¿½nï¿½Êï¿½ï¿½ï¿½
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
 
-	//ƒXƒe[ƒW
+	//ï¿½Xï¿½eï¿½[ï¿½W
 
 	firstMap.m_map[0][0] = BLOCK_STONE;
 	firstMap.m_map[0][1] = BLOCK_STONE;
@@ -1135,7 +1121,7 @@ void CreateStage1_2R() {
 	//firstMap.m_map[1][9] = BLOCK_STONE;
 	//firstMap.m_map[2][8] = BLOCK_STONE;
 
-	//firstMap.m_map[13][4] = BLOCK_STONE; //<- ‚Æ‚°ƒuƒƒbƒN‚Ì‘ã‚í‚è
+	//firstMap.m_map[13][4] = BLOCK_STONE; //<- ï¿½Æ‚ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½Ì‘ï¿½ï¿½ï¿½
 	//firstMap.m_map[14][3] = BLOCK_STONE;
 	//firstMap.m_map[14][5] = BLOCK_STONE;
 	//firstMap.m_map[15][4] = BLOCK_STONE;
@@ -1338,7 +1324,7 @@ void CreateStage1_2R() {
 	firstMap.m_map[155][firstMap.getNumY() - 1] = 0;
 	firstMap.m_map[156][firstMap.getNumY() - 1] = 0;
 
-	//ƒXƒe[ƒW‚ÉƒZƒbƒg
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
 	*stage.usingM = firstMap;
 
 	//MOB
@@ -1562,7 +1548,7 @@ void CreateStage1_2R() {
 }
 
 void CreateStage1_3R() {
-	//”wŒi‚ğƒZƒbƒg
+	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_3Back[i];
 	}
@@ -1575,11 +1561,11 @@ void CreateStage1_3R() {
 
 	Map firstMap;
 
-	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
-	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
+	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
 	firstMap.setNum(300, firstMap.getNumY());
 
-	//’n–Ê¶¬
+	//ï¿½nï¿½Êï¿½ï¿½ï¿½
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
@@ -1665,7 +1651,7 @@ void CreateStage1_3R() {
 	}
 	firstMap.m_map[296][7] = 1;
 
-	//ƒXƒe[ƒW‚ÉƒZƒbƒg
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
 	*stage.usingM = firstMap;
 
 	
@@ -1851,7 +1837,7 @@ void CreateStage1_3R() {
 
 
 void CreateStage_MiniGame1() {
-	//’l‚ğ•‰‚Æ‚µ‚Äg‚¤(5•bŠÔ‚Ìà–¾)
+	//ï¿½lï¿½ğ•‰‚Æ‚ï¿½ï¿½Ägï¿½ï¿½(5ï¿½bï¿½Ô‚Ìï¿½ï¿½ï¿½)
 	stage.limit = 5000;
 
 	//new Turtle(300, 10);

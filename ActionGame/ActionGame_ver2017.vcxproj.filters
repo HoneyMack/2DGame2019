@@ -115,15 +115,12 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TurtleWithWing.h">
-<<<<<<< HEAD
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Polarbear.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Sea.h">
-=======
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -225,15 +222,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="TurtleWithWing.cpp">
-<<<<<<< HEAD
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Polarbear.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Sea.cpp">
-=======
->>>>>>> parent of 6027140... Merge branch 'MakePenguin' of https://github.com/HoneyMack/2DGame2019 into MakePenguin
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
