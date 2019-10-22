@@ -94,9 +94,9 @@ void Sea::Draw()
 #ifdef DEBUG
 		rect.Draw(*Camera);
 #endif
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, SEA_TRANSPARENCY);
+		//SetDrawBlendMode(DX_BLENDMODE_ALPHA, SEA_TRANSPARENCY);
 		DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		//SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	}
 }
 

@@ -878,8 +878,8 @@ void CreateStage1_1R() {
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
 	//マップ作製
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][0] = 1;		//debug 天井作成
+	//for (int i = 0; i < firstMap.getNumX(); i++)
+	//	firstMap.m_map[i][0] = 1;		//debug 天井作成
 
 	firstMap.m_map[13][11] = BLOCK_WOOD;
 	firstMap.m_map[16][11] = BLOCK_WOOD;
@@ -967,12 +967,12 @@ void CreateStage1_1R() {
 
 	for (int i = 0; i < 30; i++) {			//debug
 		for (int j = 1; j < 14; j++) {
-			new Sea(DOT *  i, DOT * j,8);
+			new Sea(DOT *  i, DOT * j,4);
 		}
 	}
 	for (int i = 30; i < 100; i++) {			//debug
 		for (int j = 1; j < 14; j++) {
-			new Sea(DOT * i, DOT * j, 0);
+			new Sea(DOT * i, DOT * j, 4);
 		}
 	}
 
