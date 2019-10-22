@@ -2,6 +2,7 @@
 
 #include "Player.h"
 #include "WalkEnemy.h"
+#include "Penguin.h"
 #include "FlashBlock.h"
 #include "ShootLaser.h"
 #include "UpDownObject.h"
@@ -30,17 +31,17 @@
 
 
 
-//”wŒi‰æ‘œ“ü‚ê‚È‚¢‚ÆƒoƒO
+//ï¿½wï¿½iï¿½æ‘œï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æƒoï¿½O
 
 class Stage
 {
 public:
-	int mode = CROSSKEYANDJUMP;		//ƒvƒŒƒCƒ‚[ƒh
-	static	int limit;						//Žc‚èŽžŠÔ
-	Rect* Camera;					//•`‰æ”ÍˆÍŽw’è—p‹éŒ`‚Ì—pˆÓ
-	Player* usingP;					//ƒvƒŒƒCƒ„[
-	Map* usingM;					//ƒ}ƒbƒv
-	int mapparts[ACCOUNTFORMAPPARTS];	//”wŒi‰æ‘œ‚Ì’f•Ð
+	int mode = CROSSKEYANDJUMP;		//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½h
+	static	int limit;						//ï¿½cï¿½èŽžï¿½ï¿½
+	Rect* Camera;					//ï¿½`ï¿½ï¿½ÍˆÍŽwï¿½ï¿½pï¿½ï¿½`ï¿½Ì—pï¿½ï¿½
+	Player* usingP;					//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[
+	Map* usingM;					//ï¿½}ï¿½bï¿½v
+	int mapparts[ACCOUNTFORMAPPARTS];	//ï¿½wï¿½iï¿½æ‘œï¿½Ì’fï¿½ï¿½
 
 	Stage();
 	~Stage();
@@ -50,7 +51,7 @@ public:
 
 	void AllReset();
 
-	void Update(double frametime);//mobƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ð“n‚·‚Æ“n‚µ‚½Mob‚Ìˆ—‚ð‚µ‚Ä‚­‚ê‚é
-	void Draw();					//mobƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ð“n‚·‚Æ“n‚µ‚½Mob‚Ì•`‰æ‚ð‚µ‚Ä‚­‚ê‚é
-	void AddDraw();							//mobƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ð“n‚·‚Æ“n‚µ‚½Mob‚Ì•`‰æ(’Ç‰Á)‚ð‚µ‚Ä‚­‚ê‚é
+	void Update(double frametime);//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
+	void Draw();					//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ì•`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
+	void AddDraw();							//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ì•`ï¿½ï¿½(ï¿½Ç‰ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
 };

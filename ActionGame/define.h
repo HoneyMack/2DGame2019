@@ -1,7 +1,7 @@
 //マップは配列として持つ
 #pragma once
 #include "DxLib.h"
-#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
+//#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
 
 
 
@@ -235,6 +235,15 @@
 #define SHIP_SIZEX 96
 #define SHIP_SIZEY 64
 #define SHIP_MOVESPEED 100
+
+
+//Penguin
+#define PENGUIN_MOVEWIDTH 160
+#define PENGUIN_HITDAMAGE 4
+#define PENGUIN_SLIDINGSPEED 300	//滑ってる時のスピード
+#define PENGUIN_WALKINGSPEED 100	//歩いてる時のスピード
+#define PENGUIN_SEARCHINGAREA 200
+
 
 
 //SeaWeed(海藻)
