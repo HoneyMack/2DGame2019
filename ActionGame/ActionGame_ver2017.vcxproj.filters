@@ -115,9 +115,6 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TurtleWithWing.h">
-    <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Penguin.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Polarbear.h">
@@ -225,9 +222,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="TurtleWithWing.cpp">
-     <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Penguin.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Polarbear.cpp">

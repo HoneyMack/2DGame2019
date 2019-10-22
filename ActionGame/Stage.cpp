@@ -4,16 +4,16 @@ int Stage::limit = 0;
 
 Stage::Stage()
 {
-	Camera = new Rect(WIDTH, HEIGHT, nullptr, nullptr);	//ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½
-	usingP = new Player();				//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ì¬
-	usingM = new Map();					//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ì¬						
+	Camera = new Rect(WIDTH, HEIGHT, nullptr, nullptr);	//ƒJƒƒ‰‚Ì‘å‚«‚³‚ðŽw’è
+	usingP = new Player();				//ƒvƒŒƒCƒ„[‚ðì¬
+	usingM = new Map();					//ƒ}ƒbƒv‚ðì¬						
 
 
-	usingP->map = usingM;				//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Éƒ}ï¿½bï¿½vï¿½ï¿½ï¿½Zï¿½bï¿½g
-	usingP->Camera = Camera;			//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÉƒJï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g	
-	Object::Camera = Camera;			//Mobï¿½ÉƒJï¿½ï¿½ï¿½ï¿½ï¿½Æƒ}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½
+	usingP->map = usingM;				//ƒvƒŒƒCƒ„[‚Éƒ}ƒbƒv‚ðƒZƒbƒg
+	usingP->Camera = Camera;			//ƒvƒŒƒCƒ„[‚ÉƒJƒƒ‰‚ðƒZƒbƒg	
+	Object::Camera = Camera;			//Mob‚ÉƒJƒƒ‰‚Æƒ}ƒbƒvî•ñ‚ð—^‚¦‚é
 	Object::map = usingM;
-	Object::usingP = usingP;			//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½set
+	Object::usingP = usingP;			//ƒvƒŒƒCƒ„[‚ðset
 }
 
 Stage::~Stage()
@@ -21,7 +21,7 @@ Stage::~Stage()
 	Mob::AllDelete();
 	Fence::AllDelete();
 
-	//ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½
+	//“®“I¶¬‚µ‚½ƒƒ‚ƒŠŠJ•ú
 	delete Camera;
 	delete usingP;
 	delete usingM;
@@ -29,29 +29,29 @@ Stage::~Stage()
 
 
 void Stage::AllUpdate(double ftime) {
-	//ï¿½wï¿½iï¿½æ‘œï¿½Kï¿½Ø‚É•`ï¿½æˆï¿½ï¿½(ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ÅŒï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ë‚¾ï¿½ï¿½)
+	//”wŒi‰æ‘œ“KØ‚É•`‰æˆ—(ƒJƒƒ‰‚ÅŒ©‚¦‚Ä‚¢‚é‚Æ‚±‚ë‚¾‚¯)
 	int i = Camera->x / MAPPARTS_X  -1;
 	while (i *MAPPARTS_X < Camera->x + WIDTH) {
-		//ï¿½æ‘œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ˜Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½.ï¿½æ‘œï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½Í”ï¿½ï¿½ï¿½ï¿½ï¿½
+		//‰æ‘œ‚ª‚¿‚á‚ñ‚Æ˜A‘±‚·‚é‚æ‚¤‚É‚·‚é.‰æ‘œ‚ª‚È‚¢‚Æ‚±‚ë‚Í”²‚¯‚é
 		DrawGraph(i*MAPPARTS_X-Camera->x, 0, mapparts[i % ACCOUNTFORMAPPARTS], TRUE);
 		i++;
 	}
 
-	//ï¿½cï¿½èŽžï¿½ÔŒï¿½ï¿½ï¿½
+	//Žc‚èŽžŠÔŒ¸­
 	limit -= ftime * 1000;
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ð”»’ï¿½Ì‚ï¿½ï¿½ï¿½true = ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+	//‰½‚©‚µ‚ç‚Ìƒtƒ‰ƒbƒVƒ…ƒuƒƒbƒN‚ª‰Ÿ‚³‚ê‚½‚©‚ð”»’è‚Ì‚½‚ßtrue = Œõ‚Á‚Ä‚¢‚é
 	FlashBlock::flashingflag = false;
 
 	Update(ftime);
 	switch (mode) {
 	case CROSSKEYANDJUMP:
 		usingP->Motion(ftime);
-		//ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Äƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ð’†Sï¿½ÉˆÚ“ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½
+		//‰¼‚Æ‚µ‚ÄƒvƒŒƒCƒ„[‚ð’†S‚ÉˆÚ“®B‚½‚¾‚µA”z—ñ‚ðˆì‚ê‚È‚¢‚æ‚¤‚É‚·‚é
 		if (usingP ->x - WIDTH / 2 > 0 && usingP->x + WIDTH / 2 < usingM->getNumX() *DOT)
 			Camera->x = usingP->x - WIDTH / 2;
 		break;
 	case FORCEHORIZONTALSCROLL:
-		//ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//‹­§ƒXƒNƒ[ƒ‹‚³‚¹‚é
 		Camera->x += ftime *SCROLLSPEED;
 		usingP->Motion(ftime);
 		break;
@@ -67,12 +67,12 @@ void Stage::AllDraw() {
 	AddDraw();
 }
 void Stage::Update(double ftime) {
-	//ï¿½Gï¿½Ìï¿½ï¿½ï¿½ï¿½ÌŠï¿½{ï¿½`
+	//“G‚Ìˆ—‚ÌŠî–{Œ`
 	Mob* mob = Mob::first;
-	if (mob != nullptr) {		//ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
+	if (mob != nullptr) {		//ƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚é‚©
 		if (mob->deathflag == false)
 		mob->Motion(ftime);
-		while (mob->HasNext()) {	//ï¿½ï¿½ï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (mob->HasNext()) {	//ŽŸ‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚½‚ç
 			mob = mob->next;
 			if (mob->deathflag == false)
 			mob->Motion(ftime);
@@ -80,12 +80,12 @@ void Stage::Update(double ftime) {
 	}
 }
 void Stage::Draw() {
-	//ï¿½Gï¿½Ì•`ï¿½ï¿½ÌŠï¿½{ï¿½`
+	//“G‚Ì•`‰æ‚ÌŠî–{Œ`
 	Mob* mob = Mob::first;
-	if (mob != nullptr) {		//ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
+	if (mob != nullptr) {		//ƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚é‚©
 		if (mob->deathflag == false)
 		mob->Draw();
-		while (mob->HasNext()) {	//ï¿½ï¿½ï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (mob->HasNext()) {	//ŽŸ‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚½‚ç
 			mob = mob->next;
 			if(mob ->deathflag ==false)
 			mob->Draw();
@@ -94,12 +94,12 @@ void Stage::Draw() {
 }
 
 void Stage::AddDraw() {
-	//ï¿½Gï¿½Ì•`ï¿½ï¿½ÌŠï¿½{ï¿½`
+	//“G‚Ì•`‰æ‚ÌŠî–{Œ`
 	Mob* mob = Mob::first;
-	if (mob != nullptr) {		//ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
+	if (mob != nullptr) {		//ƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚é‚©
 		if (mob->deathflag == false)
 			mob->AddDraw();
-		while (mob->HasNext()) {	//ï¿½ï¿½ï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (mob->HasNext()) {	//ŽŸ‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð•ÛŽ‚µ‚Ä‚¢‚½‚ç
 			mob = mob->next;
 			if (mob->deathflag == false)
 				mob->AddDraw();
@@ -114,14 +114,14 @@ void Stage::AllReset() {
 	usingM->resetMap();
 	usingP->Reset();
 
-	//ï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½,ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½0ï¿½ï¿½
+	//Žc‚èƒ^ƒCƒ€,“|‚µ‚½“G‚ð0‚É
 	limit = 0;
 	Mob::killedenemy = 0;
 
-	//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ç”²ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½Rï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
+	//ƒ}ƒbƒv‚©‚ç”²‚¯‚é‚Æ‚«‚ÉŠŽƒRƒCƒ“‚ðƒ[ƒ‚É
 	Coin::hadcoins = 0;
 
-	//ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//ƒCƒ“ƒXƒ^ƒ“ƒX‚Ì½‚ðÁ‹Ž
 	Mob::AllDelete();
 	Fence::AllDelete();
 	Sea::AllDelete();

@@ -151,7 +151,6 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Mob.h" />
     <ClInclude Include="Object.h" />
-    <ClInclude Include="Penguin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Polarbear.h" />
     <ClInclude Include="Rect.h" />
@@ -190,7 +189,6 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Penguin.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Polarbear.cpp" />
     <ClCompile Include="Rect.cpp" />
