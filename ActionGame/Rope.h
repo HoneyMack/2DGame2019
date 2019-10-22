@@ -17,6 +17,8 @@ public:
 	Rect fixture = Rect(ROPE_FIXTURE_SIZEX, ROPE_FIXTURE_SIZEY, &this->x, &this->y);			//固定具
 	Rect rope = Rect(ROPE_SIZEX, ROPE_SIZEY, &this->x, &this->y);				//ロープ
 	bool catchflag;		//今ロープにつかんでいるか
+
+	double invalidation = 100;		//ジャンプ後に当たり判定の無効か時間を設定する
 					
 	bool hitflag = false;
 
