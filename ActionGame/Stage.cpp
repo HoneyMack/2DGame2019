@@ -124,4 +124,5 @@ void Stage::AllReset() {
 	//インスタンスの鎖を消去
 	Mob::AllDelete();
 	Fence::AllDelete();
+	Sea::AllDelete();
 }
