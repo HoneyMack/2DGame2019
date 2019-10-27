@@ -953,6 +953,10 @@ void CreateStage1_1R() {
 	firstMap.m_map[168][14] = 0;
 	firstMap.m_map[107][14] = 0;
 
+	for (int i = 0; i < 7; i++) {
+		firstMap.m_map[23 + i][10] = BLOCK_ICE;
+	}//debug（最初のところに氷を置く）
+
 	//ステージにセット
 	*stage.usingM = firstMap;
 

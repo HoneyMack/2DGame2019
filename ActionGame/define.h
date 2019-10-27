@@ -64,7 +64,6 @@
 //player move speed
 #define HITPOINT 50		//プレイヤーのHP
 #define ENEMYMATCHLESSTIME 1000	//ダメージを受けたときの無敵時間(ms)
-#define MOVESPEED 200
 #define GROUNDBOOSTSPEED 26		//押しっぱなしによる移動量の増加度
 #define AIRBOOSTSPEED 12			//空中での横スピード加速度
 #define MAXBOOST 280		//押しっぱなしによる増加度の上限
@@ -77,6 +76,9 @@
 #define KILLHIGHJUMPLIMIT 125 //敵を踏んだことによるハイジャンプで調節できる時間(ms)を制限		もしかしたら、CANHIGHJUMPTIMEより小さくないといけない
 #define KILLJUMP 380		//敵をたおしたときの上へのジャンプ量
 #define ANIMETIONINTERVAL 400 //画像切り替え速度（ms）
+
+#define ONICEFRICTION 0.985 //アイスの上の摩擦
+#define ONICEBOOSTSPEED 6 //アイスの上にいるときの移動速度増加度
 
 
 //walkenemy
