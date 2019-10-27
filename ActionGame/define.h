@@ -57,6 +57,9 @@
 #define HANMER_HITDAMAGE 8
 #define HANMERTHROW_DAMAGE 4
 #define GARDENEEL_DAMAGE  4//チンアナゴに衝突したときのダメージ
+#define SNOWBALL_DAMAGE 5 //ボールに衝突したときのダメージ
+#define SNOWMAN_DAMAGE 5 //ゆきだるまに衝突したときのダメージ
+
 
 //player move speed
 #define HITPOINT 50		//プレイヤーのHP
@@ -279,6 +282,15 @@
 #define SEA_WAVESPEEDX 30 //ｘ方向速度（波）
 #define SEA_WAVESPEEDDOWN 30
 #define SEA_WAVESPEEDUP 50
+
+
+
+//SnowMan（雪だるま）
+#define SNOWMAN_SIZEX 20
+#define SNOWMAN_SIZEY 40
+#define SNOWMAN_THROWINTERVAL 3000 //球を転がす間隔(ms)
+#define SNOWBALL_RADIUS 15
+#define SNOWBALL_VELOCITY 300//玉の速度(dot/s) 
 
 
 //描画サイズ(配列の個数)

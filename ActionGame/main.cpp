@@ -165,6 +165,9 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
 	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
 
+	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug用仮画像
+	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug用仮画像
+
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
 	Sea::PicHandle = LoadGraph("pictures/Sea.png");
 
@@ -964,6 +967,7 @@ void CreateStage1_1R() {
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 	new GardenEel(DOT * 30, DOT * 14);//debug
+	new SnowMan(DOT * 33, DOT * 12);//debug
 	new TurtleWithWing(DOT * 35, DOT * 10); //debug
 
 	new WalkEnemy(700, 415);

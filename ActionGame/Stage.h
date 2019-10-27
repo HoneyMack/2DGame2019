@@ -26,6 +26,7 @@
 #include "SeaWeed.h"
 #include "Polarbear.h"  //new
 #include "GardenEel.h"
+#include "SnowMan.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"
