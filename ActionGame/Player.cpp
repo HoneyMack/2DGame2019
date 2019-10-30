@@ -114,10 +114,54 @@ void Player::Motion(double frametime) {
 		if (hitface == BOTTOM)
 			Animation(STAND);
 	}
+	else if (Sea::PlayerHitCheck(rect)) {
+		if (seaflag == false) {
+			//初めて海の中に入った
+			vx *= SEA_FIRSTDIVE_SPEED_DECAY;
+			vy *= SEA_FIRSTDIVE_SPEED_DECAY;
+			ay = SEA_GRAVITY;
+			seaflag = true;
+		}
+		Animation(FENCE);		//アニメーションをフェンスで仮置き（泳ぎモーションが完成したら差し替え）
+		//左右移動
+		if (now_key & (PAD_INPUT_LEFT | PAD_INPUT_RIGHT)) {
+			if (now_key & PAD_INPUT_LEFT) {
+				vx = -SEA_MOVESPEED;
+				directionflag = 2;		//左向き
+				/*if (vx < -SEA_MOVESPEED)
+					vx = -SEA_MOVESPEED;*/
+			}
+
+			else {
+				vx = SEA_MOVESPEED;
+				//directionflag = 1;		//右向き
+				//if (vx > SEA_MOVESPEED)
+				//	vx = SEA_MOVESPEED;
+			}
+		}
+		else {
+			vx *= 0.5;
+			//directionflag = 0;			//どこも向かない
+		}
+		if (vy > SEA_MAXVY) {
+			vy = SEA_MAXVY;	//水中での下方への速度制限
+		}
+
+		hitface = Sea::PlayerHitCheck(rect);
+		if (hitface & 0b0001 && hitface != 0b1111 ) vx -= SEA_WAVESPEEDX;
+		if (hitface & 0b0010 && hitface != 0b1111) vx += SEA_WAVESPEEDX;
+		if (hitface & 0b0100 && hitface != 0b1111) vy += SEA_WAVESPEEDDOWN;
+		if (hitface & 0b1000 && hitface != 0b1111) vy -= SEA_WAVESPEEDUP;
+		//if (hitface == 0b1111) vx = vy = 0;
+		//ax = 750;
+		
+		Jump(SEA_LOWJUMPSPEED);
+	}
 	else {
-		if (fenceflag == true) {
+		if (fenceflag == true || seaflag == true) {
 			ay = GRAVITY;
 			fenceflag = false;
+			seaflag = false;
 		}
 		keypressed = CrossKeyInput();				//キー入力
 		//directionflag = 0;
@@ -153,7 +197,11 @@ void Player::Motion(double frametime) {
 			vy = 0.0;
 			Animation(STAND);
 			Jump();
-			if (keypressed)
+			//自分の左右にあるブロックを取得しそれがアイスなら摩擦度減少
+			if (CheckMapNum(*this, rect.sizeX + 8, rect.sizeY + 10) == BLOCK_ICE || CheckMapNum(*this, 0, rect.sizeY + 10) == BLOCK_ICE) {
+				vx *= ONICEFRICTION;
+			}
+			else if (keypressed && seaflag == false)	//海中でこの処理が働かないように変更
 				vx *= 0.9;			//プレイヤー地面にいてキーが押されているときの横速度減衰率
 			else
 				vx *= 0.6;			//プレイヤーが地面にいてキーが押されていないときの横速度減衰率
@@ -222,8 +270,14 @@ bool Player::CrossKeyInput() {
 	//右に速度追加
 	if (now_key &PAD_INPUT_RIGHT) {
 		//プレイヤーのいるところで分岐
-		if ((index == 1 || index == 0))
-			vx += GROUNDBOOSTSPEED;
+		if ((index == 1 || index == 0)) {
+			//自分の左右にあるブロックを取得しそれがアイスかどうか
+			if (CheckMapNum(*this, rect.sizeX + 8, rect.sizeY + 10) == BLOCK_ICE || CheckMapNum(*this, 0, rect.sizeY + 10) == BLOCK_ICE) {
+				vx += ONICEBOOSTSPEED;
+			}
+			else
+				vx += GROUNDBOOSTSPEED;
+		}
 		else
 			vx += AIRBOOSTSPEED;
 
@@ -235,8 +289,14 @@ bool Player::CrossKeyInput() {
 	//左に速度追加(地面にいるときだけ)
 	if (now_key &PAD_INPUT_LEFT) {
 		//プレイヤーのいるところで分岐
-		if ((index == 1 || index == 0))
-			vx -= GROUNDBOOSTSPEED;
+		if ((index == 1 || index == 0)) {
+			//自分の左右にあるブロックを取得しそれがアイスかどうか
+			if (CheckMapNum(*this, rect.sizeX + 8, rect.sizeY + 10) == BLOCK_ICE || CheckMapNum(*this, 0, rect.sizeY + 10) == BLOCK_ICE) {
+				vx -= ONICEBOOSTSPEED;
+			}
+			else
+				vx -= GROUNDBOOSTSPEED;
+		}
 		else
 			vx -= AIRBOOSTSPEED;
 
@@ -249,9 +309,6 @@ bool Player::CrossKeyInput() {
 	if (keypressed)
 		Animation(RUN);
 
-	if (!keypressed) {
-		vx *= 0.98;
-	}
 	return keypressed;
 }
 
