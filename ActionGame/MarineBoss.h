@@ -8,7 +8,7 @@
 #define BOSS_SIZEX 110
 #define BOSS_SIZEY 95
 #define BOSS_HP 5	//踏まれても生きていられる回数
-#define BOSS_MOVESPEED 100
+#define BOSS_MOVESPEED 200
 #define BOSS_WAIT 50	//行動間の時間
 #define BOSS_HARDTIME 300	//硬質化している時間
 #define BOSS_UNITIME_FIRST 300	//ウニを落とす時間の初期値
@@ -16,6 +16,9 @@
 #define BOSS_UNI_CNT 20	//保持するウニの数	
 #define BOSS_ACTION_INTERVAL 100
 #define BOSS_HITDAMAGE 5
+#define BOSS_UNI_HITDAMAGE 5
+#define BOSS_DROPED_VX 800	//ボスを踏んだときに発生するプレイヤーのx方向速度
+#define BOSS_DROPED_VY 200	//y方向速度
 
 
 class MarineBoss	:public Mob, public Object

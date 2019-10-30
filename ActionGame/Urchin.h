@@ -5,7 +5,7 @@
 
 //ウニ
 #define URCHIN_RADIUS 15	//半径
-#define URCHIN_AY 1500	//重力加速度
+#define URCHIN_AY 100	//重力加速度
 
 class Urchin :public Mob, public Object
 {

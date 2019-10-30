@@ -174,6 +174,8 @@ bool MarineBoss::HitCheck(Rect rect)
 				cnttime = 0;
 			}
 			if (hp <= 0)deathflag = true;	//hp‚ª‚O‚È‚çŽ€–S
+			usingP->vx -= BOSS_DROPED_VX;
+			usingP->vy -= BOSS_DROPED_VY;
 			usingP->Knuckled(this->rect, BOTTOM);
 
 			waittime = 0;
@@ -194,7 +196,15 @@ bool MarineBoss::HitCheck(Rect rect)
 
 		return true;
 	}
-	else
+	else {
+		for (int i = 0; i < BOSS_UNI_CNT; i++) {
+			//ƒEƒj‚Ì“–‚½‚è”»’è
+			if (CheckCircleRect(*UNI[i]->cir, rect)) {
+				usingP->Damage(BOSS_UNI_HITDAMAGE, ENEMYMATCHLESSTIME);
+				return true;
+			}
+		}
+	}
 		return false;
 }
 
