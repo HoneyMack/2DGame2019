@@ -149,6 +149,7 @@
     <ClInclude Include="Jump.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MarineBoss.h" />
     <ClInclude Include="Mob.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="TurtleWithWing.h" />
     <ClInclude Include="UpDownObject.h" />
+    <ClInclude Include="Urchin.h" />
     <ClInclude Include="WalkEnemy.h" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +187,7 @@
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MarineBoss.cpp" />
     <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -200,6 +203,7 @@
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="TurtleWithWing.cpp" />
     <ClCompile Include="UpDownObject.cpp" />
+    <ClCompile Include="Urchin.cpp" />
     <ClCompile Include="WalkEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
