@@ -23,6 +23,7 @@
 #include "Fence.h"
 #include "SeaWeed.h"
 #include "GardenEel.h"
+#include "MarineBoss.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-#define STAGENUM 3
+#define STAGENUM 4
 using namespace std;
 
 //ランキングデータ保持用	テキストの保存形式:名前、残りタイム、敵の撃破数、残りHP、コイン
@@ -40,6 +40,7 @@ void CreateStage1_1R();
 void CreateStage1_2R();
 void CreateStage1_3R();
 void CreateStage_MiniGame1();			//タイムを競うミニゲーム
+void CreateSampleBoss();	//boss作成debug用
 
 
 //メニュー切り替え用フラグ
@@ -51,7 +52,7 @@ bool befKeys[62];	//一戸前の入力保持用
 
 
 //マップ名保持
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","TEST1","TEST2" };
+string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","BOSS","TEST1","TEST2" };
 
 //背景画像指定
 int stage1_1Back[ACCOUNTFORMAPPARTS];
@@ -326,7 +327,8 @@ int GameSelectWindow() {
 			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
 			break;
 		case 3:
-			CreateStage2_1();
+			//CreateStage2_1();
+			CreateSampleBoss();
 			break;
 		case 4:
 			CreateStage1_1();
@@ -1826,4 +1828,28 @@ void CreateStage_MiniGame1() {
 	//new Jump(300, 400);
 
 
+}
+
+void CreateSampleBoss() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage1_1Back[i];
+	}
+
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
+
+	//地面生成
+	for (int i = 0; i < firstMap.getNumX(); i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+
+	new MarineBoss(DOT * 25, 100, DOT * 10);
 }
