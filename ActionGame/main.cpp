@@ -157,13 +157,21 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
+	Polarbear::PicHandle = LoadGraph("pictures/Ship.png"); //debug用仮画像
+
 	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
 	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
 	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
 	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
 	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
 
+	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug用仮画像
+	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug用仮画像
+
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
+	Sea::PicHandle = LoadGraph("pictures/Sea.png");
+
+	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
@@ -945,6 +953,10 @@ void CreateStage1_1R() {
 	firstMap.m_map[168][14] = 0;
 	firstMap.m_map[107][14] = 0;
 
+	for (int i = 0; i < 7; i++) {
+		firstMap.m_map[23 + i][10] = BLOCK_ICE;
+	}//debug（最初のところに氷を置く）
+
 	//ステージにセット
 	*stage.usingM = firstMap;
 
@@ -959,6 +971,7 @@ void CreateStage1_1R() {
 
 	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
 	new GardenEel(DOT * 30, DOT * 14);//debug
+	new SnowMan(DOT * 33, DOT * 12);//debug
 	new TurtleWithWing(DOT * 35, DOT * 10); //debug
 
 	new WalkEnemy(700, 415);
