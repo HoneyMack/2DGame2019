@@ -57,13 +57,11 @@
 #define HANMER_HITDAMAGE 8
 #define HANMERTHROW_DAMAGE 4
 #define GARDENEEL_DAMAGE  4//チンアナゴに衝突したときのダメージ
-#define SNOWBALL_DAMAGE 5 //ボールに衝突したときのダメージ
-#define SNOWMAN_DAMAGE 5 //ゆきだるまに衝突したときのダメージ
-
 
 //player move speed
 #define HITPOINT 50		//プレイヤーのHP
 #define ENEMYMATCHLESSTIME 1000	//ダメージを受けたときの無敵時間(ms)
+#define MOVESPEED 200
 #define GROUNDBOOSTSPEED 26		//押しっぱなしによる移動量の増加度
 #define AIRBOOSTSPEED 12			//空中での横スピード加速度
 #define MAXBOOST 280		//押しっぱなしによる増加度の上限
@@ -76,9 +74,6 @@
 #define KILLHIGHJUMPLIMIT 125 //敵を踏んだことによるハイジャンプで調節できる時間(ms)を制限		もしかしたら、CANHIGHJUMPTIMEより小さくないといけない
 #define KILLJUMP 380		//敵をたおしたときの上へのジャンプ量
 #define ANIMETIONINTERVAL 400 //画像切り替え速度（ms）
-
-#define ONICEFRICTION 0.985 //アイスの上の摩擦
-#define ONICEBOOSTSPEED 6 //アイスの上にいるときの移動速度増加度
 
 
 //walkenemy
@@ -226,20 +221,6 @@
 #define GHOST_TRANSPARENCY 50  //どのくらい透明にするか0:透明　250:不透明
 #define GHOST_TURNTIME 300	//フラッシュがたかれて引っ込むまで
 
-//Polarbear
-#define PBSIZEX 32
-#define PBSIZEY 32
-#define PB_SPEED 100
-#define PB_MOVEWIDTH 160
-#define PB_HITDAMAGE 5
-
-//Penguin
-#define PENGUIN_MOVEWIDTH 160
-#define PENGUIN_HITDAMAGE 4
-#define PENGUIN_SLIDINGSPEED 300	//滑ってる時の速度
-#define PENGUIN_WALKINGSPEED 100	//歩いてる時の速度
-#define PENGUIN_SEARCHINGAREA 200
-
 //thornblock
 #define THORNBLOCK_SIZEX 28
 #define THORNBLOCK_SIZEY 28
@@ -269,30 +250,6 @@
 #define GARDENEEL_RISINGTIME 500 //上に上昇している時間(ms)
 #define GARDENEEL_HOLDINGTIME 3000 //上昇しきって伸びている状態の時間(ms)
 #define GARDENEEL_FALLINGTIME 1000 //下に下降している時間(ms)
-
-//Sea(?C)
-#define SEA_SIZEX 32
-#define SEA_SIZEY 32
-#define SEA_TRANSPARENCY 150	//透明度
-#define SEA_FIRSTDIVE_SPEED_DECAY 0.5	//最初に海に入った時の速度減衰
-#define SEA_GRAVITY 1200	//海の中の重力
-//#define SEA_PLAYERMOVESPEED 70	//????????????x
-//#define SEA_BOOSTSPEED 14
-#define SEA_MOVESPEED 100	
-#define SEA_LOWJUMPSPEED 120
-#define SEA_MAXVY 100	//海の中の最高速度
-#define SEA_WAVESPEEDX 30 //ｘ方向速度（波）
-#define SEA_WAVESPEEDDOWN 30
-#define SEA_WAVESPEEDUP 50
-
-
-
-//SnowMan（雪だるま）
-#define SNOWMAN_SIZEX 20
-#define SNOWMAN_SIZEY 40
-#define SNOWMAN_THROWINTERVAL 3000 //球を転がす間隔(ms)
-#define SNOWBALL_RADIUS 15
-#define SNOWBALL_VELOCITY 300//玉の速度(dot/s) 
 
 
 //描画サイズ(配列の個数)

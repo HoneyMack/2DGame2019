@@ -20,7 +20,7 @@ class Crab:public Mob,public Object
 public:
 	static int PicHandle;
 
-	Rect rect = Rect(30, 30, &this->x, &this->y);		//before 30x30
+	Rect rect = Rect(30, 30, &this->x, &this->y);
 	BulletTowardPlayer* BTP[CRAB_BULLETS];
 
 	int bulletcounter = 0;	//Ÿ‚É”­Ë‚³‚ê‚é’e‚ğ•Û

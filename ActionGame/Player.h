@@ -33,7 +33,6 @@ public:
 	bool Xmovingflag = false;	//いまx座標の移動処理をしているか
 	bool Ymovingflag = false;	//いまy座標の移動処理をしているか
 	bool fenceflag = false;		//フェンスの上にいたか
-	bool seaflag = false;		//海の中にいるか
 
 	Player();
 	Player(double dx, double dy, double dvx, double dvy, double dax, double day);
