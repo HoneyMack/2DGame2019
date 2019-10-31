@@ -176,6 +176,16 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
+	Eel::PicHandle = LoadGraph("pictures/takoyaki_back.png");
+	Killer::PicHandle = LoadGraph("pictures/takoyaki_back.png");
+
+	MarineBoss::PicHandle[0] = LoadGraph("pictures/marine_boss2_2.png");
+	MarineBoss::PicHandle[1] = LoadGraph("pictures/barrier.png");
+	Urchin::PicHandle = LoadGraph("pictures/bullet.png");
+
+	Blockforblock::PicHandle = LoadGraph("pictures/ground.png");
+
+
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
 	//マップ画像をセット
@@ -1900,11 +1910,11 @@ void CreateSampleBoss() {
 	}
 
 	for (int i = 56; i < 69; i++) {
-		firstMap.m_map[i][6] = BLOCK_WOOD;
+		firstMap.m_map[i][7] = BLOCK_WOOD;
 		firstMap.m_map[i][10] = BLOCK_WOOD;
 
 	}
-	for (int i = 1; i < 6; i++)
+	for (int i = 1; i < 7; i++)
 	{
 		firstMap.m_map[56][i] = BLOCK_WOOD;
 		firstMap.m_map[68][i] = BLOCK_WOOD;
@@ -1957,11 +1967,26 @@ void CreateSampleBoss() {
 	new Crab(DOT * 35, DOT * 13);
 	new Fish(DOT * 37, DOT * 6);
 	
-		
+	new Eel(DOT * 42, DOT * 9,true);
+	new Eel(DOT * 49, DOT * 6, true);
+	new Fish(DOT * 45, DOT * 11);
+	new Crab(DOT * 44, DOT * 13);
+	new Crab(DOT * 54, DOT * 13);
 
-	
+	new GardenEel(DOT * 56, DOT * 10, 0);
+	new GardenEel(DOT * 60, DOT * 10, 0);
+	new GardenEel(DOT * 67, DOT * 10, 0);
+	new SeaWeed(DOT * 64, DOT * 8, 3, 2);
 
-	//new MarineBoss(DOT * 25, 100, DOT * 10);
+	new Blockforblock(DOT * 129, DOT * 11, DOT * 130);
+	new Blockforblock(DOT * 129, DOT * 10, DOT * 130);
+	new Blockforblock(DOT * 148, DOT * 13, DOT * 130);
+	new Blockforblock(DOT * 148, DOT * 12, DOT * 130);
+
+
+	new MarineBoss(DOT * 143, DOT*12, DOT * 130);
+
+	stage.usingP->x = DOT*139;
 }
 
 

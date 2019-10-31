@@ -22,6 +22,8 @@ void Urchin::Motion(double frametime)
 {
 	if (CheckInCam())
 		stepPosAll(frametime);
+	else
+		vy = 0;
 }
 
 void Urchin::Draw()

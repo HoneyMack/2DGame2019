@@ -27,8 +27,11 @@
 #include "SeaWeed.h"
 #include "Polarbear.h"  //new
 #include "HealingItem.h"
+#include "Eel.h"
+#include "Killer.h"
 #include "GardenEel.h"
 #include "SnowMan.h"
+#include "Blockforblock.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"

@@ -3,6 +3,7 @@
 #include "Mob.h"
 #include "Object.h"
 #include "Urchin.h"
+#include "Blockforblock.h"
 #include <random>
 
 #define BOSS_SIZEX 110
@@ -14,10 +15,10 @@
 #define BOSS_UNITIME_FIRST 300	//ウニを落とす時間の初期値
 #define BOSS_UNI_INTERVAL 30	//ウニを落とす時間のインターヴァル
 #define BOSS_UNI_CNT 20	//保持するウニの数	
-#define BOSS_ACTION_INTERVAL 100
+#define BOSS_ACTION_INTERVAL 10
 #define BOSS_HITDAMAGE 5
 #define BOSS_UNI_HITDAMAGE 5
-#define BOSS_DROPED_VX 800	//ボスを踏んだときに発生するプレイヤーのx方向速度
+#define BOSS_DROPED_VX 500	//ボスを踏んだときに発生するプレイヤーのx方向速度
 #define BOSS_DROPED_VY 200	//y方向速度
 
 

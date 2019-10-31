@@ -27,7 +27,7 @@ MarineBoss::~MarineBoss()
 
 void MarineBoss::Motion(double frametime)
 {
-	if (CheckInCam()) {
+	
 		//ハイジャンプ用フラグ
 		if (waittime < KILLHIGHJUMPTIME) {
 			waittime += frametime * 1000;
@@ -43,7 +43,7 @@ void MarineBoss::Motion(double frametime)
 		case 0:
 			//何もしてない、次の行動を選択
 			if (statflag) {
-				stats = rnd() % 4 + 1;
+				stats = rnd() % 3 + 1;
 				cnttime = 0;
 			}
 			break;
@@ -83,6 +83,7 @@ void MarineBoss::Motion(double frametime)
 				cnttime = 0;
 				stats = 6;
 				unicnt = 0;
+				
 			}
 			break;
 		case 4:
@@ -112,6 +113,7 @@ void MarineBoss::Motion(double frametime)
 				stats = 6;	//行動後の待ち時間へ移行
 				cnttime = 0;
 				unicnt = 0;
+				
 			}
 			break;
 		case 6:
@@ -134,7 +136,7 @@ void MarineBoss::Motion(double frametime)
 		for (int i = 0; i < BOSS_UNI_CNT; i++) {
 			UNI[i]->Motion(frametime);
 		}
-	}
+	
 	//落下したときに死ぬようにする
 	if (y > HEIGHT)
 		deathflag = true;
@@ -147,8 +149,12 @@ void MarineBoss::Draw()
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[0], TRUE);
 		else if (stats == 4)
 			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle[0], TRUE);
-		else if (stats == 2 || stats == 5)
+		else if (stats == 2 || stats == 5) {
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[0], TRUE);
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, SEA_TRANSPARENCY);
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[1], TRUE);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		}
 
 		for (int i = 0; i < BOSS_UNI_CNT; i++) {
 			UNI[i]->Draw();
@@ -173,8 +179,13 @@ bool MarineBoss::HitCheck(Rect rect)
 				stats = 5;
 				cnttime = 0;
 			}
-			if (hp <= 0)deathflag = true;	//hpが０なら死亡
-			usingP->vx -= BOSS_DROPED_VX;
+			if (hp <= 0) {
+				Blockforblock::liveflag = false;
+				deathflag = true;	//hpが０なら死亡
+			}
+			//usingP->vx -= BOSS_DROPED_VX;
+			if (usingP->x < this->x+BOSS_SIZEX/2)usingP->vx -= BOSS_DROPED_VX;
+			else usingP->vx += BOSS_DROPED_VX;
 			usingP->vy -= BOSS_DROPED_VY;
 			usingP->Knuckled(this->rect, BOTTOM);
 
