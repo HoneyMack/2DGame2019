@@ -34,6 +34,10 @@ bool HealingItem::HitCheck(Rect rect)
 	//return false;
 	if (CheckInCam()) {
 		if (CheckRectRect(this->rect, rect)) {
+			PlaySoundMem(Sound::sounds[SOUND_HEALING], DX_PLAYTYPE_BACK);//‰¹‚ð–Â‚ç‚·
+			//PlaySoundMem(Sound::sounds[SOUND_FLASHBLOCK], DX_PLAYTYPE_BACK);//‰¹‚ð–Â‚ç‚·
+
+
 			HitPlayer();
 			return true;
 		}
