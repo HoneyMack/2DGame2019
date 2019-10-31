@@ -14,6 +14,7 @@ MarineBoss::MarineBoss(int sx, int sy, int fx)
 		UNI[i] = new Urchin(x,-40);
 	}
 
+	startflag = false;
 	velocity = BOSS_MOVESPEED;
 	unitime = BOSS_UNITIME_FIRST;	//ウニを落とす時間を設定
 }
@@ -27,6 +28,7 @@ MarineBoss::~MarineBoss()
 
 void MarineBoss::Motion(double frametime)
 {
+	if (Blockforblock::startflag)startflag = true;
 	
 		//ハイジャンプ用フラグ
 		if (waittime < KILLHIGHJUMPTIME) {
@@ -42,7 +44,7 @@ void MarineBoss::Motion(double frametime)
 		{
 		case 0:
 			//何もしてない、次の行動を選択
-			if (statflag) {
+			if (startflag) {
 				stats = rnd() % 3 + 1;
 				cnttime = 0;
 			}
@@ -72,6 +74,10 @@ void MarineBoss::Motion(double frametime)
 		case 3:
 			//ウニ落とし
 			//用サウンド追加
+			if (Uniflag == false) {
+				Uniflag = true;
+
+			}
 			cnttime++;
 			if ((int)cnttime % BOSS_UNI_INTERVAL == 0) {
 				//ウニを落とす処理を追加

@@ -11,7 +11,7 @@ class Eel :public Mob,public Object
 public:
 	static int PicHandle;
 
-	Rect rect = Rect(30, 30, &this->x, &this->y);
+	Rect rect = Rect(60, 30, &this->x, &this->y);
 
 	bool startflag = false;
 

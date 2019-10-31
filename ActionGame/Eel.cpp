@@ -10,7 +10,7 @@ Eel::Eel(int x, int y, bool direction)
 	if (direction)
 		vx = EEL_MOVESPEED;
 	else
-		vx = EEL_MOVESPEED;
+		vx = -EEL_MOVESPEED;
 
 	ay = 0;
 
@@ -45,7 +45,7 @@ void Eel::Motion(double frametime)
 void Eel::Draw()
 {
 	if (CheckInCam()) {
-		if (vx > 0)
+		if (vx < 0)
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
 		else
 			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);

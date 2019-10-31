@@ -1,13 +1,13 @@
 #include "Penguin.h"
 
-int Penguin::PicHandle = 0;
+int Penguin::PicHandle[] = { 0,0 };
 
 Penguin::Penguin(int x,int y)
 {
 	this->x = x;
 	this->y = y;
 	
-	GetGraphSize(PicHandle, &rect.x, &rect.y);
+	GetGraphSize(PicHandle[0], &rect.x, &rect.y);
 	rect.x /= 2;
 	rect.y /= 2;
 	rect.x -= rect.sizeX / 2;
@@ -81,11 +81,14 @@ void Penguin::Motion(double frametime)
 
 void Penguin::Draw()
 {
+	int i;
+	if (searched = false)i = 0;
+	else i = 1;
 	if (CheckInCam()) {
 		if (velocity <= 0) 
-			DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[i], TRUE);
 		else
-			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle[i], TRUE);
 #ifdef DEBUG
 		rect.Draw(*Camera);
 #endif		

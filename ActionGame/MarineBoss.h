@@ -38,8 +38,9 @@ public:
 	double velocity;
 	double unitime;
 
-	bool statflag = true;	//falsew’è	debug now
+	bool startflag = false;	//falsew’è	debug now
 	bool HardeningFlag = false;
+	bool Uniflag = false;
 
 	int stats = 0;	
 	/*

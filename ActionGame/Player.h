@@ -13,7 +13,7 @@ private:
 	int index = 0;			//アニメーション用
 	int motion = 0;			//キャラクターを動かすために用いる
 public:
-	static int PicHandle[];						//画像を持つ stand,run,jump,fance
+	static int PicHandle[];						//画像を持つ stand,run,jump,fance,swim
 	Rect rect = Rect(25,25,&this->x,&this->y);	//あたり判定を持つ
 	Map *map;			//位置移動のためにその時々のマップ情報をもつ
 	Rect *Camera;		//カメラの位置を持つ

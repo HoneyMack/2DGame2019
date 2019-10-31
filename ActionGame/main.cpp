@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-#define STAGENUM 5
+#define STAGENUM 7
 using namespace std;
 
 //ランキングデータ保持用	テキストの保存形式:名前、残りタイム、敵の撃破数、残りHP、コイン
@@ -40,8 +40,10 @@ void CreateStage1_1R();
 void CreateStage1_2R();
 void CreateStage1_3R();
 void CreateStage_MiniGame1();			//タイムを競うミニゲーム
-void CreateSampleBoss();	//boss作成debug用
+void CreateStage_Sea();	
 void CreateStage_Snow();
+void CreateStage_Sky();
+void CreateStage_Tutorial();
 
 
 //メニュー切り替え用フラグ
@@ -53,12 +55,17 @@ bool befKeys[62];	//一戸前の入力保持用
 
 
 //マップ名保持
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","snow_stage","BOSS","TEST1","TEST2" };
+//string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","snow_stage","SeaStage","TEST1","TEST2" };
+string stagename[] = { "Tutorial","snow_stage","SeaStage","SkyStage(MiniGame)","stage1_1R","stage1_2R","stage1_3R" };
 
 //背景画像指定
 int stage1_1Back[ACCOUNTFORMAPPARTS];
 int stage1_2Back[ACCOUNTFORMAPPARTS];
 int stage1_3Back[ACCOUNTFORMAPPARTS];
+int stage_Snow[1];
+int stage_Sea[1];
+int stage_Sky[1];
+int stage_tutorial[1];
 
 //ゴールバー
 int goalPicHandle;
@@ -110,6 +117,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Player::PicHandle[1] = LoadGraph("pictures/boy_run.png");
 	Player::PicHandle[2] = LoadGraph("pictures/boy_jump.png");
 	Player::PicHandle[3] = LoadGraph("pictures/fence_motion.png");
+	Player::PicHandle[4] = LoadGraph("pictures/player_swim.png");
 
 	WalkEnemy::PicHandle[0] = LoadGraph("pictures/walkenemy_animation/anime1.png");
 	WalkEnemy::PicHandle[1] = LoadGraph("pictures/walkenemy_animation/anime2.png");
@@ -155,35 +163,40 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
+	Fish::PicHandle = LoadGraph("pictures/fish.png");	//魚仮画像セット
+	Crab::PicHandle = LoadGraph("pictures/crab.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
-	Polarbear::PicHandle = LoadGraph("pictures/Ship.png");
+	Polarbear::PicHandle = LoadGraph("pictures/polarbear.png");
 
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像		atodehattyuu
 	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
 	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
 	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
 	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
 
-	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?
-	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?
+	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?						atodehattyuu
+	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?					atodehattyuu
 
 
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
 	Sea::PicHandle = LoadGraph("pictures/Sea.png");
 
-	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
+	Penguin::PicHandle[0] = LoadGraph("pictures/penguin_walk.png");
+	Penguin::PicHandle[1] = LoadGraph("pictures/penguin_sliding.png");
 
-	Eel::PicHandle = LoadGraph("pictures/takoyaki_back.png");
-	Killer::PicHandle = LoadGraph("pictures/takoyaki_back.png");
+	Eel::PicHandle = LoadGraph("pictures/eel.png");
+	Killer::PicHandle = LoadGraph("pictures/Killer.png");
 
 	MarineBoss::PicHandle[0] = LoadGraph("pictures/marine_boss2_2.png");
-	MarineBoss::PicHandle[1] = LoadGraph("pictures/barrier.png");
+	MarineBoss::PicHandle[1] = LoadGraph("pictures/barrier.png");										//atode
 	Urchin::PicHandle = LoadGraph("pictures/bullet.png");
 
-	Blockforblock::PicHandle = LoadGraph("pictures/ground.png");
+	Blockforblock::PicHandle = LoadGraph("pictures/block_wood.png");
+
+	HealingItem::PicHandle[0] = LoadGraph("pictures/HealingItem0.png");
+	HealingItem::PicHandle[1] = LoadGraph("pictures/HealingItem1.png");
+	HealingItem::PicHandle[2] = LoadGraph("pictures/HealingItem2.png");
 
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
@@ -205,6 +218,11 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	stage1_3Back[0] = LoadGraph("pictures/background/stage1_3/background_1.jpg");
 	stage1_3Back[1] = LoadGraph("pictures/background/stage1_3/background_2.jpg");
 	stage1_3Back[2] = LoadGraph("pictures/background/stage1_3/background_3.jpg");
+	stage_Snow[0] = LoadGraph("pictures/background/Snow_background.png");
+	stage_Sea[0] = LoadGraph("pictures/background/Sea_background.JPG");
+	stage_Sky[0] = LoadGraph("pictures/background/Sky_background.png");
+	//浜辺の画像追加
+
 
 	//ゴール
 	goalPicHandle = LoadGraph("pictures/goal_line.png");
@@ -222,6 +240,14 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
+	Sound::sounds[SOUND_UNI] = LoadSoundMem("sounds/rakka.mp3");
+	Sound::sounds[SOUND_HEALING] = LoadSoundMem("sounds/kaifuku.mp3");
+	Sound::sounds[SOUND_BOSS_DEFEAT] = LoadSoundMem("sounds/defeat.mp3");
+	Sound::sounds[SOUND_STAGE_SNOW] = LoadSoundMem("sounds/action_snow.mp3");
+	Sound::sounds[SOUND_STAGE_TUTO] = LoadSoundMem("sounds/actio_tuto.mp3");
+	Sound::sounds[SOUND_STAGE_SEA] = LoadSoundMem("sounds/action_marine.mp3");
+	Sound::sounds[SOUND_BOSS] = LoadSoundMem("sounds/action_marine_boss.mp3");
+	Sound::sounds[SOUND_STAGE_SKY] = LoadSoundMem("sounds/action_ship.mp3");
 
 	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//音量調整
 
@@ -333,28 +359,40 @@ int GameSelectWindow() {
 	//選択されたらその番号を返す +(GameSelectWindowに入った瞬間にゲームに入るのを防ぐ)
 	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
 		switch (selectnum) {
-
 		case 0:
-			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
-			CreateStage1_1R();
+			Sound::sounds[SOUND_STAGE_TUTO] = LoadSoundMem("sounds/actio_tuto.mp3");
+			CreateStage_Tutorial();
 			break;
 		case 1:
-			CreateStage1_2R();
-			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
-			break;
-		case 2:
-			CreateStage1_3R();
-			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
-			break;
-		case 3:
+			Sound::sounds[SOUND_STAGE_SNOW] = LoadSoundMem("sounds/action_snow.mp3");
+			//CreateStage1_1R();
 			CreateStage_Snow();
 			break;
+		case 2:
+			//CreateStage1_2R();
+			Sound::sounds[SOUND_STAGE_SEA] = LoadSoundMem("sounds/action_marine.mp3");
+			CreateStage_Sea();
+			break;
+		case 3:
+			//CreateStage1_3R();
+			Sound::sounds[SOUND_STAGE_SKY] = LoadSoundMem("sounds/action_ship.mp3");
+			CreateStage_Sky();
+			break;
 		case 4:
-			//CreateStage2_1();
-			CreateSampleBoss();
+			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
+			//CreateStage_Snow();
+			CreateStage1_1R();
 			break;
 		case 5:
-			CreateStage1_1();
+			//CreateStage2_1();
+			//CreateSampleBoss();
+			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
+			CreateStage1_2R();
+			break;
+		case 6:
+			//CreateStage1_1();
+			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
+			CreateStage1_3R();
 			break;
 		}
 		if (now_key&PAD_INPUT_4)
@@ -1854,10 +1892,10 @@ void CreateStage_MiniGame1() {
 
 }
 
-void CreateSampleBoss() {
+void CreateStage_Sea() {
 	//背景をセット
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
-		stage.mapparts[i] = stage1_1Back[i];
+		stage.mapparts[i] = stage_Sea[0];
 	}
 
 	stage.limit = TIME_STAGE1_1R;
@@ -1925,20 +1963,20 @@ void CreateSampleBoss() {
 		firstMap.m_map[68][i] = BLOCK_WOOD;
 	}
 
-	//usingP->x = DOT * 60;
+
 
 	for (int i = 0; i < 6; i++)
 	{
 		firstMap.m_map[68 + i][6 - i] = BLOCK_WOOD;
 	}
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		firstMap.m_map[68 + i][10 - i] = BLOCK_WOOD;
 	}
-	for (int i = 76; i < 100; i++) {
-		firstMap.m_map[i][3] = BLOCK_WOOD;
+	for (int i = 75; i < 100; i++) {
+		firstMap.m_map[i][4] = BLOCK_WOOD;
 	}
-	for (int i = 3; i < 15; i++) {
+	for (int i = 4; i < 15; i++) {
 		firstMap.m_map[99][i] = BLOCK_WOOD;
 	}
 
@@ -1967,16 +2005,20 @@ void CreateSampleBoss() {
 	new Crab(DOT * 35, DOT * 13);
 	new Fish(DOT * 37, DOT * 6);
 	
-	new Eel(DOT * 42, DOT * 9,true);
+	new Eel(DOT * 42, DOT * 9,false);
 	new Eel(DOT * 49, DOT * 6, true);
+	new Eel(DOT * 85, DOT * 1, false);
 	new Fish(DOT * 45, DOT * 11);
 	new Crab(DOT * 44, DOT * 13);
 	new Crab(DOT * 54, DOT * 13);
 
 	new GardenEel(DOT * 56, DOT * 10, 0);
 	new GardenEel(DOT * 60, DOT * 10, 0);
+	new GardenEel(DOT * 63, DOT * 10, 0);
 	new GardenEel(DOT * 67, DOT * 10, 0);
 	new SeaWeed(DOT * 64, DOT * 8, 3, 2);
+
+	new HealingItem(DOT * 128, DOT * 11);
 
 	new Blockforblock(DOT * 129, DOT * 11, DOT * 130);
 	new Blockforblock(DOT * 129, DOT * 10, DOT * 130);
@@ -1986,12 +2028,34 @@ void CreateSampleBoss() {
 
 	new MarineBoss(DOT * 143, DOT*12, DOT * 130);
 
-	stage.usingP->x = DOT*139;
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (7 + i), DOT * (9 - i));
+		new Coin(DOT * (11 + i), DOT * (7 + i));
+	}
+	new Coin(DOT * 10, DOT * 7);
+
+	for (int i = 25; i < 31; i++) {
+		new Coin(DOT* i, DOT * 12);
+	}
+	for (int i = 45; i < 52; i++) {
+		new Coin(DOT * i, DOT * 9);
+	}
+	new Coin(DOT * 57, DOT * 9);
+	new Coin(DOT * 61, DOT * 9);
+	new Coin(DOT * 62, DOT * 9);
+
+
+	//stage.usingP->x = DOT*139;
 }
 
 
 
 void CreateStage_Snow() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage_Snow[0];
+	}
 	stage.limit = TIME_STAGE_SNOW;
 
 	Map firstMap;
@@ -2173,4 +2237,125 @@ void CreateStage_Snow() {
 
 	//ステージにセット
 	*stage.usingM = firstMap;
+}
+
+void CreateStage_Sky() {
+
+}
+
+void CreateStage_Tutorial() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage1_1Back[i];
+	}
+
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(6 * firstMap.getNumX(), firstMap.getNumY());
+
+	//地面生成
+	for (int i = 0; i < firstMap.getNumX(); i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+
+	//マップ作製
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[16 + i][11] = BLOCK_WOOD;
+	}
+	//マップ作製
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[26 + i][11] = BLOCK_WOOD;
+	}
+
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			firstMap.m_map[35 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_STONE;
+		}
+	}
+
+	firstMap.m_map[41][10] = BLOCK_WOOD;
+	firstMap.m_map[42][10] = BLOCK_WOOD;
+	firstMap.m_map[43][10] = BLOCK_WOOD;
+	firstMap.m_map[44][10] = BLOCK_WOOD;
+
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			firstMap.m_map[60 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_STONE;
+		}
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			firstMap.m_map[63 + i][firstMap.getNumY() - 1 - 1 - j] = BLOCK_STONE;
+		}
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		firstMap.m_map[71][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[73][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[93][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (16 + i), DOT * 10);
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (26 + i), DOT * 10);
+	}
+
+
+	new WalkEnemy(500, 415);
+	new WalkEnemy(780, 415);
+
+	new ShootEnemy(DOT * 66, 415);
+
+	new Jump(DOT * 33, 415);
+
+	new Coin(1600, 256);
+	new Coin(1632, 256);
+	new Coin(1664, 256);
+	new Coin(1696, 256);
+	new Coin(1728, 256);
+	new Coin(1760, 256);
+
+	new Rope(1834, 100, 8);
+
+	new Turtle(DOT * 76, DOT * 13);
+	new Turtle(DOT * 46, DOT * 13);
+
+	new WalkEnemy(DOT * 75, DOT * 13);
+
+	new UpDownObject(DOT * 87, DOT * 9);
+
+	new FallWall(DOT * 90, DOT * 1);
+
+	new TurtleWithWing(DOT * 100, DOT * 11);
+
+	new FireBar(DOT * 110, DOT * 10, 70.0, false, 5, 2, 90);
 }
