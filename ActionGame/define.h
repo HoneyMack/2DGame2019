@@ -12,6 +12,8 @@
 #define	TIME_STAGE2_1R 500000 //c‚èŠÔ(ms)
 #define TIME_STAGE1_3R 500000
 
+#define TIME_STAGE_SNOW 500000
+
 
 //”wŒi‰æ‘œ
 #define MAPPARTS_X 1000	//”wŒi‰æ‘œ‚Ì‚È‚ª‚³@

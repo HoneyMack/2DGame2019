@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-#define STAGENUM 4
+#define STAGENUM 5
 using namespace std;
 
 //ランキングデータ保持用	テキストの保存形式:名前、残りタイム、敵の撃破数、残りHP、コイン
@@ -41,6 +41,7 @@ void CreateStage1_2R();
 void CreateStage1_3R();
 void CreateStage_MiniGame1();			//タイムを競うミニゲーム
 void CreateSampleBoss();	//boss作成debug用
+void CreateStage_Snow();
 
 
 //メニュー切り替え用フラグ
@@ -52,7 +53,7 @@ bool befKeys[62];	//一戸前の入力保持用
 
 
 //マップ名保持
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","BOSS","TEST1","TEST2" };
+string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","snow_stage","BOSS","TEST1","TEST2" };
 
 //背景画像指定
 int stage1_1Back[ACCOUNTFORMAPPARTS];
@@ -336,10 +337,13 @@ int GameSelectWindow() {
 			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
 			break;
 		case 3:
+			CreateStage_Snow();
+			break;
+		case 4:
 			//CreateStage2_1();
 			CreateSampleBoss();
 			break;
-		case 4:
+		case 5:
 			CreateStage1_1();
 			break;
 		}
@@ -1852,16 +1856,44 @@ void CreateSampleBoss() {
 
 	//マップの情報をセット
 	//マップの大きさを変更
-	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
+	firstMap.setNum(160   , firstMap.getNumY());
 
 	//地面生成
-	for (int i = 0; i < firstMap.getNumX(); i++)
+	for (int i = 0; i < 100; i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+
+	for (int i = 103; i < 130; i++) {
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+		firstMap.m_map[i][firstMap.getNumY() - 2] = BLOCK_WOOD;
+		firstMap.m_map[i][firstMap.getNumY() - 3] = BLOCK_WOOD;
+		/*firstMap.m_map[i][firstMap.getNumY() - 6] = BLOCK_WOOD;
+		firstMap.m_map[i][0] = BLOCK_WOOD;*/
+		for (int j = 0; j < 10; j++) {
+			firstMap.m_map[i][j] = BLOCK_WOOD;
+		}
+
+	}
+	for (int i = 130; i < 149; i++) {
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+	}
+	for (int i = 0; i < 12; i++) {
+		firstMap.m_map[148][i] = BLOCK_WOOD;
+	}
+	/*for (int i = 12; i < 15; i++) {
+		firstMap.m_map[148][i] = BLOCK_WOOD;
+	}*/
+	for (int i = 149; i < 160; i++) {
+		firstMap.m_map[i][11] = BLOCK_WOOD;
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+
 
 	//天井作成
 	for (int i = 0; i < 100; i++) {
 		firstMap.m_map[i][0] = BLOCK_WOOD;
 	}
+	
 
 	for (int i = 7; i < 13; i++) {
 		firstMap.m_map[i][11] = BLOCK_WOOD;
@@ -1883,11 +1915,21 @@ void CreateSampleBoss() {
 		firstMap.m_map[68][i] = BLOCK_WOOD;
 	}
 
-	usingP->x = DOT * 60;
+	//usingP->x = DOT * 60;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		firstMap.m_map[68 + i][6 - i] = BLOCK_WOOD;
+	}
+	for (int i = 0; i < 8; i++)
+	{
+		firstMap.m_map[68 + i][10 - i] = BLOCK_WOOD;
+	}
+	for (int i = 76; i < 100; i++) {
+		firstMap.m_map[i][3] = BLOCK_WOOD;
+	}
+	for (int i = 3; i < 15; i++) {
+		firstMap.m_map[99][i] = BLOCK_WOOD;
 	}
 
 
@@ -1900,8 +1942,210 @@ void CreateSampleBoss() {
 
 		}
 	}
+	for (int i = 0; i < 15; i++) {
+		for (int j = 100; j < 103; j++) {
+			new Sea(DOT * j, DOT * i, 0b0100);
+		}
+	}
+
+	new Crab(DOT * 4, DOT * 13);
+	new Fish(DOT * 17, DOT * 8);
+
+
+	new SeaWeed(DOT * 20, DOT * 1, 4, 13);
+	new Fish(DOT * 28, DOT * 10);
+	new Crab(DOT * 35, DOT * 13);
+	new Fish(DOT * 37, DOT * 6);
+	
+		
 
 	
 
 	//new MarineBoss(DOT * 25, 100, DOT * 10);
+}
+
+
+
+void CreateStage_Snow() {
+	stage.limit = TIME_STAGE_SNOW;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
+
+	//地面(氷)生成
+	for (int i = 0; i < firstMap.getNumX(); i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_ICE;
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[6 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		new Coin(DOT * (6 + i), DOT * (firstMap.getNumY() - 1 - 5));
+	}
+	new WalkEnemy(DOT * 7, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[29 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+	new WalkEnemy(DOT * 15, DOT * (firstMap.getNumY() - 1 - 2));
+
+	new Polarbear(DOT * 22, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 7; i++)
+	{
+		firstMap.m_map[36 + i][firstMap.getNumY() - 1 - 7] = BLOCK_ICE;
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (40 + i), DOT * (firstMap.getNumY() - 1 - 8 - j));
+		}
+	}
+
+	new SnowMan(DOT * 39, DOT * (firstMap.getNumY() - 1 - 8), true);
+	new Penguin(DOT * 32, DOT * (firstMap.getNumY() - 1 - 1));
+	new Penguin(DOT * 46, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = i; j < 7 - i; j++)
+		{
+			firstMap.m_map[49 + j][firstMap.getNumY() - 2 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		firstMap.m_map[52][firstMap.getNumY() - 1 - i] = 0;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[62 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		new Coin(DOT * (62 + i), DOT * (firstMap.getNumY() - 1 - 5));
+	}
+	new Penguin(DOT * 60, DOT * (firstMap.getNumY() - 1 - 1));
+	new Penguin(DOT * 66, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = i; j < 7 - i; j++)
+		{
+			firstMap.m_map[71 + j][firstMap.getNumY() - 2 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		firstMap.m_map[74][firstMap.getNumY() - 1 - i] = 0;
+	}
+
+	new Polarbear(DOT * 80, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[82 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+
+	new Lift(DOT * 88, DOT * (firstMap.getNumY() - 1 - 8), true);
+
+	for (int i = 0; i < 7; i++)
+	{
+		firstMap.m_map[92 + i][firstMap.getNumY() - 1 - 10] = BLOCK_ICE;
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (92 + i), DOT * (firstMap.getNumY() - 1 - 11 - j));
+		}
+	}
+	new SnowMan(DOT * 95, DOT * (firstMap.getNumY() - 1 - 2), true);
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[106 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+	new Lift(DOT * 101, DOT * (firstMap.getNumY() - 1 - 8), true);
+
+	new Penguin(DOT * 112, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[118 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		firstMap.m_map[118 + i][firstMap.getNumY() - 1 - 8] = BLOCK_ICE;
+		new Coin(DOT * (118 + i), DOT * (firstMap.getNumY() - 1 - 9));
+	}
+
+	new Polarbear(DOT * 122, DOT * (firstMap.getNumY() - 1 - 2));
+
+	//healingItem
+	new HealingItem(DOT * 119, DOT * (firstMap.getNumY() - 1 - 5));
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (123 + i), DOT * (firstMap.getNumY() - 1 - 11));
+	}
+	new Polarbear(DOT * 128, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = i; j < 3; j++)
+		{
+			firstMap.m_map[130 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[133 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	new SnowMan(DOT * 134, DOT * (firstMap.getNumY() - 1 - 5), true);
+	for (int i = 3; i < 6; i++) {
+		for (int j = i - 3; j < 3; j++)
+		{
+			firstMap.m_map[136 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[139 + i][firstMap.getNumY() - 1 - 1 - j] = BLOCK_ICE;
+		}
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (139 + i), DOT * (firstMap.getNumY() - 1 - 7 - j));
+		}
+	}
+	firstMap.m_map[142][firstMap.getNumY() - 1 - 3] = BLOCK_ICE;
+
+	new UpDownObject(DOT * 147, DOT * (firstMap.getNumY() - 1 - 7));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[152 + i][firstMap.getNumY() - 1 - 6] = BLOCK_ICE;
+	}
+
+	new TurtleWithWing(DOT * 158, DOT * (firstMap.getNumY() - 1 - 8));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[162 + i][firstMap.getNumY() - 1 - 6] = BLOCK_ICE;
+	}
+
+	new UpDownObject(DOT * 170, DOT * (firstMap.getNumY() - 1 - 7));
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[178 + i][firstMap.getNumY() - 1 - j] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 2; i++) {
+		new Polarbear(DOT * (145 + i * 12), DOT * (firstMap.getNumY() - 1 - 1));
+	}
+	new Penguin(DOT * 155, DOT * (firstMap.getNumY() - 1 - 1));
+
+	//ステージにセット
+	*stage.usingM = firstMap;
 }
