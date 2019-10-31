@@ -7,58 +7,59 @@
 #include <stdlib.h>
 
 
-#define STAGENUM 3
+#define STAGENUM 4
 using namespace std;
 
-//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p	ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½
+//ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^•Û—p	ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“
 struct rankdata {
 	string name;
 	int limit, killedene, hp, coin;
 };
 
 
-//ï¿½Nï¿½ï¿½ï¿½Xï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ì¬
+//ƒNƒ‰ƒXƒCƒ“ƒXƒ^ƒ“ƒXì¬
 Stage stage;
 
-//ï¿½Öï¿½ï¿½@ï¿½vï¿½ï¿½ï¿½gï¿½^ï¿½Cï¿½vï¿½éŒ¾
+//ŠÖ”@ƒvƒƒgƒ^ƒCƒvéŒ¾
 void GameControl();
 void StartWindow();
-int  GameSelectWindow();		//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
+int  GameSelectWindow();		//‘I‘ğ‚µ‚½ƒXƒe[ƒW‚Ì®—”Ô†‚ğ•Ô‚·
 void GamePlayWindow();
 void GamePauseWindow();
 void GameOverWindow();
-void GameClearWindow(int selectedstage);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½nï¿½ï¿½
+void GameClearWindow(int selectedstage);	//‘I‘ğ‚µ‚½ƒXƒe[ƒW‚Ì®—”Ô†‚ğ“n‚·
 void RankingWindow();
 
-void RankingWrite(string txtname, rankdata rankdata);		//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½rnkdtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-rankdata* RankingRead(string txtname, int* index);					//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½Å–ß‚ï¿½lï¿½Æ‚ï¿½ï¿½Ä“nï¿½ï¿½ ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É“nï¿½ï¿½
+void RankingWrite(string txtname, rankdata rankdata);		//txtname‚Ìƒtƒ@ƒCƒ‹‚Érnkdt‚ğ‘‚«‚Ş
+rankdata* RankingRead(string txtname, int* index);					//txtname‚Ìƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚ğ“Ç‚İ‚ñ‚Å–ß‚è’l‚Æ‚µ‚Ä“n‚· ”z—ñ‚Ì—v‘f”‚ğˆø”‚É“n‚·
 
-//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
+//ƒXƒe[ƒW‚ÌƒIƒuƒWƒFƒNƒg¶¬
 void CreateStage1_1();
 void CreateStage2_1();
 void CreateStage1_1R();
 void CreateStage1_2R();
 void CreateStage1_3R();
-void CreateStage_MiniGame1();			//ï¿½^ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½jï¿½Qï¿½[ï¿½ï¿½
+void CreateStage_MiniGame1();			//ƒ^ƒCƒ€‚ğ‹£‚¤ƒ~ƒjƒQ[ƒ€
+void CreateSampleBoss();	//bossì¬debug—p
 
 
-//ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½pï¿½tï¿½ï¿½ï¿½O
+//ƒƒjƒ…[Ø‚è‘Ö‚¦—pƒtƒ‰ƒO
 int window = STARTWINDOW;
 
-//ï¿½Lï¿½[ï¿½ï¿½ï¿½ÍŠÖŒW
-int now_key;		//ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìï¿½Ô‚ï¿½Ûï¿½
-bool befKeys[62];	//ï¿½ï¿½Ë‘Oï¿½Ì“ï¿½ï¿½Í•Ûï¿½ï¿½p
+//ƒL[“ü—ÍŠÖŒW
+int now_key;		//¡‚ÌƒtƒŒ[ƒ€‚Ìó‘Ô‚ğ•Û
+bool befKeys[62];	//ˆêŒË‘O‚Ì“ü—Í•Û—p
 
 
-//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Ûï¿½
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","TEST1","TEST2" };
+//ƒ}ƒbƒv–¼•Û
+string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","BOSS","TEST1","TEST2" };
 
-//ï¿½wï¿½iï¿½æ‘œï¿½wï¿½ï¿½
+//”wŒi‰æ‘œw’è
 int stage1_1Back[ACCOUNTFORMAPPARTS];
 int stage1_2Back[ACCOUNTFORMAPPARTS];
 int stage1_3Back[ACCOUNTFORMAPPARTS];
 
-//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[
+//ƒS[ƒ‹ƒo[
 int goalPicHandle;
 
 
@@ -66,12 +67,12 @@ int goalPicHandle;
 int beftime, curtime;
 float frametime;
 
-//ï¿½Xï¿½^ï¿½[ï¿½gï¿½ï¿½Ê‚Ì•ï¿½ï¿½ï¿½
+//ƒXƒ^[ƒg‰æ–Ê‚Ì•¶š
 int strWidth, strLen;
 
-int HPfont;				//HPï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ûï¿½
-int rankfont_1, rankfont_2, rankfont_3;			//ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½g
-int Pausefont;							//ï¿½|ï¿½[ï¿½Yï¿½tï¿½Hï¿½ï¿½ï¿½g
+int HPfont;				//HP•\¦—pƒtƒHƒ“ƒgƒnƒ“ƒhƒ‹•Û
+int rankfont_1, rankfont_2, rankfont_3;			//ƒ‰ƒ“ƒN•\¦—pƒtƒHƒ“ƒg
+int Pausefont;							//ƒ|[ƒYƒtƒHƒ“ƒg
 
 
 //int picture;
@@ -93,17 +94,17 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	beftime = GetNowCount() & INT_MAX;
 
 
-	//ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Zï¿½bï¿½g
-	HPfont = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_1 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_2 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 8, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_3 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 7, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	//ƒtƒHƒ“ƒgƒZƒbƒg
+	HPfont = CreateFontToHandle("ƒƒCƒŠƒI", 16, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_1 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_2 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 8, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	rankfont_3 = CreateFontToHandle("ƒƒCƒŠƒI", 16, 7, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
 	Pausefont = CreateFontToHandle("Ravie", 32, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
 
-	//ï¿½wï¿½iï¿½æ‘œ
+	//”wŒi‰æ‘œ
 	//picture = LoadGraph("pictures/background.png");
 
-	//Mobï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//Mob‰æ‘œ‚ğƒZƒbƒg
 	Player::PicHandle[0] = LoadGraph("pictures/player.png");
 	Player::PicHandle[1] = LoadGraph("pictures/boy_run.png");
 	Player::PicHandle[2] = LoadGraph("pictures/boy_jump.png");
@@ -142,7 +143,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Turtle::PicShellHandle[1] = LoadGraph("pictures/takoyaki_right.png");
 	Turtle::PicShellHandle[2] = LoadGraph("pictures/takoyaki_left.png");
 	Turtle::PicShellHandle[3] = LoadGraph("pictures/takoyaki_back.png");
-	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debug—p‰¼‰æ‘œ
 	HanmerThrow::PicHandle[0] = LoadGraph("pictures/HanmerThrow_1.png");
 	HanmerThrow::PicHandle[1] = LoadGraph("pictures/HanmerThrow_2.png");
 	HanmerThrow::PicHandle[2] = LoadGraph("pictures/HanmerThrow_3.png");
@@ -153,36 +154,37 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ï¿½ï¿½ï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ï¿½Jï¿½jï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
-	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//ï¿½fï¿½oï¿½bï¿½Nï¿½pï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
+	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//‹›‰¼‰æ‘œƒZƒbƒg
+	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ƒJƒj‰æ‘œ‰¼ƒZƒbƒg
+	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//ƒfƒoƒbƒN—p‰¼‰æ‘œƒZƒbƒg
 
-	Polarbear::PicHandle = LoadGraph("pictures/Ship.png"); //debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	Polarbear::PicHandle = LoadGraph("pictures/Ship.png");
 
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug—p‰¼‰æ‘œ
+	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug—p‰¼‰æ‘œ
+	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug—p‰¼‰æ‘œ
+	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug—p‰¼‰æ‘œ
+	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug—p‰¼‰æ‘œ
 
-	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug?¿½p?¿½?¿½?¿½æ‘?
+	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug?¿½p?¿½?¿½?¿½æ‘?
 
-	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
+
+	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug—p‰¼‰æ‘œ
 	Sea::PicHandle = LoadGraph("pictures/Sea.png");
 
 	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
-	//ï¿½}ï¿½bï¿½vï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ƒ}ƒbƒv‰æ‘œ‚ğƒZƒbƒg
 	Map::PicHandle[GROUND] = LoadGraph("pictures/ground.png");
 	Map::PicHandle[TOGE] = LoadGraph("pictures/toge.png");
 	Map::PicHandle[BLOCK_STONE] = LoadGraph("pictures/block_stone.png");
 	Map::PicHandle[BLOCK_ICE] = LoadGraph("pictures/block_ice.png");
 	Map::PicHandle[BLOCK_WOOD] = LoadGraph("pictures/block_wood.png");
 
-	//ï¿½wï¿½iï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//”wŒi‰æ‘œ‚ğƒZƒbƒg
 	stage1_1Back[0] = LoadGraph("pictures/background/stage1_1/background_1.jpg");
 	stage1_1Back[1] = LoadGraph("pictures/background/stage1_1/background_2.jpg");
 	stage1_1Back[2] = LoadGraph("pictures/background/stage1_1/background_3.jpg");
@@ -193,10 +195,10 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	stage1_3Back[1] = LoadGraph("pictures/background/stage1_3/background_2.jpg");
 	stage1_3Back[2] = LoadGraph("pictures/background/stage1_3/background_3.jpg");
 
-	//ï¿½Sï¿½[ï¿½ï¿½
+	//ƒS[ƒ‹
 	goalPicHandle = LoadGraph("pictures/goal_line.png");
 
-	//ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//ƒTƒEƒ“ƒh‚ğƒZƒbƒg
 	Sound::sounds[SOUND_FLASHBLOCK] = LoadSoundMem("sounds/flashblock.mp3");
 	Sound::sounds[SOUND_PLAYERJUMP] = LoadSoundMem("sounds/jump.mp3");
 	Sound::sounds[SOUND_LASERSHOT] = LoadSoundMem("sounds/lasershot.mp3");
@@ -210,7 +212,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
 
-	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//ï¿½ï¿½ï¿½Ê’ï¿½ï¿½ï¿½
+	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//‰¹—Ê’²®
 
 	while (ProcessMessage() == 0 && ScreenFlip() == 0 && ClearDrawScreen() == 0)
 	{
@@ -218,7 +220,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 		GameControl();
 		//printfDx("%f::", frametime);
 	}
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚Ä‰ï¿½ï¿½
+	//ƒƒ‚ƒŠ‚ğ‚·‚×‚Ä‰ğ•ú
 	stage.AllReset();
 
 	DxLib_End();
@@ -227,21 +229,21 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 }
 
 void GameControl() {
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì”Ôï¿½ï¿½ï¿½Ûï¿½
+	//‘I‘ğ‚³‚ê‚½ƒXƒe[ƒW‚Ì”Ô†‚ğ•Û
 	static int selectedstage = 0;
 	//calcurate frametime
 	curtime = GetNowCount() & INT_MAX;
 	frametime = (float)(curtime - beftime) / 1000.0f;
 	beftime = curtime;
 
-	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//ï¿½Lï¿½[ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½
+	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//ƒL[“ü—Íˆ—
 
 	switch (window) {
 	case STARTWINDOW:
 		StartWindow();
 		break;
 	case GAMESELECTWINDOW:
-		//ï¿½ï¿½ï¿½ï¿½ï¿½~
+		//‰¹‚ğ’â~
 		StopSoundMem(Sound::sounds[selectedstage + SOUND_STAGESTART + 1]);
 		selectedstage = GameSelectWindow();
 		break;
@@ -270,7 +272,7 @@ void StartWindow() {
 	strLen = strlen(str);
 	strWidth = GetDrawStringWidth(str, strLen);
 
-	//ï¿½ï¿½ï¿½å‚¤ï¿½Ç’ï¿½ï¿½ï¿½ï¿½É•`ï¿½æ‚³ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½é‚½ï¿½ß‚Ìï¿½ï¿½ï¿½
+	//‚¿‚å‚¤‚Ç’†‰›‚É•`‰æ‚³‚ê‚é‚æ‚¤‚É‚·‚é‚½‚ß‚Ìˆ—
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
 
 	if (GetJoypadInputState(DX_INPUT_KEY_PAD1)) {
@@ -279,1880 +281,45 @@ void StartWindow() {
 }
 
 int GameSelectWindow() {
-	static int selectnum = -1;												//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Bï¿½Åï¿½ï¿½É•ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ÄAï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½
-	const int startx = 100, starty = 100, interval = 30;					//ï¿½ï¿½ï¿½Ú‚ï¿½ x ï¿½ï¿½ï¿½W,yï¿½ï¿½ï¿½W,ï¿½ï¿½ï¿½Ú‚ÌŠÔŠu
+	static int selectnum = -1;												//‘I‘ğ‚µ‚½ƒ}ƒbƒv‚ğ‹L‰¯‚µ‚Ä‚¨‚­BÅ‰‚É•‰‚Ì”‚ğ“ü‚ê‚Ä‚¨‚¢‚ÄA˜A‘±‰Ÿ‚³‚ê‚ğ–h‚®
+	const int startx = 100, starty = 100, interval = 30;					//ˆê—ñ–Ú‚Ì x À•W,yÀ•W,€–Ú‚ÌŠÔŠu
 
-	//ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Å“ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ï¿½
+	//‰‰ñ˜A‘±‚Å“ü‚Á‚Ä‚µ‚Ü‚¤‚Ì‚Å
 	if (selectnum == -1) {
-		InKeyTrigger(now_key, PAD_INPUT_1);			//ï¿½Lï¿½[ï¿½ï¿½ï¿½Í‚ğ—¬‚ï¿½
+		InKeyTrigger(now_key, PAD_INPUT_1);			//ƒL[“ü—Í‚ğ—¬‚·
 		InKeyTrigger(now_key, PAD_INPUT_4);
 		selectnum = 0;
 	}
 
-	if (InKeyTrigger(now_key, PAD_INPUT_DOWN) && selectnum < STAGENUM - 1)					selectnum++;			//ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½Éï¿½ï¿½ï¿½
+	if (InKeyTrigger(now_key, PAD_INPUT_DOWN) && selectnum < STAGENUM - 1)					selectnum++;			//‰½‚à‚È‚¢‚Æ‚±‚ë‚ğ‘I‘ğ‚µ‚È‚¢‚æ‚¤‚É§ŒÀ
 	if (InKeyTrigger(now_key, PAD_INPUT_UP) && selectnum > 0)	selectnum--;
 
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//‘I‘ğ‚ğ‹­§‚·‚é
 	if (selectnum >= 0)
-		DrawString(startx - 30, starty + selectnum * interval, "ï¿½ï¿½", 0xFFFFFF);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‰¡ï¿½Éï¿½ï¿½ï¿½`ï¿½ï¿½
+		DrawString(startx - 30, starty + selectnum * interval, "¡", 0xFFFFFF);	//‘I‘ğ‚µ‚Ä‚¢‚é‰¡‚É¡‚ğ•`‰æ
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½
+	//¡‚ ‚éƒ}ƒbƒv–¼‚ğ•`‰æ
 	for (int i = 0; i < STAGENUM; i++)
 		DrawString(startx, starty + interval * i, stagename[i].c_str(), 0xFFFFFF);
 
-	DrawString(30, 310, "ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½h:", 0xFFFFFF);
-	DrawString(50, 340, "Aï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ + ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);							//ï¿½ï¿½ï¿½Óï¿½ï¿½ï¿½
-	DrawString(50, 370, "Zï¿½Lï¿½[: ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);
-	DrawString(30, 430, "Rï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½\ï¿½ï¿½ï¿½ï¿½", 0xFFFFFF);
+	DrawString(30, 310, "ƒvƒŒƒCƒ‚[ƒh:", 0xFFFFFF);
+	DrawString(50, 340, "AƒL[:‹­§ƒXƒNƒ[ƒ‹ + ¶‰EˆÚ“®(–îˆóƒL[) + ƒWƒƒƒ“ƒv(ƒXƒy[ƒXƒL[)", 0xFFFFFF);							//’ˆÓ‘‚«
+	DrawString(50, 370, "ZƒL[: ¶‰EˆÚ“®(–îˆóƒL[) + ƒWƒƒƒ“ƒv(ƒXƒy[ƒXƒL[)", 0xFFFFFF);
+	DrawString(30, 430, "RƒL[:ƒ‰ƒ“ƒLƒ“ƒO•\¦‚Ö", 0xFFFFFF);
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ï¿½BGMï¿½Íƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Jï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Åï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
-	static bool stagesounddeleteflag = false; //ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì‰ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
+	//ƒXƒe[ƒW‚ÌBGM‚Íƒƒ‚ƒŠƒoƒJH‚¢‚·‚é‚Ì‚ÅÁ‚µ‚Ä‚¨‚­
+	static bool stagesounddeleteflag = false; //ƒXƒe[ƒW‚Ì‰¹Šy‚ªÁ‚³‚ê‚Ä‚¢‚é‚©
 	if (!stagesounddeleteflag) {
 		for (int i = SOUND_STAGESTART; i < SOUND_MAX; i++) {
 			DeleteSoundMem(Sound::sounds[i]);
 		}
 		stagesounddeleteflag = true;
 
-		//ï¿½æ‘œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//‰æ‘œ‚ğÁ‹‚·‚é
 		for(int i = 0;i < 3;i++)
 		stage.mapparts[i] = 0;
 	}
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ç‚»ï¿½Ì”Ôï¿½ï¿½ï¿½Ô‚ï¿½ +(GameSelectWindowï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½Ô‚ÉƒQï¿½[ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½Ì‚ï¿½hï¿½ï¿½)
-	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
-		switch (selectnum) {
-
-		case 0:
-			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
-			CreateStage1_1R();
-			break;
-		case 1:
-			CreateStage1_2R();
-			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
-			break;
-		case 2:
-			CreateStage1_3R();
-			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
-			break;
-		case 3:
-			CreateStage2_1();
-			break;
-		case 4:
-			CreateStage1_1();
-			break;
-		}
-		if (now_key&PAD_INPUT_4)
-			stage.mode = FORCEHORIZONTALSCROLL;
-		else {
-			stage.mode = CROSSKEYANDJUMP;
-		}
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ÅŒvï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-		//calcurate frametime
-		curtime = GetNowCount() & INT_MAX;
-		frametime = (float)(curtime - beftime) / 1000.0f;
-		beftime = curtime;
-		window = GAMEPLAYWINDOW;
-		stagesounddeleteflag = false;
-
-		//ï¿½ï¿½ï¿½ï¿½ï¿½Äï¿½
-		PlaySoundMem(Sound::sounds[selectnum + SOUND_STAGESTART + 1], DX_PLAYTYPE_LOOP, TRUE);
-	}
-	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ï¿½Ê‚ÖˆÚ“ï¿½
-	if (CheckHitKey(KEY_INPUT_R) == 1) {
-		window = RANKINGWINDOW;
-	}
-
-
-
-
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
-	return selectnum;
-}
-
-void GamePlayWindow() {
-	//ï¿½ï¿½ï¿½Èï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½timeï¿½ï¿½ï¿½oï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½Oï¿½ï¿½ï¿½ï¿½(200ms)
-	if (frametime >= 0.2) {
-		window = GAMEPAUSEWINDOW;
-	}
-	else {
-		//ï¿½wï¿½iï¿½`ï¿½ï¿½
-		//DrawGraph(-stage.Camera->x, -stage.Camera->y, picture, TRUE);
-
-
-		stage.AllUpdate(frametime);
-		stage.AllDraw();
-
-		//ï¿½\ï¿½ï¿½ï¿½ÖŒWï¿½`ï¿½ï¿½
-		//ï¿½cï¿½ï¿½gï¿½oï¿½É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
-		if (stage.usingP->HP >= 10)
-			DrawFormatStringToHandle(10, 10, 0x32CCB6, HPfont, "HP:%3d", stage.usingP->HP);
-		else
-			DrawFormatStringToHandle(10, 10, 0xFF0037, HPfont, "HP:%3d", stage.usingP->HP);
-
-		DrawFormatStringToHandle(90, 10, 0xFFF10F, HPfont, "COIN:%4d", Coin::hadcoins);		//ï¿½Rï¿½Cï¿½ï¿½ï¿½`ï¿½ï¿½
-
-		//ï¿½cï¿½èï¿½Ô‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
-		if (stage.limit >= 100000)
-			DrawFormatStringToHandle(530, 10, 0xFFFFFF, HPfont, "TIME:%3d", stage.limit / 1000);
-		else
-			DrawFormatStringToHandle(530, 10, 0xFF0037, HPfont, "TIME:%3d", stage.limit / 1000);
-
-		//printfDx("coins:%d , ", Coin::hadcoins);	//ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½Cï¿½ï¿½ï¿½\ï¿½ï¿½
-		//printfDx("HP:%d , ", stage.usingP->HP);	//HPï¿½\ï¿½ï¿½
-		//printfDx("vy:%f , ", stage.usingP->vy);	//ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½\ï¿½ï¿½
-
-		if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
-			window = GAMEPAUSEWINDOW;
-
-		//ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½ï¿½(ï¿½cï¿½èï¿½Ô‚Oï¿½AHPï¿½Oï¿½Aï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-		if (stage.limit < 0 || stage.usingP->HP <= 0 || stage.usingP->y >= HEIGHT + DOT) {
-			window = GAMEOVERWINDOW;
-		}
-		//ï¿½Sï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		if (stage.usingP->x > stage.usingM->getNumX() * DOT - 50) {
-			window = GAMECLEARWINDOW;
-		}		
-		//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[ï¿½`ï¿½ï¿½
-		DrawGraph(stage.usingM->getNumX()*DOT -stage.Camera->x -100,350,goalPicHandle,TRUE);
-	}
-}
-
-void GamePauseWindow() {
-
-	str = "ï¿½Xï¿½eï¿½[ï¿½Wï¿½É–ß‚ï¿½:ESC , ï¿½Xï¿½eï¿½[ï¿½Wï¿½Iï¿½ï¿½ï¿½É–ß‚ï¿½:Z";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
-
-	str = "Pause";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
-
-	if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
-		window = GAMEPLAYWINDOW;
-	if (InKeyTrigger(now_key, PAD_INPUT_1)) {//zï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
-		stage.AllReset();
-		window = GAMESELECTWINDOW;
-	}
-}
-
-void GameOverWindow() {
-
-	str = "GameOver";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
-
-	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 300, str, 0x00FFFF);
-
-	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
-		stage.AllReset();
-		window = GAMESELECTWINDOW;
-
-	}
-}
-void GameClearWindow(int selectedstage) {
-	str = "GAMECLEAR";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF);
-
-
-	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½
-	char addname[20 + 1] = {""};
-	str = "ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ÄƒXï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½É“oï¿½^ï¿½ï¿½ï¿½Ü‚ï¿½(20ï¿½ï¿½ï¿½ï¿½ï¿½È“ï¿½):Enterï¿½ÅŒï¿½ï¿½ï¿½";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 300, str, 0xFFFFFF);
-
-	str = "Escï¿½Lï¿½[:ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
-	//if (KeyInputSingleCharString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
-	if (KeyInputString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
-		rankdata addrank;
-		//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
-		addrank.name = addname;
-		addrank.limit = stage.limit / 1000;
-		addrank.killedene = Mob::killedenemy;
-		addrank.hp = stage.usingP->HP;
-		addrank.coin = Coin::hadcoins;
-
-		RankingWrite(stagename[selectedstage] + ".txt", addrank);
-	}
-	//ï¿½ï¿½ï¿½ÍŒï¿½Zï¿½ï¿½ï¿½Nï¿½gï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½É–ß‚ï¿½
-	stage.AllReset();
-	window = GAMESELECTWINDOW;
-
-}
-
-void RankingWindow() {
-	static int selectedstage = 0;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ôï¿½ï¿½ï¿½Ûï¿½
-	{
-		//string str;
-		//ifstream text("test.txt");		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
-		////ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
-		//string name[RECODE_NUM_MAX];
-		//int scores[RECODE_NUM_MAX][5];
-		////ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
-		//int count = 0;
-		//while (getline(text, str) && count < RECODE_NUM_MAX)
-		//{
-		//	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
-		//	string tmp;
-		//	istringstream stream(str);
-		//	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
-		//	getline(stream, tmp, ',');
-		//	name[count] = tmp;
-		//	//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
-		//	for (int i = 0; i < 4; i++) {
-		//		getline(stream, tmp, ',');
-		//		scores[count][i] = stoi(tmp);
-		//	}
-		//	count++;
-		//}
-
-
-		int count = 0;		//ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		int scores[RECODE_NUM_MAX];			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_
-		rankdata *score = RankingRead(stagename[selectedstage] + ".txt", &count);	//ï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p
-
-		//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
-		for (int i = 0; i < count; i++) {
-			scores[i] = SCORE_LIMIT * score[i].limit + SCORE_ENEMY * score[i].killedene + SCORE_HP * score[i].hp + SCORE_COIN * score[i].coin;
-		}
-
-		//ï¿½Åï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
-		int firstx = 20, firsty = 20, interval = 20;
-		int rank;	//ï¿½ï¿½ï¿½ÊƒJï¿½Eï¿½ï¿½ï¿½g
-		//ï¿½\ï¿½ï¿½
-		for (int i = 0; i < count; i++) {
-			//ï¿½ï¿½ï¿½Ê•tï¿½ï¿½
-			rank = 0;
-			for (int j = 0; j < count; j++) {
-				if (scores[i] < scores[j])
-					rank++;
-			}
-			//ï¿½ï¿½ï¿½Ê‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
-			switch (rank + 1) {
-			case 1:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFF10F, rankfont_1, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFF10F, rankfont_1, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFF10F, rankfont_1, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
-				break;
-			case 2:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xafafb0, rankfont_2, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xafafb0, rankfont_2, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xafafb0, rankfont_2, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
-				break;
-			case 3:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xb36b24, rankfont_3, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xb36b24, rankfont_3, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xb36b24, rankfont_3, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
-				break;
-			default:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFFFFF, HPfont, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFFFFF, HPfont, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFFFFF, HPfont, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
-				break;
-			}
-		}
-	}
-
-	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
-
-	//ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	if (InKeyTrigger(now_key, PAD_INPUT_RIGHT) && selectedstage < STAGENUM - 1) selectedstage++;
-	if (InKeyTrigger(now_key, PAD_INPUT_LEFT) && selectedstage > 0) selectedstage--;
-
-	//before,now,nextï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ÉˆÚ“ï¿½ï¿½Ì•`ï¿½ï¿½
-	strWidth = GetDrawFormatStringWidth("now:%s", stagename[selectedstage].c_str());				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
-	DrawFormatString((WIDTH - strWidth) / 2, 430, 0xFFFFFF, "now:%s", stagename[selectedstage].c_str());
-
-	if (selectedstage > 0)
-		DrawFormatString(20, 430, 0xffffff, "ï¿½ï¿½before:%s", stagename[selectedstage - 1].c_str());
-	if (selectedstage < STAGENUM - 1)
-		DrawFormatString(450, 430, 0xffffff, "ï¿½ï¿½next:%s", stagename[selectedstage + 1].c_str());
-
-	//ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½
-	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
-		window = GAMESELECTWINDOW;
-	}
-}
-
-void RankingWrite(string name, rankdata rank) {
-	//ï¿½ï¿½ï¿½oï¿½ï¿½
-	string str;
-	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
-
-	//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
-	string names[RECODE_NUM_MAX + 1] = {};
-	int scores[RECODE_NUM_MAX + 1][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
-
-	//ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
-	int count = 0;
-
-	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
-	while (getline(text, str) && count < RECODE_NUM_MAX)
-	{
-		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
-		string tmp;
-		istringstream stream(str);
-		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
-		getline(stream, tmp, ',');
-		names[count] = tmp;
-		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
-		for (int i = 0; i < 4; i++) {
-			getline(stream, tmp, ',');
-			scores[count][i] = stoi(tmp);
-		}
-		count++;
-	}
-
-	//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
-	names[count] = rank.name;
-	scores[count][0] = rank.limit;
-	scores[count][1] = rank.killedene;
-	scores[count][2] = rank.hp;
-	scores[count][3] = rank.coin;
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
-	for (int i = 0; i <= count; i++) {
-		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
-	}
-	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
-	for (int i = 0; i < count; i++) {
-		for (int j = i + 1; j <= count; j++) {
-			if (scores[i][4] < scores[j][4]) {
-				int d_score[5];
-				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
-				for (int k = 0; k < 5; k++) {
-					d_score[k] = scores[i][k];
-				}
-				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
-				string d_name = names[i];
-				names[i] = names[j];
-				names[j] = d_name;
-				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
-				for (int k = 0; k < 5; k++) {
-					scores[i][k] = scores[j][k];
-				}
-				for (int k = 0; k < 5; k++) {
-					scores[j][k] = d_score[k];
-				}
-			}
-		}
-	}
-	text.close();
-	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Éoï¿½ï¿½(ï¿½Eï¿½Cï¿½ï¿½ï¿½Xï¿½Zï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Bï¿½[ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚È‚ï¿½ï¿½È‚ï¿½Ì‚Å’ï¿½ï¿½ï¿½)
-	ofstream output(name, ios_base::trunc);
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	for (int i = 0; i <= count; i++)
-		output << names[i] << ',' << scores[i][0] << ',' << scores[i][1] << ',' << scores[i][2] << ',' << scores[i][3] << ',' << std::endl;
-
-	output.close();
-}
-
-rankdata* RankingRead(string name, int *index) {
-	//ï¿½ï¿½ï¿½oï¿½ï¿½
-	string str;
-	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
-
-								//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
-	string names[RECODE_NUM_MAX] = {};
-	int scores[RECODE_NUM_MAX][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
-
-										   //ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
-	int count = 0;
-
-	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
-	while (getline(text, str) && count < RECODE_NUM_MAX)
-	{
-		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
-		string tmp;
-		istringstream stream(str);
-		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
-		getline(stream, tmp, ',');
-		names[count] = tmp;
-		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
-		for (int i = 0; i < 4; i++) {
-			getline(stream, tmp, ',');
-			scores[count][i] = stoi(tmp);
-		}
-		count++;
-	}
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
-	for (int i = 0; i < count; i++) {
-		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
-	}
-	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
-	for (int i = 0; i < count - 1; i++) {
-		for (int j = i + 1; j < count; j++) {
-			if (scores[i][4] < scores[j][4]) {
-				int d_score[5];
-				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
-				for (int k = 0; k < 5; k++) {
-					d_score[k] = scores[i][k];
-				}
-				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
-				string d_name = names[i];
-				names[i] = names[j];
-				names[j] = d_name;
-				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
-				for (int k = 0; k < 5; k++) {
-					scores[i][k] = scores[j][k];
-				}
-				for (int k = 0; k < 5; k++) {
-					scores[j][k] = d_score[k];
-				}
-			}
-		}
-	}
-	text.close();
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½zï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½
-	static rankdata rank[RECODE_NUM_MAX];
-
-	for (int i = 0; i < count; i++) {
-		rank[i].name = names[i];
-		rank[i].limit = scores[i][0];
-		rank[i].killedene = scores[i][1];
-		rank[i].hp = scores[i][2];
-		rank[i].coin = scores[i][3];
-	}
-
-	//ï¿½vï¿½fï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
-	*index = count;
-	return rank;
-}
-
-void CreateStage1_1() {
-	//stage.usingP->x = 5;
-	//stage.usingP->y = 10;
-	stage.limit = TIME_STAGE1_1;
-
-	Map firstMap;
-
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
-	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
-
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
-
-	//mapï¿½ì¬
-	//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½@1*5
-	firstMap.m_map[6][5] = 1;
-	firstMap.m_map[6][6] = 1;
-	firstMap.m_map[6][7] = 1;
-	firstMap.m_map[6][8] = 1;
-	firstMap.m_map[6][9] = 1;
-
-	//sï¿½Ìï¿½
-	firstMap.m_map[4][10] = 1;
-	firstMap.m_map[3][10] = 1;
-	firstMap.m_map[3][11] = 1;
-	firstMap.m_map[2][11] = 1;
-	//2ï¿½Ìï¿½
-	firstMap.m_map[8][10] = 1;
-	firstMap.m_map[9][10] = 1;
-	firstMap.m_map[9][11] = 1;
-	firstMap.m_map[10][11] = 1;
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½` 2*2
-	firstMap.m_map[17][11] = BLOCK_WOOD;
-	firstMap.m_map[17][10] = BLOCK_ICE;
-	firstMap.m_map[16][11] = BLOCK_STONE;
-	firstMap.m_map[16][10] = GROUND;
-
-	for (int i = 0; i < 5; i++) {
-		firstMap.m_map[19 + i * 5][12] = 1;
-		firstMap.m_map[19 + i * 5][13] = 1;
-	}
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
-	*stage.usingM = firstMap;
-
-	new WalkEnemy(300, 300);
-	new WalkEnemy(100, 100);
-	new WalkEnemy(200, 200);
-	//new ShootLaser(1000);
-	new ShootLaser(500);
-	new ShootEnemy(300, 300);
-	new ShootEnemy(600, 300);
-	new UpDownObject(1000, 300);
-	new UpDownObject(500, 200);
-
-
-	new Coin(100, 300);
-	new FallWall(400, 200);
-	new FallWall(600, 20);
-	//ï¿½oï¿½Oï¿½ï¿½ï¿½Wï¿½i610,10ï¿½j,ï¿½Tï¿½Cï¿½Yï¿½i30,40ï¿½j<-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	new Turtle(610, 10);
-	for(int i = 0; i< 1;i++)
-		new WalkEnemy(730 + i*2, 10);
-
-	//40000ï¿½Â‚Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½[ï¿½{ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚Éï¿½ï¿½ï¿½È‚ï¿½ï¿½B10000ï¿½È‚ç‚¢ï¿½ï¿½ï¿½ï¿½Í‚ï¿½
-	new FireBar(1200, 200, 10, 4);
-
-
-	new Lift(1500, 300, true);
-	new Lift(1800, 300, false);
-	new Rope(350, 150, 5);
-	new Rope(2500, 350, 2);
-	new Jump(3200, 400);
-	new Jump(3240, 400);
-	new Jump(3280, 400);
-	new Jump(3320, 400);
-	new FlashBlock(DOT * 15, DOT * 10);
-
-}
-
-void CreateStage2_1() {
-	stage.limit = TIME_STAGE2_1;
-	Map firstMap;
-	stage.usingP->x = 320;
-	stage.usingP->y = 20;
-
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
-	firstMap.setNum(firstMap.getNumX(), firstMap.getNumY());
-
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
-
-	//ï¿½cï¿½_1*2
-	//firstMap.m_map[6][12] = 1;
-	//firstMap.m_map[6][13] = 1;
-
-	firstMap.m_map[13][12] = 1;
-	firstMap.m_map[13][13] = 1;
-
-	firstMap.m_map[2][firstMap.getNumY() - 1] = 0;
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
-	*stage.usingM = firstMap;
-
-	new Lift(300, 400, true);
-
-	//new Turtle(300, 10);
-	//new Jump(300, 400);
-	//new HanmerThrow(300, 10, 300);
-
-	//new FlashBlock(DOT * 15, DOT * 10);
-	//new FlashBlock(DOT * 12, DOT * 10);
-	//new Ghost(300,10);
-	//new ThornBlock(300,400);
-	//new Ghost(10,10);
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 5; j++) {
-			new Fence(DOT *( 6 + i),DOT * (9 + j));
-		}
-	}
-
-	//new Fence(DOT * 6, DOT * 10);
-	//new Fence(DOT * 5, DOT * 11);
-	//new Fence(DOT * 5, DOT * 10);
-}
-
-void CreateStage1_1R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
-	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
-		stage.mapparts[i] = stage1_1Back[i];
-	}
-
-	stage.limit = TIME_STAGE1_1R;
-
-	Map firstMap;
-
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
-	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
-
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
-
-	//ï¿½}ï¿½bï¿½vï¿½ì»
-	firstMap.m_map[13][11] = BLOCK_WOOD;
-	firstMap.m_map[16][11] = BLOCK_WOOD;
-	firstMap.m_map[18][11] = BLOCK_WOOD;
-	firstMap.m_map[20][11] = BLOCK_WOOD;
-
-	firstMap.m_map[35][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[36][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[37][firstMap.getNumY() - 1] = 0;
-
-	firstMap.m_map[40][9] = BLOCK_WOOD;
-	firstMap.m_map[41][9] = BLOCK_WOOD;
-	firstMap.m_map[42][9] = BLOCK_WOOD;
-	firstMap.m_map[43][9] = BLOCK_WOOD;
-
-	//firstMap.m_map[48][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[49][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[50][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[51][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[52][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[53][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[54][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[55][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[56][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[57][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[58][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[59][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[60][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[61][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[62][firstMap.getNumY() - 1] = 0;
-
-
-	firstMap.m_map[50][9] = BLOCK_WOOD;
-	firstMap.m_map[51][9] = BLOCK_WOOD;
-	firstMap.m_map[52][9] = BLOCK_WOOD;
-	firstMap.m_map[53][9] = BLOCK_WOOD;
-	firstMap.m_map[54][9] = BLOCK_WOOD;
-	firstMap.m_map[55][9] = BLOCK_WOOD;
-
-	firstMap.m_map[50][7] = BLOCK_WOOD;
-	firstMap.m_map[51][7] = BLOCK_WOOD;
-	firstMap.m_map[52][7] = BLOCK_WOOD;
-	firstMap.m_map[53][7] = BLOCK_WOOD;
-	firstMap.m_map[54][7] = BLOCK_WOOD;
-	firstMap.m_map[55][7] = BLOCK_WOOD;
-
-	firstMap.m_map[72][13] = BLOCK_WOOD;
-	firstMap.m_map[72][12] = BLOCK_WOOD;
-
-	firstMap.m_map[83][11] = BLOCK_WOOD;
-	firstMap.m_map[83][12] = BLOCK_WOOD;
-	firstMap.m_map[83][13] = BLOCK_WOOD;
-
-	firstMap.m_map[98][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[99][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[100][firstMap.getNumY() - 1] = 0;
-
-	firstMap.m_map[106][13] = BLOCK_WOOD;
-	firstMap.m_map[113][13] = BLOCK_WOOD;
-
-	firstMap.m_map[159][13] = BLOCK_WOOD;
-
-
-	firstMap.m_map[185][13] = BLOCK_WOOD;
-
-	//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½H
-	firstMap.m_map[168][14] = 0;
-	firstMap.m_map[107][14] = 0;
-
-	for (int i = 0; i < 7; i++) {
-		firstMap.m_map[23 + i][10] = BLOCK_ICE;
-	}//debugï¿½iï¿½Åï¿½ï¿½Ì‚Æ‚ï¿½ï¿½ï¿½É•Xï¿½ï¿½uï¿½ï¿½ï¿½j
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
-	*stage.usingM = firstMap;
-
-
-	new Coin(545, 350);
-	new Coin(609, 350);
-
-	new Turtle(DOT * 10, DOT * 13); //debug
-	//new Fish(DOT * 10, DOT * 13);	//debug
-	//new Crab(DOT * 10, DOT * 4);
-	new Ship(DOT * 10, DOT * 4, 0);
-
-	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
-	new GardenEel(DOT * 30, DOT * 14);//debug
-	new SnowMan(DOT * 33, DOT * 12);//debug
-	new TurtleWithWing(DOT * 35, DOT * 10); //debug
-
-	new WalkEnemy(700, 415);
-	new WalkEnemy(1280, 290);
-
-	new ShootEnemy(1248, 415);
-	new ShootEnemy(1280, 415);
-
-	new Jump(1500, 415);
-
-	new Coin(1600, 256);
-	new Coin(1632, 256);
-	new Coin(1664, 256);
-	new Coin(1696, 256);
-	new Coin(1728, 256);
-	new Coin(1760, 256);
-
-	new Rope(1834, 100, 5);
-
-	new Turtle(DOT * 76, DOT * 13);
-
-
-
-	new UpDownObject(DOT * 87, DOT * 9);
-
-	new FallWall(DOT * 90, DOT * 4);
-
-	new WalkEnemy(DOT * 93, DOT * 13);
-
-	new ShootEnemy(DOT * 104, DOT * 13);
-
-	new Turtle(DOT * 109, DOT * 13);
-
-	new UpDownObject(DOT * 109, DOT * 9);
-
-	new Jump(DOT * 117, DOT * 13);
-
-	new FireBar(DOT * 125, DOT * 10, 90.0, true, 10, 4, 90);
-
-	new Rope(DOT * 119, DOT * 1, 4);
-	new Rope(DOT * 127, DOT * 1, 5);
-
-	new Lift(DOT * 131, DOT * 7, true);
-
-	new ShootLaser(DOT * 131);
-
-	new FireBar(DOT * 138, DOT * 10, 90.0, false, 10, 4, 90);
-
-	new Jump(DOT * 153, DOT * 13);
-
-
-
-	new Turtle(DOT * 165, DOT * 13);
-
-
-	new Turtle(DOT * 172, DOT * 13);
-
-	new Lift(DOT * 188, DOT * 9, true);
-
-	new Lift(DOT * 193, DOT * 7, true);
-
-	new FallWall(DOT * 185, DOT * 2);
-
-	new Coin(DOT * 195, DOT * 5);
-	new Coin(DOT * 196, DOT * 4);
-	new Coin(DOT * 197, DOT * 3);
-	new Coin(DOT * 198, DOT * 3);
-	new Coin(DOT * 199, DOT * 4);
-	new Coin(DOT * 200, DOT * 5);
-
-	new FlashBlock(DOT * 82, DOT * 11);
-	new FlashBlock(DOT * 18, DOT * 8);
-
-	new FlashBlock(DOT * 168, DOT * 14);
-	new FlashBlock(DOT * 107, DOT * 14);
-
-	new FlashBlock(DOT * 112, DOT * 13);
-	new FlashBlock(DOT * 160, DOT * 13);
-
-
-}
-void CreateStage1_2R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
-	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
-		stage.mapparts[i] = stage1_2Back[i];
-	}
-
-	stage.limit = TIME_STAGE2_1R;
-
-	stage.usingP->x = DOT * 2;
-	stage.usingP->y = DOT * 13;
-
-	Map firstMap;
-
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
-	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
-
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
-
-	//ï¿½Xï¿½eï¿½[ï¿½W
-
-	firstMap.m_map[0][0] = BLOCK_STONE;
-	firstMap.m_map[0][1] = BLOCK_STONE;
-	firstMap.m_map[0][2] = BLOCK_STONE;
-	firstMap.m_map[0][3] = BLOCK_STONE;
-	firstMap.m_map[0][4] = BLOCK_STONE;
-	firstMap.m_map[0][5] = BLOCK_STONE;
-	firstMap.m_map[0][6] = BLOCK_STONE;
-	firstMap.m_map[0][7] = BLOCK_STONE;
-	firstMap.m_map[0][8] = BLOCK_STONE;
-	firstMap.m_map[0][9] = BLOCK_STONE;
-	firstMap.m_map[0][10] = BLOCK_STONE;
-	firstMap.m_map[0][11] = BLOCK_STONE;
-	firstMap.m_map[0][12] = BLOCK_STONE;
-	firstMap.m_map[0][13] = BLOCK_STONE;
-
-	firstMap.m_map[1][10] = BLOCK_STONE;
-	firstMap.m_map[2][10] = BLOCK_STONE;
-	firstMap.m_map[3][10] = BLOCK_STONE;
-	firstMap.m_map[4][10] = BLOCK_STONE;
-	firstMap.m_map[5][10] = BLOCK_STONE;
-	firstMap.m_map[6][10] = BLOCK_STONE;
-	firstMap.m_map[7][10] = BLOCK_STONE;
-	firstMap.m_map[8][10] = BLOCK_STONE;
-	firstMap.m_map[9][10] = BLOCK_STONE;
-	firstMap.m_map[10][10] = BLOCK_STONE;
-	firstMap.m_map[11][10] = BLOCK_STONE;
-	firstMap.m_map[12][10] = BLOCK_STONE;
-
-	firstMap.m_map[10][firstMap.getNumY() - 1] = 0;
-
-	firstMap.m_map[14][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[15][firstMap.getNumY() - 1] = 0;
-
-	firstMap.m_map[13][11] = BLOCK_STONE;
-
-	firstMap.m_map[15][11] = BLOCK_STONE;
-
-	//firstMap.m_map[1][9] = BLOCK_STONE;
-	//firstMap.m_map[2][8] = BLOCK_STONE;
-
-	//firstMap.m_map[13][4] = BLOCK_STONE; //<- ï¿½Æ‚ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½Ì‘ï¿½ï¿½ï¿½
-	//firstMap.m_map[14][3] = BLOCK_STONE;
-	//firstMap.m_map[14][5] = BLOCK_STONE;
-	//firstMap.m_map[15][4] = BLOCK_STONE;
-
-	firstMap.m_map[20][9] = BLOCK_STONE;
-	firstMap.m_map[21][9] = BLOCK_STONE;
-	firstMap.m_map[22][9] = BLOCK_STONE;
-	firstMap.m_map[23][9] = BLOCK_STONE;
-	firstMap.m_map[24][9] = BLOCK_STONE;
-	firstMap.m_map[25][9] = BLOCK_STONE;
-	firstMap.m_map[26][9] = BLOCK_STONE;
-	firstMap.m_map[27][9] = BLOCK_STONE;
-	firstMap.m_map[28][9] = BLOCK_STONE;
-	firstMap.m_map[29][9] = BLOCK_STONE;
-	firstMap.m_map[30][9] = BLOCK_STONE;
-	firstMap.m_map[31][9] = BLOCK_STONE;
-	firstMap.m_map[32][9] = BLOCK_STONE;
-
-	firstMap.m_map[20][5] = BLOCK_STONE;
-	firstMap.m_map[21][5] = BLOCK_STONE;
-	firstMap.m_map[22][5] = BLOCK_STONE;
-	firstMap.m_map[23][5] = BLOCK_STONE;
-	firstMap.m_map[24][5] = BLOCK_STONE;
-	firstMap.m_map[25][5] = BLOCK_STONE;
-	firstMap.m_map[26][5] = BLOCK_STONE;
-	firstMap.m_map[27][5] = BLOCK_STONE;
-	firstMap.m_map[28][5] = BLOCK_STONE;
-	firstMap.m_map[29][5] = BLOCK_STONE;
-	firstMap.m_map[30][5] = BLOCK_STONE;
-	firstMap.m_map[31][5] = BLOCK_STONE;
-	firstMap.m_map[32][5] = BLOCK_STONE;
-
-	firstMap.m_map[30][13] = BLOCK_STONE;
-	firstMap.m_map[36][13] = BLOCK_STONE;
-
-	firstMap.m_map[35][9] = BLOCK_STONE;
-	firstMap.m_map[36][9] = BLOCK_STONE;
-	firstMap.m_map[37][9] = BLOCK_STONE;
-	firstMap.m_map[38][9] = BLOCK_STONE;
-	firstMap.m_map[39][9] = BLOCK_STONE;
-	firstMap.m_map[40][9] = BLOCK_STONE;
-	firstMap.m_map[41][9] = BLOCK_STONE;
-	firstMap.m_map[42][9] = BLOCK_STONE;
-	firstMap.m_map[43][9] = BLOCK_STONE;
-	firstMap.m_map[44][9] = BLOCK_STONE;
-	firstMap.m_map[45][9] = BLOCK_STONE;
-	firstMap.m_map[46][9] = BLOCK_STONE;
-	firstMap.m_map[47][9] = BLOCK_STONE;
-	firstMap.m_map[48][9] = BLOCK_STONE;
-	firstMap.m_map[49][9] = BLOCK_STONE;
-	firstMap.m_map[50][9] = BLOCK_STONE;
-	firstMap.m_map[51][9] = BLOCK_STONE;
-	firstMap.m_map[52][9] = BLOCK_STONE;
-	firstMap.m_map[53][9] = BLOCK_STONE;
-	firstMap.m_map[54][9] = BLOCK_STONE;
-	firstMap.m_map[55][9] = BLOCK_STONE;
-	firstMap.m_map[56][9] = BLOCK_STONE;
-	firstMap.m_map[57][9] = BLOCK_STONE;
-	firstMap.m_map[58][9] = BLOCK_STONE;
-
-	firstMap.m_map[35][5] = BLOCK_STONE;
-	firstMap.m_map[36][5] = BLOCK_STONE;
-	firstMap.m_map[37][5] = BLOCK_STONE;
-	firstMap.m_map[38][5] = BLOCK_STONE;
-	firstMap.m_map[39][5] = BLOCK_STONE;
-	firstMap.m_map[40][5] = BLOCK_STONE;
-	firstMap.m_map[41][5] = BLOCK_STONE;
-	firstMap.m_map[42][5] = BLOCK_STONE;
-	firstMap.m_map[43][5] = BLOCK_STONE;
-	firstMap.m_map[44][5] = BLOCK_STONE;
-	firstMap.m_map[45][5] = BLOCK_STONE;
-	firstMap.m_map[46][5] = BLOCK_STONE;
-	firstMap.m_map[47][5] = BLOCK_STONE;
-	firstMap.m_map[48][5] = BLOCK_STONE;
-	firstMap.m_map[49][5] = BLOCK_STONE;
-	firstMap.m_map[50][5] = BLOCK_STONE;
-	firstMap.m_map[51][5] = BLOCK_STONE;
-	firstMap.m_map[52][5] = BLOCK_STONE;
-	firstMap.m_map[53][5] = BLOCK_STONE;
-	firstMap.m_map[54][5] = BLOCK_STONE;
-	firstMap.m_map[55][5] = BLOCK_STONE;
-	firstMap.m_map[56][5] = BLOCK_STONE;
-	//firstMap.m_map[57][5] = BLOCK_STONE;
-	firstMap.m_map[58][5] = BLOCK_STONE;
-
-	firstMap.m_map[62][9] = BLOCK_STONE;
-	firstMap.m_map[63][9] = BLOCK_STONE;
-	firstMap.m_map[64][9] = BLOCK_STONE;
-	firstMap.m_map[65][9] = BLOCK_STONE;
-	firstMap.m_map[66][9] = BLOCK_STONE;
-	firstMap.m_map[67][9] = BLOCK_STONE;
-	firstMap.m_map[68][9] = BLOCK_STONE;
-	firstMap.m_map[69][9] = BLOCK_STONE;
-	firstMap.m_map[70][9] = BLOCK_STONE;
-	firstMap.m_map[71][9] = BLOCK_STONE;
-	firstMap.m_map[72][9] = BLOCK_STONE;
-	firstMap.m_map[73][9] = BLOCK_STONE;
-	firstMap.m_map[74][9] = BLOCK_STONE;
-	firstMap.m_map[75][9] = BLOCK_STONE;
-	firstMap.m_map[76][9] = BLOCK_STONE;
-	firstMap.m_map[77][9] = BLOCK_STONE;
-	firstMap.m_map[78][9] = BLOCK_STONE;
-	firstMap.m_map[79][9] = BLOCK_STONE;
-	firstMap.m_map[80][9] = BLOCK_STONE;
-	firstMap.m_map[81][9] = BLOCK_STONE;
-	firstMap.m_map[82][9] = BLOCK_STONE;
-	//firstMap.m_map[83][9] = BLOCK_STONE;
-	//firstMap.m_map[84][9] = BLOCK_STONE;
-	firstMap.m_map[85][9] = BLOCK_STONE;
-
-	firstMap.m_map[62][5] = BLOCK_STONE;
-	firstMap.m_map[63][5] = BLOCK_STONE;
-	firstMap.m_map[64][5] = BLOCK_STONE;
-	firstMap.m_map[65][5] = BLOCK_STONE;
-	firstMap.m_map[66][5] = BLOCK_STONE;
-	firstMap.m_map[67][5] = BLOCK_STONE;
-	firstMap.m_map[68][5] = BLOCK_STONE;
-	firstMap.m_map[69][5] = BLOCK_STONE;
-	firstMap.m_map[70][5] = BLOCK_STONE;
-	firstMap.m_map[71][5] = BLOCK_STONE;
-	firstMap.m_map[72][5] = BLOCK_STONE;
-	firstMap.m_map[73][5] = BLOCK_STONE;
-	firstMap.m_map[74][5] = BLOCK_STONE;
-	firstMap.m_map[75][5] = BLOCK_STONE;
-	firstMap.m_map[76][5] = BLOCK_STONE;
-	firstMap.m_map[77][5] = BLOCK_STONE;
-	firstMap.m_map[78][5] = BLOCK_STONE;
-	firstMap.m_map[79][5] = BLOCK_STONE;
-	firstMap.m_map[80][5] = BLOCK_STONE;
-	firstMap.m_map[81][5] = BLOCK_STONE;
-	firstMap.m_map[82][5] = BLOCK_STONE;
-	//firstMap.m_map[83][5] = BLOCK_STONE;
-	//firstMap.m_map[84][5] = BLOCK_STONE;
-	firstMap.m_map[85][5] = BLOCK_STONE;
-
-	firstMap.m_map[83][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[84][firstMap.getNumY() - 1] = 0;
-
-	firstMap.m_map[88][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[89][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[90][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[91][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[92][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[93][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[94][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[95][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[96][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[97][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[98][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[99][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[100][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[101][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[102][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[103][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[104][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[105][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[106][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[107][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[108][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[109][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[110][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[111][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[112][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[113][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[114][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[115][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[116][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[117][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[118][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[119][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[120][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[127][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[128][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[129][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[130][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[131][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[132][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[133][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[134][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[135][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[136][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[137][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[138][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[139][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[140][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[141][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[142][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[143][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[144][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[145][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[146][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[147][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[148][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[149][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[150][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[151][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[152][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[153][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[154][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[155][firstMap.getNumY() - 1] = 0;
-	firstMap.m_map[156][firstMap.getNumY() - 1] = 0;
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
-	*stage.usingM = firstMap;
-
-	//MOB
-	new Jump(DOT * 15, DOT * 10);
-
-	new WalkEnemy(DOT * 6, DOT * 13);
-	new WalkEnemy(DOT * 7, DOT * 13);
-
-	new Coin(DOT, DOT * 5);
-	new Coin(DOT, DOT * 6);
-	new Coin(DOT, DOT * 7);
-	new Coin(DOT, DOT * 8);
-
-	new Coin(DOT * 13, DOT * 3);
-	new Coin(DOT * 13, DOT * 5);
-	new Coin(DOT * 14, DOT * 4);
-	new Coin(DOT * 15, DOT * 3);
-	new Coin(DOT * 15, DOT * 5);
-
-	new Coin(DOT * 64, DOT * 6);
-	new Coin(DOT * 64, DOT * 7);
-	new Coin(DOT * 64, DOT * 8);
-
-	new Coin(DOT * 65, DOT * 6);
-	new Coin(DOT * 65, DOT * 7);
-	new Coin(DOT * 65, DOT * 8);
-
-	new Coin(DOT * 66, DOT * 6);
-	new Coin(DOT * 66, DOT * 7);
-	new Coin(DOT * 66, DOT * 8);
-
-	new Coin(DOT * 64, DOT * 11);
-	new Coin(DOT * 64, DOT * 12);
-	new Coin(DOT * 64, DOT * 13);
-
-	new Coin(DOT * 65, DOT * 11);
-	new Coin(DOT * 65, DOT * 12);
-	new Coin(DOT * 65, DOT * 13);
-
-	new Coin(DOT * 66, DOT * 11);
-	new Coin(DOT * 66, DOT * 12);
-	new Coin(DOT * 66, DOT * 13);
-
-	new Rope(DOT * 18, DOT, 7);
-	new Rope(DOT * 33, DOT, 7);
-	new Rope(DOT * 60, DOT, 7);
-	new Rope(DOT * 130, DOT, 7);
-	new Rope(DOT * 135, DOT, 7);
-	new Rope(DOT * 140, DOT, 7);
-	new Rope(DOT * 145, DOT, 7);
-	new Rope(DOT * 150, DOT, 7);
-
-	new Turtle(DOT * 33, DOT * 13);
-
-	new HanmerThrow(DOT * 46, DOT * 5, 300);
-	//new HanmerThrow(DOT * 48, DOT * 5,300);
-	//new HanmerThrow(DOT * 50, DOT * 5,300);
-	new HanmerThrow(DOT * 52, DOT * 5, 300);
-
-	new UpDownObject(DOT * 88, DOT * 4);
-
-
-	new Lift(DOT * 90, DOT * 12, false);
-	new Lift(DOT * 94, DOT * 4, true);
-	new Coin(DOT * 94, DOT * 8);
-	new Coin(DOT * 94, DOT * 7);
-	new Coin(DOT * 94, DOT * 6);
-	new Lift(DOT * 98, DOT * 12, false);
-	new Lift(DOT * 102, DOT * 4, true);
-	new Coin(DOT * 102, DOT * 8);
-	new Coin(DOT * 102, DOT * 7);
-	new Coin(DOT * 102, DOT * 6);
-	new Lift(DOT * 102, DOT * 12, false);
-	new Lift(DOT * 106, DOT * 5, true);
-	new Lift(DOT * 110, DOT * 6, true);
-	new Lift(DOT * 114, DOT * 7, true);
-	new Lift(DOT * 118, DOT * 8, true);
-	new Lift(DOT * 163, DOT * 6, true);
-	new Coin(DOT * 163, DOT * 7);
-	new Coin(DOT * 164, DOT * 9);
-	new Coin(DOT * 163, DOT * 11);
-	new Coin(DOT * 164, DOT * 13);
-
-	new Jump(DOT * 165, DOT * 13);
-	new Jump(DOT * 170, DOT * 13);
-	new Jump(DOT * 175, DOT * 13);
-	new Jump(DOT * 194, DOT * 13);
-	new Coin(DOT * 195, DOT * 5);
-	new Coin(DOT * 197, DOT * 4);
-	new Coin(DOT * 199, DOT * 3);
-
-	new FlashBlock(DOT * 14, DOT * 11);
-	new FlashBlock(DOT * 14, DOT * 14);
-	new FlashBlock(DOT * 15, DOT * 14);
-
-	new FlashBlock(DOT * 35, DOT * 12);
-	new FlashBlock(DOT * 57, DOT * 5);
-
-	new FlashBlock(DOT * 83, DOT * 5);
-	new FlashBlock(DOT * 84, DOT * 5);
-	new FlashBlock(DOT * 83, DOT * 9);
-	new FlashBlock(DOT * 84, DOT * 9);
-	new FlashBlock(DOT * 83, DOT * 14);
-	new FlashBlock(DOT * 84, DOT * 14);
-	new FlashBlock(DOT * 123, DOT * 7);
-	new FlashBlock(DOT * 124, DOT * 7);
-	new FlashBlock(DOT * 158, DOT * 7);
-	new FlashBlock(DOT * 159, DOT * 7);
-
-	new ThornBlock(DOT * 13, DOT * 4);
-	new ThornBlock(DOT * 14, DOT * 3);
-	new ThornBlock(DOT * 14, DOT * 5);
-	new ThornBlock(DOT * 15, DOT * 4);
-
-	new ThornBlock(DOT * 1, DOT * 9);
-	new ThornBlock(DOT * 2, DOT * 8);
-
-	new ThornBlock(DOT * 22, DOT * 8);
-	new ThornBlock(DOT * 22, DOT * 7);
-	//new ThornBlock(DOT * 22, DOT * 6);
-
-	new ThornBlock(DOT * 22, DOT * 4);
-	new ThornBlock(DOT * 22, DOT * 3);
-	new ThornBlock(DOT * 22, DOT * 2);
-
-	new ThornBlock(DOT * 22, DOT * 10);
-
-	new ThornBlock(DOT * 36, DOT * 6);
-
-	new ThornBlock(DOT * 36, DOT * 3);
-	new ThornBlock(DOT * 37, DOT * 4);
-	new ThornBlock(DOT * 37, DOT * 2);
-
-	new ThornBlock(DOT * 37, DOT * 11);
-	new ThornBlock(DOT * 37, DOT * 12);
-
-	new ThornBlock(DOT * 63, DOT);
-	new ThornBlock(DOT * 63, DOT * 2);
-	new ThornBlock(DOT * 63, DOT * 3);
-
-	new ThornBlock(DOT * 63, DOT * 6);
-	new ThornBlock(DOT * 63, DOT * 7);
-	new ThornBlock(DOT * 63, DOT * 8);
-
-	new ThornBlock(DOT * 63, DOT * 12);
-	new ThornBlock(DOT * 63, DOT * 13);
-
-	new ThornBlock(DOT * 162, DOT * 7);
-	new ThornBlock(DOT * 165, DOT * 7);
-	new ThornBlock(DOT * 166, DOT * 7);
-	new ThornBlock(DOT * 167, DOT * 7);
-	new ThornBlock(DOT * 168, DOT * 7);
-	new ThornBlock(DOT * 169, DOT * 7);
-	new ThornBlock(DOT * 170, DOT * 7);
-	new ThornBlock(DOT * 171, DOT * 7);
-	new ThornBlock(DOT * 172, DOT * 7);
-	new ThornBlock(DOT * 173, DOT * 7);
-	new ThornBlock(DOT * 174, DOT * 7);
-	new ThornBlock(DOT * 175, DOT * 7);
-	new ThornBlock(DOT * 176, DOT * 7);
-	new ThornBlock(DOT * 177, DOT * 7);
-	new ThornBlock(DOT * 178, DOT * 7);
-	new ThornBlock(DOT * 179, DOT * 7);
-	new ThornBlock(DOT * 180, DOT * 7);
-	new ThornBlock(DOT * 181, DOT * 7);
-
-	new ThornBlock(DOT * 162, DOT * 8);
-	new ThornBlock(DOT * 165, DOT * 8);
-	new ThornBlock(DOT * 166, DOT * 8);
-	new ThornBlock(DOT * 167, DOT * 8);
-	new ThornBlock(DOT * 168, DOT * 8);
-	new ThornBlock(DOT * 169, DOT * 8);
-	new ThornBlock(DOT * 170, DOT * 8);
-	new ThornBlock(DOT * 171, DOT * 8);
-	new ThornBlock(DOT * 172, DOT * 8);
-	new ThornBlock(DOT * 173, DOT * 8);
-	new ThornBlock(DOT * 174, DOT * 8);
-	new ThornBlock(DOT * 175, DOT * 8);
-	new ThornBlock(DOT * 176, DOT * 8);
-	new ThornBlock(DOT * 177, DOT * 8);
-	new ThornBlock(DOT * 178, DOT * 8);
-	new ThornBlock(DOT * 179, DOT * 8);
-	new ThornBlock(DOT * 180, DOT * 8);
-	new ThornBlock(DOT * 181, DOT * 8);
-
-	new Crab(DOT * 25, DOT * 13);
-
-	new Ghost(DOT * 25, DOT * 7);
-	new Ghost(DOT * 25, DOT * 3);
-	new Ghost(DOT * 40, DOT * 4);
-	new Ghost(DOT * 46, DOT * 13);
-	//new Ghost(DOT * 48, DOT * 13);
-	//new Ghost(DOT * 50, DOT * 13);
-	//new Ghost(DOT * 52, DOT * 13);
-
-	new Ghost(DOT * 68, DOT);
-	new Ghost(DOT * 68, DOT * 13);
-
-	new Ghost(DOT * 70, DOT * 7);
-	//new Ghost(DOT * 70, DOT * 8);
-	//new Ghost(DOT * 71, DOT * 7);
-	//new Ghost(DOT * 71, DOT * 8);
-	//new Ghost(DOT * 72, DOT * 7);
-	new Ghost(DOT * 72, DOT * 8);
-
-	new Ghost(DOT * 109, DOT * 13);
-	//new Ghost(DOT * 110, DOT * 13);
-	new Ghost(DOT * 111, DOT * 13);
-
-	new Ghost(DOT * 109, DOT * 2);
-	//new Ghost(DOT * 110, DOT * 2);
-	new Ghost(DOT * 111, DOT * 2);
-
-	new Ghost(DOT * 123, DOT * 13);
-	new Ghost(DOT * 124, DOT * 13);
-
-	new Ghost(DOT * 135, DOT * 13);
-	new Ghost(DOT * 140, DOT * 13);
-	new Ghost(DOT * 145, DOT * 13);
-
-}
-
-void CreateStage1_3R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
-	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
-		stage.mapparts[i] = stage1_3Back[i];
-	}
-
-	stage.usingP->x = DOT * 2;
-	stage.usingP->y = DOT * 10;
-	//stage.usingP->x = DOT * 256;
-	//stage.usingP->y = DOT * 10;
-	stage.limit = TIME_STAGE1_3R;
-
-	Map firstMap;
-
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
-	firstMap.setNum(300, firstMap.getNumY());
-
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
-	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
-
-
-	firstMap.m_map[6][11] = 1;
-	for (int i = 0; i < 5; i++)
-		firstMap.m_map[8 + i][11] = 1;
-
-	for (int i = 0; i < 3; i++) {
-		firstMap.m_map[35 + i][13] = 1;
-		firstMap.m_map[40 + i][13] = 1;
-	}
-	for (int i = 0; i < 2; i++) {
-		firstMap.m_map[36 + i][12] = 1;
-		firstMap.m_map[40 + i][12] = 1;
-	}
-	firstMap.m_map[37][11] = 1;
-	firstMap.m_map[40][11] = 1;
-	firstMap.m_map[38][14] = 0;
-	firstMap.m_map[39][14] = 0;
-	for (int i = 0; i < 12; i += 2) {
-		firstMap.m_map[51 + i][3] = 1;
-		firstMap.m_map[50 + i][4] = 1;
-		firstMap.m_map[49 + i][5] = 1;
-		firstMap.m_map[50 + i][6] = 1;
-	}
-	for (int i = 0; i < 13; i++)
-		firstMap.m_map[69 + i][8] = 1;
-	/*for (int i = 0; i < 2; i++)
-	firstMap.m_map[81][6 - i] = 1;*/
-	for (int i = 0; i < 32; i++)
-		firstMap.m_map[69 + i][14] = 0;
-
-	for (int i = 0; i < 2; i++) {
-		firstMap.m_map[85 + (i * 2)][12] = 1;
-		firstMap.m_map[86 + (i * 2)][13] = 1;
-	}
-	firstMap.m_map[87][14] = 1;
-	firstMap.m_map[86][11] = 1;
-	for (int i = 0; i < 5; i++) {
-		firstMap.m_map[90 + i][9] = 1;
-	}
-	firstMap.m_map[93][6] = 1;
-	for (int i = 0; i < 3; i++)
-		firstMap.m_map[89][i + 1] = 1;
-	for (int i = 0; i < 2; i++)
-		firstMap.m_map[90 + i][4] = 1;
-	firstMap.m_map[91][2] = 1;
-
-	for (int i = 0; i < 5; i++)
-		firstMap.m_map[92 + i][1] = 1;
-	firstMap.m_map[122][10] = 1;
-	firstMap.m_map[128][10] = 1;
-	firstMap.m_map[125][7] = 1;
-	firstMap.m_map[135][10] = 1;
-	firstMap.m_map[139][7] = 1;
-	firstMap.m_map[142][10] = 1;
-	for (int i = 0; i < 100; i++) {
-		firstMap.m_map[178 + i][0] = 1;
-	}
-
-	for(int i=0;i<40;i++)
-		firstMap.m_map[255 + i][3] = 1;
-
-	for (int i = 0; i < 7; i++) {
-		firstMap.m_map[290][13] = 1;
-
-	}
-	for (int i = 0; i < 6; i++) {
-		firstMap.m_map[291][12] = 1;
-	}
-	for (int i = 0; i < 5; i++) {
-		firstMap.m_map[292][11] = 1;
-	}
-	for (int i = 0; i < 4; i++) {
-		firstMap.m_map[293][10] = 1;
-	}
-	for (int i = 0; i < 3; i++) {
-		firstMap.m_map[294][9] = 1;
-	}
-	for (int i = 0; i < 2; i++) {
-		firstMap.m_map[295][8] = 1;
-	}
-	firstMap.m_map[296][7] = 1;
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
-	*stage.usingM = firstMap;
-
-	
-
-	new ShootEnemy(DOT * 8, DOT * 12);
-	new HanmerThrow(DOT * 10, DOT * 9, 250);
-	new Coin(DOT * 8, DOT * 8);
-	new Coin(DOT * 9, DOT * 7 + 5);
-	new Coin(DOT * 10, DOT * 6 + 20);
-	new Coin(DOT * 11, DOT * 7 + 5);
-	new Coin(DOT * 12, DOT * 8);
-
-	new WalkEnemy(DOT * 20, DOT * 12);
-	new HanmerThrow(DOT * 25, DOT * 12, 250);
-
-
-
-	for (int i = 0; i < 10; i += 2) {
-		new ShootEnemy(DOT * (51 + i), DOT * 4);
-		new ShootEnemy(DOT*(50 + i), DOT * 5);
-	}
-
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT*(52 + i * 3), DOT * 9);
-		new Coin(DOT*(53 + i * 3), DOT * 8);
-		new Coin(DOT*(54 + i * 3), DOT * 9);
-	}
-	for (int i = 0; i < 5; i++) {
-		new Jump(DOT*(51 + i * 3), DOT * 13);
-	}
-	for (int i = 0; i < 6; i++) {
-		new FallWall(DOT*(69 + i * 2), DOT);
-	}
-	for (int i = 0; i < 5; i++)
-		new Coin(DOT * (70 + i * 2), DOT * 3);
-	//new FlashBlock(DOT * 80, DOT * 5);
-	new FallWall(DOT * 81, DOT);
-
-	new Coin(DOT * 82, DOT * 3);
-	new Coin(DOT * 83, DOT * 2);
-	new Coin(DOT * 84, DOT * 2);
-	new Coin(DOT * 85, DOT * 3);
-	new Lift(DOT * 86, DOT * 4, true);
-	new ShootEnemy(DOT * 86, DOT * 12);
-	new ShootEnemy(DOT * 87, DOT * 13);
-	new FireBar(DOT * 91, DOT * 6, 90, false, 8, 3, 0);
-	new Coin(DOT * 91, DOT * 7 + 16);
-	new Coin(DOT * 92, DOT * 7 + 16);
-	new Coin(DOT * 93, DOT * 5);
-	for (int i = 0; i < 7; i++) {
-		new Coin(DOT * (90 + i), 0);
-	}
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT * 90, DOT*(i + 1));
-	}
-	new Coin(DOT * 91, DOT * 1);
-	new Coin(DOT * 91, DOT * 3);
-	new Coin(DOT * 93, DOT * 4);
-	new Lift(DOT * 96, DOT * 9, true);
-	new Rope(DOT * 98, 0, 4);
-	new ShootLaser(DOT * 103);
-	new FireBar(DOT * 103 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
-	new WalkEnemy(DOT * 103, DOT * 12);
-	new FireBar(DOT * 110 + 16, DOT * 10 - 16, 60, false, 8, 3, 0);
-	new FireBar(DOT * 117 + 16, DOT * 10 - 16, 60, false, 8, 2, 0);
-	new WalkEnemy(DOT * 117, DOT * 12);
-	new FireBar(DOT * 124 + 16, DOT * 10 - 16,60,true, 8, 2,0);
-
-	new FireBar(DOT * 131 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
-	new FireBar(DOT * 138 + 16, DOT * 10 - 16, 60, false, 8, 4, 0);
-	new FireBar(DOT * 145 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
-	new FireBar(DOT * 152 + 16, DOT * 10 - 16, 60, false, 8, 5, 0);
-	new Coin(DOT * 122, DOT * 9);
-	new Coin(DOT * 128, DOT * 9);
-	new Coin(DOT * 125, DOT * 6);
-	new Coin(DOT * 135, DOT * 9);
-	new Coin(DOT * 139, DOT * 6);
-	new Coin(DOT * 142, DOT * 9);
-
-	new FireBar(DOT * 159 + 16, DOT * 10 - 16, 60, false, 8, 6, 0);
-	new FireBar(DOT * 166 + 16, DOT * 10 - 16, 60, false, 8, 7, 0);
-	new FireBar(DOT * 173 + 16, DOT * 10 - 16, 60, false, 8, 8, 0);
-
-
-
-	//new Fence(DOT * 180, DOT * 7);
-	for (int i = 0; i < 112; i++) {
-		for (int j = 1; j < 14; j++) {
-			new Fence(DOT*(178 + i), DOT*j);
-		}
-	}
-	for (int i = 0; i < 5; i++) {
-		new ShootEnemy(DOT*(185 + i * 4), DOT * 12);
-	}
-	for (int i = 0; i < 3; i++) {
-		new HanmerThrow(DOT*(185 + i * 8), DOT * 12, 460);
-	}
-
-	for (int i = 0; i < 3; i++) {
-		new FireBar(DOT*(210 + i * 5), DOT*(2 + i * 4), 40, true, 4, 4, 0);
-	}
-	for (int i = 0; i < 2; i++) {
-		new FireBar(DOT*(210 + i * 10), DOT*(10 - i * 8), 40, true, 4, 4, 0);
-	}
-	for (int i = 0; i < 2; i++) {
-		new FireBar(DOT * 215, DOT*(2 + i * 8), 40, false, 4, 4, 0);
-	}
-	for (int i = 0; i < 2; i++) {
-		new FireBar(DOT*(210 + i * 10), DOT * 6, 40, false, 4, 4, 0);
-	}
-	new FireBar(DOT * 230, DOT * 7, 45, true, 16, 4, 0);
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT * 227, DOT*(5 + i));
-	}
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT * 234, DOT*(5 + i));
-	}
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT * (229 + i), DOT * 3);
-	}
-	for (int i = 0; i < 3; i++) {
-		new Coin(DOT * (229 + i), DOT * 11);
-	}
-
-	for (int i =1; i < 4; i++) {
-		new HanmerThrow(DOT*(256 + i * 8), DOT * 1, 250);
-		new ShootEnemy(DOT * (258 + i * 8), DOT * 12);
-
-	}
-	for (int i = 0; i < 3; i++) {
-		new ShootLaser(DOT*(253 + i * 20));
-	}
-
-
-	for (int i = 0; i < 7; i++) {
-		new FlashBlock(DOT * 240, DOT*i * 2);  ///////////////////////////
-
-	}
-	new FlashBlock(DOT * 249, DOT * 8);  //kkakakakakakka
-	new FlashBlock(DOT * 251, DOT * 4);  //
-	new FlashBlock(DOT * 251, DOT * 8);  //
-	new Ghost(DOT * 38, DOT * 14);
-
-	new Ghost(DOT * 243, DOT * 2);
-	new Ghost(DOT * 243, DOT * 13);
-
-	for (int i = 0; i < 6; i++) {
-		new ThornBlock(DOT * 246, DOT*(i + 1));
-		new ThornBlock(DOT * 246, DOT * (13 - i));
-	}
-	for (int i = 0; i < 2; i++) {
-		new ThornBlock(DOT*(247 + i), DOT * 8);
-		new ThornBlock(DOT*(247 + i), DOT * 6);  //////////////////
-	}
-	new ThornBlock(DOT * 250, DOT * 2);
-	new ThornBlock(DOT * 254, DOT * 7);
-	for (int i = 0; i < 4; i++) {
-		new ThornBlock(DOT * 248, DOT*(5 - i));
-	}
-	new ThornBlock(DOT * 249, DOT * 2);
-
-	/////////////////////////////////////////////
-	for (int i = 0; i < 4; i++) {
-		new ThornBlock(DOT*(251 + i), DOT * 2);
-	}
-	for (int i = 0; i < 5; i++) {
-		new ThornBlock(DOT * 254, DOT*(6 - i));
-	}
-
-	for (int i = 0; i < 3; i++) {
-		new ThornBlock(DOT * 251, DOT*(5 + i));
-	}
-
-	for (int i = 0; i < 2; i++) {
-
-		new ThornBlock(DOT * 254, DOT*(8 + i));
-	}
-	new ThornBlock(DOT * 250, DOT * 8);
-	new ThornBlock(DOT * 251, DOT * 9);
-
-	//new Fence(222, 222);
-}
-
-
-void CreateStage_MiniGame1() {
-	//ï¿½lï¿½ğ•‰‚Æ‚ï¿½ï¿½Ägï¿½ï¿½(5ï¿½bï¿½Ô‚Ìï¿½ï¿½ï¿½)
-	stage.limit = 5000;
-
-	//new Turtle(300, 10);
-	//new Jump(300, 400);
-
-
-}
-
-#include "Stage.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <stdlib.h>
-
-
-#define STAGENUM 4
-using namespace std;
-
-//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p	ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½
-struct rankdata {
-	string name;
-	int limit, killedene, hp, coin;
-};
-
-
-//ï¿½Nï¿½ï¿½ï¿½Xï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ì¬
-Stage stage;
-
-//ï¿½Öï¿½ï¿½@ï¿½vï¿½ï¿½ï¿½gï¿½^ï¿½Cï¿½vï¿½éŒ¾
-void GameControl();
-void StartWindow();
-int  GameSelectWindow();		//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
-void GamePlayWindow();
-void GamePauseWindow();
-void GameOverWindow();
-void GameClearWindow(int selectedstage);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ìï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½nï¿½ï¿½
-void RankingWindow();
-
-void RankingWrite(string txtname, rankdata rankdata);		//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½rnkdtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-rankdata* RankingRead(string txtname, int* index);					//txtnameï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½Å–ß‚ï¿½lï¿½Æ‚ï¿½ï¿½Ä“nï¿½ï¿½ ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É“nï¿½ï¿½
-
-//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
-void CreateStage1_1();
-void CreateStage2_1();
-void CreateStage1_1R();
-void CreateStage1_2R();
-void CreateStage1_3R();
-void CreateStage_MiniGame1();			//ï¿½^ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½jï¿½Qï¿½[ï¿½ï¿½
-void CreateSampleBoss();	//bossï¿½ì¬debugï¿½p
-
-
-//ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½pï¿½tï¿½ï¿½ï¿½O
-int window = STARTWINDOW;
-
-//ï¿½Lï¿½[ï¿½ï¿½ï¿½ÍŠÖŒW
-int now_key;		//ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìï¿½Ô‚ï¿½Ûï¿½
-bool befKeys[62];	//ï¿½ï¿½Ë‘Oï¿½Ì“ï¿½ï¿½Í•Ûï¿½ï¿½p
-
-
-//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Ûï¿½
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","BOSS","TEST1","TEST2" };
-
-//ï¿½wï¿½iï¿½æ‘œï¿½wï¿½ï¿½
-int stage1_1Back[ACCOUNTFORMAPPARTS];
-int stage1_2Back[ACCOUNTFORMAPPARTS];
-int stage1_3Back[ACCOUNTFORMAPPARTS];
-
-//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[
-int goalPicHandle;
-
-
-//use to calcurate frametime 
-int beftime, curtime;
-float frametime;
-
-//ï¿½Xï¿½^ï¿½[ï¿½gï¿½ï¿½Ê‚Ì•ï¿½ï¿½ï¿½
-int strWidth, strLen;
-
-int HPfont;				//HPï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ûï¿½
-int rankfont_1, rankfont_2, rankfont_3;			//ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½g
-int Pausefont;							//ï¿½|ï¿½[ï¿½Yï¿½tï¿½Hï¿½ï¿½ï¿½g
-
-
-//int picture;
-
-char *str = "";
-
-HWND hWnd;
-
-
-int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
-{
-
-	ChangeWindowMode(TRUE), SetGraphMode(WIDTH, HEIGHT, 32);
-
-	if (DxLib_Init() == -1) return -1;
-
-	SetDrawScreen(DX_SCREEN_BACK);
-
-	beftime = GetNowCount() & INT_MAX;
-
-
-	//ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Zï¿½bï¿½g
-	HPfont = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_1 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_2 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 8, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	rankfont_3 = CreateFontToHandle("ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I", 16, 7, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	Pausefont = CreateFontToHandle("Ravie", 32, 3, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-
-	//ï¿½wï¿½iï¿½æ‘œ
-	//picture = LoadGraph("pictures/background.png");
-
-	//Mobï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
-	Player::PicHandle[0] = LoadGraph("pictures/player.png");
-	Player::PicHandle[1] = LoadGraph("pictures/boy_run.png");
-	Player::PicHandle[2] = LoadGraph("pictures/boy_jump.png");
-	Player::PicHandle[3] = LoadGraph("pictures/fence_motion.png");
-
-	WalkEnemy::PicHandle[0] = LoadGraph("pictures/walkenemy_animation/anime1.png");
-	WalkEnemy::PicHandle[1] = LoadGraph("pictures/walkenemy_animation/anime2.png");
-	WalkEnemy::PicHandle[2] = LoadGraph("pictures/walkenemy_animation/anime3.png");
-	WalkEnemy::PicHandle[3] = LoadGraph("pictures/walkenemy_animation/anime4.png");
-	WalkEnemy::PicHandle[4] = LoadGraph("pictures/walkenemy_animation/anime5.png");
-	WalkEnemy::PicHandle[5] = LoadGraph("pictures/walkenemy_animation/anime6.png");
-	WalkEnemy::PicHandle[6] = LoadGraph("pictures/walkenemy_animation/anime7.png");
-	WalkEnemy::PicHandle[7] = LoadGraph("pictures/walkenemy_animation/anime8.png");
-	FlashBlock::PicHandle = LoadGraph("pictures/block_flash.png");
-	ShootLaser::PicHandle_dispenser = LoadGraph("pictures/raser_app.png");
-	ShootLaser::PicHandle_laser = LoadGraph("pictures/raser.png");
-	ShootEnemy::PicHandle = LoadGraph("pictures/enemy_gun.png");
-	BulletTowardPlayer::PicHandle[0] = LoadGraph("pictures/bullet.png");
-	BulletTowardPlayer::PicHandle[1] = LoadGraph("pictures/bullet.png");
-	FireBall::PicHandle = LoadGraph("pictures/fireball.png");
-	FireBar::PicHandle = LoadGraph("pictures/firebar_center.png");
-	UpDownObject::PicHandle = LoadGraph("pictures/lift.png");
-	Lift::PicDownHandle = LoadGraph("pictures/lift_down.png");
-	Lift::PicUpHandle = LoadGraph("pictures/lift_up.png");
-	Rope::rope_PicHandle = LoadGraph("pictures/rope.png");
-	Rope::fixture_PicHandle = LoadGraph("pictures/rope_fixation.png");
-	Coin::PicHandle[0] = LoadGraph("pictures/coin.png");
-	Coin::PicHandle[1] = LoadGraph("pictures/coin_reverse.png");
-	Jump::PicHandle = LoadGraph("pictures/spring.png");
-	Jump::PicHandle_extended = LoadGraph("pictures/spring_ext.png");
-	FallWall::BirdPicHandle[0] = LoadGraph("pictures/fallwall_fly1.png");
-	FallWall::BirdPicHandle[1] = LoadGraph("pictures/fallwall_fly2.png");
-	FallWall::RedExamPicHandle = LoadGraph("pictures/fall_wall_block.png");
-	Turtle::PicTurtleHandle = LoadGraph("pictures/octopus.png");
-	Turtle::PicShellHandle[0] = LoadGraph("pictures/takoyaki_top.png");
-	Turtle::PicShellHandle[1] = LoadGraph("pictures/takoyaki_right.png");
-	Turtle::PicShellHandle[2] = LoadGraph("pictures/takoyaki_left.png");
-	Turtle::PicShellHandle[3] = LoadGraph("pictures/takoyaki_back.png");
-	TurtleWithWing::PicHandleWing = LoadGraph("pictures/takoyaki_wing.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	HanmerThrow::PicHandle[0] = LoadGraph("pictures/HanmerThrow_1.png");
-	HanmerThrow::PicHandle[1] = LoadGraph("pictures/HanmerThrow_2.png");
-	HanmerThrow::PicHandle[2] = LoadGraph("pictures/HanmerThrow_3.png");
-	Hanmer::PicHandle = LoadGraph("pictures/ballonly.png");
-	Ghost::PicHandle[0] = LoadGraph("pictures/ghost_3.png");
-	Ghost::PicHandle[1] = LoadGraph("pictures/ghost_2.png");
-	Ghost::PicHandle[2] = LoadGraph("pictures/ghost_1.png");
-	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
-	Fence::PicHandle = LoadGraph("pictures/fence.png");
-
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ï¿½ï¿½ï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//ï¿½Jï¿½jï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
-	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//ï¿½fï¿½oï¿½bï¿½Nï¿½pï¿½ï¿½ï¿½æ‘œï¿½Zï¿½bï¿½g
-
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-
-	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debugï¿½pï¿½ï¿½ï¿½æ‘œ
-
-	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
-
-	//ï¿½}ï¿½bï¿½vï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
-	Map::PicHandle[GROUND] = LoadGraph("pictures/ground.png");
-	Map::PicHandle[TOGE] = LoadGraph("pictures/toge.png");
-	Map::PicHandle[BLOCK_STONE] = LoadGraph("pictures/block_stone.png");
-	Map::PicHandle[BLOCK_ICE] = LoadGraph("pictures/block_ice.png");
-	Map::PicHandle[BLOCK_WOOD] = LoadGraph("pictures/block_wood.png");
-
-	//ï¿½wï¿½iï¿½æ‘œï¿½ï¿½ï¿½Zï¿½bï¿½g
-	stage1_1Back[0] = LoadGraph("pictures/background/stage1_1/background_1.jpg");
-	stage1_1Back[1] = LoadGraph("pictures/background/stage1_1/background_2.jpg");
-	stage1_1Back[2] = LoadGraph("pictures/background/stage1_1/background_3.jpg");
-	stage1_2Back[0] = LoadGraph("pictures/background/stage1_2/background_1.jpg");
-	stage1_2Back[1] = LoadGraph("pictures/background/stage1_2/background_2.jpg");
-	stage1_2Back[2] = LoadGraph("pictures/background/stage1_2/background_3.jpg");
-	stage1_3Back[0] = LoadGraph("pictures/background/stage1_3/background_1.jpg");
-	stage1_3Back[1] = LoadGraph("pictures/background/stage1_3/background_2.jpg");
-	stage1_3Back[2] = LoadGraph("pictures/background/stage1_3/background_3.jpg");
-
-	//ï¿½Sï¿½[ï¿½ï¿½
-	goalPicHandle = LoadGraph("pictures/goal_line.png");
-
-	//ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Zï¿½bï¿½g
-	Sound::sounds[SOUND_FLASHBLOCK] = LoadSoundMem("sounds/flashblock.mp3");
-	Sound::sounds[SOUND_PLAYERJUMP] = LoadSoundMem("sounds/jump.mp3");
-	Sound::sounds[SOUND_LASERSHOT] = LoadSoundMem("sounds/lasershot.mp3");
-	Sound::sounds[SOUND_PLAYERSKILL] = LoadSoundMem("sounds/player_skill.mp3");
-	Sound::sounds[SOUND_PLAYERJUMPMINI] = LoadSoundMem("sounds/jump_mini.mp3");
-	Sound::sounds[SOUND_DAMAGE] = LoadSoundMem("sounds/damage.mp3");
-	Sound::sounds[SOUND_ENEMYSHOOT] = LoadSoundMem("sounds/shoot.mp3");
-	Sound::sounds[SOUND_JUMPSPRING] = LoadSoundMem("sounds/jump_spring.mp3");
-	Sound::sounds[SOUND_JUMPSPRINGMINI] = LoadSoundMem("sounds/jump_spring_mini.mp3");
-	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
-	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
-	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
-
-	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//ï¿½ï¿½ï¿½Ê’ï¿½ï¿½ï¿½
-
-	while (ProcessMessage() == 0 && ScreenFlip() == 0 && ClearDrawScreen() == 0)
-	{
-		clsDx();
-		GameControl();
-		//printfDx("%f::", frametime);
-	}
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚Ä‰ï¿½ï¿½
-	stage.AllReset();
-
-	DxLib_End();
-
-	return 0;
-}
-
-void GameControl() {
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì”Ôï¿½ï¿½ï¿½Ûï¿½
-	static int selectedstage = 0;
-	//calcurate frametime
-	curtime = GetNowCount() & INT_MAX;
-	frametime = (float)(curtime - beftime) / 1000.0f;
-	beftime = curtime;
-
-	now_key = GetJoypadInputState(DX_INPUT_KEY_PAD1);						//ï¿½Lï¿½[ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½
-
-	switch (window) {
-	case STARTWINDOW:
-		StartWindow();
-		break;
-	case GAMESELECTWINDOW:
-		//ï¿½ï¿½ï¿½ï¿½ï¿½~
-		StopSoundMem(Sound::sounds[selectedstage + SOUND_STAGESTART + 1]);
-		selectedstage = GameSelectWindow();
-		break;
-	case GAMEPLAYWINDOW:
-		GamePlayWindow();
-		break;
-	case GAMEPAUSEWINDOW:
-		GamePauseWindow();
-		break;
-	case GAMEOVERWINDOW:
-		GameOverWindow();
-
-		break;
-	case GAMECLEARWINDOW:
-		GameClearWindow(selectedstage);
-		break;
-	case RANKINGWINDOW:
-		RankingWindow();
-		break;
-	}
-}
-
-void StartWindow() {
-
-	str = "Press Any Key To Play";
-	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);
-
-	//ï¿½ï¿½ï¿½å‚¤ï¿½Ç’ï¿½ï¿½ï¿½ï¿½É•`ï¿½æ‚³ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½é‚½ï¿½ß‚Ìï¿½ï¿½ï¿½
-	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
-
-	if (GetJoypadInputState(DX_INPUT_KEY_PAD1)) {
-		window = GAMESELECTWINDOW;
-	}
-}
-
-int GameSelectWindow() {
-	static int selectnum = -1;												//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Bï¿½Åï¿½ï¿½É•ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ÄAï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½
-	const int startx = 100, starty = 100, interval = 30;					//ï¿½ï¿½ï¿½Ú‚ï¿½ x ï¿½ï¿½ï¿½W,yï¿½ï¿½ï¿½W,ï¿½ï¿½ï¿½Ú‚ÌŠÔŠu
-
-	//ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Å“ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ï¿½
-	if (selectnum == -1) {
-		InKeyTrigger(now_key, PAD_INPUT_1);			//ï¿½Lï¿½[ï¿½ï¿½ï¿½Í‚ğ—¬‚ï¿½
-		InKeyTrigger(now_key, PAD_INPUT_4);
-		selectnum = 0;
-	}
-
-	if (InKeyTrigger(now_key, PAD_INPUT_DOWN) && selectnum < STAGENUM - 1)					selectnum++;			//ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½Éï¿½ï¿½ï¿½
-	if (InKeyTrigger(now_key, PAD_INPUT_UP) && selectnum > 0)	selectnum--;
-
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	if (selectnum >= 0)
-		DrawString(startx - 30, starty + selectnum * interval, "ï¿½ï¿½", 0xFFFFFF);	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‰¡ï¿½Éï¿½ï¿½ï¿½`ï¿½ï¿½
-
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½
-	for (int i = 0; i < STAGENUM; i++)
-		DrawString(startx, starty + interval * i, stagename[i].c_str(), 0xFFFFFF);
-
-	DrawString(30, 310, "ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½h:", 0xFFFFFF);
-	DrawString(50, 340, "Aï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ + ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);							//ï¿½ï¿½ï¿½Óï¿½ï¿½ï¿½
-	DrawString(50, 370, "Zï¿½Lï¿½[: ï¿½ï¿½ï¿½Eï¿½Ú“ï¿½(ï¿½ï¿½ï¿½Lï¿½[) + ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v(ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[)", 0xFFFFFF);
-	DrawString(30, 430, "Rï¿½Lï¿½[:ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½\ï¿½ï¿½ï¿½ï¿½", 0xFFFFFF);
-
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ï¿½BGMï¿½Íƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Jï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Åï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
-	static bool stagesounddeleteflag = false; //ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ì‰ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
-	if (!stagesounddeleteflag) {
-		for (int i = SOUND_STAGESTART; i < SOUND_MAX; i++) {
-			DeleteSoundMem(Sound::sounds[i]);
-		}
-		stagesounddeleteflag = true;
-
-		//ï¿½æ‘œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		for(int i = 0;i < 3;i++)
-		stage.mapparts[i] = 0;
-	}
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ç‚»ï¿½Ì”Ôï¿½ï¿½ï¿½Ô‚ï¿½ +(GameSelectWindowï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½Ô‚ÉƒQï¿½[ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½Ì‚ï¿½hï¿½ï¿½)
+	//‘I‘ğ‚³‚ê‚½‚ç‚»‚Ì”Ô†‚ğ•Ô‚· +(GameSelectWindow‚É“ü‚Á‚½uŠÔ‚ÉƒQ[ƒ€‚É“ü‚é‚Ì‚ğ–h‚®)
 	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
 		switch (selectnum) {
 
@@ -2181,7 +348,7 @@ int GameSelectWindow() {
 		else {
 			stage.mode = CROSSKEYANDJUMP;
 		}
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ÅŒvï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
+		//ˆ—‚ªd‚­‚È‚Á‚Ä‚µ‚Ü‚¤‚Ì‚ÅŒv‘ªƒŠƒZƒbƒg
 		//calcurate frametime
 		curtime = GetNowCount() & INT_MAX;
 		frametime = (float)(curtime - beftime) / 1000.0f;
@@ -2189,10 +356,10 @@ int GameSelectWindow() {
 		window = GAMEPLAYWINDOW;
 		stagesounddeleteflag = false;
 
-		//ï¿½ï¿½ï¿½ï¿½ï¿½Äï¿½
+		//‰¹‚ğÄ¶
 		PlaySoundMem(Sound::sounds[selectnum + SOUND_STAGESTART + 1], DX_PLAYTYPE_LOOP, TRUE);
 	}
-	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ï¿½Ê‚ÖˆÚ“ï¿½
+	//ƒ‰ƒ“ƒLƒ“ƒO‰æ–Ê‚ÖˆÚ“®
 	if (CheckHitKey(KEY_INPUT_R) == 1) {
 		window = RANKINGWINDOW;
 	}
@@ -2200,73 +367,73 @@ int GameSelectWindow() {
 
 
 
-	//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôï¿½ï¿½ï¿½Ô‚ï¿½
+	//‘I‘ğ‚µ‚½”Ô†‚ğ•Ô‚·
 	return selectnum;
 }
 
 void GamePlayWindow() {
-	//ï¿½ï¿½ï¿½Èï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½timeï¿½ï¿½ï¿½oï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½Oï¿½ï¿½ï¿½ï¿½(200ms)
+	//ˆê’èˆÈã‚ÌƒtƒŒ[ƒ€time‚ªo‚Ä‚µ‚Ü‚Á‚½‚Ì—áŠOˆ—(200ms)
 	if (frametime >= 0.2) {
 		window = GAMEPAUSEWINDOW;
 	}
 	else {
-		//ï¿½wï¿½iï¿½`ï¿½ï¿½
+		//”wŒi•`‰æ
 		//DrawGraph(-stage.Camera->x, -stage.Camera->y, picture, TRUE);
 
 
 		stage.AllUpdate(frametime);
 		stage.AllDraw();
 
-		//ï¿½\ï¿½ï¿½ï¿½ÖŒWï¿½`ï¿½ï¿½
-		//ï¿½cï¿½ï¿½gï¿½oï¿½É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+		//•\¦ŠÖŒW•`‰æ
+		//c‚è‚g‚o‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
 		if (stage.usingP->HP >= 10)
 			DrawFormatStringToHandle(10, 10, 0x32CCB6, HPfont, "HP:%3d", stage.usingP->HP);
 		else
 			DrawFormatStringToHandle(10, 10, 0xFF0037, HPfont, "HP:%3d", stage.usingP->HP);
 
-		DrawFormatStringToHandle(90, 10, 0xFFF10F, HPfont, "COIN:%4d", Coin::hadcoins);		//ï¿½Rï¿½Cï¿½ï¿½ï¿½`ï¿½ï¿½
+		DrawFormatStringToHandle(90, 10, 0xFFF10F, HPfont, "COIN:%4d", Coin::hadcoins);		//ƒRƒCƒ“•`‰æ
 
-		//ï¿½cï¿½èï¿½Ô‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+		//c‚èŠÔ‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
 		if (stage.limit >= 100000)
 			DrawFormatStringToHandle(530, 10, 0xFFFFFF, HPfont, "TIME:%3d", stage.limit / 1000);
 		else
 			DrawFormatStringToHandle(530, 10, 0xFF0037, HPfont, "TIME:%3d", stage.limit / 1000);
 
-		//printfDx("coins:%d , ", Coin::hadcoins);	//ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½Cï¿½ï¿½ï¿½\ï¿½ï¿½
-		//printfDx("HP:%d , ", stage.usingP->HP);	//HPï¿½\ï¿½ï¿½
-		//printfDx("vy:%f , ", stage.usingP->vy);	//ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½\ï¿½ï¿½
+		//printfDx("coins:%d , ", Coin::hadcoins);	//ŠƒRƒCƒ“•\¦
+		//printfDx("HP:%d , ", stage.usingP->HP);	//HP•\¦
+		//printfDx("vy:%f , ", stage.usingP->vy);	//‚™‘¬“x•\¦
 
-		if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
+		if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
 			window = GAMEPAUSEWINDOW;
 
-		//ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½ï¿½(ï¿½cï¿½èï¿½Ô‚Oï¿½AHPï¿½Oï¿½Aï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+		//ƒQ[ƒ€ƒI[ƒo[”»’è(c‚èŠÔ‚OAHP‚OAƒvƒŒƒCƒ„[‚ª—‚¿‚é)
 		if (stage.limit < 0 || stage.usingP->HP <= 0 || stage.usingP->y >= HEIGHT + DOT) {
 			window = GAMEOVERWINDOW;
 		}
-		//ï¿½Sï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ƒS[ƒ‹”»’è
 		if (stage.usingP->x > stage.usingM->getNumX() * DOT - 50) {
 			window = GAMECLEARWINDOW;
 		}		
-		//ï¿½Sï¿½[ï¿½ï¿½ï¿½oï¿½[ï¿½`ï¿½ï¿½
+		//ƒS[ƒ‹ƒo[•`‰æ
 		DrawGraph(stage.usingM->getNumX()*DOT -stage.Camera->x -100,350,goalPicHandle,TRUE);
 	}
 }
 
 void GamePauseWindow() {
 
-	str = "ï¿½Xï¿½eï¿½[ï¿½Wï¿½É–ß‚ï¿½:ESC , ï¿½Xï¿½eï¿½[ï¿½Wï¿½Iï¿½ï¿½ï¿½É–ß‚ï¿½:Z";
+	str = "ƒXƒe[ƒW‚É–ß‚é:ESC , ƒXƒe[ƒW‘I‘ğ‚É–ß‚é:Z";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen, Pausefont);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
 
 	str = "Pause";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//’†‰›•`‰æ—p
 	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
 
-	if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
+	if (InKeyTrigger(now_key, PAD_INPUT_9)) //ESCƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
 		window = GAMEPLAYWINDOW;
-	if (InKeyTrigger(now_key, PAD_INPUT_1)) {//zï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
+	if (InKeyTrigger(now_key, PAD_INPUT_1)) {//zƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
 		stage.AllReset();
 		window = GAMESELECTWINDOW;
 	}
@@ -2276,12 +443,12 @@ void GameOverWindow() {
 
 	str = "GameOver";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidthToHandle(str, strLen, Pausefont);				//’†‰›•`‰æ—p
 	DrawStringToHandle((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF, Pausefont);
 
-	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
+	str = "‘I‘ğƒƒjƒ…[‚É–ß‚é:ZƒL[";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 300, str, 0x00FFFF);
 
 	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
@@ -2293,25 +460,26 @@ void GameOverWindow() {
 void GameClearWindow(int selectedstage) {
 	str = "GAMECLEAR";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 200, str, 0xFFFFFF);
 
 
-	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½
+	//–¼‘O‚ğ“ü—Í‚³‚¹‚é
 	char addname[20 + 1] = {""};
-	str = "ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ÄƒXï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½É“oï¿½^ï¿½ï¿½ï¿½Ü‚ï¿½(20ï¿½ï¿½ï¿½ï¿½ï¿½È“ï¿½):Enterï¿½ÅŒï¿½ï¿½ï¿½";
+	str = "–¼‘O‚ğ“ü—Í‚µ‚ÄƒXƒRƒA‚ğƒ‰ƒ“ƒLƒ“ƒO‚É“o˜^‚µ‚Ü‚·(20•¶šˆÈ“à):Enter‚ÅŒˆ’è";
+
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 300, str, 0xFFFFFF);
 
-	str = "Escï¿½Lï¿½[:ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½";
+	str = "EscƒL[:“o˜^‚¹‚¸‚É–ß‚é";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0xFFFFFF);
 	//if (KeyInputSingleCharString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
 	if (KeyInputString((WIDTH - strWidth) / 2, 320, 20, addname, TRUE) == 1) {
 		rankdata addrank;
-		//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
+		//V‚µ‚­’Ç‰Á‚·‚éƒXƒRƒA‚ğ”z—ñ‚É’Ç‰Á
 		addrank.name = addname;
 		addrank.limit = stage.limit / 1000;
 		addrank.killedene = Mob::killedenemy;
@@ -2320,31 +488,31 @@ void GameClearWindow(int selectedstage) {
 
 		RankingWrite(stagename[selectedstage] + ".txt", addrank);
 	}
-	//ï¿½ï¿½ï¿½ÍŒï¿½Zï¿½ï¿½ï¿½Nï¿½gï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½É–ß‚ï¿½
+	//“ü—ÍŒãƒZƒŒƒNƒgƒEƒBƒ“ƒhƒE‚É–ß‚é
 	stage.AllReset();
 	window = GAMESELECTWINDOW;
 
 }
 
 void RankingWindow() {
-	static int selectedstage = 0;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Ôï¿½ï¿½ï¿½Ûï¿½
+	static int selectedstage = 0;	//Œ©‚½‚¢ƒXƒe[ƒW”Ô†‚ğ•Û
 	{
 		//string str;
-		//ifstream text("test.txt");		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
-		////ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
+		//ifstream text("test.txt");		//ƒeƒLƒXƒg“üè
+		////ƒf[ƒ^‚ğˆê“I•Û
 		//string name[RECODE_NUM_MAX];
 		//int scores[RECODE_NUM_MAX][5];
-		////ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
+		////‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
 		//int count = 0;
 		//while (getline(text, str) && count < RECODE_NUM_MAX)
 		//{
-		//	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
+		//	//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
 		//	string tmp;
 		//	istringstream stream(str);
-		//	//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
+		//	//–¼‘O‚ğæ‚èo‚·
 		//	getline(stream, tmp, ',');
 		//	name[count] = tmp;
-		//	//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
+		//	//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
 		//	for (int i = 0; i < 4; i++) {
 		//		getline(stream, tmp, ',');
 		//		scores[count][i] = stoi(tmp);
@@ -2353,98 +521,98 @@ void RankingWindow() {
 		//}
 
 
-		int count = 0;		//ï¿½zï¿½ï¿½Ì—vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		int scores[RECODE_NUM_MAX];			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_
-		rankdata *score = RankingRead(stagename[selectedstage] + ".txt", &count);	//ï¿½fï¿½[ï¿½^ï¿½Ûï¿½ï¿½p
+		int count = 0;		//”z—ñ‚Ì—v‘f”‚ğ“üè
+		int scores[RECODE_NUM_MAX];			//‘‡“¾“_
+		rankdata *score = RankingRead(stagename[selectedstage] + ".txt", &count);	//ƒf[ƒ^•Û—p
 
-		//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
+		//‘‡ŒvZ
 		for (int i = 0; i < count; i++) {
 			scores[i] = SCORE_LIMIT * score[i].limit + SCORE_ENEMY * score[i].killedene + SCORE_HP * score[i].hp + SCORE_COIN * score[i].coin;
 		}
 
-		//ï¿½Åï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
+		//Å‰‚É•\¦‚·‚éˆÊ’u
 		int firstx = 20, firsty = 20, interval = 20;
-		int rank;	//ï¿½ï¿½ï¿½ÊƒJï¿½Eï¿½ï¿½ï¿½g
-		//ï¿½\ï¿½ï¿½
+		int rank;	//‡ˆÊƒJƒEƒ“ƒg
+		//•\¦
 		for (int i = 0; i < count; i++) {
-			//ï¿½ï¿½ï¿½Ê•tï¿½ï¿½
+			//‡ˆÊ•t‚¯
 			rank = 0;
 			for (int j = 0; j < count; j++) {
 				if (scores[i] < scores[j])
 					rank++;
 			}
-			//ï¿½ï¿½ï¿½Ê‚É‚ï¿½ï¿½ï¿½ÄFï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+			//‡ˆÊ‚É‚æ‚Á‚ÄF‚ğ•Ï‚¦‚é
 			switch (rank + 1) {
 			case 1:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFF10F, rankfont_1, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFF10F, rankfont_1, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFF10F, rankfont_1, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFF10F, rankfont_1, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFF10F, rankfont_1, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFF10F, rankfont_1, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
 				break;
 			case 2:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xafafb0, rankfont_2, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xafafb0, rankfont_2, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xafafb0, rankfont_2, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xafafb0, rankfont_2, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xafafb0, rankfont_2, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xafafb0, rankfont_2, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
 				break;
 			case 3:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xb36b24, rankfont_3, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xb36b24, rankfont_3, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xb36b24, rankfont_3, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xb36b24, rankfont_3, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xb36b24, rankfont_3, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xb36b24, rankfont_3, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
 				break;
 			default:
-				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFFFFF, HPfont, "rank:%2d", rank + 1);						//ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFFFFF, HPfont, "NAME:%-20s", score[i].name.c_str());		//ï¿½ï¿½ï¿½Oï¿½`ï¿½ï¿½
-				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFFFFF, HPfont, "SCORE:%-10d", scores[i]);		//ï¿½Xï¿½Rï¿½Aï¿½`ï¿½ï¿½
+				DrawFormatStringToHandle(firstx, firsty + i * interval, 0xFFFFFF, HPfont, "rank:%2d", rank + 1);						//‡ˆÊ•`‰æ
+				DrawFormatStringToHandle(firstx + 130, firsty + i * interval, 0xFFFFFF, HPfont, "NAME:%-20s", score[i].name.c_str());		//–¼‘O•`‰æ
+				DrawFormatStringToHandle(firstx + 450, firsty + i * interval, 0xFFFFFF, HPfont, "SCORE:%-10d", scores[i]);		//ƒXƒRƒA•`‰æ
 				break;
 			}
 		}
 	}
 
-	str = "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½É–ß‚ï¿½:Zï¿½Lï¿½[";
+	str = "‘I‘ğƒƒjƒ…[‚É–ß‚é:ZƒL[";
 	strLen = strlen(str);
-	strWidth = GetDrawStringWidth(str, strLen);				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	strWidth = GetDrawStringWidth(str, strLen);				//’†‰›•`‰æ—p
 	DrawString((WIDTH - strWidth) / 2, 400, str, 0x00FFFF);
 
-	//ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//‰E¶ˆ—
 	if (InKeyTrigger(now_key, PAD_INPUT_RIGHT) && selectedstage < STAGENUM - 1) selectedstage++;
 	if (InKeyTrigger(now_key, PAD_INPUT_LEFT) && selectedstage > 0) selectedstage--;
 
-	//before,now,nextï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ÉˆÚ“ï¿½ï¿½Ì•`ï¿½ï¿½
-	strWidth = GetDrawFormatStringWidth("now:%s", stagename[selectedstage].c_str());				//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½p
+	//before,now,nextƒ‰ƒ“ƒLƒ“ƒO‚ÉˆÚ“®‚Ì•`‰æ
+	strWidth = GetDrawFormatStringWidth("now:%s", stagename[selectedstage].c_str());				//’†‰›•`‰æ—p
 	DrawFormatString((WIDTH - strWidth) / 2, 430, 0xFFFFFF, "now:%s", stagename[selectedstage].c_str());
 
 	if (selectedstage > 0)
-		DrawFormatString(20, 430, 0xffffff, "ï¿½ï¿½before:%s", stagename[selectedstage - 1].c_str());
+		DrawFormatString(20, 430, 0xffffff, "©before:%s", stagename[selectedstage - 1].c_str());
 	if (selectedstage < STAGENUM - 1)
-		DrawFormatString(450, 430, 0xffffff, "ï¿½ï¿½next:%s", stagename[selectedstage + 1].c_str());
+		DrawFormatString(450, 430, 0xffffff, "¨next:%s", stagename[selectedstage + 1].c_str());
 
-	//ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½
+	//ƒL[“ü—Í
 	if (InKeyTrigger(now_key, PAD_INPUT_1)) {
 		window = GAMESELECTWINDOW;
 	}
 }
 
 void RankingWrite(string name, rankdata rank) {
-	//ï¿½ï¿½ï¿½oï¿½ï¿½
+	//“üo—Í
 	string str;
-	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
+	ifstream text(name);		//ƒeƒLƒXƒg“üè
 
-	//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
+	//ƒf[ƒ^‚ğˆê“I•Û
 	string names[RECODE_NUM_MAX + 1] = {};
-	int scores[RECODE_NUM_MAX + 1][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
+	int scores[RECODE_NUM_MAX + 1][5] = {};//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
 
-	//ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
+	//‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
 	int count = 0;
 
-	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
+	//ˆês•ª“Ç‚İæ‚è
 	while (getline(text, str) && count < RECODE_NUM_MAX)
 	{
-		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
+		//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
 		string tmp;
 		istringstream stream(str);
-		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
+		//–¼‘O‚ğæ‚èo‚·
 		getline(stream, tmp, ',');
 		names[count] = tmp;
-		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
+		//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
 		for (int i = 0; i < 4; i++) {
 			getline(stream, tmp, ',');
 			scores[count][i] = stoi(tmp);
@@ -2452,31 +620,31 @@ void RankingWrite(string name, rankdata rank) {
 		count++;
 	}
 
-	//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Rï¿½Aï¿½ï¿½zï¿½ï¿½É’Ç‰ï¿½
+	//V‚µ‚­’Ç‰Á‚·‚éƒXƒRƒA‚ğ”z—ñ‚É’Ç‰Á
 	names[count] = rank.name;
 	scores[count][0] = rank.limit;
 	scores[count][1] = rank.killedene;
 	scores[count][2] = rank.hp;
 	scores[count][3] = rank.coin;
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
+	//‘‡ŒvZ
 	for (int i = 0; i <= count; i++) {
 		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
 	}
-	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
+	//ƒ\[ƒg i‚ª‘Oj‚ªŒã‚ë
 	for (int i = 0; i < count; i++) {
 		for (int j = i + 1; j <= count; j++) {
 			if (scores[i][4] < scores[j][4]) {
 				int d_score[5];
-				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
+				//”z—ñ‚Ì’†g‚ğŠÛXƒRƒs[
 				for (int k = 0; k < 5; k++) {
 					d_score[k] = scores[i][k];
 				}
-				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
+				//–¼‘O“ü‚ê‘Ö‚¦
 				string d_name = names[i];
 				names[i] = names[j];
 				names[j] = d_name;
-				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
+				//”z—ñ“ü‚ê‘Ö‚¦
 				for (int k = 0; k < 5; k++) {
 					scores[i][k] = scores[j][k];
 				}
@@ -2487,10 +655,10 @@ void RankingWrite(string name, rankdata rank) {
 		}
 	}
 	text.close();
-	//ï¿½eï¿½Lï¿½Xï¿½gï¿½Éoï¿½ï¿½(ï¿½Eï¿½Cï¿½ï¿½ï¿½Xï¿½Zï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Bï¿½[ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚È‚ï¿½ï¿½È‚ï¿½Ì‚Å’ï¿½ï¿½ï¿½)
+	//ƒeƒLƒXƒg‚Éo—Í(ƒEƒCƒ‹ƒXƒZƒLƒ…ƒŠƒeƒB[‚É‚æ‚Á‚Ä‘‚«‚ß‚È‚­‚È‚é‚Ì‚Å’ˆÓ)
 	ofstream output(name, ios_base::trunc);
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//‘‚«‚İ
 	for (int i = 0; i <= count; i++)
 		output << names[i] << ',' << scores[i][0] << ',' << scores[i][1] << ',' << scores[i][2] << ',' << scores[i][3] << ',' << std::endl;
 
@@ -2498,27 +666,27 @@ void RankingWrite(string name, rankdata rank) {
 }
 
 rankdata* RankingRead(string name, int *index) {
-	//ï¿½ï¿½ï¿½oï¿½ï¿½
+	//“üo—Í
 	string str;
-	ifstream text(name);		//ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
+	ifstream text(name);		//ƒeƒLƒXƒg“üè
 
-								//ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½êï¿½Iï¿½Ûï¿½
+								//ƒf[ƒ^‚ğˆê“I•Û
 	string names[RECODE_NUM_MAX] = {};
-	int scores[RECODE_NUM_MAX][5] = {};//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
+	int scores[RECODE_NUM_MAX][5] = {};//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
 
-										   //ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
+										   //‰½l‚¢‚é‚©‚ğƒJƒEƒ“ƒg
 	int count = 0;
 
-	//ï¿½ï¿½sï¿½ï¿½ï¿½Ç‚İï¿½ï¿½
+	//ˆês•ª“Ç‚İæ‚è
 	while (getline(text, str) && count < RECODE_NUM_MAX)
 	{
-		//ï¿½eï¿½Lï¿½Xï¿½gï¿½Ì•Û‘ï¿½ï¿½`ï¿½ï¿½:ï¿½ï¿½ï¿½Oï¿½Aï¿½cï¿½ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½Gï¿½ÌŒï¿½ï¿½jï¿½ï¿½ï¿½Aï¿½cï¿½ï¿½HPï¿½Aï¿½Rï¿½Cï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½
+		//ƒeƒLƒXƒg‚Ì•Û‘¶Œ`®:–¼‘OAc‚èƒ^ƒCƒ€A“G‚ÌŒ‚”j”Ac‚èHPAƒRƒCƒ“,‘‡
 		string tmp;
 		istringstream stream(str);
-		//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
+		//–¼‘O‚ğæ‚èo‚·
 		getline(stream, tmp, ',');
 		names[count] = tmp;
-		//ï¿½Xï¿½Rï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½(4ï¿½Â‚Ì—vï¿½f)
+		//ƒXƒRƒA‚ğæ‚èo‚·(4ŒÂ‚Ì—v‘f)
 		for (int i = 0; i < 4; i++) {
 			getline(stream, tmp, ',');
 			scores[count][i] = stoi(tmp);
@@ -2526,24 +694,24 @@ rankdata* RankingRead(string name, int *index) {
 		count++;
 	}
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z
+	//‘‡ŒvZ
 	for (int i = 0; i < count; i++) {
 		scores[i][4] = SCORE_LIMIT * scores[i][0] + SCORE_ENEMY * scores[i][1] + SCORE_HP * scores[i][2] + SCORE_COIN * scores[i][3];
 	}
-	//ï¿½\ï¿½[ï¿½g iï¿½ï¿½ï¿½Ojï¿½ï¿½ï¿½ï¿½ï¿½
+	//ƒ\[ƒg i‚ª‘Oj‚ªŒã‚ë
 	for (int i = 0; i < count - 1; i++) {
 		for (int j = i + 1; j < count; j++) {
 			if (scores[i][4] < scores[j][4]) {
 				int d_score[5];
-				//ï¿½zï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ï¿½ÛXï¿½Rï¿½sï¿½[
+				//”z—ñ‚Ì’†g‚ğŠÛXƒRƒs[
 				for (int k = 0; k < 5; k++) {
 					d_score[k] = scores[i][k];
 				}
-				//ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
+				//–¼‘O“ü‚ê‘Ö‚¦
 				string d_name = names[i];
 				names[i] = names[j];
 				names[j] = d_name;
-				//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
+				//”z—ñ“ü‚ê‘Ö‚¦
 				for (int k = 0; k < 5; k++) {
 					scores[i][k] = scores[j][k];
 				}
@@ -2555,7 +723,7 @@ rankdata* RankingRead(string name, int *index) {
 	}
 	text.close();
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½zï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½
+	//ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^”z—ñ‚É“ü‚ê‚é
 	static rankdata rank[RECODE_NUM_MAX];
 
 	for (int i = 0; i < count; i++) {
@@ -2566,7 +734,7 @@ rankdata* RankingRead(string name, int *index) {
 		rank[i].coin = scores[i][3];
 	}
 
-	//ï¿½vï¿½fï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+	//—v‘f”‚ğ“n‚µ‚Ä‚ ‚°‚é
 	*index = count;
 	return rank;
 }
@@ -2578,34 +746,34 @@ void CreateStage1_1() {
 
 	Map firstMap;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
-	//mapï¿½ì¬
-	//ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½@1*5
+	//mapì¬
+	//’·•ûŒ`@1*5
 	firstMap.m_map[6][5] = 1;
 	firstMap.m_map[6][6] = 1;
 	firstMap.m_map[6][7] = 1;
 	firstMap.m_map[6][8] = 1;
 	firstMap.m_map[6][9] = 1;
 
-	//sï¿½Ìï¿½
+	//s‚Ìš
 	firstMap.m_map[4][10] = 1;
 	firstMap.m_map[3][10] = 1;
 	firstMap.m_map[3][11] = 1;
 	firstMap.m_map[2][11] = 1;
-	//2ï¿½Ìï¿½
+	//2‚Ìš
 	firstMap.m_map[8][10] = 1;
 	firstMap.m_map[9][10] = 1;
 	firstMap.m_map[9][11] = 1;
 	firstMap.m_map[10][11] = 1;
 
-	//ï¿½ï¿½ï¿½ï¿½ï¿½` 2*2
+	//³•ûŒ` 2*2
 	firstMap.m_map[17][11] = BLOCK_WOOD;
 	firstMap.m_map[17][10] = BLOCK_ICE;
 	firstMap.m_map[16][11] = BLOCK_STONE;
@@ -2616,7 +784,7 @@ void CreateStage1_1() {
 		firstMap.m_map[19 + i * 5][13] = 1;
 	}
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
 	new WalkEnemy(300, 300);
@@ -2633,12 +801,12 @@ void CreateStage1_1() {
 	new Coin(100, 300);
 	new FallWall(400, 200);
 	new FallWall(600, 20);
-	//ï¿½oï¿½Oï¿½ï¿½ï¿½Wï¿½i610,10ï¿½j,ï¿½Tï¿½Cï¿½Yï¿½i30,40ï¿½j<-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//ƒoƒOÀ•Wi610,10j,ƒTƒCƒYi30,40j<-’¼‚µ‚½
 	new Turtle(610, 10);
 	for(int i = 0; i< 1;i++)
 		new WalkEnemy(730 + i*2, 10);
 
-	//40000ï¿½Â‚Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½[ï¿½{ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚Éï¿½ï¿½ï¿½È‚ï¿½ï¿½B10000ï¿½È‚ç‚¢ï¿½ï¿½ï¿½ï¿½Í‚ï¿½
+	//40000ŒÂ‚Ìƒtƒ@ƒCƒ„[ƒ{[ƒ‹‚ğì‚é‚Æˆ—‚ªŠÔ‚É‡‚í‚È‚¢B10000‚È‚ç‚¢‚¯‚é‚Í‚¸
 	new FireBar(1200, 200, 10, 4);
 
 
@@ -2660,15 +828,15 @@ void CreateStage2_1() {
 	stage.usingP->x = 320;
 	stage.usingP->y = 20;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(firstMap.getNumX(), firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
 
-	//ï¿½cï¿½_1*2
+	//c–_1*2
 	//firstMap.m_map[6][12] = 1;
 	//firstMap.m_map[6][13] = 1;
 
@@ -2677,7 +845,7 @@ void CreateStage2_1() {
 
 	firstMap.m_map[2][firstMap.getNumY() - 1] = 0;
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
 	new Lift(300, 400, true);
@@ -2703,7 +871,7 @@ void CreateStage2_1() {
 }
 
 void CreateStage1_1R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//”wŒi‚ğƒZƒbƒg
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_1Back[i];
 	}
@@ -2712,15 +880,15 @@ void CreateStage1_1R() {
 
 	Map firstMap;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
-	//ï¿½}ï¿½bï¿½vï¿½ì»
+	//ƒ}ƒbƒvì»
 	firstMap.m_map[13][11] = BLOCK_WOOD;
 	firstMap.m_map[16][11] = BLOCK_WOOD;
 	firstMap.m_map[18][11] = BLOCK_WOOD;
@@ -2785,11 +953,11 @@ void CreateStage1_1R() {
 
 	firstMap.m_map[185][13] = BLOCK_WOOD;
 
-	//ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½H
+	//ƒ}ƒbƒv‰ÁH
 	firstMap.m_map[168][14] = 0;
 	firstMap.m_map[107][14] = 0;
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
 
@@ -2885,7 +1053,7 @@ void CreateStage1_1R() {
 
 }
 void CreateStage1_2R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//”wŒi‚ğƒZƒbƒg
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_2Back[i];
 	}
@@ -2897,15 +1065,15 @@ void CreateStage1_2R() {
 
 	Map firstMap;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_STONE;
 
-	//ï¿½Xï¿½eï¿½[ï¿½W
+	//ƒXƒe[ƒW
 
 	firstMap.m_map[0][0] = BLOCK_STONE;
 	firstMap.m_map[0][1] = BLOCK_STONE;
@@ -2947,7 +1115,7 @@ void CreateStage1_2R() {
 	//firstMap.m_map[1][9] = BLOCK_STONE;
 	//firstMap.m_map[2][8] = BLOCK_STONE;
 
-	//firstMap.m_map[13][4] = BLOCK_STONE; //<- ï¿½Æ‚ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½Ì‘ï¿½ï¿½ï¿½
+	//firstMap.m_map[13][4] = BLOCK_STONE; //<- ‚Æ‚°ƒuƒƒbƒN‚Ì‘ã‚í‚è
 	//firstMap.m_map[14][3] = BLOCK_STONE;
 	//firstMap.m_map[14][5] = BLOCK_STONE;
 	//firstMap.m_map[15][4] = BLOCK_STONE;
@@ -3150,7 +1318,7 @@ void CreateStage1_2R() {
 	firstMap.m_map[155][firstMap.getNumY() - 1] = 0;
 	firstMap.m_map[156][firstMap.getNumY() - 1] = 0;
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
 	//MOB
@@ -3374,7 +1542,7 @@ void CreateStage1_2R() {
 }
 
 void CreateStage1_3R() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//”wŒi‚ğƒZƒbƒg
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_3Back[i];
 	}
@@ -3387,11 +1555,11 @@ void CreateStage1_3R() {
 
 	Map firstMap;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(300, firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
@@ -3477,7 +1645,7 @@ void CreateStage1_3R() {
 	}
 	firstMap.m_map[296][7] = 1;
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
 	
@@ -3663,7 +1831,7 @@ void CreateStage1_3R() {
 
 
 void CreateStage_MiniGame1() {
-	//ï¿½lï¿½ğ•‰‚Æ‚ï¿½ï¿½Ägï¿½ï¿½(5ï¿½bï¿½Ô‚Ìï¿½ï¿½ï¿½)
+	//’l‚ğ•‰‚Æ‚µ‚Äg‚¤(5•bŠÔ‚Ìà–¾)
 	stage.limit = 5000;
 
 	//new Turtle(300, 10);
@@ -3673,7 +1841,7 @@ void CreateStage_MiniGame1() {
 }
 
 void CreateSampleBoss() {
-	//ï¿½wï¿½iï¿½ï¿½ï¿½Zï¿½bï¿½g
+	//”wŒi‚ğƒZƒbƒg
 	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
 		stage.mapparts[i] = stage1_1Back[i];
 	}
@@ -3682,16 +1850,18 @@ void CreateSampleBoss() {
 
 	Map firstMap;
 
-	//ï¿½}ï¿½bï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
-	//ï¿½}ï¿½bï¿½vï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½ÏX
+	//ƒ}ƒbƒv‚Ìî•ñ‚ğƒZƒbƒg
+	//ƒ}ƒbƒv‚Ì‘å‚«‚³‚ğ•ÏX
 	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
 
-	//ï¿½nï¿½Êï¿½ï¿½ï¿½
+	//’n–Ê¶¬
 	for (int i = 0; i < firstMap.getNumX(); i++)
 		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
 
-	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ÉƒZï¿½bï¿½g
+	
+
+	//ƒXƒe[ƒW‚ÉƒZƒbƒg
 	*stage.usingM = firstMap;
 
-	new MarineBoss(DOT * 25, 100, DOT * 10);
+	//new MarineBoss(DOT * 25, 100, DOT * 10);
 }

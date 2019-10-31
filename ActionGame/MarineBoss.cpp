@@ -11,7 +11,7 @@ MarineBoss::MarineBoss(int sx, int sy, int fx)
 	this->tx = sx;
 
 	for (int i = 0; i < BOSS_UNI_CNT; i++) {
-		UNI[i] = new Urchin(x,1);
+		UNI[i] = new Urchin(x,-40);
 	}
 
 	velocity = BOSS_MOVESPEED;
