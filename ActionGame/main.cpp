@@ -1856,12 +1856,52 @@ void CreateSampleBoss() {
 
 	//地面生成
 	for (int i = 0; i < firstMap.getNumX(); i++)
-		firstMap.m_map[i][firstMap.getNumY() - 1] = 1;
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
 
-	
+	//天井作成
+	for (int i = 0; i < 100; i++) {
+		firstMap.m_map[i][0] = BLOCK_WOOD;
+	}
+
+	for (int i = 7; i < 13; i++) {
+		firstMap.m_map[i][11] = BLOCK_WOOD;
+	}
+
+	for (int i = 56; i < 69; i++) {
+		firstMap.m_map[i][6] = BLOCK_WOOD;
+		firstMap.m_map[i][10] = BLOCK_WOOD;
+
+	}
+	for (int i = 1; i < 6; i++)
+	{
+		firstMap.m_map[56][i] = BLOCK_WOOD;
+		firstMap.m_map[68][i] = BLOCK_WOOD;
+	}
+
+	for (int i = 11; i < 15; i++) {
+		firstMap.m_map[56][i] = BLOCK_WOOD;
+		firstMap.m_map[68][i] = BLOCK_WOOD;
+	}
+
+	usingP->x = DOT * 60;
+
+	for (int i = 0; i < 5; i++)
+	{
+		firstMap.m_map[68 + i][6 - i] = BLOCK_WOOD;
+	}
+
 
 	//ステージにセット
 	*stage.usingM = firstMap;
+
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 15; j++) {
+			new Sea(DOT * i, DOT * j, 0);
+
+		}
+	}
+
+	
 
 	//new MarineBoss(DOT * 25, 100, DOT * 10);
 }

@@ -1,7 +1,7 @@
 //マップは配列として持つ
 #pragma once
 #include "DxLib.h"
-#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
+//#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
 
 
 
