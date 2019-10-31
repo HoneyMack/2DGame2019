@@ -228,6 +228,14 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	goalPicHandle = LoadGraph("pictures/goal_line.png");
 
 	//サウンドをセット
+	Sound::sounds[SOUND_UNI] = LoadSoundMem("sounds/rakka.mp3");
+	Sound::sounds[SOUND_HEALING] = LoadSoundMem("sounds/kaifuku.mp3");
+	Sound::sounds[SOUND_BOSS_DEFEAT] = LoadSoundMem("sounds/defeat.mp3");
+	Sound::sounds[SOUND_STAGE_SNOW] = LoadSoundMem("sounds/action_snow.mp3");
+	Sound::sounds[SOUND_STAGE_TUTO] = LoadSoundMem("sounds/actio_tuto.mp3");
+	Sound::sounds[SOUND_STAGE_SEA] = LoadSoundMem("sounds/action_marine.mp3");
+	Sound::sounds[SOUND_BOSS] = LoadSoundMem("sounds/action_marine_boss.mp3");
+	Sound::sounds[SOUND_STAGE_SKY] = LoadSoundMem("sounds/action_ship.mp3");
 	Sound::sounds[SOUND_FLASHBLOCK] = LoadSoundMem("sounds/flashblock.mp3");
 	Sound::sounds[SOUND_PLAYERJUMP] = LoadSoundMem("sounds/jump.mp3");
 	Sound::sounds[SOUND_LASERSHOT] = LoadSoundMem("sounds/lasershot.mp3");
@@ -240,14 +248,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
-	Sound::sounds[SOUND_UNI] = LoadSoundMem("sounds/rakka.mp3");
-	Sound::sounds[SOUND_HEALING] = LoadSoundMem("sounds/kaifuku.mp3");
-	Sound::sounds[SOUND_BOSS_DEFEAT] = LoadSoundMem("sounds/defeat.mp3");
-	Sound::sounds[SOUND_STAGE_SNOW] = LoadSoundMem("sounds/action_snow.mp3");
-	Sound::sounds[SOUND_STAGE_TUTO] = LoadSoundMem("sounds/actio_tuto.mp3");
-	Sound::sounds[SOUND_STAGE_SEA] = LoadSoundMem("sounds/action_marine.mp3");
-	Sound::sounds[SOUND_BOSS] = LoadSoundMem("sounds/action_marine_boss.mp3");
-	Sound::sounds[SOUND_STAGE_SKY] = LoadSoundMem("sounds/action_ship.mp3");
+
 
 	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//音量調整
 
