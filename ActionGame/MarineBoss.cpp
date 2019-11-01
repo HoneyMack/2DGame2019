@@ -50,6 +50,10 @@ void MarineBoss::Motion(double frametime)
 			//何もしてない、次の行動を選択
 			if (startflag) {
 				stats = rnd() % 3 + 1;
+				if (stats == bstats) {
+					stats++;
+					stats = stats % 3 + 1;
+				}
 				cnttime = 0;
 			}
 			break;
@@ -60,6 +64,7 @@ void MarineBoss::Motion(double frametime)
 			if (x <= fx) {	//行動範囲の左端に到達
 				stats = 4;	//右方向へ横移動に変更
 				cnttime = 0;
+				bstats = 1;
 			}
 			break;
 		case 2:
@@ -72,6 +77,7 @@ void MarineBoss::Motion(double frametime)
 			if (cnttime >= BOSS_HARDTIME) {
 				HardeningFlag = false;	//硬質化解除
 				stats = 6;	//行動後の待ち時間へ移行
+				bstats = 2;
 				cnttime = 0;
 			}
 			break;
@@ -79,8 +85,8 @@ void MarineBoss::Motion(double frametime)
 			//ウニ落とし
 			//用サウンド追加
 			if (Uniflag == false) {
+				PlaySoundMem(Sound::sounds[SOUND_UNI], DX_PLAYTYPE_BACK);
 				Uniflag = true;
-
 			}
 			cnttime++;
 			if ((int)cnttime % BOSS_UNI_INTERVAL == 0) {
@@ -92,7 +98,9 @@ void MarineBoss::Motion(double frametime)
 			if (cnttime >= unitime) {
 				cnttime = 0;
 				stats = 6;
+				bstats = 3;
 				unicnt = 0;
+				Uniflag = false;
 				
 			}
 			break;
@@ -108,6 +116,10 @@ void MarineBoss::Motion(double frametime)
 		case 5:
 			//ウニ落とし+硬質化
 			//用サウンド追加
+			if (Uniflag == false) {
+				PlaySoundMem(Sound::sounds[SOUND_UNI], DX_PLAYTYPE_BACK);
+				Uniflag = true; 
+			}
 			if (HardeningFlag == false) {
 				HardeningFlag = true;
 			}
@@ -122,6 +134,7 @@ void MarineBoss::Motion(double frametime)
 				HardeningFlag = false;	//硬質化解除
 				stats = 6;	//行動後の待ち時間へ移行
 				cnttime = 0;
+				Uniflag = false;
 				unicnt = 0;
 				
 			}
@@ -183,12 +196,16 @@ bool MarineBoss::HitCheck(Rect rect)
 		//プライヤーが落下してきて、自分の上にあたっていたら自分が死んでプレイヤーにダメージは入らない
 		if (HitFaceRectRect(rect, this->rect) & TOP && usingP->vy > 0 && usingP->Ymovingflag && !(HitFaceRectRect(rect, this->rect) & BOTTOM)) {
 			//killedenemy++;
-			PlaySoundMem(Sound::sounds[SOUND_ENEMYTREAD], DX_PLAYTYPE_BACK);
 			//deathflag = true;
 			if (stats != 2 && stats != 5) {
 				hp--;	//hpを減らす
+				PlaySoundMem(Sound::sounds[SOUND_ENEMYTREAD], DX_PLAYTYPE_BACK);
+
 				stats = 5;
 				cnttime = 0;
+			}
+			else {
+				PlaySoundMem(Sound::sounds[SOUND_GUARD], DX_PLAYTYPE_BACK);
 			}
 			if (hp <= 0) {
 				Blockforblock::liveflag = false;

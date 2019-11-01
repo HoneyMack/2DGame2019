@@ -168,12 +168,9 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
 	Polarbear::PicHandle = LoadGraph("pictures/polarbear.png");
+	
 
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像		atodehattyuu
-	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
-	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
-	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
-	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/SeaWeed.png");//Debug用仮画像		atodehattyuu
 
 	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?						atodehattyuu
 	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?					atodehattyuu
@@ -193,7 +190,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 	MarineBoss::PicHandle[0] = LoadGraph("pictures/marine_boss2_2.png");
 	MarineBoss::PicHandle[1] = LoadGraph("pictures/barrier.png");										//atode
-	Urchin::PicHandle = LoadGraph("pictures/bullet.png");
+	Urchin::PicHandle = LoadGraph("pictures/Uni.png");
 
 	Blockforblock::PicHandle = LoadGraph("pictures/block_wood.png");
 
@@ -246,6 +243,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
+	Sound::sounds[SOUND_GUARD] = LoadSoundMem("sounds/guard.mp3");
 
 
 	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//音量調整
@@ -1016,14 +1014,14 @@ void CreateStage1_1R() {
 	new Coin(545, 350);
 	new Coin(609, 350);
 
-	new Turtle(DOT * 10, DOT * 13); //debug
-	//new Fish(DOT * 10, DOT * 13);	//debug
-	//new Crab(DOT * 10, DOT * 4);
-	new Ship(DOT * 10, DOT * 4, 0);
+	//new Turtle(DOT * 10, DOT * 13); //debug
+	////new Fish(DOT * 10, DOT * 13);	//debug
+	////new Crab(DOT * 10, DOT * 4);
+	//new Ship(DOT * 10, DOT * 4, 0);
 
-	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
-	new GardenEel(DOT * 30, DOT * 14);//debug
-	new TurtleWithWing(DOT * 35, DOT * 10); //debug
+	//new SeaWeed(DOT * 20, DOT * 10, 3, 2);//debug
+	//new GardenEel(DOT * 30, DOT * 14);//debug
+	//new TurtleWithWing(DOT * 35, DOT * 10); //debug
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);
@@ -2000,7 +1998,7 @@ void CreateStage_Sea() {
 	new Fish(DOT * 17, DOT * 8);
 
 
-	new SeaWeed(DOT * 20, DOT * 1, 4, 13);
+	new SeaWeed(DOT * 20, DOT * 2, 4, 6);
 	new Fish(DOT * 28, DOT * 10);
 	new Crab(DOT * 35, DOT * 13);
 	new Fish(DOT * 37, DOT * 6);
@@ -2008,12 +2006,13 @@ void CreateStage_Sea() {
 	new Eel(DOT * 42, DOT * 9,false);
 	new Eel(DOT * 49, DOT * 6, true);
 	new Eel(DOT * 85, DOT * 1, false);
+	new Eel(DOT * 90, DOT * 2, false);
 
 	new Eel(DOT * 52, DOT * 8, true);
 	//stage.usingP->x = DOT*50;
 
 
-	new Fish(DOT * 45, DOT * 11);
+	//new Fish(DOT * 45, DOT * 11);
 	new Crab(DOT * 44, DOT * 13);
 	new Crab(DOT * 54, DOT * 13);
 
@@ -2021,7 +2020,7 @@ void CreateStage_Sea() {
 	new GardenEel(DOT * 60, DOT * 10, 0);
 	new GardenEel(DOT * 63, DOT * 10, 0);
 	new GardenEel(DOT * 67, DOT * 10, 0);
-	new SeaWeed(DOT * 64, DOT * 8, 3, 2);
+	new SeaWeed(DOT * 64, DOT * 8, 3, 1);
 
 	new HealingItem(DOT * 128, DOT * 11);
 
@@ -2327,7 +2326,7 @@ void CreateStage_Sky() {
 
 	new TurtleWithWing(DOT * 135, DOT * 8);
 
-	for (int i = 140; i < 150; i++) {
+	for (int i = 141; i < 150; i++) {
 		firstMap.m_map[i][14] = BLOCK_WOOD;
 	}
 

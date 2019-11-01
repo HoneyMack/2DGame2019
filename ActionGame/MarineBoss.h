@@ -43,6 +43,7 @@ public:
 	bool Uniflag = false;
 
 	int stats = 0;	
+	int bstats = 0;	//前の状態を保持
 	/*
 	0:何もしてない、行動を選択
 	1:左方向移動
