@@ -1,7 +1,7 @@
 //マップは配列として持つ
 #pragma once
 #include "DxLib.h"
-#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
+//#define DEBUG			//あたり判定を描画させたくないときはコメントアウト
 
 
 
@@ -11,6 +11,8 @@
 #define	TIME_STAGE1_1R 500000 //残り時間(ms)
 #define	TIME_STAGE2_1R 500000 //残り時間(ms)
 #define TIME_STAGE1_3R 500000
+
+#define TIME_STAGE_SNOW 500000
 
 
 //背景画像
@@ -236,9 +238,10 @@
 //Penguin
 #define PENGUIN_MOVEWIDTH 160
 #define PENGUIN_HITDAMAGE 4
-#define PENGUIN_SLIDINGSPEED 300	//滑ってる時の速度
+#define PENGUIN_SLIDINGSPEED 200	//滑ってる時の速度
 #define PENGUIN_WALKINGSPEED 100	//歩いてる時の速度
 #define PENGUIN_SEARCHINGAREA 200
+#define PENGUIN_CHANGEDISTANCE_WIDTH 200
 
 //thornblock
 #define THORNBLOCK_SIZEX 28
@@ -252,15 +255,14 @@
 
 //Ship
 #define SHIP_SIZEX 96
-#define SHIP_SIZEY 64
+#define SHIP_SIZEY 20
 #define SHIP_MOVESPEED 100
 
 
 //SeaWeed(海藻)
 #define SEAWEED_SIZEX 32 //海藻の画像の大きさ
-#define SEAWEED_SIZEY 32 //海藻の画像の大きさ
-#define SEAWEED_TOTALPICTURES 5 //画像の総数
-#define SEAWEED_SWITCHTIME 1000 //1画像あたりの表示時間(ms/画像)
+#define SEAWEED_SIZEY 64 //海藻の画像の大きさ
+#define SEAWEED_TOTALPICTURES 1 //画像の総数
 
 //GardenEel(チンアナゴ)
 #define GARDENEEL_SIZEX 10 //チンアナゴの画像サイズ
@@ -284,6 +286,7 @@
 #define SEA_WAVESPEEDX 30 //ｘ方向速度（波）
 #define SEA_WAVESPEEDDOWN 30
 #define SEA_WAVESPEEDUP 50
+#define SEA_SWITCHTIME 300
 
 
 
@@ -321,16 +324,16 @@ class Map;
 class Rect;
 class Circle;
 
- //プロトタイプ宣言
+//プロトタイプ宣言
 bool InKeyTrigger(int key, int CheckKey);		//when key pressed, return true once    not while
 bool CheckRectRect(Rect rect1, Rect rect2);		//二つの長方形が重なっているか
-bool CheckPointRect( double vecX, double vecY ,Rect rect);	//rectに点vectorが含まれているか
-bool CheckCircleCircle(Circle cir1,Circle cir2);//二つの円が重なっているか
-bool CheckPointCircle(double vecX,double vecY,Circle cir);	//ある点(vecX,vecY)は,円に含まれているか
+bool CheckPointRect(double vecX, double vecY, Rect rect);	//rectに点vectorが含まれているか
+bool CheckCircleCircle(Circle cir1, Circle cir2);//二つの円が重なっているか
+bool CheckPointCircle(double vecX, double vecY, Circle cir);	//ある点(vecX,vecY)は,円に含まれているか
 bool CheckCircleRect(Circle cir, Rect rect);	//円と長方形が重なっているか
 int HitFaceRectRect(Rect rect1, Rect rect2);	//二つの長方形で重なっている部分を返す(rect2を基本として上下左右)
 int HitFaceCircleRect(Circle cir, Rect rect);	//Circleと長方形で重なっている部分を返す(rectを基本として上下左右)(cirをrectとみて処理)
-int HitFaceCircleCircle(Circle cir1,Circle cir2);	//２つの円で重なっている部分を返す(cir2を基本として上下左右)(cirをrectとみて処理)
+int HitFaceCircleCircle(Circle cir1, Circle cir2);	//２つの円で重なっている部分を返す(cir2を基本として上下左右)(cirをrectとみて処理)
 Rect ChangeCircleToRect(Circle cir);	//Circleをぐるっと囲む長方形を作成
 
 
@@ -338,7 +341,7 @@ Rect ChangeCircleToRect(Circle cir);	//Circleをぐるっと囲む長方形を作成
 
 //ウィンドウ切り替え用
 enum {
-	STARTWINDOW, GAMESELECTWINDOW, GAMEPLAYWINDOW,GAMEPAUSEWINDOW, GAMEOVERWINDOW,GAMECLEARWINDOW,RANKINGWINDOW
+	STARTWINDOW, GAMESELECTWINDOW, GAMEPLAYWINDOW, GAMEPAUSEWINDOW, GAMEOVERWINDOW, GAMECLEARWINDOW, RANKINGWINDOW
 };
 //マップ画像用
 enum {
@@ -346,20 +349,23 @@ enum {
 };
 //画像管理用
 enum {
-	PLAYER,WALKENEMY
+	PLAYER, WALKENEMY
 };
 //プレイモード切替
 enum {
-	CROSSKEYANDJUMP,FORCEHORIZONTALSCROLL
+	CROSSKEYANDJUMP, FORCEHORIZONTALSCROLL
 };
 
 //プレイヤー画像切り替え用
 enum {
-	STAND,RUN,JUMP,ROPE,FENCE
+	STAND, RUN, JUMP, ROPE, FENCE, SWIM
 };
 
 
 //サウンド管理用
 enum {
-	SOUND_FLASHBLOCK, SOUND_PLAYERJUMP,SOUND_PLAYERSKILL,SOUND_PLAYERJUMPMINI,SOUND_LASERSHOT,SOUND_DAMAGE,SOUND_ENEMYSHOOT,SOUND_JUMPSPRING,SOUND_JUMPSPRINGMINI,SOUND_ROPEJUMP,SOUND_ENEMYTREAD,SOUND_COIN,SOUND_STAGESTART,SOUND_STAGE1_1,SOUND_STAGE1_2,SOUND_STAGE1_3,SOUND_MAX
+	SOUND_FLASHBLOCK, SOUND_PLAYERJUMP, SOUND_PLAYERSKILL, SOUND_PLAYERJUMPMINI, SOUND_LASERSHOT, SOUND_DAMAGE, SOUND_ENEMYSHOOT, SOUND_JUMPSPRING, SOUND_JUMPSPRINGMINI, SOUND_ROPEJUMP, SOUND_ENEMYTREAD, SOUND_COIN, SOUND_BOSS_DEFEAT, SOUND_HEALING, SOUND_UNI,SOUND_GUARD,
+	SOUND_STAGESTART, SOUND_STAGE_TUTO, SOUND_STAGE_SNOW, SOUND_STAGE_SEA, SOUND_STAGE_SKY,
+	SOUND_STAGE1_1, SOUND_STAGE1_2, SOUND_STAGE1_3,
+	SOUND_BOSS, SOUND_MAX
 };

@@ -12,10 +12,10 @@ Fish::Fish(int x, int y)
 
 	//重力を無効に
 	ay = 0;
-	rect.x = 3;
-	rect.y = 5;
-	rect.sizeX = 25;
-	rect.sizeY = 25;
+	rect.x = 2;
+	rect.y = 6;
+	rect.sizeX = 26;
+	rect.sizeY = 18;
 
 	fx = x;
 	fy = y;
@@ -42,35 +42,38 @@ void Fish::Motion(double frametime)
 			&& (fx + FISH_MOVEWIDTH/2 > usingP->x) && (fx - FISH_MOVEWIDTH/2 < usingP->x)) {
 			chasing = true;	//追いかけフラグセット
 
-			//プレイヤーとfishとの角度を計算する
-			//angle = atan((usingP->y - y) / (x - usingP->x));	//0除算　要修正
-			if (x - usingP->x < ZEROEXCEPTION)
-				angle = atan((usingP->y - y) / ZEROEXCEPTION);
-			else
-				angle = atan((usingP->y - y) / (x - usingP->x));	//0除算　要修正
-
 			
-			angle *=180. / PI;
-			//if (angle < 0)angle *= -1;
 
-			//プレイヤーとの角度が限界角度以上であった場合限界角度として進む方向を変更
-			if (angle >= FISH_LIMIT_ANGLE) {
-				velocityX = FISH_SPEED * cos(FISH_LIMIT_ANGLE * PI / 180.);
-				velocityY = FISH_SPEED * sin(FISH_LIMIT_ANGLE * PI / 180.);
-			}
-			else if (angle <= -FISH_LIMIT_ANGLE) {
-				velocityX = FISH_SPEED * cos(-FISH_LIMIT_ANGLE * PI / 180.);
-				velocityY = FISH_SPEED * sin(-FISH_LIMIT_ANGLE * PI / 180.);
-			}
-			//プレイヤーとの角度が小さければプレイヤーを追いかける
-			else {
-				velocityX = FISH_SPEED * cos(angle * PI / 180.);	//ここで勝手に設定すると壁を突き抜けるかもしれない。突き抜けたら修正する。
-				velocityY = FISH_SPEED * sin(angle * PI / 180.);
-			}
-			if (usingP->x < x || velocityX < 0)
-				velocityX = -velocityX;
-			/*if (usingP->y < y || velocityY < 0)
-				velocityY = -velocityY;*/
+				//プレイヤーとfishとの角度を計算する
+				//angle = atan((usingP->y - y) / (x - usingP->x));	//0除算　要修正
+				if (x - usingP->x < ZEROEXCEPTION)
+					angle = atan((usingP->y - y) / ZEROEXCEPTION);
+				else
+					angle = atan((usingP->y - y) / (x - usingP->x));	//0除算　要修正
+
+
+				angle *= 180. / PI;
+				//if (angle < 0)angle *= -1;
+
+				//プレイヤーとの角度が限界角度以上であった場合限界角度として進む方向を変更
+				if (angle >= FISH_LIMIT_ANGLE) {
+					velocityX = FISH_SPEED * cos(FISH_LIMIT_ANGLE * PI / 180.);
+					velocityY = FISH_SPEED * sin(FISH_LIMIT_ANGLE * PI / 180.);
+				}
+				else if (angle <= -FISH_LIMIT_ANGLE) {
+					velocityX = FISH_SPEED * cos(-FISH_LIMIT_ANGLE * PI / 180.);
+					velocityY = FISH_SPEED * sin(-FISH_LIMIT_ANGLE * PI / 180.);
+				}
+				//プレイヤーとの角度が小さければプレイヤーを追いかける
+				else {
+					velocityX = FISH_SPEED * cos(angle * PI / 180.);	//ここで勝手に設定すると壁を突き抜けるかもしれない。突き抜けたら修正する。
+					velocityY = FISH_SPEED * sin(angle * PI / 180.);
+				}
+				if (usingP->x < x || velocityX < 0)
+					velocityX = -velocityX;
+				/*if (usingP->y < y || velocityY < 0)
+					velocityY = -velocityY;*/
+			
 		}
 		//プレイヤーとの距離が離れている場合は横移動
 		else if(chasing == true){

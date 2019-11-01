@@ -21,12 +21,17 @@
 #include "Fish.h"
 #include "Crab.h"
 #include "ThornBlock.h"
+#include "MarineBoss.h"
 #include "Fence.h"
 #include "Sea.h"
 #include "SeaWeed.h"
 #include "Polarbear.h"  //new
+#include "HealingItem.h"
+#include "Eel.h"
+#include "Killer.h"
 #include "GardenEel.h"
 #include "SnowMan.h"
+#include "Blockforblock.h"
 #include "Map.h"
 #include "Rect.h"
 #include "Object.h"
@@ -34,17 +39,17 @@
 
 
 
-//ï¿½wï¿½iï¿½æ‘œï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æƒoï¿½O
+//?¿½w?¿½i?¿½æ‘œï¿½?¿½?¿½?¿½È‚ï¿½?¿½Æƒo?¿½O
 
 class Stage
 {
 public:
-	int mode = CROSSKEYANDJUMP;		//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½h
-	static	int limit;						//ï¿½cï¿½èï¿½ï¿½
-	Rect* Camera;					//ï¿½`ï¿½ï¿½ÍˆÍwï¿½ï¿½pï¿½ï¿½`ï¿½Ì—pï¿½ï¿½
-	Player* usingP;					//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[
-	Map* usingM;					//ï¿½}ï¿½bï¿½v
-	int mapparts[ACCOUNTFORMAPPARTS];	//ï¿½wï¿½iï¿½æ‘œï¿½Ì’fï¿½ï¿½
+	int mode = CROSSKEYANDJUMP;		//?¿½v?¿½?¿½?¿½C?¿½?¿½?¿½[?¿½h
+	static	int limit;						//?¿½c?¿½èï¿½?¿½
+	Rect* Camera;					//?¿½`?¿½?¿½ÍˆÍw?¿½?¿½p?¿½?¿½`?¿½Ì—p?¿½?¿½
+	Player* usingP;					//?¿½v?¿½?¿½?¿½C?¿½?¿½?¿½[
+	Map* usingM;					//?¿½}?¿½b?¿½v
+	int mapparts[ACCOUNTFORMAPPARTS];	//?¿½w?¿½i?¿½æ‘œï¿½Ì’f?¿½?¿½
 
 	Stage();
 	~Stage();
@@ -54,7 +59,7 @@ public:
 
 	void AllReset();
 
-	void Update(double frametime);//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
-	void Draw();					//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ì•`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
-	void AddDraw();							//mobï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½nï¿½ï¿½ï¿½Æ“nï¿½ï¿½ï¿½ï¿½Mobï¿½Ì•`ï¿½ï¿½(ï¿½Ç‰ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½
+	void Update(double frametime);//mob?¿½C?¿½?¿½?¿½X?¿½^?¿½?¿½?¿½X?¿½Ìƒ|?¿½C?¿½?¿½?¿½^?¿½?¿½n?¿½?¿½?¿½Æ“n?¿½?¿½?¿½?¿½Mob?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½?¿½Ä‚ï¿½?¿½?¿½?¿½
+	void Draw();					//mob?¿½C?¿½?¿½?¿½X?¿½^?¿½?¿½?¿½X?¿½Ìƒ|?¿½C?¿½?¿½?¿½^?¿½?¿½n?¿½?¿½?¿½Æ“n?¿½?¿½?¿½?¿½Mob?¿½Ì•`?¿½?¿½?¿½?¿½?¿½?¿½Ä‚ï¿½?¿½?¿½?¿½
+	void AddDraw();							//mob?¿½C?¿½?¿½?¿½X?¿½^?¿½?¿½?¿½X?¿½Ìƒ|?¿½C?¿½?¿½?¿½^?¿½?¿½n?¿½?¿½?¿½Æ“n?¿½?¿½?¿½?¿½Mob?¿½Ì•`?¿½?¿½(?¿½Ç‰ï¿½)?¿½?¿½?¿½?¿½?¿½Ä‚ï¿½?¿½?¿½?¿½
 };

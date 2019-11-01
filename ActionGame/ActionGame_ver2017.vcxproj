@@ -131,11 +131,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Blockforblock.h" />
     <ClInclude Include="BulletTowardPlayer.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Crab.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="Eel.h" />
     <ClInclude Include="FallWall.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="FireBall.h" />
@@ -146,9 +148,12 @@
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Hanmer.h" />
     <ClInclude Include="HanmerThrow.h" />
+    <ClInclude Include="HealingItem.h" />
     <ClInclude Include="Jump.h" />
+    <ClInclude Include="Killer.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MarineBoss.h" />
     <ClInclude Include="Mob.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Penguin.h" />
@@ -159,6 +164,7 @@
     <ClInclude Include="Rope.h" />
     <ClInclude Include="Sea.h" />
     <ClInclude Include="SeaWeed.h" />
+    <ClInclude Include="Ship.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
     <ClInclude Include="SnowMan.h" />
@@ -168,13 +174,16 @@
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="TurtleWithWing.h" />
     <ClInclude Include="UpDownObject.h" />
+    <ClInclude Include="Urchin.h" />
     <ClInclude Include="WalkEnemy.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Blockforblock.cpp" />
     <ClCompile Include="BulletTowardPlayer.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Crab.cpp" />
+    <ClCompile Include="Eel.cpp" />
     <ClCompile Include="FallWall.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="FireBall.cpp" />
@@ -185,10 +194,13 @@
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Hanmer.cpp" />
     <ClCompile Include="HanmerThrow.cpp" />
+    <ClCompile Include="HealingItem.cpp" />
     <ClCompile Include="Jump.cpp" />
+    <ClCompile Include="Killer.cpp" />
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MarineBoss.cpp" />
     <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Penguin.cpp" />
@@ -208,6 +220,7 @@
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="TurtleWithWing.cpp" />
     <ClCompile Include="UpDownObject.cpp" />
+    <ClCompile Include="Urchin.cpp" />
     <ClCompile Include="WalkEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>

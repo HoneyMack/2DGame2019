@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "Stage.h"
 
-int Player::PicHandle[] = { 0,0,0 ,0};
+int Player::PicHandle[] = { 0,0,0 ,0,0};
 
 static bool befKeys[62];	//一戸前の入力保持用
 
@@ -122,7 +122,7 @@ void Player::Motion(double frametime) {
 			ay = SEA_GRAVITY;
 			seaflag = true;
 		}
-		Animation(FENCE);		//アニメーションをフェンスで仮置き（泳ぎモーションが完成したら差し替え）
+		Animation(SWIM);		//アニメーションをフェンスで仮置き（泳ぎモーションが完成したら差し替え）
 		//左右移動
 		if (now_key & (PAD_INPUT_LEFT | PAD_INPUT_RIGHT)) {
 			if (now_key & PAD_INPUT_LEFT) {
@@ -261,6 +261,10 @@ void Player::Animation(int action) {
 	case FENCE:
 		//移動しているときこれ
 		index = 3;
+		break;
+	case SWIM:
+		//泳いでいるとき
+		index = 4;	//よくわからんけど仮置き
 		break;
 	}
 }

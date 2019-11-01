@@ -7,7 +7,7 @@
 class Penguin : public Mob,public Object
 {
 public:
-	static int PicHandle;
+	static int PicHandle[2];
 
 	Rect rect = Rect(30, 30, &this->x, &this->y);
 

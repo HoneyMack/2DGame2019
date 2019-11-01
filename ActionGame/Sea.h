@@ -1,13 +1,14 @@
 #pragma once
 #include "Mob.h"
 #include "Object.h"
+#include "Stage.h"
 
 
 
 class Sea : public Object
 {
 public:
-	static int PicHandle;
+	static int PicHandle[];
 
 	static Sea* first;
 	static Sea* last;
@@ -24,6 +25,8 @@ public:
 	~Sea();
 
 	int direction;
+
+	int index;
 
 	void ChainMaker();	//ƒŠƒXƒg‚Å‚·‚×‚Ä‚ÌŠC‚Ì”»’è‚ğˆ—‚·‚é
 	void ChainCutter();

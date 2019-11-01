@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-#define STAGENUM 3
+#define STAGENUM 7
 using namespace std;
 
 //ランキングデータ保持用	テキストの保存形式:名前、残りタイム、敵の撃破数、残りHP、コイン
@@ -40,6 +40,10 @@ void CreateStage1_1R();
 void CreateStage1_2R();
 void CreateStage1_3R();
 void CreateStage_MiniGame1();			//タイムを競うミニゲーム
+void CreateStage_Sea();	
+void CreateStage_Snow();
+void CreateStage_Sky();
+void CreateStage_Tutorial();
 
 
 //メニュー切り替え用フラグ
@@ -51,12 +55,17 @@ bool befKeys[62];	//一戸前の入力保持用
 
 
 //マップ名保持
-string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","TEST1","TEST2" };
+//string stagename[] = { "stage1_1R" ,"stage1_2R","stage1_3R","snow_stage","SeaStage","TEST1","TEST2" };
+string stagename[] = { "Tutorial","snow_stage","SeaStage","SkyStage(MiniGame)","stage1_1R","stage1_2R","stage1_3R" };
 
 //背景画像指定
 int stage1_1Back[ACCOUNTFORMAPPARTS];
 int stage1_2Back[ACCOUNTFORMAPPARTS];
 int stage1_3Back[ACCOUNTFORMAPPARTS];
+int stage_Snow[1];
+int stage_Sea[1];
+int stage_Sky[1];
+int stage_tutorial[1];
 
 //ゴールバー
 int goalPicHandle;
@@ -108,6 +117,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Player::PicHandle[1] = LoadGraph("pictures/boy_run.png");
 	Player::PicHandle[2] = LoadGraph("pictures/boy_jump.png");
 	Player::PicHandle[3] = LoadGraph("pictures/fence_motion.png");
+	Player::PicHandle[4] = LoadGraph("pictures/player_swim.png");
 
 	WalkEnemy::PicHandle[0] = LoadGraph("pictures/walkenemy_animation/anime1.png");
 	WalkEnemy::PicHandle[1] = LoadGraph("pictures/walkenemy_animation/anime2.png");
@@ -153,25 +163,41 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	ThornBlock::PicHandle = LoadGraph("pictures/thornblock.png");
 	Fence::PicHandle = LoadGraph("pictures/fence.png");
 
-	Fish::PicHandle = LoadGraph("pictures/enemy_gun.png");	//魚仮画像セット
-	Crab::PicHandle = LoadGraph("pictures/enemy_gun.png");	//カニ画像仮セット
+	Fish::PicHandle = LoadGraph("pictures/fish.png");	//魚仮画像セット
+	Crab::PicHandle = LoadGraph("pictures/crab.png");	//カニ画像仮セット
 	Ship::PicHandle = LoadGraph("pictures/Ship.png");	//デバック用仮画像セット
 
-	Polarbear::PicHandle = LoadGraph("pictures/Ship.png"); //debug用仮画像
+	Polarbear::PicHandle = LoadGraph("pictures/polarbear.png");
+	
 
-	SeaWeed::PicHandles[0] = LoadGraph("pictures/seaweed_animation/seaweed0.png");//Debug用仮画像
-	SeaWeed::PicHandles[1] = LoadGraph("pictures/seaweed_animation/seaweed1.png");//Debug用仮画像
-	SeaWeed::PicHandles[2] = LoadGraph("pictures/seaweed_animation/seaweed2.png");//Debug用仮画像
-	SeaWeed::PicHandles[3] = LoadGraph("pictures/seaweed_animation/seaweed3.png");//Debug用仮画像
-	SeaWeed::PicHandles[4] = LoadGraph("pictures/seaweed_animation/seaweed4.png");//Debug用仮画像
+	SeaWeed::PicHandles[0] = LoadGraph("pictures/SeaWeed.png");//Debug用仮画像		atodehattyuu
 
-	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug用仮画像
-	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug用仮画像
+	SnowMan::PicHandle = LoadGraph("pictures/SnowMan.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?						atodehattyuu
+	SnowBall::PicHandle = LoadGraph("pictures/SnowBall.png");//Debug?ｿｽp?ｿｽ?ｿｽ?ｿｽ鞫?					atodehattyuu
+
 
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
-	Sea::PicHandle = LoadGraph("pictures/Sea.png");
+	Sea::PicHandle[0] = LoadGraph("pictures/Sea0.png");
+	Sea::PicHandle[1] = LoadGraph("pictures/Sea1.png");
+	Sea::PicHandle[2] = LoadGraph("pictures/Sea2.png");
+	Sea::PicHandle[3] = LoadGraph("pictures/Sea3.png");
 
-	Penguin::PicHandle = LoadGraph("pictures/takoyaki_back.png");
+	Penguin::PicHandle[0] = LoadGraph("pictures/penguin_walk.png");
+	Penguin::PicHandle[1] = LoadGraph("pictures/penguin_sliding.png");
+
+	Eel::PicHandle = LoadGraph("pictures/eel.png");
+	Killer::PicHandle = LoadGraph("pictures/Killer.png");
+
+	MarineBoss::PicHandle[0] = LoadGraph("pictures/marine_boss2_2.png");
+	MarineBoss::PicHandle[1] = LoadGraph("pictures/barrier.png");										//atode
+	Urchin::PicHandle = LoadGraph("pictures/Uni.png");
+
+	Blockforblock::PicHandle = LoadGraph("pictures/block_wood.png");
+
+	HealingItem::PicHandle[0] = LoadGraph("pictures/HealingItem0.png");
+	HealingItem::PicHandle[1] = LoadGraph("pictures/HealingItem1.png");
+	HealingItem::PicHandle[2] = LoadGraph("pictures/HealingItem2.png");
+
 
 	//Fence::PicHandle = LoadGraph("pictures/block_stone.png");
 
@@ -192,11 +218,19 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	stage1_3Back[0] = LoadGraph("pictures/background/stage1_3/background_1.jpg");
 	stage1_3Back[1] = LoadGraph("pictures/background/stage1_3/background_2.jpg");
 	stage1_3Back[2] = LoadGraph("pictures/background/stage1_3/background_3.jpg");
+	stage_Snow[0] = LoadGraph("pictures/background/Snow_background.png");
+	stage_Sea[0] = LoadGraph("pictures/background/Sea_background.JPG");
+	stage_Sky[0] = LoadGraph("pictures/background/Sky_background.png");
+	//浜辺の画像追加
+
 
 	//ゴール
 	goalPicHandle = LoadGraph("pictures/goal_line.png");
 
 	//サウンドをセット
+	Sound::sounds[SOUND_UNI] = LoadSoundMem("sounds/rakka.mp3");
+	Sound::sounds[SOUND_HEALING] = LoadSoundMem("sounds/kaifuku.mp3");
+	Sound::sounds[SOUND_BOSS_DEFEAT] = LoadSoundMem("sounds/defeat.mp3");
 	Sound::sounds[SOUND_FLASHBLOCK] = LoadSoundMem("sounds/flashblock.mp3");
 	Sound::sounds[SOUND_PLAYERJUMP] = LoadSoundMem("sounds/jump.mp3");
 	Sound::sounds[SOUND_LASERSHOT] = LoadSoundMem("sounds/lasershot.mp3");
@@ -209,6 +243,8 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 	Sound::sounds[SOUND_ENEMYTREAD] = LoadSoundMem("sounds/enemy_tread.mp3");
 	Sound::sounds[SOUND_COIN] = LoadSoundMem("sounds/coin.mp3");
 	Sound::sounds[SOUND_ROPEJUMP] = LoadSoundMem("sounds/rope.mp3");
+	Sound::sounds[SOUND_GUARD] = LoadSoundMem("sounds/guard.mp3");
+
 
 	ChangeVolumeSoundMem(255 * 50 / 100, Sound::sounds[SOUND_LASERSHOT]);//音量調整
 
@@ -320,24 +356,41 @@ int GameSelectWindow() {
 	//選択されたらその番号を返す +(GameSelectWindowに入った瞬間にゲームに入るのを防ぐ)
 	if ((InKeyTrigger(now_key, PAD_INPUT_1) || InKeyTrigger(now_key, PAD_INPUT_4))) {
 		switch (selectnum) {
-
 		case 0:
-			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
-			CreateStage1_1R();
+			Sound::sounds[SOUND_STAGE_TUTO] = LoadSoundMem("sounds/actio_tuto.mp3");
+			CreateStage_Tutorial();
 			break;
 		case 1:
-			CreateStage1_2R();
-			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
+			Sound::sounds[SOUND_STAGE_SNOW] = LoadSoundMem("sounds/action_snow.mp3");
+			//CreateStage1_1R();
+			CreateStage_Snow();
 			break;
 		case 2:
-			CreateStage1_3R();
-			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
+			//CreateStage1_2R();
+			Sound::sounds[SOUND_STAGE_SEA] = LoadSoundMem("sounds/action_marine.mp3");
+			Sound::sounds[SOUND_BOSS] = LoadSoundMem("sounds/action_marine_boss.mp3");
+			CreateStage_Sea();
 			break;
 		case 3:
-			CreateStage2_1();
+			//CreateStage1_3R();
+			Sound::sounds[SOUND_STAGE_SKY] = LoadSoundMem("sounds/action_ship.mp3");
+			CreateStage_Sky();
 			break;
 		case 4:
-			CreateStage1_1();
+			Sound::sounds[SOUND_STAGE1_1] = LoadSoundMem("sounds/stage1-1.mp3");
+			//CreateStage_Snow();
+			CreateStage1_1R();
+			break;
+		case 5:
+			//CreateStage2_1();
+			//CreateSampleBoss();
+			Sound::sounds[SOUND_STAGE1_2] = LoadSoundMem("sounds/stage1-2.mp3");
+			CreateStage1_2R();
+			break;
+		case 6:
+			//CreateStage1_1();
+			Sound::sounds[SOUND_STAGE1_3] = LoadSoundMem("sounds/stage1-3.mp3");
+			CreateStage1_3R();
 			break;
 		}
 		if (now_key&PAD_INPUT_4)
@@ -464,6 +517,7 @@ void GameClearWindow(int selectedstage) {
 	//名前を入力させる
 	char addname[20 + 1] = {""};
 	str = "名前を入力してスコアをランキングに登録します(20文字以内):Enterで決定";
+
 	strLen = strlen(str);
 	strWidth = GetDrawStringWidth(str, strLen);				//中央描画用
 	DrawString((WIDTH - strWidth) / 2, 300, str, 0xFFFFFF);
@@ -953,10 +1007,6 @@ void CreateStage1_1R() {
 	firstMap.m_map[168][14] = 0;
 	firstMap.m_map[107][14] = 0;
 
-	for (int i = 0; i < 7; i++) {
-		firstMap.m_map[23 + i][10] = BLOCK_ICE;
-	}//debug（最初のところに氷を置く）
-
 	//ステージにセット
 	*stage.usingM = firstMap;
 
@@ -964,15 +1014,14 @@ void CreateStage1_1R() {
 	new Coin(545, 350);
 	new Coin(609, 350);
 
-	new Turtle(DOT * 10, DOT * 13); //debug
-	//new Fish(DOT * 10, DOT * 13);	//debug
-	//new Crab(DOT * 10, DOT * 4);
-	new Ship(DOT * 10, DOT * 4, 0);
+	//new Turtle(DOT * 10, DOT * 13); //debug
+	////new Fish(DOT * 10, DOT * 13);	//debug
+	////new Crab(DOT * 10, DOT * 4);
+	//new Ship(DOT * 10, DOT * 4, 0);
 
-	new SeaWeed(DOT * 20, DOT * 10, 3, 4);//debug
-	new GardenEel(DOT * 30, DOT * 14);//debug
-	new SnowMan(DOT * 33, DOT * 12);//debug
-	new TurtleWithWing(DOT * 35, DOT * 10); //debug
+	//new SeaWeed(DOT * 20, DOT * 10, 3, 2);//debug
+	//new GardenEel(DOT * 30, DOT * 14);//debug
+	//new TurtleWithWing(DOT * 35, DOT * 10); //debug
 
 	new WalkEnemy(700, 415);
 	new WalkEnemy(1280, 290);
@@ -1505,7 +1554,7 @@ void CreateStage1_2R() {
 	new ThornBlock(DOT * 180, DOT * 8);
 	new ThornBlock(DOT * 181, DOT * 8);
 
-	new Crab(DOT * 25, DOT * 13);
+	//new Crab(DOT * 25, DOT * 13);
 
 	new Ghost(DOT * 25, DOT * 7);
 	new Ghost(DOT * 25, DOT * 3);
@@ -1839,4 +1888,569 @@ void CreateStage_MiniGame1() {
 	//new Jump(300, 400);
 
 
+}
+
+void CreateStage_Sea() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage_Sea[0];
+	}
+
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(160   , firstMap.getNumY());
+
+	//地面生成
+	for (int i = 0; i < 100; i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+
+	for (int i = 103; i < 130; i++) {
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+		firstMap.m_map[i][firstMap.getNumY() - 2] = BLOCK_WOOD;
+		firstMap.m_map[i][firstMap.getNumY() - 3] = BLOCK_WOOD;
+		/*firstMap.m_map[i][firstMap.getNumY() - 6] = BLOCK_WOOD;
+		firstMap.m_map[i][0] = BLOCK_WOOD;*/
+		for (int j = 0; j < 10; j++) {
+			firstMap.m_map[i][j] = BLOCK_WOOD;
+		}
+
+	}
+	for (int i = 130; i < 149; i++) {
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+	}
+	for (int i = 0; i < 12; i++) {
+		firstMap.m_map[148][i] = BLOCK_WOOD;
+	}
+	/*for (int i = 12; i < 15; i++) {
+		firstMap.m_map[148][i] = BLOCK_WOOD;
+	}*/
+	for (int i = 149; i < 160; i++) {
+		firstMap.m_map[i][11] = BLOCK_WOOD;
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+
+
+	//天井作成
+	for (int i = 0; i < 100; i++) {
+		firstMap.m_map[i][0] = BLOCK_WOOD;
+	}
+	
+
+	for (int i = 7; i < 13; i++) {
+		firstMap.m_map[i][11] = BLOCK_WOOD;
+	}
+
+	for (int i = 56; i < 69; i++) {
+		firstMap.m_map[i][7] = BLOCK_WOOD;
+		firstMap.m_map[i][10] = BLOCK_WOOD;
+
+	}
+	for (int i = 1; i < 7; i++)
+	{
+		firstMap.m_map[56][i] = BLOCK_WOOD;
+		firstMap.m_map[68][i] = BLOCK_WOOD;
+	}
+
+	for (int i = 11; i < 15; i++) {
+		firstMap.m_map[56][i] = BLOCK_WOOD;
+		firstMap.m_map[68][i] = BLOCK_WOOD;
+	}
+
+
+
+	for (int i = 0; i < 6; i++)
+	{
+		firstMap.m_map[68 + i][6 - i] = BLOCK_WOOD;
+	}
+	for (int i = 0; i < 7; i++)
+	{
+		firstMap.m_map[68 + i][10 - i] = BLOCK_WOOD;
+	}
+	for (int i = 75; i < 100; i++) {
+		firstMap.m_map[i][4] = BLOCK_WOOD;
+	}
+	for (int i = 4; i < 15; i++) {
+		firstMap.m_map[99][i] = BLOCK_WOOD;
+	}
+
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 15; j++) {
+			new Sea(DOT * i, DOT * j, 0);
+
+		}
+	}
+	for (int i = 0; i < 15; i++) {
+		for (int j = 100; j < 103; j++) {
+			new Sea(DOT * j, DOT * i, 0b0100);
+		}
+	}
+
+	new Crab(DOT * 4, DOT * 13);
+	new Fish(DOT * 17, DOT * 8);
+
+
+	new SeaWeed(DOT * 20, DOT * 2, 4, 6);
+	new Fish(DOT * 28, DOT * 10);
+	new Crab(DOT * 35, DOT * 13);
+	new Fish(DOT * 37, DOT * 6);
+	
+	new Eel(DOT * 42, DOT * 9,false);
+	new Eel(DOT * 49, DOT * 6, true);
+	new Eel(DOT * 85, DOT * 1, false);
+	new Eel(DOT * 90, DOT * 2, false);
+
+	new Eel(DOT * 52, DOT * 8, true);
+	//stage.usingP->x = DOT*50;
+
+
+	//new Fish(DOT * 45, DOT * 11);
+	new Crab(DOT * 44, DOT * 13);
+	new Crab(DOT * 54, DOT * 13);
+
+	new GardenEel(DOT * 56, DOT * 10, 0);
+	new GardenEel(DOT * 60, DOT * 10, 0);
+	new GardenEel(DOT * 63, DOT * 10, 0);
+	new GardenEel(DOT * 67, DOT * 10, 0);
+	new SeaWeed(DOT * 64, DOT * 8, 3, 1);
+
+	new HealingItem(DOT * 128, DOT * 11);
+
+	new Blockforblock(DOT * 129, DOT * 11, DOT * 130);
+	new Blockforblock(DOT * 129, DOT * 10, DOT * 130);
+	new Blockforblock(DOT * 148, DOT * 13, DOT * 130);
+	new Blockforblock(DOT * 148, DOT * 12, DOT * 130);
+
+
+	new MarineBoss(DOT * 143, DOT*12, DOT * 130);
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (7 + i), DOT * (9 - i));
+		new Coin(DOT * (11 + i), DOT * (7 + i));
+	}
+	new Coin(DOT * 10, DOT * 7);
+
+	for (int i = 25; i < 31; i++) {
+		new Coin(DOT* i, DOT * 12);
+	}
+	for (int i = 45; i < 52; i++) {
+		new Coin(DOT * i, DOT * 9);
+	}
+	new Coin(DOT * 57, DOT * 9);
+	new Coin(DOT * 61, DOT * 9);
+	new Coin(DOT * 62, DOT * 9);
+
+
+	//stage.usingP->x = DOT*139;
+}
+
+
+
+void CreateStage_Snow() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage_Snow[0];
+	}
+	stage.limit = TIME_STAGE_SNOW;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(10 * firstMap.getNumX(), firstMap.getNumY());
+
+	//地面(氷)生成
+	for (int i = 0; i < firstMap.getNumX(); i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_ICE;
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[6 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		new Coin(DOT * (6 + i), DOT * (firstMap.getNumY() - 1 - 5));
+	}
+	new WalkEnemy(DOT * 7, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[29 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+	new WalkEnemy(DOT * 15, DOT * (firstMap.getNumY() - 1 - 2));
+
+	new Polarbear(DOT * 22, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 7; i++)
+	{
+		firstMap.m_map[36 + i][firstMap.getNumY() - 1 - 7] = BLOCK_ICE;
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (40 + i), DOT * (firstMap.getNumY() - 1 - 8 - j));
+		}
+	}
+
+	new SnowMan(DOT * 39, DOT * (firstMap.getNumY() - 1 - 8), true);
+	new Penguin(DOT * 32, DOT * (firstMap.getNumY() - 1 - 1));
+	new Penguin(DOT * 46, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = i; j < 7 - i; j++)
+		{
+			firstMap.m_map[49 + j][firstMap.getNumY() - 2 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		firstMap.m_map[52][firstMap.getNumY() - 1 - i] = 0;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[62 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		new Coin(DOT * (62 + i), DOT * (firstMap.getNumY() - 1 - 5));
+	}
+	new Penguin(DOT * 60, DOT * (firstMap.getNumY() - 1 - 1));
+	new Penguin(DOT * 66, DOT * (firstMap.getNumY() - 1 - 1));
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = i; j < 7 - i; j++)
+		{
+			firstMap.m_map[71 + j][firstMap.getNumY() - 2 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		firstMap.m_map[74][firstMap.getNumY() - 1 - i] = 0;
+	}
+
+	new Polarbear(DOT * 80, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[82 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+
+	new Lift(DOT * 88, DOT * (firstMap.getNumY() - 1 - 8), true);
+
+	for (int i = 0; i < 7; i++)
+	{
+		firstMap.m_map[92 + i][firstMap.getNumY() - 1 - 10] = BLOCK_ICE;
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (92 + i), DOT * (firstMap.getNumY() - 1 - 11 - j));
+		}
+	}
+	new SnowMan(DOT * 95, DOT * (firstMap.getNumY() - 1 - 2), true);
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[106 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+	}
+	new Lift(DOT * 101, DOT * (firstMap.getNumY() - 1 - 8), true);
+
+	new Penguin(DOT * 112, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[118 + i][firstMap.getNumY() - 1 - 4] = BLOCK_ICE;
+		firstMap.m_map[118 + i][firstMap.getNumY() - 1 - 8] = BLOCK_ICE;
+		new Coin(DOT * (118 + i), DOT * (firstMap.getNumY() - 1 - 9));
+	}
+
+	new Polarbear(DOT * 122, DOT * (firstMap.getNumY() - 1 - 2));
+
+	//healingItem
+	new HealingItem(DOT * 119, DOT * (firstMap.getNumY() - 1 - 5));
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (123 + i), DOT * (firstMap.getNumY() - 1 - 11));
+	}
+	new Polarbear(DOT * 128, DOT * (firstMap.getNumY() - 1 - 2));
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = i; j < 3; j++)
+		{
+			firstMap.m_map[130 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[133 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	new SnowMan(DOT * 134, DOT * (firstMap.getNumY() - 1 - 5), true);
+	for (int i = 3; i < 6; i++) {
+		for (int j = i - 3; j < 3; j++)
+		{
+			firstMap.m_map[136 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[139 + i][firstMap.getNumY() - 1 - 1 - j] = BLOCK_ICE;
+		}
+		for (int j = 0; j < 3; j++)
+		{
+			new Coin(DOT * (139 + i), DOT * (firstMap.getNumY() - 1 - 7 - j));
+		}
+	}
+	firstMap.m_map[142][firstMap.getNumY() - 1 - 3] = BLOCK_ICE;
+
+	new UpDownObject(DOT * 147, DOT * (firstMap.getNumY() - 1 - 7));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[152 + i][firstMap.getNumY() - 1 - 6] = BLOCK_ICE;
+	}
+
+	new TurtleWithWing(DOT * 158, DOT * (firstMap.getNumY() - 1 - 8));
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[162 + i][firstMap.getNumY() - 1 - 6] = BLOCK_ICE;
+	}
+
+	new UpDownObject(DOT * 170, DOT * (firstMap.getNumY() - 1 - 7));
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 6; j++)
+		{
+			firstMap.m_map[178 + i][firstMap.getNumY() - 1 - j] = BLOCK_ICE;
+		}
+	}
+	for (int i = 0; i < 2; i++) {
+		new Polarbear(DOT * (145 + i * 12), DOT * (firstMap.getNumY() - 1 - 1));
+	}
+	new Penguin(DOT * 155, DOT * (firstMap.getNumY() - 1 - 1));
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+}
+
+void CreateStage_Sky() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage_Sky[0];
+	}
+
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+	firstMap.setNum(150, firstMap.getNumY());
+
+	for (int i = 0; i < 10; i++) {
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+	//new Ship(DOT * 6, DOT * 8, 180);
+
+	new Rope(DOT * 13, DOT * 1, 7);
+
+	new Rope(DOT * 20, DOT * 1, 7);
+
+	new UpDownObject(DOT * 25, DOT * 8);
+
+	
+
+	stage.usingP->x = DOT*3;
+
+	new UpDownObject(DOT * 25, DOT * 4);
+
+
+	new Lift(DOT * 27, DOT * 12, false);
+	new Lift(DOT * 31, DOT * 4, true);
+	new Coin(DOT * 31, DOT * 8);
+	new Coin(DOT * 31, DOT * 7);
+	new Coin(DOT * 31, DOT * 6);
+
+	new Killer(DOT * 40, DOT * 8, false);
+	new Killer(DOT * 42, DOT * 5, false);
+	new Killer(DOT * 37, DOT * 7, false);
+
+
+
+	new Lift(DOT * 32, DOT * 12, false);
+	new Lift(DOT * 39, DOT * 4, true);
+	new Coin(DOT * 39, DOT * 8);
+	new Coin(DOT * 39, DOT * 7);
+
+	new Coin(DOT * 39, DOT * 6);
+	new Lift(DOT * 39, DOT * 12, false);
+	new Lift(DOT * 43, DOT * 5, true);
+	new Lift(DOT * 47, DOT * 6, true);
+	new Lift(DOT * 51, DOT * 7, true);
+	new Lift(DOT * 55, DOT * 8, true);
+
+	new Ship(DOT * 60, DOT * 10, 180);
+
+	new Ship(DOT * 65, DOT * 12, 45);
+
+	new Ship(DOT * 80, DOT * 3, 315);
+
+	new Rope(DOT * 88, DOT * 3, 6);
+
+	new FireBar(DOT * 91, DOT * 6, 5, 2);
+
+	new Killer(DOT * 90, DOT * 7, false);
+	new Killer(DOT * 75, DOT * 8, false);
+	new Killer(DOT * 82, DOT * 2, false);
+
+
+	new Rope(DOT * 95, DOT * 3, 6);
+
+	for (int i = 104; i < 108; i++) {
+		firstMap.m_map[i][8] = BLOCK_WOOD;
+	}
+	firstMap.m_map[115][8] = BLOCK_WOOD;
+	firstMap.m_map[116][8] = BLOCK_WOOD;
+
+	firstMap.m_map[122][8] = BLOCK_WOOD;
+
+	new FireBar(DOT * 128, DOT * 8, 5, 1);
+
+	new TurtleWithWing(DOT * 135, DOT * 8);
+
+	for (int i = 141; i < 150; i++) {
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+
+	//new Lift(DOT * , DOT * 6, true);
+
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+}
+
+void CreateStage_Tutorial() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage1_1Back[i];
+	}
+
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+
+	//マップの情報をセット
+	//マップの大きさを変更
+	firstMap.setNum(6 * firstMap.getNumX(), firstMap.getNumY());
+
+	//地面生成
+	for (int i = 0; i < firstMap.getNumX(); i++)
+		firstMap.m_map[i][firstMap.getNumY() - 1] = BLOCK_WOOD;
+
+	//マップ作製
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[16 + i][11] = BLOCK_WOOD;
+	}
+	//マップ作製
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[26 + i][11] = BLOCK_WOOD;
+	}
+
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			firstMap.m_map[35 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_STONE;
+		}
+	}
+
+	firstMap.m_map[41][10] = BLOCK_WOOD;
+	firstMap.m_map[42][10] = BLOCK_WOOD;
+	firstMap.m_map[43][10] = BLOCK_WOOD;
+	firstMap.m_map[44][10] = BLOCK_WOOD;
+
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 3; j++)
+		{
+			firstMap.m_map[60 + j][firstMap.getNumY() - 1 - 1 - i] = BLOCK_STONE;
+		}
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			firstMap.m_map[63 + i][firstMap.getNumY() - 1 - 1 - j] = BLOCK_STONE;
+		}
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		firstMap.m_map[71][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[73][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		firstMap.m_map[93][(firstMap.getNumY() - 1 - 1 - i)] = BLOCK_STONE;
+	}
+
+	//ステージにセット
+	*stage.usingM = firstMap;
+
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (16 + i), DOT * 10);
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Coin(DOT * (26 + i), DOT * 10);
+	}
+
+
+	new WalkEnemy(500, 415);
+	new WalkEnemy(780, 415);
+
+	new ShootEnemy(DOT * 66, 415);
+
+	new Jump(DOT * 33, 415);
+
+	new Coin(1600, 256);
+	new Coin(1632, 256);
+	new Coin(1664, 256);
+	new Coin(1696, 256);
+	new Coin(1728, 256);
+	new Coin(1760, 256);
+
+	new Rope(1834, 100, 8);
+
+	new Turtle(DOT * 76, DOT * 13);
+	new Turtle(DOT * 46, DOT * 13);
+
+	new WalkEnemy(DOT * 75, DOT * 13);
+
+	new UpDownObject(DOT * 87, DOT * 9);
+
+	new FallWall(DOT * 90, DOT * 1);
+
+	new TurtleWithWing(DOT * 100, DOT * 11);
+
+	new FireBar(DOT * 110, DOT * 10, 70.0, false, 5, 2, 90);
 }

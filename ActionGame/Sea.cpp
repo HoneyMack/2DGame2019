@@ -3,12 +3,15 @@
 Sea* Sea::first = nullptr;
 Sea* Sea::last = nullptr;
 
-int Sea::PicHandle = 0;
+int Sea::PicHandle[] = { 0,0,0,0 };
 
 Sea::Sea(int x, int y,int direction)
 {
 	this->x = x;
 	this->y = y;
+
+	if (direction == 0)index = 0;
+	else index = 1;
 
 	this->direction = direction;
 	
@@ -90,13 +93,28 @@ void Sea::AllDelete(Sea* sea)
 
 void Sea::Draw()
 {
+	index = (Stage::limit / SEA_SWITCHTIME) % 3;
 	if (CheckInCam(x + rect.sizeX, y) || CheckInCam(x, y)) {
 #ifdef DEBUG
 		rect.Draw(*Camera);
 #endif
-		//SetDrawBlendMode(DX_BLENDMODE_ALPHA, SEA_TRANSPARENCY);
-		DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
-		//SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, SEA_TRANSPARENCY);
+		if (direction == 0) {
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[0], TRUE);
+		}
+		else if (direction == 1) {
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[index + 1], TRUE);
+		}
+		else if (direction == 2) {
+			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle[index + 1], TRUE);
+		}
+		else if (direction == 4) {
+			DrawRotaGraph(RelativePosX()+16, RelativePosY()+16, 1, PI*3/2, PicHandle[index + 1], TRUE);
+		}
+		else if (direction == 8) {
+			DrawRotaGraph(RelativePosX()+16, RelativePosY()+16, 1, PI/2, PicHandle[index + 1], TRUE);
+		}
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	}
 }
 

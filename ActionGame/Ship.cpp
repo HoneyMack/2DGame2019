@@ -11,6 +11,10 @@ Ship::Ship(int x, int y, double set_angle)
 		int i = angle / 360;
 		angle -= 360 * i;
 	}
+	if (angle <= 90 || 270 < angle)
+		directionflag = true;
+	else
+		directionflag = false;
 	angle = 360 - angle;	//windows上での角度指定に合わせる処理
 	angle *= PI / 180;	//ラジアンへ変換
 	vx = SHIP_MOVESPEED * cos(angle);
@@ -19,12 +23,12 @@ Ship::Ship(int x, int y, double set_angle)
 	ay = 0;
 
 	//画像が決まったらこの処理を見直す。
-	GetGraphSize(PicHandle, &rect.x, &rect.y);
-	rect.x /= 2;
-	rect.y /= 2;
+	//GetGraphSize(PicHandle, &rect.x, &rect.y);
+	//rect.x /= 2;
+	//rect.y /= 2;
 	//rect.y = 0;
-	rect.x -= rect.sizeX / 2;
-	rect.y -= rect.sizeY / 2 - 4;
+	//rect.x -= rect.sizeX / 2;
+	rect.y += 60;
 }
 
 Ship::~Ship()
@@ -34,10 +38,12 @@ Ship::~Ship()
 void Ship::Motion(double frametime)
 {
 	if (CheckInCam()) {
-		startflag = true;
-		stepPosAll(frametime);
-		if (y >= HEIGHT || y <= 0)
-			deathflag = true;	//yの範囲を超えたら消滅
+		if (startflag) {
+			//startflag = true;
+			stepPosAll(frametime);
+			if (y >= HEIGHT || y <= 0)
+				deathflag = true;	//yの範囲を超えたら消滅
+		}
 	}
 	else if (startflag) {
 		deathflag = true;	//画面内に入り動かしてから画面外に出たら消滅
@@ -48,11 +54,15 @@ void Ship::Motion(double frametime)
 void Ship::Draw()
 {
 	if (CheckInCam()) {
-		DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
-
 #ifdef DEBUG
 		rect.Draw(*Camera);
 #endif // DEBUG
+		if (!directionflag)
+			DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+		else
+			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+
+
 
 	}
 }
@@ -81,6 +91,7 @@ bool Ship::HitCheck(Rect rect)
 	//		return false;*/
 	//}
 	if (CheckRectRect(rect, this->rect)) {
+		startflag = true;
 		if (HitFaceRectRect(rect, this->rect) & TOP && !(HitFaceRectRect(rect,this->rect) & BOTTOM)) {
 			HitPlayer();
 			unsigned int a = HitFaceRectRect(rect, this->rect);
