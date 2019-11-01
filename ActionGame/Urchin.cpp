@@ -11,6 +11,9 @@ Urchin::Urchin(int x, int y)
 	ay = URCHIN_AY;
 
 	cir = new Circle(URCHIN_RADIUS, &this->x, &this->y);
+
+	cir->x = 15;
+	cir->y = 16;
 }
 
 Urchin::~Urchin()
@@ -29,10 +32,10 @@ void Urchin::Motion(double frametime)
 void Urchin::Draw()
 {
 	if (CheckInCam()) {
-		DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
 
 #ifdef DEBUG
 		cir->Draw(*Camera);
 #endif
+		DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
 	}
 }

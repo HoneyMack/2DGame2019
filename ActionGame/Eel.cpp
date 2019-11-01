@@ -14,12 +14,10 @@ Eel::Eel(int x, int y, bool direction)
 
 	ay = 0;
 
-	//‰æ‘œ‚ªŒˆ‚Ü‚Á‚½‚ç‚±‚Ìˆ—‚ğŒ©’¼‚·
-	GetGraphSize(PicHandle, &rect.x, &rect.y);
-	rect.x /= 2;
-	rect.y /= 2;
-	rect.x -= rect.sizeX / 2;
-	rect.y -= rect.sizeY / 2 - 2;
+	rect.sizeX = 50;
+	rect.sizeY = 11;
+	rect.x = 0;
+	rect.y =45;
 }
 
 Eel::~Eel()
@@ -45,10 +43,14 @@ void Eel::Motion(double frametime)
 void Eel::Draw()
 {
 	if (CheckInCam()) {
-		if (vx < 0)
+		if (vx < 0) {
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
-		else
+			rect.x = 0;
+		}
+		else {
 			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle, TRUE);
+			rect.x = 16;
+		}
 
 #ifdef DEBUG
 		rect.Draw(*Camera);

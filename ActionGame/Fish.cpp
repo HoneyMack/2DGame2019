@@ -12,10 +12,10 @@ Fish::Fish(int x, int y)
 
 	//重力を無効に
 	ay = 0;
-	rect.x = 3;
-	rect.y = 5;
-	rect.sizeX = 25;
-	rect.sizeY = 25;
+	rect.x = 2;
+	rect.y = 6;
+	rect.sizeX = 26;
+	rect.sizeY = 18;
 
 	fx = x;
 	fy = y;
@@ -34,12 +34,12 @@ void Fish::Motion(double frametime)
 	if (CheckInCam()) {
 		int hitface = 0x0000;
 
-
+		
 
 		//プレイヤーとの距離が一定以下であれば追いかける
 		//プレイヤーが範囲外に出たら追いかけないようにする。範囲恥での反復横跳び防止
-		if (((x - usingP->x) * (x - usingP->x) + (usingP->y - y) * (usingP->y - y)) < FISH_CHASE_DISTANCE * FISH_CHASE_DISTANCE
-			&& (fx + FISH_MOVEWIDTH / 2 > usingP->x) && (fx - FISH_MOVEWIDTH / 2 < usingP->x)) {
+		if (((x - usingP->x) * (x - usingP->x) + (usingP->y - y) * (usingP->y - y)) < FISH_CHASE_DISTANCE * FISH_CHASE_DISTANCE 
+			&& (fx + FISH_MOVEWIDTH/2 > usingP->x) && (fx - FISH_MOVEWIDTH/2 < usingP->x)) {
 			chasing = true;	//追いかけフラグセット
 
 			//プレイヤーとfishとの角度を計算する
@@ -49,8 +49,8 @@ void Fish::Motion(double frametime)
 			else
 				angle = atan((usingP->y - y) / (x - usingP->x));	//0除算　要修正
 
-
-			angle *= 180. / PI;
+			
+			angle *=180. / PI;
 			//if (angle < 0)angle *= -1;
 
 			//プレイヤーとの角度が限界角度以上であった場合限界角度として進む方向を変更
@@ -73,20 +73,14 @@ void Fish::Motion(double frametime)
 				velocityY = -velocityY;*/
 		}
 		//プレイヤーとの距離が離れている場合は横移動
-		else if (chasing == true) {
+		else if(chasing == true){
 			chasing = false;
 			velocityX = FISH_SPEED;
 			velocityY = 0;
 		}
 
-		/*if (vecX + velocityX * frametime > FISH_MOVEWIDTH / 2) || vecX + velocityX * frametime < -FISH_MOVEWIDTH / 2) {
-
-		velocityX = -velocityX;
-		}*/
-
-		if ((fx + FISH_MOVEWIDTH / 2 < x) || (fx - FISH_MOVEWIDTH / 2 > x)){
-		velocityX = -velocityX;
-
+		if (vecX + velocityX * frametime > FISH_MOVEWIDTH / 2 || vecX + velocityX * frametime < -FISH_MOVEWIDTH) {
+			velocityX = -velocityX;
 		}
 
 		vecX += velocityX * frametime;

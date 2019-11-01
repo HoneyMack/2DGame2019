@@ -39,7 +39,8 @@ void TurtleWithWing::Draw() {
 	if (CheckInCam()) {
 		if (isWithWing) {
 			//âHÇï`âÊ(óvèCê≥)
-			DrawGraph(RelativePosX(), RelativePosY(), PicHandleWing, TRUE);
+			//DrawGraph(RelativePosX(), RelativePosY(), PicHandleWing, TRUE);
+			DrawRotaGraph(RelativePosX()+10, RelativePosY(), 0.3, 0, PicHandleWing, TRUE);
 		}
 	}
 }

@@ -10,7 +10,7 @@ Polarbear::Polarbear(int x, int y)
 	rect.x = 3;
 	rect.y = 5;
 	rect.sizeX = 25;
-	rect.sizeY = 25;
+	rect.sizeY = 22;
 
 	velocity = PB_SPEED;	//速度をセット
 

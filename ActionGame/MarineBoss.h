@@ -6,8 +6,8 @@
 #include "Blockforblock.h"
 #include <random>
 
-#define BOSS_SIZEX 110
-#define BOSS_SIZEY 95
+#define BOSS_SIZEX 100
+#define BOSS_SIZEY 88
 #define BOSS_HP 5	//“¥‚Ü‚ê‚Ä‚à¶‚«‚Ä‚¢‚ç‚ê‚é‰ñ”
 #define BOSS_MOVESPEED 200
 #define BOSS_WAIT 50	//s“®ŠÔ‚ÌŠÔ

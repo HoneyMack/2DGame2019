@@ -14,6 +14,9 @@ MarineBoss::MarineBoss(int sx, int sy, int fx)
 		UNI[i] = new Urchin(x,-40);
 	}
 
+	rect.x = 5;
+	rect.y = 7;
+
 	startflag = false;
 	velocity = BOSS_MOVESPEED;
 	unitime = BOSS_UNITIME_FIRST;	//ウニを落とす時間を設定
@@ -28,8 +31,9 @@ MarineBoss::~MarineBoss()
 
 void MarineBoss::Motion(double frametime)
 {
-	if (Blockforblock::startflag)startflag = true;
-	
+	if (Blockforblock::startflag) 
+		
+		startflag = true;
 		//ハイジャンプ用フラグ
 		if (waittime < KILLHIGHJUMPTIME) {
 			waittime += frametime * 1000;
@@ -150,6 +154,9 @@ void MarineBoss::Motion(double frametime)
 
 void MarineBoss::Draw()
 {
+#ifdef DEBUG
+		rect.Draw(*Camera);
+#endif
 	if (CheckInCam()) {
 		if (stats == 0 || stats == 1 || stats == 3 || stats == 6)	//左向き正常
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[0], TRUE);
@@ -165,9 +172,7 @@ void MarineBoss::Draw()
 		for (int i = 0; i < BOSS_UNI_CNT; i++) {
 			UNI[i]->Draw();
 		}
-#ifdef DEBUG
-		rect.Draw(*Camera);
-#endif
+
 	}
 }
 

@@ -1,161 +1,15 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (ActionGame_ver2017.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Blockforblock.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Blockforblock.cpp(30,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  BulletTowardPlayer.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Blockforblock.cpp(30,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(35,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Circle.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\BulletTowardPlayer.cpp(37,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Circle.cpp(24,39): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Coin.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Circle.cpp(24,21): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Coin.cpp(54,37): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Crab.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Coin.cpp(54,15): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(97,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(97,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(99,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Eel.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(99,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Eel.cpp(49,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Eel.cpp(49,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Eel.cpp(51,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  FallWall.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Eel.cpp(51,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(49,27): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(66,28): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(135,59): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(135,34): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(136,64): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Fence.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FallWall.cpp(136,27): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fence.cpp(25,40): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  FireBall.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fence.cpp(25,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBall.cpp(56,70): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  FireBar.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBall.cpp(56,39): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(20,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(20,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(25,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(25,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(51,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(51,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(56,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(56,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(80,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(80,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(85,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(85,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(109,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(109,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(114,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(114,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(138,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(138,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(143,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(143,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(170,44): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(170,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(176,36): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(176,20): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(194,63): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Fish.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FireBar.cpp(194,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fish.cpp(123,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fish.cpp(123,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fish.cpp(125,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  FlashBlock.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Fish.cpp(125,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FlashBlock.cpp(49,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   GardenEel.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\FlashBlock.cpp(49,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(7,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(8,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(38,78): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(38,45): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Ghost.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(38,29): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ghost.cpp(71,34): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ghost.cpp(80,33): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ghost.cpp(101,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Hanmer.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ghost.cpp(101,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Hanmer.cpp(40,57): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  HanmerThrow.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Hanmer.cpp(40,32): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HanmerThrow.cpp(153,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HanmerThrow.cpp(153,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HanmerThrow.cpp(155,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  HealingItem.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HanmerThrow.cpp(155,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HealingItem.cpp(24,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Jump.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\HealingItem.cpp(24,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(46,38): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(46,19): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(45,50): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(45,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(44,51): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(44,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(43,49): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(43,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(68,35): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Killer.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Jump.cpp(75,36): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Killer.cpp(63,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Killer.cpp(63,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Killer.cpp(65,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Lift.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Killer.cpp(65,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Lift.cpp(47,40): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Lift.cpp(47,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Lift.cpp(50,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  コンパイル中...
-  main.cpp
-  Map.cpp
-  MarineBoss.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Lift.cpp(50,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(14,23): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(155,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(155,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(157,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(157,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(159,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(159,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(161,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Mob.cpp
-  Object.cpp
-  Penguin.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\MarineBoss.cpp(161,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(40,16): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(88,32): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(108,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(108,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(110,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Player.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(110,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\GardenEel.cpp(38,29): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(170,29): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(342,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Polarbear.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(342,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Polarbear.cpp(77,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Polarbear.cpp(77,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Polarbear.cpp(79,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Rect.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Polarbear.cpp(79,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rect.cpp(24,93): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rect.cpp(24,65): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rect.cpp(24,37): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Rope.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rect.cpp(24,18): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rope.cpp(173,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rope.cpp(173,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rope.cpp(175,92): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Sea.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Rope.cpp(175,55): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Player.cpp(342,29): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(103,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(103,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(106,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
@@ -167,77 +21,26 @@ C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(112,32): warning 
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(115,51): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   SeaWeed.cpp
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Sea.cpp(115,32): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(21,21): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Ship.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(20,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ship.cpp(11,9): warning C4244:  '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ship.cpp(61,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ship.cpp(61,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ship.cpp(63,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  ShootEnemy.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Ship.cpp(63,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootEnemy.cpp(38,32): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootEnemy.cpp(111,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootEnemy.cpp(111,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootEnemy.cpp(113,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  ShootLaser.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootEnemy.cpp(113,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootLaser.cpp(61,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootLaser.cpp(73,31): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootLaser.cpp(82,57): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-  SnowMan.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ShootLaser.cpp(83,36): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(40,45): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(40,29): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(58,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(58,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(64,26): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(68,28): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(106,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Sound.cpp
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(24,21): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(23,34): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(27,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   Stage.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SnowMan.cpp(106,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\SeaWeed.cpp(26,34): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(1,1): warning C4819:  ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(41,23): warning C4244:  '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(51,26): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
-  ThornBlock.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(55,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ThornBlock.cpp(31,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Turtle.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\ThornBlock.cpp(31,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(40,32): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(115,43): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(115,27): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(117,47): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(117,31): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(122,43): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(122,27): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(124,43): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  コンパイル中...
   TurtleWithWing.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Turtle.cpp(124,27): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Stage.cpp(55,34): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(8,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(9,12): warning C4244:  '=': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(12,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
 C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(12,22): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(42,42): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  UpDownObject.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(42,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\UpDownObject.cpp(50,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  Urchin.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\UpDownObject.cpp(50,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Urchin.cpp(32,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  WalkEnemy.cpp
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Urchin.cpp(32,25): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(57,32): warning C4244:  '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(77,41): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(77,26): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(79,46): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\WalkEnemy.cpp(79,30): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(43,49): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  main.cpp
+C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\TurtleWithWing.cpp(43,32): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   コード生成しています。
-  Previous IPDB not found, fall back to full compilation.
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Penguin.cpp(145): warning C4715: 'Penguin::HitCheck': 値を返さないコントロール パスがあります。
-C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Crab.cpp(129): warning C4715: 'Crab::HitCheck': 値を返さないコントロール パスがあります。
-  All 1054 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 1054 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   ActionGame_ver2017.vcxproj -> C:\actiongame\project\2DGame2019\2DGame2019\ActionGame\Release\ActionGame.exe

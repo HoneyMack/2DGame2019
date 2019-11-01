@@ -19,8 +19,22 @@ Blockforblock::~Blockforblock()
 
 void Blockforblock::Motion(double frametime)
 {
-	if (usingP->x > fx)startflag = true;
-	if (liveflag == false)deathflag = true;
+	if (usingP->x > fx && startflag == false && liveflag == true) {
+		startflag = true;
+
+		StopSoundMem(Sound::sounds[SOUND_STAGE_SEA]);
+		//音をロードして再生
+		PlaySoundMem(Sound::sounds[SOUND_BOSS], DX_PLAYTYPE_LOOP, TRUE);
+
+	}
+	if (liveflag == false && deathflag == false) {
+		deathflag = true;
+		StopSoundMem(Sound::sounds[SOUND_BOSS]);
+		//音をデリート
+		DeleteSoundMem(Sound::sounds[SOUND_BOSS]);
+		//音を再生
+		PlaySoundMem(Sound::sounds[SOUND_BOSS_DEFEAT], DX_PLAYTYPE_BACK, TRUE);
+	}
 }
 
 void Blockforblock::Draw()

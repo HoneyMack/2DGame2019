@@ -4,7 +4,7 @@
 #include "Object.h"
 #include <math.h>
 
-#define FISH_SPEED 80	//移動する速さ00
+#define FISH_SPEED 80	//移動する速さ
 #define FISH_CHASE_DISTANCE 200	//プレイヤーに反応する距離
 #define FISH_LIMIT_ANGLE 10	//プレイヤーを追いかけるときの最大角度
 #define FISH_MOVEWIDTH 1000	//魚の行動範囲
@@ -16,7 +16,7 @@ public:
 	
 	static int PicHandle;
 	
-	Rect rect = Rect(30, 30, &this->x, &this->y);
+	Rect rect = Rect(30, 20, &this->x, &this->y);
 
 	int fx, fy;	//初期座標保持
 	bool chasing = false;	//追いかけ中のフラグ

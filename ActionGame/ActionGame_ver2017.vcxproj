@@ -164,6 +164,7 @@
     <ClInclude Include="Rope.h" />
     <ClInclude Include="Sea.h" />
     <ClInclude Include="SeaWeed.h" />
+    <ClInclude Include="Ship.h" />
     <ClInclude Include="ShootEnemy.h" />
     <ClInclude Include="ShootLaser.h" />
     <ClInclude Include="SnowMan.h" />
