@@ -4,7 +4,7 @@
 #include "Object.h"
 #include <math.h>
 
-#define FISH_SPEED 80	//移動する速さ
+#define FISH_SPEED 80	//移動する速さ00
 #define FISH_CHASE_DISTANCE 200	//プレイヤーに反応する距離
 #define FISH_LIMIT_ANGLE 10	//プレイヤーを追いかけるときの最大角度
 #define FISH_MOVEWIDTH 1000	//魚の行動範囲

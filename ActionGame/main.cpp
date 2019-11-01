@@ -180,7 +180,10 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lp, int nC)
 
 
 	GardenEel::PicHandle = LoadGraph("pictures/GardenEel.png"); //Debug用仮画像
-	Sea::PicHandle = LoadGraph("pictures/Sea.png");
+	Sea::PicHandle[0] = LoadGraph("pictures/Sea0.png");
+	Sea::PicHandle[1] = LoadGraph("pictures/Sea1.png");
+	Sea::PicHandle[2] = LoadGraph("pictures/Sea2.png");
+	Sea::PicHandle[3] = LoadGraph("pictures/Sea3.png");
 
 	Penguin::PicHandle[0] = LoadGraph("pictures/penguin_walk.png");
 	Penguin::PicHandle[1] = LoadGraph("pictures/penguin_sliding.png");
@@ -1557,7 +1560,7 @@ void CreateStage1_2R() {
 	new ThornBlock(DOT * 180, DOT * 8);
 	new ThornBlock(DOT * 181, DOT * 8);
 
-	new Crab(DOT * 25, DOT * 13);
+	//new Crab(DOT * 25, DOT * 13);
 
 	new Ghost(DOT * 25, DOT * 7);
 	new Ghost(DOT * 25, DOT * 3);
@@ -2009,6 +2012,11 @@ void CreateStage_Sea() {
 	new Eel(DOT * 42, DOT * 9,false);
 	new Eel(DOT * 49, DOT * 6, true);
 	new Eel(DOT * 85, DOT * 1, false);
+
+	new Eel(DOT * 52, DOT * 8, true);
+	//stage.usingP->x = DOT*50;
+
+
 	new Fish(DOT * 45, DOT * 11);
 	new Crab(DOT * 44, DOT * 13);
 	new Crab(DOT * 54, DOT * 13);
@@ -2241,7 +2249,98 @@ void CreateStage_Snow() {
 }
 
 void CreateStage_Sky() {
+	//背景をセット
+	for (int i = 0; i < ACCOUNTFORMAPPARTS; i++) {
+		stage.mapparts[i] = stage_Sky[0];
+	}
 
+	stage.limit = TIME_STAGE1_1R;
+
+	Map firstMap;
+	firstMap.setNum(150, firstMap.getNumY());
+
+	for (int i = 0; i < 10; i++) {
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+	//new Ship(DOT * 6, DOT * 8, 180);
+
+	new Rope(DOT * 13, DOT * 1, 7);
+
+	new Rope(DOT * 20, DOT * 1, 7);
+
+	new UpDownObject(DOT * 25, DOT * 8);
+
+	
+
+	stage.usingP->x = DOT*3;
+
+	new UpDownObject(DOT * 25, DOT * 4);
+
+
+	new Lift(DOT * 27, DOT * 12, false);
+	new Lift(DOT * 31, DOT * 4, true);
+	new Coin(DOT * 31, DOT * 8);
+	new Coin(DOT * 31, DOT * 7);
+	new Coin(DOT * 31, DOT * 6);
+
+	new Killer(DOT * 40, DOT * 8, false);
+	new Killer(DOT * 42, DOT * 5, false);
+	new Killer(DOT * 37, DOT * 7, false);
+
+
+
+	new Lift(DOT * 32, DOT * 12, false);
+	new Lift(DOT * 39, DOT * 4, true);
+	new Coin(DOT * 39, DOT * 8);
+	new Coin(DOT * 39, DOT * 7);
+
+	new Coin(DOT * 39, DOT * 6);
+	new Lift(DOT * 39, DOT * 12, false);
+	new Lift(DOT * 43, DOT * 5, true);
+	new Lift(DOT * 47, DOT * 6, true);
+	new Lift(DOT * 51, DOT * 7, true);
+	new Lift(DOT * 55, DOT * 8, true);
+
+	new Ship(DOT * 60, DOT * 10, 180);
+
+	new Ship(DOT * 65, DOT * 12, 45);
+
+	new Ship(DOT * 80, DOT * 3, 315);
+
+	new Rope(DOT * 88, DOT * 3, 6);
+
+	new FireBar(DOT * 91, DOT * 6, 5, 2);
+
+	new Killer(DOT * 90, DOT * 7, false);
+	new Killer(DOT * 75, DOT * 8, false);
+	new Killer(DOT * 82, DOT * 2, false);
+
+
+	new Rope(DOT * 95, DOT * 3, 6);
+
+	for (int i = 104; i < 108; i++) {
+		firstMap.m_map[i][8] = BLOCK_WOOD;
+	}
+	firstMap.m_map[115][8] = BLOCK_WOOD;
+	firstMap.m_map[116][8] = BLOCK_WOOD;
+
+	firstMap.m_map[122][8] = BLOCK_WOOD;
+
+	new FireBar(DOT * 128, DOT * 8, 5, 1);
+
+	new TurtleWithWing(DOT * 135, DOT * 8);
+
+	for (int i = 140; i < 150; i++) {
+		firstMap.m_map[i][14] = BLOCK_WOOD;
+	}
+
+
+	//new Lift(DOT * , DOT * 6, true);
+
+
+	//ステージにセット
+	*stage.usingM = firstMap;
 }
 
 void CreateStage_Tutorial() {

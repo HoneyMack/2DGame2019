@@ -7,11 +7,11 @@ Penguin::Penguin(int x,int y)
 	this->x = x;
 	this->y = y;
 	
-	GetGraphSize(PicHandle[0], &rect.x, &rect.y);
-	rect.x /= 2;
-	rect.y /= 2;
-	rect.x -= rect.sizeX / 2;
-	rect.y -= rect.sizeY / 2 - 2;
+	//GetGraphSize(PicHandle[0], &rect.x, &rect.y);
+	//rect.x /= 2;
+	//rect.y /= 2;
+	//rect.x -= rect.sizeX / 2;
+	//rect.y -= rect.sizeY / 2 - 2;
 
 	velocity = PENGUIN_WALKINGSPEED;
 }
@@ -49,11 +49,27 @@ void Penguin::Motion(double frametime)
 			else
 				velocity = PENGUIN_SLIDINGSPEED;
 			searched = true;
+			rect.sizeY = 15;
+			rect.y += 5;
+			/*if (usingP->x - x > PENGUIN_CHANGEDISTANCE_WIDTH || x - usingP->x > PENGUIN_CHANGEDISTANCE_WIDTH) {
+				if (usingP->x > x)
+					velocity = PENGUIN_SLIDINGSPEED;
+				else
+					velocity = -PENGUIN_SLIDINGSPEED;
+			}*/
+
 		}
 
 		//ŠŠ‚è‚¾‚·‚Æ”ÍˆÍ‚É‚æ‚éÜ‚è•Ô‚µ‚È‚µB
-		if ((vecX + velocity * frametime > PENGUIN_MOVEWIDTH / 2 || vecX + velocity * frametime < -PENGUIN_MOVEWIDTH)&&searched == false) {
+		/*if ((vecX + velocity * frametime > PENGUIN_MOVEWIDTH / 2 || vecX + velocity * frametime < -PENGUIN_MOVEWIDTH)&&searched == false) {
 			velocity = -velocity;
+		}*/
+
+		if (usingP->x - x > PENGUIN_CHANGEDISTANCE_WIDTH || x - usingP->x > PENGUIN_CHANGEDISTANCE_WIDTH) {
+			if (usingP->x > x)
+				velocity = PENGUIN_SLIDINGSPEED;
+			else
+				velocity = -PENGUIN_SLIDINGSPEED;
 		}
 
 		vecX += velocity * frametime;
@@ -82,16 +98,17 @@ void Penguin::Motion(double frametime)
 void Penguin::Draw()
 {
 	int i;
-	if (searched = false)i = 0;
+	if (searched == false)i = 0;
 	else i = 1;
 	if (CheckInCam()) {
+#ifdef DEBUG
+		rect.Draw(*Camera);
+#endif		
 		if (velocity <= 0) 
 			DrawGraph(RelativePosX(), RelativePosY(), PicHandle[i], TRUE);
 		else
 			DrawTurnGraph(RelativePosX(), RelativePosY(), PicHandle[i], TRUE);
-#ifdef DEBUG
-		rect.Draw(*Camera);
-#endif		
+
 		
 	}
 }

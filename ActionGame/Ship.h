@@ -14,6 +14,8 @@ public:
 	double angle;
 	bool startflag = false;
 
+	bool directionflag;
+
 	Rect rect = Rect(SHIP_SIZEX, SHIP_SIZEY, &this->x, &this->y);
 
 	Ship(int x, int y, double set_angle);	//コンストラクタ　
